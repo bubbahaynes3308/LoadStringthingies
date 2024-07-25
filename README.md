@@ -16,3 +16,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
 ```
+# RoClothes Assets
+Download The Zip File
+
+Extract the Zip File
+
+Place All Desendents Of Folder Into
+
+Bloxstrap\Modifications\content (This One Keeps Everything In a Seperate Content Folder but works Fine + Dont Have to Do This Step All Over Again When Roblox Updates)
+
+Or
+
+RobloxDirectory\content
+
+https://www.youtube.com/watch?v=PFxHhCIShI0 Follow This Video If needed For Directory Of Content
