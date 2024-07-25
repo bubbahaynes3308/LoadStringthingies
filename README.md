@@ -17,7 +17,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
 ```
 # RoClothes Assets
-Download The Zip File
+Download The RoClothesLocalMeshes.zip File
 
 Extract the Zip File
 
