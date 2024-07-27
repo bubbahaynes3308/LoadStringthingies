@@ -235,6 +235,9 @@ function Converter(Character)
 			local CharacterMesh = Instance.new("CharacterMesh", ShirtModel)
 			CharacterMesh.BodyPart = Enum.BodyPart.Torso
 			CharacterMesh.MeshId = 48112070
+			if R6PartTransparency then
+				CharacterMesh.MeshId = 0
+			end
 		end
 
 		ShirtModel.Name = "ShirtModel"
@@ -252,6 +255,9 @@ function Converter(Character)
 				Part.CanTouch = false
 				Part.Massless = false
 				Part.Size = BasePart.Size + Vector3.new(0.01,0.01,0.01)
+				if R6PartTransparency then
+				Part.Transparency = 1
+			        end
 
 				local Weld = Instance.new("Weld", Part)
 				Weld.Part0 = BasePart
