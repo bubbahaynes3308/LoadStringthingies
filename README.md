@@ -16,6 +16,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
 ```
+
+HitBox Expander:
+```lua
+_G.HS = 10 --Hitbox Size
+_G.Enabled = true
+_G.HBP = "Head" --HitBox Part
+_G.T = 0.75 --Transparency
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/CWHBE",true))()
+
+```
+
 # RoClothes Assets
 Download The RoClothesLocalMeshes.zip File
 
