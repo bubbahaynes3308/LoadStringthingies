@@ -9816,7 +9816,6 @@ GUIObject.ToneButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 GUIObject.ToneButton.TextScaled = true
 GUIObject.ToneButton.TextSize = 14.000
 GUIObject.ToneButton.TextStrokeColor3 = Color3.fromRGB(57, 57, 57)
-GUIObject.ToneButton.TextWrapped = true
 
 GUIObject.Bundles.Name = "Bundles"
 GUIObject.Bundles.Parent = GUIObject.PageFrame
