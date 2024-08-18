@@ -4437,7 +4437,8 @@ function RoClothes(Player)
 					[1] = "Right Leg",
 					[2] = "Right Shoe 3",
 				},
-			}, 
+			},
+--[[ Some Executor Fuck up when reading this one for some reason(ExecutorNameHere:4444 Attempt to index nil with 'new')
 			["Right Shoe 3 Nurbs Path 7"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Shoe 3 Nurbs Path 7",
@@ -4457,6 +4458,7 @@ function RoClothes(Player)
 					[2] = "Right Shoe 3",
 				},
 			}, 
+]]
 			["Right Shoe 3 Nurbs Path 8"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Shoe 3 Nurbs Path 8",
