@@ -6111,7 +6111,33 @@ function RoClothes(Player)
 				7733302642
 			}
 		},
-		["Ic3y"] = {
+		["Shark"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(205,205,205),
+				["LeftArmColor3"] = Color3.fromRGB(205,205,205),
+				["RightArmColor3"] = Color3.fromRGB(205,205,205),
+				["LeftLegColor3"] = Color3.fromRGB(205,205,205),
+				["RightLegColor3"] = Color3.fromRGB(205,205,205),
+				["TorsoColor3"] = Color3.fromRGB(205,205,205),
+			},
+			["Accessory"] = {
+				17649531118,
+				4773932088,
+				17649505815,
+				17649520840,
+				13871760775,
+				16112752598,
+				13491595552,
+				7731123921,
+                                14023758925,
+				17649513846,
+				17636708724,
+				17220316156,
+                                17634290161,
+
+			}
+		},
+["Ic3y"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(50, 50, 50),
 				["LeftArmColor3"] = Color3.fromRGB(50, 50, 50),
