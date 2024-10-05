@@ -6131,7 +6131,6 @@ function RoClothes(Player)
                 14023758925,
 				17649513846,
 				17636708724,
-				17220316156,
                 17634290161,
 
 			}
@@ -7393,6 +7392,7 @@ function RoClothes(Player)
 		RootPart.Size = Vector3.new(2,2,1)
 		RootPart.Anchored = true
 		RootPart.Transparency = 1
+		RootPart.CanCollide = false
 
 		DummyModel.PrimaryPart = RootPart
 
@@ -7401,6 +7401,8 @@ function RoClothes(Player)
 			Part.Size = Property.Size
 			Part.CFrame = RootPart.CFrame * Property.Offset
 			Part.Anchored = true
+				Part.CanCollide = false
+				
 			Part.Name = Name
 
 			if Name == "Head" then
@@ -7690,6 +7692,8 @@ function RoClothes(Player)
 					ObjectInstance.DoubleSided = DOUBLESIDED
 				elseif INSTANCE == "Part" then
 					ObjectInstance = Instance.new("Part")
+			                ObjectInstance.CanCollide = false
+				        ObjectInstance.CanQuery = false
 					ObjectInstance.Shape = SHAPE
 				end
 
