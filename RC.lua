@@ -7499,9 +7499,9 @@ function RoClothes(Player)
 	end
 
 	function Function.MultiplyCalculate(Base, Default)
-		local X = Base.X / Default.X
-		local Y = Base.Y / Default.Y
-		local Z = Base.Z / Default.Z
+		local X = print(Base.X)
+		local Y = print(Base.Y)
+		local Z = print(Base.Z)
 
 		return X,Y,Z
 	end
