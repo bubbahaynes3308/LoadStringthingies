@@ -6121,17 +6121,17 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(205,205,205),
 			},
 			["Accessory"] = {
-				17649531118,
-				4773932088,
-				17649505815,
-				17649520840,
-				16112752598,
-				13491595552,
-				7731123921,
-                14023758925,
-				17649513846,
-				17636708724,
-                17634290161,
+				17649531118;
+				4773932088;
+				17649505815;
+				17649520840;
+				16112752598;
+				13491595552;
+				7731123921;
+                		14023758925;
+				17649513846;
+				17636708724;
+               			17634290161;
 
 			}
 		},
@@ -6145,14 +6145,14 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(50, 50, 50),
 			},
 			["Accessory"] = {
-				12900133700,
-				7285471191,
-				16172144343,
-				13085534877,
-				16179383460,
-				17582835269,
-				15525029339,
-				17834634987
+				12900133700;
+				7285471191;
+				16172144343;
+				13085534877;
+				16179383460;
+				17582835269;
+				15525029339;
+				17834634987;
 			}
 		},
 	}
@@ -7046,7 +7046,7 @@ function RoClothes(Player)
 		local RCF0 = CFrame.new(0.246000007, 0.63499999, -0.451000005, -0.157161966, -0.1847606, -0.970135868, -0.0996441022, 0.980297148, -0.170553446, 0.982533038, 0.0698638037, -0.172475725)
 		local RCF1 = CFrame.new(0.200000003, 0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-		local XM, YM, ZM = Function.MultiplyCalculate(Torso.Size, BodyPartSize[Torso.Name])
+		M, YM, ZM = Function.MultiplyCalculate(Torso.Size, BodyPartSize[Torso.Name])
 
 		local RealtimeProperty = PlayerData[Data].CurrentPartList.RealtimeUpdateList.Mesh[LB]
 
@@ -7499,9 +7499,9 @@ function RoClothes(Player)
 	end
 
 	function Function.MultiplyCalculate(Base, Default)
-		local X = 3
-		local Y = 2
-		local Z = 1
+		local X = Base.X / Default.X
+		local Y = Base.Y / Default.Y
+		local Z = Base.Z / Default.Z
 
 		return X,Y,Z
 	end
