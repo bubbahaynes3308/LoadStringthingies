@@ -6174,6 +6174,24 @@ function RoClothes(Player)
 				17825791348;
 			}
 		},
+["F0-2"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 204, 153),
+				["LeftArmColor3"] = Color3.fromRGB(255, 204, 153),
+				["RightArmColor3"] = Color3.fromRGB(255, 204, 153),
+				["LeftLegColor3"] = Color3.fromRGB(255, 204, 153),
+				["RightLegColor3"] = Color3.fromRGB(255, 204, 153),
+				["TorsoColor3"] = Color3.fromRGB(255, 204, 153),
+			},
+			["Accessory"] = {
+				7392396295,
+				7863333749,
+				7675263201,
+				17825791348,
+				17825845537,
+			}
+		},
+			
 	}
 
 	local Clothes = {
