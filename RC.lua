@@ -9547,1482 +9547,1484 @@ function RoClothes(Player)
 	GUIObject.MobileCloseButtonScreen.Enabled = false
 
 	if RS:IsClient() then
+		if script.Parent:FindFirstChild("IsRequired") then
+			GUIObject.Screen.Parent = script.Parent
+			GUIObject.MobileCloseButtonScreen.Parent = script.Parent
+		else
 		GUIObject.Screen.Parent = game:GetService("CoreGui")
 		GUIObject.MobileCloseButtonScreen.Parent = game:GetService("CoreGui")
-	elseif script.Parent:WaitForChild("IsRequired").Value == true then
-		GUIObject.Screen.Parent = script.Parent
-		GUIObject.MobileCloseButtonScreen.Parent = script.Parent
-		else
-	GUIObject.Screen.Parent = Player:WaitForChild("PlayerGui")
-	GUIObject.MobileCloseButtonScreen.Parent = Player:WaitForChild("PlayerGui")
 end
-
-GUIObject.MainFrame.Name = "MainFrame"
-GUIObject.MainFrame.Parent = GUIObject.Screen
-GUIObject.MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.MainFrame.Position = UDim2.new(0.757, 0, 0.231759638, 0)
-GUIObject.MainFrame.Size = UDim2.new(0.18244803, 0, 0.536480665, 0)
-GUIObject.MainFrame.BackgroundTransparency = 1
-
-GUIObject.PageFrame.Name = "PageFrame"
-GUIObject.PageFrame.Parent = GUIObject.MainFrame
-GUIObject.PageFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PageFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.PageFrame.Position = UDim2.new(0,0,0)
-GUIObject.PageFrame.Size = UDim2.new(1,0,1,0)
-
-GUIObject.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient.Rotation = -90
-GUIObject.UIGradient.Parent = GUIObject.PageFrame
-
-GUIObject.UICorner.CornerRadius = UDim.new(0.100000001, 0)
-GUIObject.UICorner.Parent = GUIObject.PageFrame
-
-GUIObject.Clothes_3.Name = "Clothes"
-GUIObject.Clothes_3.Parent = GUIObject.PageFrame
-GUIObject.Clothes_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Clothes_3.BackgroundTransparency = 1.000
-GUIObject.Clothes_3.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Clothes_3.Visible = false
-
-GUIObject.ClothesButtonFrame.Name = "ClothesButtonFrame"
-GUIObject.ClothesButtonFrame.Parent = GUIObject.Clothes_3
-GUIObject.ClothesButtonFrame.Active = true
-GUIObject.ClothesButtonFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-GUIObject.ClothesButtonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ClothesButtonFrame.BackgroundTransparency = 1.000
-GUIObject.ClothesButtonFrame.BorderSizePixel = 0
-GUIObject.ClothesButtonFrame.ClipsDescendants = true
-GUIObject.ClothesButtonFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-GUIObject.ClothesButtonFrame.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
-GUIObject.ClothesButtonFrame.Visible = true
-GUIObject.ClothesButtonFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
-GUIObject.ClothesButtonFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-GUIObject.ClothesButtonFrame.ScrollBarThickness = 0
-
-GUIObject.UIGridLayout.Parent = GUIObject.ClothesButtonFrame
-GUIObject.UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-GUIObject.UIGridLayout.CellSize = UDim2.new(0.300000012, 0, 0.174999997, 0)
-
-GUIObject.Menu.Name = "Menu"
-GUIObject.Menu.Parent = GUIObject.PageFrame
-GUIObject.Menu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu.BackgroundTransparency = 1.000
-GUIObject.Menu.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.DestroyFrame.Name = "DestroyFrame"
-GUIObject.DestroyFrame.Parent = GUIObject.Menu
-GUIObject.DestroyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.DestroyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.DestroyFrame.Position = UDim2.new(0.784810185, 0, 0.875, 0)
-GUIObject.DestroyFrame.Size = UDim2.new(0.18244803, 0, 0.128480643, 0)
-
-GUIObject.UIAspectRatioConstraint_2.Parent = GUIObject.DestroyFrame
-
-GUIObject.UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 0, 0))}
-GUIObject.UIGradient_3.Rotation = -90
-GUIObject.UIGradient_3.Parent = GUIObject.DestroyFrame
-
-GUIObject.UICorner_3.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_3.Parent = GUIObject.DestroyFrame
-
-GUIObject.DestroyButton.Name = "DestroyButton"
-GUIObject.DestroyButton.Parent = GUIObject.DestroyFrame
-GUIObject.DestroyButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.DestroyButton.BackgroundTransparency = 1.000
-GUIObject.DestroyButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.DestroyButton.Font = Enum.Font.Code
-GUIObject.DestroyButton.Text = "DESTROY"
-GUIObject.DestroyButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.DestroyButton.TextScaled = true
-GUIObject.DestroyButton.TextSize = 14.000
-GUIObject.DestroyButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.DestroyButton.TextStrokeTransparency = 0.000
-GUIObject.DestroyButton.TextWrapped = true
-
-GUIObject.PlayerFrame.Name = "PlayerFrame"
-GUIObject.PlayerFrame.Parent = GUIObject.Menu
-GUIObject.PlayerFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.PlayerFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PlayerFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.PlayerFrame.Position = UDim2.new(0.5, 0, 0.025, 0)
-GUIObject.PlayerFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 100))}
-GUIObject.UIGradient_4.Rotation = -90
-GUIObject.UIGradient_4.Parent = GUIObject.PlayerFrame
-
-GUIObject.UICorner_4.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_4.Parent = GUIObject.PlayerFrame
-
-GUIObject.PlayerExecute.Name = "PlayerExecute"
-GUIObject.PlayerExecute.Parent = GUIObject.PlayerFrame
-GUIObject.PlayerExecute.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.PlayerExecute.BackgroundTransparency = 1.000
-GUIObject.PlayerExecute.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.PlayerExecute.ClearTextOnFocus = false
-GUIObject.PlayerExecute.Font = Enum.Font.Code
-GUIObject.PlayerExecute.PlaceholderText = "Player To Execute (Self = Yourself)"
-GUIObject.PlayerExecute.Text = "Self"
-GUIObject.PlayerExecute.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PlayerExecute.TextScaled = true
-GUIObject.PlayerExecute.TextSize = 14.000
-GUIObject.PlayerExecute.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PlayerExecute.TextWrapped = true
-
-GUIObject.BreastsTypeFrame.Name = "BreastsTypeFrame"
-GUIObject.BreastsTypeFrame.Parent = GUIObject.Menu
-GUIObject.BreastsTypeFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.BreastsTypeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsTypeFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BreastsTypeFrame.Position = UDim2.new(0.5, 0, 0.195, 0)
-GUIObject.BreastsTypeFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_5.Rotation = -90
-GUIObject.UIGradient_5.Parent = GUIObject.BreastsTypeFrame
-
-GUIObject.UICorner_5.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_5.Parent = GUIObject.BreastsTypeFrame
-
-GUIObject.BreastsTypeButton.Name = "BreastsTypeButton"
-GUIObject.BreastsTypeButton.Parent = GUIObject.BreastsTypeFrame
-GUIObject.BreastsTypeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsTypeButton.BackgroundTransparency = 1.000
-GUIObject.BreastsTypeButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BreastsTypeButton.ZIndex = 2
-GUIObject.BreastsTypeButton.Font = Enum.Font.Code
-GUIObject.BreastsTypeButton.Text = "Breasts Type: 1"
-GUIObject.BreastsTypeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsTypeButton.TextScaled = true
-GUIObject.BreastsTypeButton.TextSize = 14.000
-GUIObject.BreastsTypeButton.TextWrapped = true
-
-GUIObject.BundleFrame.Name = "BundleFrame"
-GUIObject.BundleFrame.Parent = GUIObject.Menu
-GUIObject.BundleFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.BundleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BundleFrame.Position = UDim2.new(0.5, 0, 0.11, 0)
-GUIObject.BundleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30, 0, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(55, 0, 100))}
-GUIObject.UIGradient_6.Rotation = -90
-GUIObject.UIGradient_6.Parent = GUIObject.BundleFrame
-
-GUIObject.UICorner_6.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_6.Parent = GUIObject.BundleFrame
-
-GUIObject.BundleText.Name = "BundleText"
-GUIObject.BundleText.Parent = GUIObject.BundleFrame
-GUIObject.BundleText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundleText.BackgroundTransparency = 1.000
-GUIObject.BundleText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BundleText.ZIndex = 2
-GUIObject.BundleText.Font = Enum.Font.Code
-GUIObject.BundleText.Text = "Bundle: nil"
-GUIObject.BundleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundleText.TextScaled = true
-GUIObject.BundleText.TextSize = 14.000
-GUIObject.BundleText.TextWrapped = true
-
-GUIObject.DelayFrame.Name = "DelayFrame"
-GUIObject.DelayFrame.Parent = GUIObject.Menu
-GUIObject.DelayFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.DelayFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.DelayFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.DelayFrame.Position = UDim2.new(0.5, 0, 0.535, 0)
-GUIObject.DelayFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.UIGradient_7.Rotation = -90
-GUIObject.UIGradient_7.Parent = GUIObject.DelayFrame
-
-GUIObject.UICorner_7.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_7.Parent = GUIObject.DelayFrame
-
-GUIObject.DelayTimeText.Name = "DelayTimeText"
-GUIObject.DelayTimeText.Parent = GUIObject.DelayFrame
-GUIObject.DelayTimeText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.DelayTimeText.BackgroundTransparency = 1.000
-GUIObject.DelayTimeText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.DelayTimeText.Font = Enum.Font.Code
-GUIObject.DelayTimeText.PlaceholderText = "Delay Time After Respawn"
-GUIObject.DelayTimeText.Text = "1"
-GUIObject.DelayTimeText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.DelayTimeText.TextScaled = true
-GUIObject.DelayTimeText.TextSize = 14.000
-GUIObject.DelayTimeText.TextWrapped = true
-
-GUIObject.AutoExecuteFrame.Name = "AutoExecuteFrame"
-GUIObject.AutoExecuteFrame.Parent = GUIObject.Menu
-GUIObject.AutoExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.AutoExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AutoExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.AutoExecuteFrame.Position = UDim2.new(0.5, 0, 0.62, 0)
-GUIObject.AutoExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_8.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_8.Parent = GUIObject.AutoExecuteFrame
-
-GUIObject.UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.UIGradient_8.Rotation = -90
-GUIObject.UIGradient_8.Parent = GUIObject.AutoExecuteFrame
-
-GUIObject.AutoExecuteButton.Name = "AutoExecuteButton"
-GUIObject.AutoExecuteButton.Parent = GUIObject.AutoExecuteFrame
-GUIObject.AutoExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.AutoExecuteButton.BackgroundTransparency = 1.000
-GUIObject.AutoExecuteButton.BorderSizePixel = 0
-GUIObject.AutoExecuteButton.LayoutOrder = 1
-GUIObject.AutoExecuteButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.AutoExecuteButton.Font = Enum.Font.Code
-GUIObject.AutoExecuteButton.Text = "Auto Execute"
-GUIObject.AutoExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AutoExecuteButton.TextScaled = true
-GUIObject.AutoExecuteButton.TextSize = 14.000
-GUIObject.AutoExecuteButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
-GUIObject.AutoExecuteButton.TextStrokeTransparency = 0.000
-GUIObject.AutoExecuteButton.TextWrapped = true
-
-GUIObject.BundleBodyColorFrame.Name = "BundleBodyColorFrame"
-GUIObject.BundleBodyColorFrame.Parent = GUIObject.Menu
-GUIObject.BundleBodyColorFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.BundleBodyColorFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundleBodyColorFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BundleBodyColorFrame.Position = UDim2.new(0.5, 0, 0.365, 0)
-GUIObject.BundleBodyColorFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_15.Rotation = -90
-GUIObject.UIGradient_15.Parent = GUIObject.BundleBodyColorFrame
-
-GUIObject.UICorner_15.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_15.Parent = GUIObject.BundleBodyColorFrame
-
-GUIObject.BundleBodyColorButton.Name = "BundleBodyColorButton"
-GUIObject.BundleBodyColorButton.Parent = GUIObject.BundleBodyColorFrame
-GUIObject.BundleBodyColorButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.BundleBodyColorButton.BackgroundTransparency = 1.000
-GUIObject.BundleBodyColorButton.BorderSizePixel = 0
-GUIObject.BundleBodyColorButton.LayoutOrder = 1
-GUIObject.BundleBodyColorButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BundleBodyColorButton.Font = Enum.Font.Code
-GUIObject.BundleBodyColorButton.Text = "Bundle Body Color"
-GUIObject.BundleBodyColorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundleBodyColorButton.TextScaled = true
-GUIObject.BundleBodyColorButton.TextSize = 14.000
-GUIObject.BundleBodyColorButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
-GUIObject.BundleBodyColorButton.TextStrokeTransparency = 0.000
-GUIObject.BundleBodyColorButton.TextWrapped = true
-
-GUIObject.ResetFrame.Name = "ResetFrame"
-GUIObject.ResetFrame.Parent = GUIObject.Menu
-GUIObject.ResetFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ResetFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ResetFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ResetFrame.Position = UDim2.new(0.5, 0, 0.705, 0)
-GUIObject.ResetFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_9.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_9.Parent = GUIObject.ResetFrame
-
-GUIObject.UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 0))}
-GUIObject.UIGradient_9.Rotation = -90
-GUIObject.UIGradient_9.Parent = GUIObject.ResetFrame
-
-GUIObject.ResetButton.Name = "ResetButton"
-GUIObject.ResetButton.Parent = GUIObject.ResetFrame
-GUIObject.ResetButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ResetButton.BackgroundTransparency = 1.000
-GUIObject.ResetButton.BorderSizePixel = 0
-GUIObject.ResetButton.LayoutOrder = 1
-GUIObject.ResetButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ResetButton.Font = Enum.Font.Code
-GUIObject.ResetButton.Text = "Reset"
-GUIObject.ResetButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ResetButton.TextScaled = true
-GUIObject.ResetButton.TextSize = 14.000
-GUIObject.ResetButton.TextStrokeColor3 = Color3.fromRGB(99, 0, 0)
-GUIObject.ResetButton.TextWrapped = true
-
-GUIObject.ExecuteFrame.Name = "ExecuteFrame"
-GUIObject.ExecuteFrame.Parent = GUIObject.Menu
-GUIObject.ExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ExecuteFrame.Position = UDim2.new(0.5, 0, 0.79, 0)
-GUIObject.ExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_10.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_10.Parent = GUIObject.ExecuteFrame
-
-GUIObject.UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 0))}
-GUIObject.UIGradient_10.Rotation = -90
-GUIObject.UIGradient_10.Parent = GUIObject.ExecuteFrame
-
-GUIObject.ExecuteButton.Name = "ExecuteButton"
-GUIObject.ExecuteButton.Parent = GUIObject.ExecuteFrame
-GUIObject.ExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ExecuteButton.BackgroundTransparency = 1.000
-GUIObject.ExecuteButton.BorderSizePixel = 0
-GUIObject.ExecuteButton.LayoutOrder = 1
-GUIObject.ExecuteButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ExecuteButton.Font = Enum.Font.Code
-GUIObject.ExecuteButton.Text = "Execute"
-GUIObject.ExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ExecuteButton.TextScaled = true
-GUIObject.ExecuteButton.TextSize = 14.000
-GUIObject.ExecuteButton.TextStrokeColor3 = Color3.fromRGB(99, 0, 0)
-GUIObject.ExecuteButton.TextWrapped = true
-
-GUIObject.ToneFrame.Name = "ToneFrame"
-GUIObject.ToneFrame.Parent = GUIObject.Menu
-GUIObject.ToneFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ToneFrame.Position = UDim2.new(0.5, 0, 0.28, 0)
-GUIObject.ToneFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_11.Rotation = -90
-GUIObject.UIGradient_11.Parent = GUIObject.ToneFrame
-
-GUIObject.UICorner_11.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_11.Parent = GUIObject.ToneFrame
-
-GUIObject.ToneButton.Name = "ToneButton"
-GUIObject.ToneButton.Parent = GUIObject.ToneFrame
-GUIObject.ToneButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ToneButton.BackgroundTransparency = 1.000
-GUIObject.ToneButton.BorderSizePixel = 0
-GUIObject.ToneButton.LayoutOrder = 1
-GUIObject.ToneButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ToneButton.Font = Enum.Font.Code
-GUIObject.ToneButton.Text = "Tone: Base"
-GUIObject.ToneButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ToneButton.TextScaled = true
-GUIObject.ToneButton.TextSize = 14.000
-GUIObject.ToneButton.TextStrokeColor3 = Color3.fromRGB(57, 57, 57)
-
-GUIObject.Bundles.Name = "Bundles"
-GUIObject.Bundles.Parent = GUIObject.PageFrame
-GUIObject.Bundles.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Bundles.BackgroundTransparency = 1.000
-GUIObject.Bundles.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Bundles.Visible = false
-
-GUIObject.BundlesButtonFrame.Name = "BundlesButtonFrame"
-GUIObject.BundlesButtonFrame.Parent = GUIObject.Bundles
-GUIObject.BundlesButtonFrame.Active = true
-GUIObject.BundlesButtonFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-GUIObject.BundlesButtonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BundlesButtonFrame.BackgroundTransparency = 1.000
-GUIObject.BundlesButtonFrame.BorderSizePixel = 0
-GUIObject.BundlesButtonFrame.ClipsDescendants = true
-GUIObject.BundlesButtonFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-GUIObject.BundlesButtonFrame.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
-GUIObject.BundlesButtonFrame.Visible = true
-GUIObject.BundlesButtonFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
-GUIObject.BundlesButtonFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-GUIObject.BundlesButtonFrame.ScrollBarThickness = 0
-
-GUIObject.UIGridLayout_2.Parent = GUIObject.BundlesButtonFrame
-GUIObject.UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-GUIObject.UIGridLayout_2.CellSize = UDim2.new(0.300000012, 0, 0.174999997, 0)
-
-GUIObject.ButtonFrame.Name = "ButtonFrame"
-GUIObject.ButtonFrame.Parent = GUIObject.MainFrame
-GUIObject.ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ButtonFrame.BackgroundTransparency = 1.000
-GUIObject.ButtonFrame.Position = UDim2.new(1.055,0,0.064,0)
-GUIObject.ButtonFrame.Size = UDim2.new(0.15,0,0.395,0)
-
-GUIObject.UIListLayout.Parent = GUIObject.ButtonFrame
-GUIObject.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-GUIObject.UIListLayout.Padding = UDim.new(0.0500000007, 0)
-
-GUIObject.Menu_2.Name = "Menu"
-GUIObject.Menu_2.Parent = GUIObject.ButtonFrame
-GUIObject.Menu_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Menu_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Menu_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_3.Parent = GUIObject.Menu_2
-
-GUIObject.UICorner_12.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_12.Parent = GUIObject.Menu_2
-
-GUIObject.MenuButton.Name = "MenuButton"
-GUIObject.MenuButton.Parent = GUIObject.Menu_2
-GUIObject.MenuButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MenuButton.BackgroundTransparency = 1.000
-GUIObject.MenuButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.MenuButton.Font = Enum.Font.Code
-GUIObject.MenuButton.Text = "Menu"
-GUIObject.MenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MenuButton.TextScaled = true
-GUIObject.MenuButton.TextSize = 14.000
-GUIObject.MenuButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MenuButton.TextWrapped = true
-
-GUIObject.UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_12.Rotation = -90
-GUIObject.UIGradient_12.Parent = GUIObject.Menu_2
-
-GUIObject.Menu2_2.Name = "Menu2"
-GUIObject.Menu2_2.Parent = GUIObject.ButtonFrame
-GUIObject.Menu2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Menu2_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Menu2_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_7.Parent = GUIObject.Menu2_2
-
-GUIObject.UICorner_20.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_20.Parent = GUIObject.Menu2_2
-
-GUIObject.Menu2Button.Name = "Menu2Button"
-GUIObject.Menu2Button.Parent = GUIObject.Menu2_2
-GUIObject.Menu2Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu2Button.BackgroundTransparency = 1.000
-GUIObject.Menu2Button.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Menu2Button.Font = Enum.Font.Code
-GUIObject.Menu2Button.Text = "Menu 2"
-GUIObject.Menu2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu2Button.TextScaled = true
-GUIObject.Menu2Button.TextSize = 14.000
-GUIObject.Menu2Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu2Button.TextWrapped = true
-
-GUIObject.UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_19.Rotation = -90
-GUIObject.UIGradient_19.Parent = GUIObject.Menu2_2
-
-GUIObject.Menu3_3.Name = "Menu3"
-GUIObject.Menu3_3.Parent = GUIObject.ButtonFrame
-GUIObject.Menu3_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu3_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Menu3_3.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Menu3_3.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.M3UIAspectRatioConstraint.Parent = GUIObject.Menu3_3
-
-GUIObject.M3UICorner.CornerRadius = UDim.new(0.25, 0)
-GUIObject.M3UICorner.Parent = GUIObject.Menu3_3
-
-GUIObject.Menu3Button.Name = "Menu3Button"
-GUIObject.Menu3Button.Parent = GUIObject.Menu3_3
-GUIObject.Menu3Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu3Button.BackgroundTransparency = 1.000
-GUIObject.Menu3Button.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Menu3Button.Font = Enum.Font.Code
-GUIObject.Menu3Button.Text = "Menu 3"
-GUIObject.Menu3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu3Button.TextScaled = true
-GUIObject.Menu3Button.TextSize = 14.000
-GUIObject.Menu3Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu3Button.TextWrapped = true
-
-GUIObject.M3UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.M3UIGradient.Rotation = -90
-GUIObject.M3UIGradient.Parent = GUIObject.Menu3_3
-
-GUIObject.Clothes_2.Name = "Clothes"
-GUIObject.Clothes_2.Parent = GUIObject.ButtonFrame
-GUIObject.Clothes_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Clothes_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Clothes_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Clothes_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_4.Parent = GUIObject.Clothes_2
-
-GUIObject.UICorner_13.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_13.Parent = GUIObject.Clothes_2
-
-GUIObject.ClothesButton.Name = "ClothesButton"
-GUIObject.ClothesButton.Parent = GUIObject.Clothes_2
-GUIObject.ClothesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ClothesButton.BackgroundTransparency = 1.000
-GUIObject.ClothesButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ClothesButton.Font = Enum.Font.Code
-GUIObject.ClothesButton.Text = "Clothes"
-GUIObject.ClothesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ClothesButton.TextScaled = true
-GUIObject.ClothesButton.TextSize = 14.000
-GUIObject.ClothesButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ClothesButton.TextWrapped = true
-
-GUIObject.UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_13.Rotation = -90
-GUIObject.UIGradient_13.Parent = GUIObject.Clothes_2
-
-GUIObject.Bundles_2.Name = "Bundles"
-GUIObject.Bundles_2.Parent = GUIObject.ButtonFrame
-GUIObject.Bundles_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Bundles_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Bundles_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Bundles_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_5.Parent = GUIObject.Bundles_2
-
-GUIObject.UICorner_14.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_14.Parent = GUIObject.Bundles_2
-
-GUIObject.BundlesButton.Name = "BundlesButton"
-GUIObject.BundlesButton.Parent = GUIObject.Bundles_2
-GUIObject.BundlesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundlesButton.BackgroundTransparency = 1.000
-GUIObject.BundlesButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BundlesButton.Font = Enum.Font.Code
-GUIObject.BundlesButton.Text = "Bundles"
-GUIObject.BundlesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundlesButton.TextScaled = true
-GUIObject.BundlesButton.TextSize = 14.000
-GUIObject.BundlesButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BundlesButton.TextWrapped = true
-
-GUIObject.UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_14.Rotation = -90
-GUIObject.UIGradient_14.Parent = GUIObject.Bundles_2
-
-GUIObject.NameFrame.Name = "NameFrame"
-GUIObject.NameFrame.Parent = GUIObject.MainFrame
-GUIObject.NameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.NameFrame.BackgroundTransparency = 1.000
-GUIObject.NameFrame.Position = UDim2.new(0, 0, -0.096, 0)
-GUIObject.NameFrame.Size = UDim2.new(0.561, 0, 0.04, 0)
-
-GUIObject.NameText.Name = "NameText"
-GUIObject.NameText.Parent = GUIObject.NameFrame
-GUIObject.NameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.NameText.BackgroundTransparency = 1.000
-GUIObject.NameText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.NameText.ZIndex = 2
-GUIObject.NameText.Font = Enum.Font.Code
-GUIObject.NameText.Text = "RoClothes"
-GUIObject.NameText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.NameText.TextScaled = true
-GUIObject.NameText.TextSize = 14.000
-GUIObject.NameText.TextWrapped = true
-GUIObject.NameText.TextXAlignment = Enum.TextXAlignment.Left
-
-GUIObject.VersionText.Name = "VersionText"
-GUIObject.VersionText.Parent = GUIObject.NameFrame
-GUIObject.VersionText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.VersionText.BackgroundTransparency = 1.000
-GUIObject.VersionText.Position = UDim2.new(0, 0, 1.06666636, 0)
-GUIObject.VersionText.Size = UDim2.new(1, 0, 0.799999952, 0)
-GUIObject.VersionText.ZIndex = 2
-GUIObject.VersionText.Font = Enum.Font.Code
-GUIObject.VersionText.Text = "Version - "..CVersion
-GUIObject.VersionText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.VersionText.TextScaled = true
-GUIObject.VersionText.TextSize = 14.000
-GUIObject.VersionText.TextWrapped = true
-GUIObject.VersionText.TextXAlignment = Enum.TextXAlignment.Left
-
-GUIObject.KeybindFrame.Name = "KeybindFrame"
-GUIObject.KeybindFrame.Parent = GUIObject.Menu
-GUIObject.KeybindFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.KeybindFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.KeybindFrame.Position = UDim2.new(0.0542876273, 0, 0.931, 0)
-GUIObject.KeybindFrame.Size = UDim2.new(0.684944391, 0, 0.0538139641, 0)
-
-GUIObject.UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(26, 27, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 47, 0))}
-GUIObject.UIGradient_16.Rotation = -90
-GUIObject.UIGradient_16.Parent = GUIObject.KeybindFrame
-
-GUIObject.UICorner_16.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_16.Parent = GUIObject.KeybindFrame
-
-GUIObject.KeybindButton.Name = "KeybindButton"
-GUIObject.KeybindButton.Parent = GUIObject.KeybindFrame
-GUIObject.KeybindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.KeybindButton.BackgroundTransparency = 1.000
-GUIObject.KeybindButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.KeybindButton.Font = Enum.Font.Code
-GUIObject.KeybindButton.Text = "Delete"
-GUIObject.KeybindButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.KeybindButton.TextScaled = true
-GUIObject.KeybindButton.TextSize = 14.000
-GUIObject.KeybindButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.KeybindButton.TextWrapped = true
-
-GUIObject.FaceFrame.Name = "FaceFrame"
-GUIObject.FaceFrame.Parent = GUIObject.Menu
-GUIObject.FaceFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.FaceFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.FaceFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.FaceFrame.Position = UDim2.new(0.5, 0, 0.449999988, 0)
-GUIObject.FaceFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_17.Rotation = -90
-GUIObject.UIGradient_17.Parent = GUIObject.FaceFrame
-
-GUIObject.UICorner_17.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_17.Parent = GUIObject.FaceFrame
-
-GUIObject.FaceButton.Name = "FaceButton"
-GUIObject.FaceButton.Parent = GUIObject.FaceFrame
-GUIObject.FaceButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.FaceButton.BackgroundTransparency = 1.000
-GUIObject.FaceButton.BorderSizePixel = 0
-GUIObject.FaceButton.LayoutOrder = 1
-GUIObject.FaceButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.FaceButton.Font = Enum.Font.Code
-GUIObject.FaceButton.Text = "Face"
-GUIObject.FaceButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.FaceButton.TextScaled = true
-GUIObject.FaceButton.TextSize = 14.000
-GUIObject.FaceButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
-GUIObject.FaceButton.TextStrokeTransparency = 0.000
-GUIObject.FaceButton.TextWrapped = true
-
-GUIObject.Menu2.Name = "Menu2"
-GUIObject.Menu2.Parent = GUIObject.PageFrame
-GUIObject.Menu2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu2.BackgroundTransparency = 1.000
-GUIObject.Menu2.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Menu2.Visible = false
-
-GUIObject.LocalTransparencyFrame.Name = "LocalTransparencyFrame"
-GUIObject.LocalTransparencyFrame.Parent = GUIObject.Menu2
-GUIObject.LocalTransparencyFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.LocalTransparencyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.LocalTransparencyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.LocalTransparencyFrame.Position = UDim2.new(0.647907138, 0, 0.0250000004, 0)
-GUIObject.LocalTransparencyFrame.Size = UDim2.new(0.595495105, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 93))}
-GUIObject.UIGradient_18.Rotation = -90
-GUIObject.UIGradient_18.Parent = GUIObject.LocalTransparencyFrame
-
-GUIObject.UICorner_18.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_18.Parent = GUIObject.LocalTransparencyFrame
-
-GUIObject.LocalTransparencyButton.Name = "LocalTransparency"
-GUIObject.LocalTransparencyButton.Parent = GUIObject.LocalTransparencyFrame
-GUIObject.LocalTransparencyButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.LocalTransparencyButton.BackgroundTransparency = 1.000
-GUIObject.LocalTransparencyButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.LocalTransparencyButton.ClearTextOnFocus = false
-GUIObject.LocalTransparencyButton.Font = Enum.Font.Code
-GUIObject.LocalTransparencyButton.PlaceholderText = "Player To Execute (Self = Yourself)"
-GUIObject.LocalTransparencyButton.Text = "0"
-GUIObject.LocalTransparencyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.LocalTransparencyButton.TextScaled = true
-GUIObject.LocalTransparencyButton.TextSize = 14.000
-GUIObject.LocalTransparencyButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.LocalTransparencyButton.TextWrapped = true
-
-GUIObject.CharacterFrame.Name = "CharacterFrame"
-GUIObject.CharacterFrame.Parent = GUIObject.Menu2
-GUIObject.CharacterFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.CharacterFrame.BackgroundTransparency = 1.000
-GUIObject.CharacterFrame.Position = UDim2.new(0.0591630787, 0, 0.0266665854, 0)
-GUIObject.CharacterFrame.Size = UDim2.new(0.272571504, 0, 0.218666583, 0)
-
-GUIObject.UIAspectRatioConstraint_6.Parent = GUIObject.CharacterFrame
-GUIObject.UIAspectRatioConstraint_6.AspectRatio = 0.750
-
-GUIObject.LeftArmButton.Name = "Left Arm"
-GUIObject.LeftArmButton.Parent = GUIObject.CharacterFrame
-GUIObject.LeftArmButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.LeftArmButton.BackgroundTransparency = 0.500
-GUIObject.LeftArmButton.BorderSizePixel = 0
-GUIObject.LeftArmButton.Position = UDim2.new(0, 0, 0.25, 0)
-GUIObject.LeftArmButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
-GUIObject.LeftArmButton.Image = "rbxassetid://0"
-GUIObject.LeftArmButton.ImageTransparency = 1.000
-
-GUIObject.TorsoButton.Name = "Torso"
-GUIObject.TorsoButton.Parent = GUIObject.CharacterFrame
-GUIObject.TorsoButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.TorsoButton.BackgroundTransparency = 0.500
-GUIObject.TorsoButton.BorderSizePixel = 0
-GUIObject.TorsoButton.Position = UDim2.new(0.25, 0, 0.25, 0)
-GUIObject.TorsoButton.Size = UDim2.new(0.5, 0, 0.449999988, 0)
-GUIObject.TorsoButton.Image = "rbxassetid://0"
-GUIObject.TorsoButton.ImageTransparency = 1.000
-
-GUIObject.RightArmButton.Name = "Right Arm"
-GUIObject.RightArmButton.Parent = GUIObject.CharacterFrame
-GUIObject.RightArmButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.RightArmButton.BackgroundTransparency = 0.500
-GUIObject.RightArmButton.BorderSizePixel = 0
-GUIObject.RightArmButton.Position = UDim2.new(0.75, 0, 0.25, 0)
-GUIObject.RightArmButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
-GUIObject.RightArmButton.Image = "rbxassetid://0"
-GUIObject.RightArmButton.ImageTransparency = 1.000
-
-GUIObject.RightLegButton.Name = "Right Leg"
-GUIObject.RightLegButton.Parent = GUIObject.CharacterFrame
-GUIObject.RightLegButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.RightLegButton.BackgroundTransparency = 0.500
-GUIObject.RightLegButton.BorderSizePixel = 0
-GUIObject.RightLegButton.Position = UDim2.new(0.5, 0, 0.699999988, 0)
-GUIObject.RightLegButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
-GUIObject.RightLegButton.Image = "rbxassetid://0"
-GUIObject.RightLegButton.ImageTransparency = 1.000
-
-GUIObject.LeftLegButton.Name = "Left Leg"
-GUIObject.LeftLegButton.Parent = GUIObject.CharacterFrame
-GUIObject.LeftLegButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.LeftLegButton.BackgroundTransparency = 0.500
-GUIObject.LeftLegButton.BorderSizePixel = 0
-GUIObject.LeftLegButton.Position = UDim2.new(0.25, 0, 0.699999988, 0)
-GUIObject.LeftLegButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
-GUIObject.LeftLegButton.Image = "rbxassetid://0"
-GUIObject.LeftLegButton.ImageTransparency = 1.000
-
-GUIObject.HeadButton.Name = "Head"
-GUIObject.HeadButton.Parent = GUIObject.CharacterFrame
-GUIObject.HeadButton.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.HeadButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.HeadButton.BackgroundTransparency = 0.500
-GUIObject.HeadButton.BorderSizePixel = 0
-GUIObject.HeadButton.Position = UDim2.new(0.5, 0, 0, 0)
-GUIObject.HeadButton.Size = UDim2.new(0.349999994, 0, 0.25, 0)
-GUIObject.HeadButton.Image = "rbxassetid://0"
-GUIObject.HeadButton.ImageTransparency = 1.000
-
-GUIObject.UICorner_19.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_19.Parent = GUIObject.HeadButton
-
-GUIObject.MeshSizeLockFrame.Name = "MeshSizeLockFrame"
-GUIObject.MeshSizeLockFrame.Parent = GUIObject.Menu2
-GUIObject.MeshSizeLockFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.MeshSizeLockFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshSizeLockFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.MeshSizeLockFrame.Position = UDim2.new(0.5, 0, 0.289999992, 0)
-GUIObject.MeshSizeLockFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_20.Rotation = -90
-GUIObject.UIGradient_20.Parent = GUIObject.MeshSizeLockFrame
-
-GUIObject.UICorner_21.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_21.Parent = GUIObject.MeshSizeLockFrame
-
-GUIObject.MeshSizeLockButton.Name = "MeshSizeLockButton"
-GUIObject.MeshSizeLockButton.Parent = GUIObject.MeshSizeLockFrame
-GUIObject.MeshSizeLockButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.MeshSizeLockButton.BackgroundTransparency = 1.000
-GUIObject.MeshSizeLockButton.BorderSizePixel = 0
-GUIObject.MeshSizeLockButton.LayoutOrder = 1
-GUIObject.MeshSizeLockButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.MeshSizeLockButton.Font = Enum.Font.Code
-GUIObject.MeshSizeLockButton.Text = "Mesh Size Lock"
-GUIObject.MeshSizeLockButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshSizeLockButton.TextScaled = true
-GUIObject.MeshSizeLockButton.TextSize = 14.000
-GUIObject.MeshSizeLockButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.MeshSizeLockButton.TextStrokeTransparency = 0.000
-GUIObject.MeshSizeLockButton.TextWrapped = true
-
-GUIObject.AccessorySizeLockFrame.Name = "AccessorySizeLockFrame"
-GUIObject.AccessorySizeLockFrame.Parent = GUIObject.Menu2
-GUIObject.AccessorySizeLockFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.AccessorySizeLockFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AccessorySizeLockFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.AccessorySizeLockFrame.Position = UDim2.new(0.5, 0, 0.375, 0)
-GUIObject.AccessorySizeLockFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_21.Rotation = -90
-GUIObject.UIGradient_21.Parent = GUIObject.AccessorySizeLockFrame
-
-GUIObject.UICorner_22.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_22.Parent = GUIObject.AccessorySizeLockFrame
-
-GUIObject.AccessorySizeLockButton.Name = "AccessorySizeLockButton"
-GUIObject.AccessorySizeLockButton.Parent = GUIObject.AccessorySizeLockFrame
-GUIObject.AccessorySizeLockButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.AccessorySizeLockButton.BackgroundTransparency = 1.000
-GUIObject.AccessorySizeLockButton.BorderSizePixel = 0
-GUIObject.AccessorySizeLockButton.LayoutOrder = 1
-GUIObject.AccessorySizeLockButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.AccessorySizeLockButton.Font = Enum.Font.Code
-GUIObject.AccessorySizeLockButton.Text = "Accessory Size Lock"
-GUIObject.AccessorySizeLockButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AccessorySizeLockButton.TextScaled = true
-GUIObject.AccessorySizeLockButton.TextSize = 14.000
-GUIObject.AccessorySizeLockButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.AccessorySizeLockButton.TextStrokeTransparency = 0.000
-GUIObject.AccessorySizeLockButton.TextWrapped = true
-
-GUIObject.MeshBasePartInvisibleFrame.Name = "MeshBasePartInvisibleFrame"
-GUIObject.MeshBasePartInvisibleFrame.Parent = GUIObject.Menu2
-GUIObject.MeshBasePartInvisibleFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.MeshBasePartInvisibleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshBasePartInvisibleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.MeshBasePartInvisibleFrame.Position = UDim2.new(0.5, 0, 0.46, 0)
-GUIObject.MeshBasePartInvisibleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_22.Rotation = -90
-GUIObject.UIGradient_22.Parent = GUIObject.MeshBasePartInvisibleFrame
-
-GUIObject.UICorner_23.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_23.Parent = GUIObject.MeshBasePartInvisibleFrame
-
-GUIObject.MeshBasePartInvisibleButton.Name = "MeshBasePartInvisibleButton"
-GUIObject.MeshBasePartInvisibleButton.Parent = GUIObject.MeshBasePartInvisibleFrame
-GUIObject.MeshBasePartInvisibleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.MeshBasePartInvisibleButton.BackgroundTransparency = 1.000
-GUIObject.MeshBasePartInvisibleButton.BorderSizePixel = 0
-GUIObject.MeshBasePartInvisibleButton.LayoutOrder = 1
-GUIObject.MeshBasePartInvisibleButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.MeshBasePartInvisibleButton.Font = Enum.Font.Code
-GUIObject.MeshBasePartInvisibleButton.Text = "Mesh Base Part Invisible"
-GUIObject.MeshBasePartInvisibleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshBasePartInvisibleButton.TextScaled = true
-GUIObject.MeshBasePartInvisibleButton.TextSize = 14.000
-GUIObject.MeshBasePartInvisibleButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.MeshBasePartInvisibleButton.TextStrokeTransparency = 0.000
-GUIObject.MeshBasePartInvisibleButton.TextWrapped = true
-
-GUIObject.BodyPartPhysicsFrame.Name = "BodyPartPhysicsFrame"
-GUIObject.BodyPartPhysicsFrame.Parent = GUIObject.Menu2
-GUIObject.BodyPartPhysicsFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.BodyPartPhysicsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BodyPartPhysicsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BodyPartPhysicsFrame.Position = UDim2.new(0.5, 0, 0.545, 0)
-GUIObject.BodyPartPhysicsFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradient_23.Rotation = -90
-GUIObject.UIGradient_23.Parent = GUIObject.BodyPartPhysicsFrame
-
-GUIObject.UICorner_24.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_24.Parent = GUIObject.BodyPartPhysicsFrame
-
-GUIObject.BodyPartPhysicsButton.Name = "BodyPartPhysicsButton"
-GUIObject.BodyPartPhysicsButton.Parent = GUIObject.BodyPartPhysicsFrame
-GUIObject.BodyPartPhysicsButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.BodyPartPhysicsButton.BackgroundTransparency = 1.000
-GUIObject.BodyPartPhysicsButton.BorderSizePixel = 0
-GUIObject.BodyPartPhysicsButton.LayoutOrder = 1
-GUIObject.BodyPartPhysicsButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BodyPartPhysicsButton.Font = Enum.Font.Code
-GUIObject.BodyPartPhysicsButton.Text = "Body Part Physics"
-GUIObject.BodyPartPhysicsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BodyPartPhysicsButton.TextScaled = true
-GUIObject.BodyPartPhysicsButton.TextSize = 14.000
-GUIObject.BodyPartPhysicsButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.BodyPartPhysicsButton.TextStrokeTransparency = 0.000
-GUIObject.BodyPartPhysicsButton.TextWrapped = true
-
-GUIObject.MethodFrame.Name = "MethodFrame"
-GUIObject.MethodFrame.Parent = GUIObject.Menu
-GUIObject.MethodFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MethodFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.MethodFrame.Position = UDim2.new(0.0542876273, 0, 0.865, 0)
-GUIObject.MethodFrame.Size = UDim2.new(0.684944391, 0, 0.0538139641, 0)
-
-GUIObject.UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(26, 27, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 47, 0))}
-GUIObject.UIGradient_24.Rotation = -90
-GUIObject.UIGradient_24.Parent = GUIObject.MethodFrame
-
-GUIObject.UICorner_25.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_25.Parent = GUIObject.MethodFrame
-
-GUIObject.MethodButton.Name = "MethodButton"
-GUIObject.MethodButton.Parent = GUIObject.MethodFrame
-GUIObject.MethodButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MethodButton.BackgroundTransparency = 1.000
-GUIObject.MethodButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.MethodButton.Font = Enum.Font.Code
-GUIObject.MethodButton.Text = "Method: 1"
-GUIObject.MethodButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MethodButton.TextScaled = true
-GUIObject.MethodButton.TextSize = 14.000
-GUIObject.MethodButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MethodButton.TextWrapped = true
-
-GUIObject.Catalog_2.Name = "Catalog"
-GUIObject.Catalog_2.Parent = GUIObject.ButtonFrame
-GUIObject.Catalog_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Catalog_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Catalog_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Catalog_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_9.Parent = GUIObject.Catalog_2
-
-GUIObject.UICorner_34.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_34.Parent = GUIObject.Catalog_2
-
-GUIObject.CatalogButton.Name = "CatalogButton"
-GUIObject.CatalogButton.Parent = GUIObject.Catalog_2
-GUIObject.CatalogButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.CatalogButton.BackgroundTransparency = 1.000
-GUIObject.CatalogButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.CatalogButton.Font = Enum.Font.Code
-GUIObject.CatalogButton.Text = "Catalog"
-GUIObject.CatalogButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.CatalogButton.TextScaled = true
-GUIObject.CatalogButton.TextSize = 14.000
-GUIObject.CatalogButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.CatalogButton.TextWrapped = true
-
-GUIObject.UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_33.Rotation = -90
-GUIObject.UIGradient_33.Parent = GUIObject.Catalog_2
-
-GUIObject.Edit_2.Name = "Edit"
-GUIObject.Edit_2.Parent = GUIObject.ButtonFrame
-GUIObject.Edit_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Edit_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.Edit_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
-GUIObject.Edit_2.Size = UDim2.new(1, 0, 1, 0)
-
-GUIObject.UIAspectRatioConstraint_8.Parent = GUIObject.Edit_2
-
-GUIObject.UICorner_33.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_33.Parent = GUIObject.Edit_2
-
-GUIObject.EditButton.Name = "EditButton"
-GUIObject.EditButton.Parent = GUIObject.Edit_2
-GUIObject.EditButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.EditButton.BackgroundTransparency = 1.000
-GUIObject.EditButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.EditButton.Font = Enum.Font.Code
-GUIObject.EditButton.Text = "Edit"
-GUIObject.EditButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.EditButton.TextScaled = true
-GUIObject.EditButton.TextSize = 14.000
-GUIObject.EditButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.EditButton.TextWrapped = true
-
-GUIObject.UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-GUIObject.UIGradient_32.Rotation = -90
-GUIObject.UIGradient_32.Parent = GUIObject.Edit_2
-
-GUIObject.Catalog_3.Name = "Catalog"
-GUIObject.Catalog_3.Parent = GUIObject.PageFrame
-GUIObject.Catalog_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Catalog_3.BackgroundTransparency = 1.000
-GUIObject.Catalog_3.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Catalog_3.Visible = false
-
-GUIObject.UsernameFrame.Name = "UsernameFrame"
-GUIObject.UsernameFrame.Parent = GUIObject.Catalog_3
-GUIObject.UsernameFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.UsernameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.UsernameFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.UsernameFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
-GUIObject.UsernameFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_27.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_27.Parent = GUIObject.UsernameFrame
-
-GUIObject.UsernameTextbox.Name = "UsernameTextbox"
-GUIObject.UsernameTextbox.Parent = GUIObject.UsernameFrame
-GUIObject.UsernameTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.UsernameTextbox.BackgroundTransparency = 1.000
-GUIObject.UsernameTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.UsernameTextbox.ClearTextOnFocus = false
-GUIObject.UsernameTextbox.Font = Enum.Font.Code
-GUIObject.UsernameTextbox.PlaceholderText = "Username"
-GUIObject.UsernameTextbox.Text = ""
-GUIObject.UsernameTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.UsernameTextbox.TextScaled = true
-GUIObject.UsernameTextbox.TextSize = 14.000
-GUIObject.UsernameTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.UsernameTextbox.TextWrapped = true
-
-GUIObject.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradient_26.Rotation = -90
-GUIObject.UIGradient_26.Parent = GUIObject.UsernameFrame
-
-GUIObject.AccessoryFrame.Name = "AccessoryFrame"
-GUIObject.AccessoryFrame.Parent = GUIObject.Catalog_3
-GUIObject.AccessoryFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.AccessoryFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AccessoryFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.AccessoryFrame.Position = UDim2.new(0.5, 0, 0.109999999, 0)
-GUIObject.AccessoryFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_28.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_28.Parent = GUIObject.AccessoryFrame
-
-GUIObject.AccessoryTextbox.Name = "AccessoryTextbox"
-GUIObject.AccessoryTextbox.Parent = GUIObject.AccessoryFrame
-GUIObject.AccessoryTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.AccessoryTextbox.BackgroundTransparency = 1.000
-GUIObject.AccessoryTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.AccessoryTextbox.ClearTextOnFocus = false
-GUIObject.AccessoryTextbox.Font = Enum.Font.Code
-GUIObject.AccessoryTextbox.PlaceholderText = "Accessory Id"
-GUIObject.AccessoryTextbox.Text = ""
-GUIObject.AccessoryTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AccessoryTextbox.TextScaled = true
-GUIObject.AccessoryTextbox.TextSize = 14.000
-GUIObject.AccessoryTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.AccessoryTextbox.TextWrapped = true
-
-GUIObject.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradient_27.Rotation = -90
-GUIObject.UIGradient_27.Parent = GUIObject.AccessoryFrame
-
-GUIObject.ShirtFrame.Name = "ShirtFrame"
-GUIObject.ShirtFrame.Parent = GUIObject.Catalog_3
-GUIObject.ShirtFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ShirtFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ShirtFrame.Position = UDim2.new(0.5, 0, 0.194999993, 0)
-GUIObject.ShirtFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_29.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_29.Parent = GUIObject.ShirtFrame
-
-GUIObject.ShirtTextbox.Name = "ShirtTextbox"
-GUIObject.ShirtTextbox.Parent = GUIObject.ShirtFrame
-GUIObject.ShirtTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ShirtTextbox.BackgroundTransparency = 1.000
-GUIObject.ShirtTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ShirtTextbox.ClearTextOnFocus = false
-GUIObject.ShirtTextbox.Font = Enum.Font.Code
-GUIObject.ShirtTextbox.PlaceholderText = "Shirt Id"
-GUIObject.ShirtTextbox.Text = ""
-GUIObject.ShirtTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtTextbox.TextScaled = true
-GUIObject.ShirtTextbox.TextSize = 14.000
-GUIObject.ShirtTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtTextbox.TextWrapped = true
-
-GUIObject.UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradient_28.Rotation = -90
-GUIObject.UIGradient_28.Parent = GUIObject.ShirtFrame
-
-GUIObject.PantsFrame.Name = "PantsFrame"
-GUIObject.PantsFrame.Parent = GUIObject.Catalog_3
-GUIObject.PantsFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.PantsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PantsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.PantsFrame.Position = UDim2.new(0.5, 0, 0.280000001, 0)
-GUIObject.PantsFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_30.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_30.Parent = GUIObject.PantsFrame
-
-GUIObject.PantsTextbox.Name = "PantsTextbox"
-GUIObject.PantsTextbox.Parent = GUIObject.PantsFrame
-GUIObject.PantsTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.PantsTextbox.BackgroundTransparency = 1.000
-GUIObject.PantsTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.PantsTextbox.ClearTextOnFocus = false
-GUIObject.PantsTextbox.Font = Enum.Font.Code
-GUIObject.PantsTextbox.PlaceholderText = "Pants Id"
-GUIObject.PantsTextbox.Text = ""
-GUIObject.PantsTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PantsTextbox.TextScaled = true
-GUIObject.PantsTextbox.TextSize = 14.000
-GUIObject.PantsTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PantsTextbox.TextWrapped = true
-
-GUIObject.UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradient_29.Rotation = -90
-GUIObject.UIGradient_29.Parent = GUIObject.PantsFrame
-
-GUIObject.ShirtGraphicFrame.Name = "ShirtGraphicFrame"
-GUIObject.ShirtGraphicFrame.Parent = GUIObject.Catalog_3
-GUIObject.ShirtGraphicFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ShirtGraphicFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtGraphicFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ShirtGraphicFrame.Position = UDim2.new(0.5, 0, 0.36500001, 0)
-GUIObject.ShirtGraphicFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_31.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_31.Parent = GUIObject.ShirtGraphicFrame
-
-GUIObject.ShirtGraphicTextbox.Name = "ShirtGraphicTextbox"
-GUIObject.ShirtGraphicTextbox.Parent = GUIObject.ShirtGraphicFrame
-GUIObject.ShirtGraphicTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ShirtGraphicTextbox.BackgroundTransparency = 1.000
-GUIObject.ShirtGraphicTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ShirtGraphicTextbox.ClearTextOnFocus = false
-GUIObject.ShirtGraphicTextbox.Font = Enum.Font.Code
-GUIObject.ShirtGraphicTextbox.PlaceholderText = "Shirt Graphic Id"
-GUIObject.ShirtGraphicTextbox.Text = ""
-GUIObject.ShirtGraphicTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtGraphicTextbox.TextScaled = true
-GUIObject.ShirtGraphicTextbox.TextSize = 14.000
-GUIObject.ShirtGraphicTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ShirtGraphicTextbox.TextWrapped = true
-
-GUIObject.UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradient_30.Rotation = -90
-GUIObject.UIGradient_30.Parent = GUIObject.ShirtGraphicFrame
-
-GUIObject.Edit.Name = "Edit"
-GUIObject.Edit.Parent = GUIObject.PageFrame
-GUIObject.Edit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Edit.BackgroundTransparency = 1.000
-GUIObject.Edit.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Edit.Visible = false
-
-GUIObject.MeshNameFrame.Name = "MeshNameFrame"
-GUIObject.MeshNameFrame.Parent = GUIObject.Edit
-GUIObject.MeshNameFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.MeshNameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshNameFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.MeshNameFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
-GUIObject.MeshNameFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICorner_32.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICorner_32.Parent = GUIObject.MeshNameFrame
-
-GUIObject.MeshNameTextbox.Name = "MeshNameTextbox"
-GUIObject.MeshNameTextbox.Parent = GUIObject.MeshNameFrame
-GUIObject.MeshNameTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.MeshNameTextbox.BackgroundTransparency = 1.000
-GUIObject.MeshNameTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.MeshNameTextbox.ClearTextOnFocus = false
-GUIObject.MeshNameTextbox.Font = Enum.Font.Code
-GUIObject.MeshNameTextbox.PlaceholderText = "Mesh Name"
-GUIObject.MeshNameTextbox.Text = ""
-GUIObject.MeshNameTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshNameTextbox.TextScaled = true
-GUIObject.MeshNameTextbox.TextSize = 14.000
-GUIObject.MeshNameTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MeshNameTextbox.TextWrapped = true
-
-GUIObject.UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(76, 6, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(126, 17, 145))}
-GUIObject.UIGradient_31.Rotation = -90
-GUIObject.UIGradient_31.Parent = GUIObject.MeshNameFrame
-
-GUIObject.PropertyListFrame.Name = "PropertyListFrame"
-GUIObject.PropertyListFrame.Parent = GUIObject.Edit
-GUIObject.PropertyListFrame.Active = true
-GUIObject.PropertyListFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-GUIObject.PropertyListFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.PropertyListFrame.BackgroundTransparency = 1.000
-GUIObject.PropertyListFrame.BorderSizePixel = 0
-GUIObject.PropertyListFrame.Position = UDim2.new(0.499999911, 0, 0.605427802, 0)
-GUIObject.PropertyListFrame.Size = UDim2.new(0.949999988, 0, 0.74982059, 0)
-GUIObject.PropertyListFrame.BottomImage = "rbxassetid://5946093983"
-GUIObject.PropertyListFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
-GUIObject.PropertyListFrame.MidImage = ""
-GUIObject.PropertyListFrame.ScrollBarThickness = 0
-GUIObject.PropertyListFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
-GUIObject.PropertyListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-GUIObject.PropertyListFrame.TopImage = "rbxassetid://5946093983"
-
-GUIObject.UIGridLayout_4.Parent = GUIObject.PropertyListFrame
-GUIObject.UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
-GUIObject.UIGridLayout_4.CellPadding = UDim2.new(0,0,0,0)
-GUIObject.UIGridLayout_4.CellSize = UDim2.new(0.300000012*3.5, 0, 0.174999997*3.5, 0)
-
-GUIObject.EditNote.Parent = GUIObject.Edit
-GUIObject.EditNote.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.EditNote.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.EditNote.BackgroundTransparency = 1.000
-GUIObject.EditNote.Position = UDim2.new(0.50000006, 0, 0.110409796, 0)
-GUIObject.EditNote.Size = UDim2.new(0.890999973, 0, 0.1, 0)
-GUIObject.EditNote.Font = Enum.Font.Code
-GUIObject.EditNote.Text = "Self = Change Default Mesh Part\\n--------------------------------------\\nPlayer Name = Change Personal Mesh Part"
-GUIObject.EditNote.TextColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.EditNote.TextScaled = true
-GUIObject.EditNote.TextSize = 14.000
-GUIObject.EditNote.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.EditNote.TextStrokeTransparency = 0.000
-GUIObject.EditNote.TextWrapped = true
-GUIObject.EditNote.TextXAlignment = Enum.TextXAlignment.Left
-GUIObject.EditNote.Visible = false
-
-GUIObject.CharacterPreviewFrame.Name = "CharacterPreviewFrame"
-GUIObject.CharacterPreviewFrame.Parent = GUIObject.MainFrame
-GUIObject.CharacterPreviewFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.CharacterPreviewFrame.BackgroundTransparency = 1.000
-GUIObject.CharacterPreviewFrame.Position = UDim2.new(-0.458589792, 0, 0, 0)
-GUIObject.CharacterPreviewFrame.Size = UDim2.new(0.468550086, 0, 0.378379911, 0)
-
-GUIObject.ViewportFrame.BackgroundTransparency = 1.000
-GUIObject.ViewportFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ViewportFrame.Size = UDim2.new(1,0,1,0)
-GUIObject.ViewportFrame.CurrentCamera = GUIObject.ViewportCamera
-GUIObject.ViewportFrame.Parent = GUIObject.CharacterPreviewFrame
-
-GUIObject.ViewportCamera.CFrame = CFrame.new(4, 0.300000012, -4, -0.819152057, 0, 0.57357645, 0, 1, 0, -0.57357645, 0, -0.819152057)
-GUIObject.ViewportCamera.Parent = GUIObject.CharacterPreviewFrame
-
-GUIObject.PreviewUIAspectRatioConstraint.Parent = GUIObject.CharacterPreviewFrame
-GUIObject.PreviewUIAspectRatioConstraint.AspectRatio = 0.750
-GUIObject.PreviewUIAspectRatioConstraint.DominantAxis = Enum.DominantAxis.Height
-
-GUIObject.PreviewButton.Parent = GUIObject.CharacterPreviewFrame
-GUIObject.PreviewButton.Name = "PreviewButton"
-GUIObject.PreviewButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PreviewButton.BackgroundTransparency = 1.000
-GUIObject.PreviewButton.Position = UDim2.new(0, 0, 1.00000012, 0)
-GUIObject.PreviewButton.Size = UDim2.new(1, 0, 0.153530627, 0)
-GUIObject.PreviewButton.Font = Enum.Font.Code
-GUIObject.PreviewButton.Text = "Preview"
-GUIObject.PreviewButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PreviewButton.TextScaled = true
-GUIObject.PreviewButton.TextSize = 14.000
-GUIObject.PreviewButton.TextStrokeTransparency = 0.000
-GUIObject.PreviewButton.TextWrapped = true
-
-GUIObject.ClickExecuteFrame.Name = "ClickExecuteFrame"
-GUIObject.ClickExecuteFrame.Parent = GUIObject.Menu2
-GUIObject.ClickExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ClickExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ClickExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ClickExecuteFrame.Position = UDim2.new(0.5, 0, 0.629999995, 0)
-GUIObject.ClickExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UIGradientCE.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
-GUIObject.UIGradientCE.Rotation = -90
-GUIObject.UIGradientCE.Parent = GUIObject.ClickExecuteFrame
-
-GUIObject.UICornerCE.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICornerCE.Parent = GUIObject.ClickExecuteFrame
-
-GUIObject.ClickExecuteButton.Name = "ClickExecuteButton"
-GUIObject.ClickExecuteButton.Parent = GUIObject.ClickExecuteFrame
-GUIObject.ClickExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ClickExecuteButton.BackgroundTransparency = 1.000
-GUIObject.ClickExecuteButton.BorderSizePixel = 0
-GUIObject.ClickExecuteButton.LayoutOrder = 1
-GUIObject.ClickExecuteButton.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ClickExecuteButton.Font = Enum.Font.Code
-GUIObject.ClickExecuteButton.Text = "Click Execute"
-GUIObject.ClickExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ClickExecuteButton.TextScaled = true
-GUIObject.ClickExecuteButton.TextSize = 14.000
-GUIObject.ClickExecuteButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ClickExecuteButton.TextStrokeTransparency = 0.000
-GUIObject.ClickExecuteButton.TextWrapped = true
-
-GUIObject.PositionPhysicsMultiplyFrame.Name = "PositionPhysicsMultiplyFrame"
-GUIObject.PositionPhysicsMultiplyFrame.Parent = GUIObject.Menu2
-GUIObject.PositionPhysicsMultiplyFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.PositionPhysicsMultiplyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PositionPhysicsMultiplyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.PositionPhysicsMultiplyFrame.Position = UDim2.new(0.5, 0, 0.714999974, 0)
-GUIObject.PositionPhysicsMultiplyFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICornerPPM.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICornerPPM.Parent = GUIObject.PositionPhysicsMultiplyFrame
-
-GUIObject.PositionPhysicsMultiplyText.Name = "PositionPhysicsMultiplyText"
-GUIObject.PositionPhysicsMultiplyText.Parent = GUIObject.PositionPhysicsMultiplyFrame
-GUIObject.PositionPhysicsMultiplyText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.PositionPhysicsMultiplyText.BackgroundTransparency = 1.000
-GUIObject.PositionPhysicsMultiplyText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.PositionPhysicsMultiplyText.Font = Enum.Font.Code
-GUIObject.PositionPhysicsMultiplyText.PlaceholderText = "Position Physics Multiply"
-GUIObject.PositionPhysicsMultiplyText.Text = "1"
-GUIObject.PositionPhysicsMultiplyText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.PositionPhysicsMultiplyText.TextScaled = true
-GUIObject.PositionPhysicsMultiplyText.TextSize = 14.000
-GUIObject.PositionPhysicsMultiplyText.TextWrapped = true
-
-GUIObject.UIGradientPPM.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.UIGradientPPM.Rotation = -90
-GUIObject.UIGradientPPM.Parent = GUIObject.PositionPhysicsMultiplyFrame
-
-GUIObject.RotationPhysicsMultiplyFrame.Name = "RotationPhysicsMultiplyFrame"
-GUIObject.RotationPhysicsMultiplyFrame.Parent = GUIObject.Menu2
-GUIObject.RotationPhysicsMultiplyFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.RotationPhysicsMultiplyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.RotationPhysicsMultiplyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.RotationPhysicsMultiplyFrame.Position = UDim2.new(0.5, 0, 0.800000012, 0)
-GUIObject.RotationPhysicsMultiplyFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICornerRPM.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICornerRPM.Parent = GUIObject.RotationPhysicsMultiplyFrame
-
-GUIObject.RotationPhysicsMultiplyText.Name = "RotationPhysicsMultiplyText"
-GUIObject.RotationPhysicsMultiplyText.Parent = GUIObject.RotationPhysicsMultiplyFrame
-GUIObject.RotationPhysicsMultiplyText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.RotationPhysicsMultiplyText.BackgroundTransparency = 1.000
-GUIObject.RotationPhysicsMultiplyText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.RotationPhysicsMultiplyText.Font = Enum.Font.Code
-GUIObject.RotationPhysicsMultiplyText.PlaceholderText = "Rotation Physics Multiply"
-GUIObject.RotationPhysicsMultiplyText.Text = "4"
-GUIObject.RotationPhysicsMultiplyText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.RotationPhysicsMultiplyText.TextScaled = true
-GUIObject.RotationPhysicsMultiplyText.TextSize = 14.000
-GUIObject.RotationPhysicsMultiplyText.TextWrapped = true
-
-GUIObject.UIGradientRPM.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.UIGradientRPM.Rotation = -90
-GUIObject.UIGradientRPM.Parent = GUIObject.RotationPhysicsMultiplyFrame
-
-GUIObject.MobileCloseButton.Name = "MobileCloseButton"
-GUIObject.MobileCloseButton.Parent = GUIObject.MobileCloseButtonScreen
-GUIObject.MobileCloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.MobileCloseButton.BackgroundTransparency = 1.000
-GUIObject.MobileCloseButton.Position = UDim2.new(0.969957054, 0, 0.955650926, 0)
-GUIObject.MobileCloseButton.Size = UDim2.new(0.0300429184, 0, 0.0443490706, 0)
-GUIObject.MobileCloseButton.Image = "rbxassetid://264596039"
-
-GUIObject.MCBUIAspectRatioConstraint.Parent = GUIObject.MobileCloseButton
-
-GUIObject.SkinToneFrame.Name = "SkinToneFrame"
-GUIObject.SkinToneFrame.Parent = GUIObject.Menu2
-GUIObject.SkinToneFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.SkinToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.SkinToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.SkinToneFrame.Position = UDim2.new(0.5, 0, 0.88499999, 0)
-GUIObject.SkinToneFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.STUICorner.CornerRadius = UDim.new(0.25, 0)
-GUIObject.STUICorner.Parent = GUIObject.SkinToneFrame
-
-GUIObject.SkinToneText.Name = "SkinToneText"
-GUIObject.SkinToneText.Parent = GUIObject.SkinToneFrame
-GUIObject.SkinToneText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.SkinToneText.BackgroundTransparency = 1.000
-GUIObject.SkinToneText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.SkinToneText.Font = Enum.Font.Code
-GUIObject.SkinToneText.PlaceholderText = "Skin Tone [RGB] (Leave Empty To Disable)"
-GUIObject.SkinToneText.Text = ""
-GUIObject.SkinToneText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.SkinToneText.TextScaled = true
-GUIObject.SkinToneText.TextSize = 14.000
-GUIObject.SkinToneText.TextWrapped = true
-
-GUIObject.STUIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.STUIGradient.Rotation = -90
-GUIObject.STUIGradient.Parent = GUIObject.SkinToneFrame
-
-GUIObject.Menu3.Name = "Menu3"
-GUIObject.Menu3.Parent = GUIObject.PageFrame
-GUIObject.Menu3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.Menu3.BackgroundTransparency = 1.000
-GUIObject.Menu3.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.Menu3.Visible = false
-
-GUIObject.BreastsScaleFrame.Name = "BreastsScaleFrame"
-GUIObject.BreastsScaleFrame.Parent = GUIObject.Menu3
-GUIObject.BreastsScaleFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.BreastsScaleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsScaleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.BreastsScaleFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
-GUIObject.BreastsScaleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.BS1UICorner.CornerRadius = UDim.new(0.25, 0)
-GUIObject.BS1UICorner.Parent = GUIObject.BreastsScaleFrame
-
-GUIObject.BreastsScaleText.Name = "BreastsScaleText"
-GUIObject.BreastsScaleText.Parent = GUIObject.BreastsScaleFrame
-GUIObject.BreastsScaleText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.BreastsScaleText.BackgroundTransparency = 1.000
-GUIObject.BreastsScaleText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.BreastsScaleText.ClearTextOnFocus = false
-GUIObject.BreastsScaleText.Font = Enum.Font.Code
-GUIObject.BreastsScaleText.PlaceholderText = "Breasts Scale"
-GUIObject.BreastsScaleText.Text = "1"
-GUIObject.BreastsScaleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsScaleText.TextScaled = true
-GUIObject.BreastsScaleText.TextSize = 14.000
-GUIObject.BreastsScaleText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.BreastsScaleText.TextWrapped = true
-
-GUIObject.BS1UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.BS1UIGradient.Rotation = -90
-GUIObject.BS1UIGradient.Parent = GUIObject.BreastsScaleFrame
-
-GUIObject.ButtsScaleFrame.Name = "ButtsScaleFrame"
-GUIObject.ButtsScaleFrame.Parent = GUIObject.Menu3
-GUIObject.ButtsScaleFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.ButtsScaleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ButtsScaleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.ButtsScaleFrame.Position = UDim2.new(0.5, 0, 0.109999999, 0)
-GUIObject.ButtsScaleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.BS2UICorner.CornerRadius = UDim.new(0.25, 0)
-GUIObject.BS2UICorner.Parent = GUIObject.ButtsScaleFrame
-
-GUIObject.BS2UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
-GUIObject.BS2UIGradient.Rotation = -90
-GUIObject.BS2UIGradient.Parent = GUIObject.ButtsScaleFrame
-
-GUIObject.ButtsScaleText.Name = "ButtsScaleText"
-GUIObject.ButtsScaleText.Parent = GUIObject.ButtsScaleFrame
-GUIObject.ButtsScaleText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.ButtsScaleText.BackgroundTransparency = 1.000
-GUIObject.ButtsScaleText.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.ButtsScaleText.Font = Enum.Font.Code
-GUIObject.ButtsScaleText.PlaceholderText = "Butts Scale"
-GUIObject.ButtsScaleText.Text = "1"
-GUIObject.ButtsScaleText.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.ButtsScaleText.TextScaled = true
-GUIObject.ButtsScaleText.TextSize = 14.000
-GUIObject.ButtsScaleText.TextWrapped = true
-
-GUIObject.OutfitIdFrame.Name = "Outfit Id"
-GUIObject.OutfitIdFrame.Parent = GUIObject.Catalog_3
-GUIObject.OutfitIdFrame.AnchorPoint = Vector2.new(0.5, 0)
-GUIObject.OutfitIdFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.OutfitIdFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIObject.OutfitIdFrame.Position = UDim2.new(0.5, 0, 0.449999988, 0)
-GUIObject.OutfitIdFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
-
-GUIObject.UICornerUI.CornerRadius = UDim.new(0.25, 0)
-GUIObject.UICornerUI.Parent = GUIObject.OutfitIdFrame
-
-GUIObject.OutfitIdTextbox.Name = "OutfitIdTextbox"
-GUIObject.OutfitIdTextbox.Parent = GUIObject.OutfitIdFrame
-GUIObject.OutfitIdTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GUIObject.OutfitIdTextbox.BackgroundTransparency = 1.000
-GUIObject.OutfitIdTextbox.Size = UDim2.new(1, 0, 1, 0)
-GUIObject.OutfitIdTextbox.ClearTextOnFocus = false
-GUIObject.OutfitIdTextbox.Font = Enum.Font.Code
-GUIObject.OutfitIdTextbox.PlaceholderText = "Outfit Id"
-GUIObject.OutfitIdTextbox.Text = ""
-GUIObject.OutfitIdTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.OutfitIdTextbox.TextScaled = true
-GUIObject.OutfitIdTextbox.TextSize = 14.000
-GUIObject.OutfitIdTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-GUIObject.OutfitIdTextbox.TextWrapped = true
-
-GUIObject.UIGradientUI.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
-GUIObject.UIGradientUI.Rotation = -90
-GUIObject.UIGradientUI.Parent = GUIObject.OutfitIdFrame
-
-if not UIS.KeyboardEnabled then
-	GUIObject.MobileCloseButtonScreen.Enabled = true
-end
-
-Function.CatalogAccessoryFrameAdd(SelectPlayer)
-Function.GUIFunc()
-Function.GUIUpdate()
-
-local BREAKER = Instance.new("BoolValue")
-BREAKER.Name = "RoClothesBreaker"
-BREAKER.Parent = game.workspace
-
-task.wait(2)
-
-if BREAKER.Parent ~= nil then
-	BREAKER:Destroy()
-end
-
-task.spawn(function()
-	while task.wait(0.5) do
-		local BreakerObject = game.Workspace:FindFirstChild("RoClothesBreaker")
-
-		if BreakerObject then
-			for _, Connect in pairs(AllConnect) do
-				Connect:Disconnect()
-			end
-
-			GUIObject.Screen:Destroy()
-			BreakerObject:Destroy()
-			warn("RoClothes Disconnected")
-			break
-		end
+	else
+		GUIObject.Screen.Parent = Player:WaitForChild("PlayerGui")
+		GUIObject.MobileCloseButtonScreen.Parent = Player:WaitForChild("PlayerGui")
 	end
-end)
+
+	GUIObject.MainFrame.Name = "MainFrame"
+	GUIObject.MainFrame.Parent = GUIObject.Screen
+	GUIObject.MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.MainFrame.Position = UDim2.new(0.757, 0, 0.231759638, 0)
+	GUIObject.MainFrame.Size = UDim2.new(0.18244803, 0, 0.536480665, 0)
+	GUIObject.MainFrame.BackgroundTransparency = 1
+
+	GUIObject.PageFrame.Name = "PageFrame"
+	GUIObject.PageFrame.Parent = GUIObject.MainFrame
+	GUIObject.PageFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PageFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.PageFrame.Position = UDim2.new(0,0,0)
+	GUIObject.PageFrame.Size = UDim2.new(1,0,1,0)
+
+	GUIObject.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient.Rotation = -90
+	GUIObject.UIGradient.Parent = GUIObject.PageFrame
+
+	GUIObject.UICorner.CornerRadius = UDim.new(0.100000001, 0)
+	GUIObject.UICorner.Parent = GUIObject.PageFrame
+
+	GUIObject.Clothes_3.Name = "Clothes"
+	GUIObject.Clothes_3.Parent = GUIObject.PageFrame
+	GUIObject.Clothes_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Clothes_3.BackgroundTransparency = 1.000
+	GUIObject.Clothes_3.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Clothes_3.Visible = false
+
+	GUIObject.ClothesButtonFrame.Name = "ClothesButtonFrame"
+	GUIObject.ClothesButtonFrame.Parent = GUIObject.Clothes_3
+	GUIObject.ClothesButtonFrame.Active = true
+	GUIObject.ClothesButtonFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+	GUIObject.ClothesButtonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ClothesButtonFrame.BackgroundTransparency = 1.000
+	GUIObject.ClothesButtonFrame.BorderSizePixel = 0
+	GUIObject.ClothesButtonFrame.ClipsDescendants = true
+	GUIObject.ClothesButtonFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	GUIObject.ClothesButtonFrame.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
+	GUIObject.ClothesButtonFrame.Visible = true
+	GUIObject.ClothesButtonFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
+	GUIObject.ClothesButtonFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	GUIObject.ClothesButtonFrame.ScrollBarThickness = 0
+
+	GUIObject.UIGridLayout.Parent = GUIObject.ClothesButtonFrame
+	GUIObject.UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	GUIObject.UIGridLayout.CellSize = UDim2.new(0.300000012, 0, 0.174999997, 0)
+
+	GUIObject.Menu.Name = "Menu"
+	GUIObject.Menu.Parent = GUIObject.PageFrame
+	GUIObject.Menu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu.BackgroundTransparency = 1.000
+	GUIObject.Menu.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.DestroyFrame.Name = "DestroyFrame"
+	GUIObject.DestroyFrame.Parent = GUIObject.Menu
+	GUIObject.DestroyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.DestroyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.DestroyFrame.Position = UDim2.new(0.784810185, 0, 0.875, 0)
+	GUIObject.DestroyFrame.Size = UDim2.new(0.18244803, 0, 0.128480643, 0)
+
+	GUIObject.UIAspectRatioConstraint_2.Parent = GUIObject.DestroyFrame
+
+	GUIObject.UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 0, 0))}
+	GUIObject.UIGradient_3.Rotation = -90
+	GUIObject.UIGradient_3.Parent = GUIObject.DestroyFrame
+
+	GUIObject.UICorner_3.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_3.Parent = GUIObject.DestroyFrame
+
+	GUIObject.DestroyButton.Name = "DestroyButton"
+	GUIObject.DestroyButton.Parent = GUIObject.DestroyFrame
+	GUIObject.DestroyButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.DestroyButton.BackgroundTransparency = 1.000
+	GUIObject.DestroyButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.DestroyButton.Font = Enum.Font.Code
+	GUIObject.DestroyButton.Text = "DESTROY"
+	GUIObject.DestroyButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.DestroyButton.TextScaled = true
+	GUIObject.DestroyButton.TextSize = 14.000
+	GUIObject.DestroyButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.DestroyButton.TextStrokeTransparency = 0.000
+	GUIObject.DestroyButton.TextWrapped = true
+
+	GUIObject.PlayerFrame.Name = "PlayerFrame"
+	GUIObject.PlayerFrame.Parent = GUIObject.Menu
+	GUIObject.PlayerFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.PlayerFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PlayerFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.PlayerFrame.Position = UDim2.new(0.5, 0, 0.025, 0)
+	GUIObject.PlayerFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 100))}
+	GUIObject.UIGradient_4.Rotation = -90
+	GUIObject.UIGradient_4.Parent = GUIObject.PlayerFrame
+
+	GUIObject.UICorner_4.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_4.Parent = GUIObject.PlayerFrame
+
+	GUIObject.PlayerExecute.Name = "PlayerExecute"
+	GUIObject.PlayerExecute.Parent = GUIObject.PlayerFrame
+	GUIObject.PlayerExecute.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.PlayerExecute.BackgroundTransparency = 1.000
+	GUIObject.PlayerExecute.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.PlayerExecute.ClearTextOnFocus = false
+	GUIObject.PlayerExecute.Font = Enum.Font.Code
+	GUIObject.PlayerExecute.PlaceholderText = "Player To Execute (Self = Yourself)"
+	GUIObject.PlayerExecute.Text = "Self"
+	GUIObject.PlayerExecute.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PlayerExecute.TextScaled = true
+	GUIObject.PlayerExecute.TextSize = 14.000
+	GUIObject.PlayerExecute.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PlayerExecute.TextWrapped = true
+
+	GUIObject.BreastsTypeFrame.Name = "BreastsTypeFrame"
+	GUIObject.BreastsTypeFrame.Parent = GUIObject.Menu
+	GUIObject.BreastsTypeFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.BreastsTypeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsTypeFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BreastsTypeFrame.Position = UDim2.new(0.5, 0, 0.195, 0)
+	GUIObject.BreastsTypeFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_5.Rotation = -90
+	GUIObject.UIGradient_5.Parent = GUIObject.BreastsTypeFrame
+
+	GUIObject.UICorner_5.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_5.Parent = GUIObject.BreastsTypeFrame
+
+	GUIObject.BreastsTypeButton.Name = "BreastsTypeButton"
+	GUIObject.BreastsTypeButton.Parent = GUIObject.BreastsTypeFrame
+	GUIObject.BreastsTypeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsTypeButton.BackgroundTransparency = 1.000
+	GUIObject.BreastsTypeButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BreastsTypeButton.ZIndex = 2
+	GUIObject.BreastsTypeButton.Font = Enum.Font.Code
+	GUIObject.BreastsTypeButton.Text = "Breasts Type: 1"
+	GUIObject.BreastsTypeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsTypeButton.TextScaled = true
+	GUIObject.BreastsTypeButton.TextSize = 14.000
+	GUIObject.BreastsTypeButton.TextWrapped = true
+
+	GUIObject.BundleFrame.Name = "BundleFrame"
+	GUIObject.BundleFrame.Parent = GUIObject.Menu
+	GUIObject.BundleFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.BundleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BundleFrame.Position = UDim2.new(0.5, 0, 0.11, 0)
+	GUIObject.BundleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30, 0, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(55, 0, 100))}
+	GUIObject.UIGradient_6.Rotation = -90
+	GUIObject.UIGradient_6.Parent = GUIObject.BundleFrame
+
+	GUIObject.UICorner_6.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_6.Parent = GUIObject.BundleFrame
+
+	GUIObject.BundleText.Name = "BundleText"
+	GUIObject.BundleText.Parent = GUIObject.BundleFrame
+	GUIObject.BundleText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundleText.BackgroundTransparency = 1.000
+	GUIObject.BundleText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BundleText.ZIndex = 2
+	GUIObject.BundleText.Font = Enum.Font.Code
+	GUIObject.BundleText.Text = "Bundle: nil"
+	GUIObject.BundleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundleText.TextScaled = true
+	GUIObject.BundleText.TextSize = 14.000
+	GUIObject.BundleText.TextWrapped = true
+
+	GUIObject.DelayFrame.Name = "DelayFrame"
+	GUIObject.DelayFrame.Parent = GUIObject.Menu
+	GUIObject.DelayFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.DelayFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.DelayFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.DelayFrame.Position = UDim2.new(0.5, 0, 0.535, 0)
+	GUIObject.DelayFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.UIGradient_7.Rotation = -90
+	GUIObject.UIGradient_7.Parent = GUIObject.DelayFrame
+
+	GUIObject.UICorner_7.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_7.Parent = GUIObject.DelayFrame
+
+	GUIObject.DelayTimeText.Name = "DelayTimeText"
+	GUIObject.DelayTimeText.Parent = GUIObject.DelayFrame
+	GUIObject.DelayTimeText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.DelayTimeText.BackgroundTransparency = 1.000
+	GUIObject.DelayTimeText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.DelayTimeText.Font = Enum.Font.Code
+	GUIObject.DelayTimeText.PlaceholderText = "Delay Time After Respawn"
+	GUIObject.DelayTimeText.Text = "1"
+	GUIObject.DelayTimeText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.DelayTimeText.TextScaled = true
+	GUIObject.DelayTimeText.TextSize = 14.000
+	GUIObject.DelayTimeText.TextWrapped = true
+
+	GUIObject.AutoExecuteFrame.Name = "AutoExecuteFrame"
+	GUIObject.AutoExecuteFrame.Parent = GUIObject.Menu
+	GUIObject.AutoExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.AutoExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AutoExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.AutoExecuteFrame.Position = UDim2.new(0.5, 0, 0.62, 0)
+	GUIObject.AutoExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_8.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_8.Parent = GUIObject.AutoExecuteFrame
+
+	GUIObject.UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.UIGradient_8.Rotation = -90
+	GUIObject.UIGradient_8.Parent = GUIObject.AutoExecuteFrame
+
+	GUIObject.AutoExecuteButton.Name = "AutoExecuteButton"
+	GUIObject.AutoExecuteButton.Parent = GUIObject.AutoExecuteFrame
+	GUIObject.AutoExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.AutoExecuteButton.BackgroundTransparency = 1.000
+	GUIObject.AutoExecuteButton.BorderSizePixel = 0
+	GUIObject.AutoExecuteButton.LayoutOrder = 1
+	GUIObject.AutoExecuteButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.AutoExecuteButton.Font = Enum.Font.Code
+	GUIObject.AutoExecuteButton.Text = "Auto Execute"
+	GUIObject.AutoExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AutoExecuteButton.TextScaled = true
+	GUIObject.AutoExecuteButton.TextSize = 14.000
+	GUIObject.AutoExecuteButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
+	GUIObject.AutoExecuteButton.TextStrokeTransparency = 0.000
+	GUIObject.AutoExecuteButton.TextWrapped = true
+
+	GUIObject.BundleBodyColorFrame.Name = "BundleBodyColorFrame"
+	GUIObject.BundleBodyColorFrame.Parent = GUIObject.Menu
+	GUIObject.BundleBodyColorFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.BundleBodyColorFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundleBodyColorFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BundleBodyColorFrame.Position = UDim2.new(0.5, 0, 0.365, 0)
+	GUIObject.BundleBodyColorFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_15.Rotation = -90
+	GUIObject.UIGradient_15.Parent = GUIObject.BundleBodyColorFrame
+
+	GUIObject.UICorner_15.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_15.Parent = GUIObject.BundleBodyColorFrame
+
+	GUIObject.BundleBodyColorButton.Name = "BundleBodyColorButton"
+	GUIObject.BundleBodyColorButton.Parent = GUIObject.BundleBodyColorFrame
+	GUIObject.BundleBodyColorButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.BundleBodyColorButton.BackgroundTransparency = 1.000
+	GUIObject.BundleBodyColorButton.BorderSizePixel = 0
+	GUIObject.BundleBodyColorButton.LayoutOrder = 1
+	GUIObject.BundleBodyColorButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BundleBodyColorButton.Font = Enum.Font.Code
+	GUIObject.BundleBodyColorButton.Text = "Bundle Body Color"
+	GUIObject.BundleBodyColorButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundleBodyColorButton.TextScaled = true
+	GUIObject.BundleBodyColorButton.TextSize = 14.000
+	GUIObject.BundleBodyColorButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
+	GUIObject.BundleBodyColorButton.TextStrokeTransparency = 0.000
+	GUIObject.BundleBodyColorButton.TextWrapped = true
+
+	GUIObject.ResetFrame.Name = "ResetFrame"
+	GUIObject.ResetFrame.Parent = GUIObject.Menu
+	GUIObject.ResetFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ResetFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ResetFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ResetFrame.Position = UDim2.new(0.5, 0, 0.705, 0)
+	GUIObject.ResetFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_9.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_9.Parent = GUIObject.ResetFrame
+
+	GUIObject.UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 0))}
+	GUIObject.UIGradient_9.Rotation = -90
+	GUIObject.UIGradient_9.Parent = GUIObject.ResetFrame
+
+	GUIObject.ResetButton.Name = "ResetButton"
+	GUIObject.ResetButton.Parent = GUIObject.ResetFrame
+	GUIObject.ResetButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ResetButton.BackgroundTransparency = 1.000
+	GUIObject.ResetButton.BorderSizePixel = 0
+	GUIObject.ResetButton.LayoutOrder = 1
+	GUIObject.ResetButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ResetButton.Font = Enum.Font.Code
+	GUIObject.ResetButton.Text = "Reset"
+	GUIObject.ResetButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ResetButton.TextScaled = true
+	GUIObject.ResetButton.TextSize = 14.000
+	GUIObject.ResetButton.TextStrokeColor3 = Color3.fromRGB(99, 0, 0)
+	GUIObject.ResetButton.TextWrapped = true
+
+	GUIObject.ExecuteFrame.Name = "ExecuteFrame"
+	GUIObject.ExecuteFrame.Parent = GUIObject.Menu
+	GUIObject.ExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ExecuteFrame.Position = UDim2.new(0.5, 0, 0.79, 0)
+	GUIObject.ExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_10.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_10.Parent = GUIObject.ExecuteFrame
+
+	GUIObject.UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(100, 0, 0))}
+	GUIObject.UIGradient_10.Rotation = -90
+	GUIObject.UIGradient_10.Parent = GUIObject.ExecuteFrame
+
+	GUIObject.ExecuteButton.Name = "ExecuteButton"
+	GUIObject.ExecuteButton.Parent = GUIObject.ExecuteFrame
+	GUIObject.ExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ExecuteButton.BackgroundTransparency = 1.000
+	GUIObject.ExecuteButton.BorderSizePixel = 0
+	GUIObject.ExecuteButton.LayoutOrder = 1
+	GUIObject.ExecuteButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ExecuteButton.Font = Enum.Font.Code
+	GUIObject.ExecuteButton.Text = "Execute"
+	GUIObject.ExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ExecuteButton.TextScaled = true
+	GUIObject.ExecuteButton.TextSize = 14.000
+	GUIObject.ExecuteButton.TextStrokeColor3 = Color3.fromRGB(99, 0, 0)
+	GUIObject.ExecuteButton.TextWrapped = true
+
+	GUIObject.ToneFrame.Name = "ToneFrame"
+	GUIObject.ToneFrame.Parent = GUIObject.Menu
+	GUIObject.ToneFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ToneFrame.Position = UDim2.new(0.5, 0, 0.28, 0)
+	GUIObject.ToneFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_11.Rotation = -90
+	GUIObject.UIGradient_11.Parent = GUIObject.ToneFrame
+
+	GUIObject.UICorner_11.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_11.Parent = GUIObject.ToneFrame
+
+	GUIObject.ToneButton.Name = "ToneButton"
+	GUIObject.ToneButton.Parent = GUIObject.ToneFrame
+	GUIObject.ToneButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ToneButton.BackgroundTransparency = 1.000
+	GUIObject.ToneButton.BorderSizePixel = 0
+	GUIObject.ToneButton.LayoutOrder = 1
+	GUIObject.ToneButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ToneButton.Font = Enum.Font.Code
+	GUIObject.ToneButton.Text = "Tone: Base"
+	GUIObject.ToneButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ToneButton.TextScaled = true
+	GUIObject.ToneButton.TextSize = 14.000
+	GUIObject.ToneButton.TextStrokeColor3 = Color3.fromRGB(57, 57, 57)
+
+	GUIObject.Bundles.Name = "Bundles"
+	GUIObject.Bundles.Parent = GUIObject.PageFrame
+	GUIObject.Bundles.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Bundles.BackgroundTransparency = 1.000
+	GUIObject.Bundles.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Bundles.Visible = false
+
+	GUIObject.BundlesButtonFrame.Name = "BundlesButtonFrame"
+	GUIObject.BundlesButtonFrame.Parent = GUIObject.Bundles
+	GUIObject.BundlesButtonFrame.Active = true
+	GUIObject.BundlesButtonFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+	GUIObject.BundlesButtonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BundlesButtonFrame.BackgroundTransparency = 1.000
+	GUIObject.BundlesButtonFrame.BorderSizePixel = 0
+	GUIObject.BundlesButtonFrame.ClipsDescendants = true
+	GUIObject.BundlesButtonFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	GUIObject.BundlesButtonFrame.Size = UDim2.new(0.949999988, 0, 0.949999988, 0)
+	GUIObject.BundlesButtonFrame.Visible = true
+	GUIObject.BundlesButtonFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
+	GUIObject.BundlesButtonFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	GUIObject.BundlesButtonFrame.ScrollBarThickness = 0
+
+	GUIObject.UIGridLayout_2.Parent = GUIObject.BundlesButtonFrame
+	GUIObject.UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+	GUIObject.UIGridLayout_2.CellSize = UDim2.new(0.300000012, 0, 0.174999997, 0)
+
+	GUIObject.ButtonFrame.Name = "ButtonFrame"
+	GUIObject.ButtonFrame.Parent = GUIObject.MainFrame
+	GUIObject.ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ButtonFrame.BackgroundTransparency = 1.000
+	GUIObject.ButtonFrame.Position = UDim2.new(1.055,0,0.064,0)
+	GUIObject.ButtonFrame.Size = UDim2.new(0.15,0,0.395,0)
+
+	GUIObject.UIListLayout.Parent = GUIObject.ButtonFrame
+	GUIObject.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	GUIObject.UIListLayout.Padding = UDim.new(0.0500000007, 0)
+
+	GUIObject.Menu_2.Name = "Menu"
+	GUIObject.Menu_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Menu_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Menu_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Menu_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_3.Parent = GUIObject.Menu_2
+
+	GUIObject.UICorner_12.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_12.Parent = GUIObject.Menu_2
+
+	GUIObject.MenuButton.Name = "MenuButton"
+	GUIObject.MenuButton.Parent = GUIObject.Menu_2
+	GUIObject.MenuButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MenuButton.BackgroundTransparency = 1.000
+	GUIObject.MenuButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.MenuButton.Font = Enum.Font.Code
+	GUIObject.MenuButton.Text = "Menu"
+	GUIObject.MenuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MenuButton.TextScaled = true
+	GUIObject.MenuButton.TextSize = 14.000
+	GUIObject.MenuButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MenuButton.TextWrapped = true
+
+	GUIObject.UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_12.Rotation = -90
+	GUIObject.UIGradient_12.Parent = GUIObject.Menu_2
+
+	GUIObject.Menu2_2.Name = "Menu2"
+	GUIObject.Menu2_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Menu2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Menu2_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Menu2_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_7.Parent = GUIObject.Menu2_2
+
+	GUIObject.UICorner_20.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_20.Parent = GUIObject.Menu2_2
+
+	GUIObject.Menu2Button.Name = "Menu2Button"
+	GUIObject.Menu2Button.Parent = GUIObject.Menu2_2
+	GUIObject.Menu2Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu2Button.BackgroundTransparency = 1.000
+	GUIObject.Menu2Button.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Menu2Button.Font = Enum.Font.Code
+	GUIObject.Menu2Button.Text = "Menu 2"
+	GUIObject.Menu2Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu2Button.TextScaled = true
+	GUIObject.Menu2Button.TextSize = 14.000
+	GUIObject.Menu2Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu2Button.TextWrapped = true
+
+	GUIObject.UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_19.Rotation = -90
+	GUIObject.UIGradient_19.Parent = GUIObject.Menu2_2
+
+	GUIObject.Menu3_3.Name = "Menu3"
+	GUIObject.Menu3_3.Parent = GUIObject.ButtonFrame
+	GUIObject.Menu3_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu3_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Menu3_3.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Menu3_3.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.M3UIAspectRatioConstraint.Parent = GUIObject.Menu3_3
+
+	GUIObject.M3UICorner.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.M3UICorner.Parent = GUIObject.Menu3_3
+
+	GUIObject.Menu3Button.Name = "Menu3Button"
+	GUIObject.Menu3Button.Parent = GUIObject.Menu3_3
+	GUIObject.Menu3Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu3Button.BackgroundTransparency = 1.000
+	GUIObject.Menu3Button.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Menu3Button.Font = Enum.Font.Code
+	GUIObject.Menu3Button.Text = "Menu 3"
+	GUIObject.Menu3Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu3Button.TextScaled = true
+	GUIObject.Menu3Button.TextSize = 14.000
+	GUIObject.Menu3Button.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu3Button.TextWrapped = true
+
+	GUIObject.M3UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.M3UIGradient.Rotation = -90
+	GUIObject.M3UIGradient.Parent = GUIObject.Menu3_3
+
+	GUIObject.Clothes_2.Name = "Clothes"
+	GUIObject.Clothes_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Clothes_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Clothes_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Clothes_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Clothes_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_4.Parent = GUIObject.Clothes_2
+
+	GUIObject.UICorner_13.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_13.Parent = GUIObject.Clothes_2
+
+	GUIObject.ClothesButton.Name = "ClothesButton"
+	GUIObject.ClothesButton.Parent = GUIObject.Clothes_2
+	GUIObject.ClothesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ClothesButton.BackgroundTransparency = 1.000
+	GUIObject.ClothesButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ClothesButton.Font = Enum.Font.Code
+	GUIObject.ClothesButton.Text = "Clothes"
+	GUIObject.ClothesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ClothesButton.TextScaled = true
+	GUIObject.ClothesButton.TextSize = 14.000
+	GUIObject.ClothesButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ClothesButton.TextWrapped = true
+
+	GUIObject.UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_13.Rotation = -90
+	GUIObject.UIGradient_13.Parent = GUIObject.Clothes_2
+
+	GUIObject.Bundles_2.Name = "Bundles"
+	GUIObject.Bundles_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Bundles_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Bundles_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Bundles_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Bundles_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_5.Parent = GUIObject.Bundles_2
+
+	GUIObject.UICorner_14.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_14.Parent = GUIObject.Bundles_2
+
+	GUIObject.BundlesButton.Name = "BundlesButton"
+	GUIObject.BundlesButton.Parent = GUIObject.Bundles_2
+	GUIObject.BundlesButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundlesButton.BackgroundTransparency = 1.000
+	GUIObject.BundlesButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BundlesButton.Font = Enum.Font.Code
+	GUIObject.BundlesButton.Text = "Bundles"
+	GUIObject.BundlesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundlesButton.TextScaled = true
+	GUIObject.BundlesButton.TextSize = 14.000
+	GUIObject.BundlesButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BundlesButton.TextWrapped = true
+
+	GUIObject.UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_14.Rotation = -90
+	GUIObject.UIGradient_14.Parent = GUIObject.Bundles_2
+
+	GUIObject.NameFrame.Name = "NameFrame"
+	GUIObject.NameFrame.Parent = GUIObject.MainFrame
+	GUIObject.NameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.NameFrame.BackgroundTransparency = 1.000
+	GUIObject.NameFrame.Position = UDim2.new(0, 0, -0.096, 0)
+	GUIObject.NameFrame.Size = UDim2.new(0.561, 0, 0.04, 0)
+
+	GUIObject.NameText.Name = "NameText"
+	GUIObject.NameText.Parent = GUIObject.NameFrame
+	GUIObject.NameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.NameText.BackgroundTransparency = 1.000
+	GUIObject.NameText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.NameText.ZIndex = 2
+	GUIObject.NameText.Font = Enum.Font.Code
+	GUIObject.NameText.Text = "RoClothes"
+	GUIObject.NameText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.NameText.TextScaled = true
+	GUIObject.NameText.TextSize = 14.000
+	GUIObject.NameText.TextWrapped = true
+	GUIObject.NameText.TextXAlignment = Enum.TextXAlignment.Left
+
+	GUIObject.VersionText.Name = "VersionText"
+	GUIObject.VersionText.Parent = GUIObject.NameFrame
+	GUIObject.VersionText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.VersionText.BackgroundTransparency = 1.000
+	GUIObject.VersionText.Position = UDim2.new(0, 0, 1.06666636, 0)
+	GUIObject.VersionText.Size = UDim2.new(1, 0, 0.799999952, 0)
+	GUIObject.VersionText.ZIndex = 2
+	GUIObject.VersionText.Font = Enum.Font.Code
+	GUIObject.VersionText.Text = "Version - "..CVersion
+	GUIObject.VersionText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.VersionText.TextScaled = true
+	GUIObject.VersionText.TextSize = 14.000
+	GUIObject.VersionText.TextWrapped = true
+	GUIObject.VersionText.TextXAlignment = Enum.TextXAlignment.Left
+
+	GUIObject.KeybindFrame.Name = "KeybindFrame"
+	GUIObject.KeybindFrame.Parent = GUIObject.Menu
+	GUIObject.KeybindFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.KeybindFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.KeybindFrame.Position = UDim2.new(0.0542876273, 0, 0.931, 0)
+	GUIObject.KeybindFrame.Size = UDim2.new(0.684944391, 0, 0.0538139641, 0)
+
+	GUIObject.UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(26, 27, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 47, 0))}
+	GUIObject.UIGradient_16.Rotation = -90
+	GUIObject.UIGradient_16.Parent = GUIObject.KeybindFrame
+
+	GUIObject.UICorner_16.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_16.Parent = GUIObject.KeybindFrame
+
+	GUIObject.KeybindButton.Name = "KeybindButton"
+	GUIObject.KeybindButton.Parent = GUIObject.KeybindFrame
+	GUIObject.KeybindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.KeybindButton.BackgroundTransparency = 1.000
+	GUIObject.KeybindButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.KeybindButton.Font = Enum.Font.Code
+	GUIObject.KeybindButton.Text = "Delete"
+	GUIObject.KeybindButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.KeybindButton.TextScaled = true
+	GUIObject.KeybindButton.TextSize = 14.000
+	GUIObject.KeybindButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.KeybindButton.TextWrapped = true
+
+	GUIObject.FaceFrame.Name = "FaceFrame"
+	GUIObject.FaceFrame.Parent = GUIObject.Menu
+	GUIObject.FaceFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.FaceFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.FaceFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.FaceFrame.Position = UDim2.new(0.5, 0, 0.449999988, 0)
+	GUIObject.FaceFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_17.Rotation = -90
+	GUIObject.UIGradient_17.Parent = GUIObject.FaceFrame
+
+	GUIObject.UICorner_17.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_17.Parent = GUIObject.FaceFrame
+
+	GUIObject.FaceButton.Name = "FaceButton"
+	GUIObject.FaceButton.Parent = GUIObject.FaceFrame
+	GUIObject.FaceButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.FaceButton.BackgroundTransparency = 1.000
+	GUIObject.FaceButton.BorderSizePixel = 0
+	GUIObject.FaceButton.LayoutOrder = 1
+	GUIObject.FaceButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.FaceButton.Font = Enum.Font.Code
+	GUIObject.FaceButton.Text = "Face"
+	GUIObject.FaceButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.FaceButton.TextScaled = true
+	GUIObject.FaceButton.TextSize = 14.000
+	GUIObject.FaceButton.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
+	GUIObject.FaceButton.TextStrokeTransparency = 0.000
+	GUIObject.FaceButton.TextWrapped = true
+
+	GUIObject.Menu2.Name = "Menu2"
+	GUIObject.Menu2.Parent = GUIObject.PageFrame
+	GUIObject.Menu2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu2.BackgroundTransparency = 1.000
+	GUIObject.Menu2.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Menu2.Visible = false
+
+	GUIObject.LocalTransparencyFrame.Name = "LocalTransparencyFrame"
+	GUIObject.LocalTransparencyFrame.Parent = GUIObject.Menu2
+	GUIObject.LocalTransparencyFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.LocalTransparencyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.LocalTransparencyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.LocalTransparencyFrame.Position = UDim2.new(0.647907138, 0, 0.0250000004, 0)
+	GUIObject.LocalTransparencyFrame.Size = UDim2.new(0.595495105, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 93))}
+	GUIObject.UIGradient_18.Rotation = -90
+	GUIObject.UIGradient_18.Parent = GUIObject.LocalTransparencyFrame
+
+	GUIObject.UICorner_18.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_18.Parent = GUIObject.LocalTransparencyFrame
+
+	GUIObject.LocalTransparencyButton.Name = "LocalTransparency"
+	GUIObject.LocalTransparencyButton.Parent = GUIObject.LocalTransparencyFrame
+	GUIObject.LocalTransparencyButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.LocalTransparencyButton.BackgroundTransparency = 1.000
+	GUIObject.LocalTransparencyButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.LocalTransparencyButton.ClearTextOnFocus = false
+	GUIObject.LocalTransparencyButton.Font = Enum.Font.Code
+	GUIObject.LocalTransparencyButton.PlaceholderText = "Player To Execute (Self = Yourself)"
+	GUIObject.LocalTransparencyButton.Text = "0"
+	GUIObject.LocalTransparencyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.LocalTransparencyButton.TextScaled = true
+	GUIObject.LocalTransparencyButton.TextSize = 14.000
+	GUIObject.LocalTransparencyButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.LocalTransparencyButton.TextWrapped = true
+
+	GUIObject.CharacterFrame.Name = "CharacterFrame"
+	GUIObject.CharacterFrame.Parent = GUIObject.Menu2
+	GUIObject.CharacterFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.CharacterFrame.BackgroundTransparency = 1.000
+	GUIObject.CharacterFrame.Position = UDim2.new(0.0591630787, 0, 0.0266665854, 0)
+	GUIObject.CharacterFrame.Size = UDim2.new(0.272571504, 0, 0.218666583, 0)
+
+	GUIObject.UIAspectRatioConstraint_6.Parent = GUIObject.CharacterFrame
+	GUIObject.UIAspectRatioConstraint_6.AspectRatio = 0.750
+
+	GUIObject.LeftArmButton.Name = "Left Arm"
+	GUIObject.LeftArmButton.Parent = GUIObject.CharacterFrame
+	GUIObject.LeftArmButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.LeftArmButton.BackgroundTransparency = 0.500
+	GUIObject.LeftArmButton.BorderSizePixel = 0
+	GUIObject.LeftArmButton.Position = UDim2.new(0, 0, 0.25, 0)
+	GUIObject.LeftArmButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
+	GUIObject.LeftArmButton.Image = "rbxassetid://0"
+	GUIObject.LeftArmButton.ImageTransparency = 1.000
+
+	GUIObject.TorsoButton.Name = "Torso"
+	GUIObject.TorsoButton.Parent = GUIObject.CharacterFrame
+	GUIObject.TorsoButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.TorsoButton.BackgroundTransparency = 0.500
+	GUIObject.TorsoButton.BorderSizePixel = 0
+	GUIObject.TorsoButton.Position = UDim2.new(0.25, 0, 0.25, 0)
+	GUIObject.TorsoButton.Size = UDim2.new(0.5, 0, 0.449999988, 0)
+	GUIObject.TorsoButton.Image = "rbxassetid://0"
+	GUIObject.TorsoButton.ImageTransparency = 1.000
+
+	GUIObject.RightArmButton.Name = "Right Arm"
+	GUIObject.RightArmButton.Parent = GUIObject.CharacterFrame
+	GUIObject.RightArmButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.RightArmButton.BackgroundTransparency = 0.500
+	GUIObject.RightArmButton.BorderSizePixel = 0
+	GUIObject.RightArmButton.Position = UDim2.new(0.75, 0, 0.25, 0)
+	GUIObject.RightArmButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
+	GUIObject.RightArmButton.Image = "rbxassetid://0"
+	GUIObject.RightArmButton.ImageTransparency = 1.000
+
+	GUIObject.RightLegButton.Name = "Right Leg"
+	GUIObject.RightLegButton.Parent = GUIObject.CharacterFrame
+	GUIObject.RightLegButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.RightLegButton.BackgroundTransparency = 0.500
+	GUIObject.RightLegButton.BorderSizePixel = 0
+	GUIObject.RightLegButton.Position = UDim2.new(0.5, 0, 0.699999988, 0)
+	GUIObject.RightLegButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
+	GUIObject.RightLegButton.Image = "rbxassetid://0"
+	GUIObject.RightLegButton.ImageTransparency = 1.000
+
+	GUIObject.LeftLegButton.Name = "Left Leg"
+	GUIObject.LeftLegButton.Parent = GUIObject.CharacterFrame
+	GUIObject.LeftLegButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.LeftLegButton.BackgroundTransparency = 0.500
+	GUIObject.LeftLegButton.BorderSizePixel = 0
+	GUIObject.LeftLegButton.Position = UDim2.new(0.25, 0, 0.699999988, 0)
+	GUIObject.LeftLegButton.Size = UDim2.new(0.25, 0, 0.449999988, 0)
+	GUIObject.LeftLegButton.Image = "rbxassetid://0"
+	GUIObject.LeftLegButton.ImageTransparency = 1.000
+
+	GUIObject.HeadButton.Name = "Head"
+	GUIObject.HeadButton.Parent = GUIObject.CharacterFrame
+	GUIObject.HeadButton.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.HeadButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.HeadButton.BackgroundTransparency = 0.500
+	GUIObject.HeadButton.BorderSizePixel = 0
+	GUIObject.HeadButton.Position = UDim2.new(0.5, 0, 0, 0)
+	GUIObject.HeadButton.Size = UDim2.new(0.349999994, 0, 0.25, 0)
+	GUIObject.HeadButton.Image = "rbxassetid://0"
+	GUIObject.HeadButton.ImageTransparency = 1.000
+
+	GUIObject.UICorner_19.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_19.Parent = GUIObject.HeadButton
+
+	GUIObject.MeshSizeLockFrame.Name = "MeshSizeLockFrame"
+	GUIObject.MeshSizeLockFrame.Parent = GUIObject.Menu2
+	GUIObject.MeshSizeLockFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.MeshSizeLockFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshSizeLockFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.MeshSizeLockFrame.Position = UDim2.new(0.5, 0, 0.289999992, 0)
+	GUIObject.MeshSizeLockFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_20.Rotation = -90
+	GUIObject.UIGradient_20.Parent = GUIObject.MeshSizeLockFrame
+
+	GUIObject.UICorner_21.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_21.Parent = GUIObject.MeshSizeLockFrame
+
+	GUIObject.MeshSizeLockButton.Name = "MeshSizeLockButton"
+	GUIObject.MeshSizeLockButton.Parent = GUIObject.MeshSizeLockFrame
+	GUIObject.MeshSizeLockButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.MeshSizeLockButton.BackgroundTransparency = 1.000
+	GUIObject.MeshSizeLockButton.BorderSizePixel = 0
+	GUIObject.MeshSizeLockButton.LayoutOrder = 1
+	GUIObject.MeshSizeLockButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.MeshSizeLockButton.Font = Enum.Font.Code
+	GUIObject.MeshSizeLockButton.Text = "Mesh Size Lock"
+	GUIObject.MeshSizeLockButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshSizeLockButton.TextScaled = true
+	GUIObject.MeshSizeLockButton.TextSize = 14.000
+	GUIObject.MeshSizeLockButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.MeshSizeLockButton.TextStrokeTransparency = 0.000
+	GUIObject.MeshSizeLockButton.TextWrapped = true
+
+	GUIObject.AccessorySizeLockFrame.Name = "AccessorySizeLockFrame"
+	GUIObject.AccessorySizeLockFrame.Parent = GUIObject.Menu2
+	GUIObject.AccessorySizeLockFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.AccessorySizeLockFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AccessorySizeLockFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.AccessorySizeLockFrame.Position = UDim2.new(0.5, 0, 0.375, 0)
+	GUIObject.AccessorySizeLockFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_21.Rotation = -90
+	GUIObject.UIGradient_21.Parent = GUIObject.AccessorySizeLockFrame
+
+	GUIObject.UICorner_22.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_22.Parent = GUIObject.AccessorySizeLockFrame
+
+	GUIObject.AccessorySizeLockButton.Name = "AccessorySizeLockButton"
+	GUIObject.AccessorySizeLockButton.Parent = GUIObject.AccessorySizeLockFrame
+	GUIObject.AccessorySizeLockButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.AccessorySizeLockButton.BackgroundTransparency = 1.000
+	GUIObject.AccessorySizeLockButton.BorderSizePixel = 0
+	GUIObject.AccessorySizeLockButton.LayoutOrder = 1
+	GUIObject.AccessorySizeLockButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.AccessorySizeLockButton.Font = Enum.Font.Code
+	GUIObject.AccessorySizeLockButton.Text = "Accessory Size Lock"
+	GUIObject.AccessorySizeLockButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AccessorySizeLockButton.TextScaled = true
+	GUIObject.AccessorySizeLockButton.TextSize = 14.000
+	GUIObject.AccessorySizeLockButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.AccessorySizeLockButton.TextStrokeTransparency = 0.000
+	GUIObject.AccessorySizeLockButton.TextWrapped = true
+
+	GUIObject.MeshBasePartInvisibleFrame.Name = "MeshBasePartInvisibleFrame"
+	GUIObject.MeshBasePartInvisibleFrame.Parent = GUIObject.Menu2
+	GUIObject.MeshBasePartInvisibleFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.MeshBasePartInvisibleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshBasePartInvisibleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.MeshBasePartInvisibleFrame.Position = UDim2.new(0.5, 0, 0.46, 0)
+	GUIObject.MeshBasePartInvisibleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_22.Rotation = -90
+	GUIObject.UIGradient_22.Parent = GUIObject.MeshBasePartInvisibleFrame
+
+	GUIObject.UICorner_23.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_23.Parent = GUIObject.MeshBasePartInvisibleFrame
+
+	GUIObject.MeshBasePartInvisibleButton.Name = "MeshBasePartInvisibleButton"
+	GUIObject.MeshBasePartInvisibleButton.Parent = GUIObject.MeshBasePartInvisibleFrame
+	GUIObject.MeshBasePartInvisibleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.MeshBasePartInvisibleButton.BackgroundTransparency = 1.000
+	GUIObject.MeshBasePartInvisibleButton.BorderSizePixel = 0
+	GUIObject.MeshBasePartInvisibleButton.LayoutOrder = 1
+	GUIObject.MeshBasePartInvisibleButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.MeshBasePartInvisibleButton.Font = Enum.Font.Code
+	GUIObject.MeshBasePartInvisibleButton.Text = "Mesh Base Part Invisible"
+	GUIObject.MeshBasePartInvisibleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshBasePartInvisibleButton.TextScaled = true
+	GUIObject.MeshBasePartInvisibleButton.TextSize = 14.000
+	GUIObject.MeshBasePartInvisibleButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.MeshBasePartInvisibleButton.TextStrokeTransparency = 0.000
+	GUIObject.MeshBasePartInvisibleButton.TextWrapped = true
+
+	GUIObject.BodyPartPhysicsFrame.Name = "BodyPartPhysicsFrame"
+	GUIObject.BodyPartPhysicsFrame.Parent = GUIObject.Menu2
+	GUIObject.BodyPartPhysicsFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.BodyPartPhysicsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BodyPartPhysicsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BodyPartPhysicsFrame.Position = UDim2.new(0.5, 0, 0.545, 0)
+	GUIObject.BodyPartPhysicsFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradient_23.Rotation = -90
+	GUIObject.UIGradient_23.Parent = GUIObject.BodyPartPhysicsFrame
+
+	GUIObject.UICorner_24.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_24.Parent = GUIObject.BodyPartPhysicsFrame
+
+	GUIObject.BodyPartPhysicsButton.Name = "BodyPartPhysicsButton"
+	GUIObject.BodyPartPhysicsButton.Parent = GUIObject.BodyPartPhysicsFrame
+	GUIObject.BodyPartPhysicsButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.BodyPartPhysicsButton.BackgroundTransparency = 1.000
+	GUIObject.BodyPartPhysicsButton.BorderSizePixel = 0
+	GUIObject.BodyPartPhysicsButton.LayoutOrder = 1
+	GUIObject.BodyPartPhysicsButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BodyPartPhysicsButton.Font = Enum.Font.Code
+	GUIObject.BodyPartPhysicsButton.Text = "Body Part Physics"
+	GUIObject.BodyPartPhysicsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BodyPartPhysicsButton.TextScaled = true
+	GUIObject.BodyPartPhysicsButton.TextSize = 14.000
+	GUIObject.BodyPartPhysicsButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.BodyPartPhysicsButton.TextStrokeTransparency = 0.000
+	GUIObject.BodyPartPhysicsButton.TextWrapped = true
+
+	GUIObject.MethodFrame.Name = "MethodFrame"
+	GUIObject.MethodFrame.Parent = GUIObject.Menu
+	GUIObject.MethodFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MethodFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.MethodFrame.Position = UDim2.new(0.0542876273, 0, 0.865, 0)
+	GUIObject.MethodFrame.Size = UDim2.new(0.684944391, 0, 0.0538139641, 0)
+
+	GUIObject.UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(26, 27, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 47, 0))}
+	GUIObject.UIGradient_24.Rotation = -90
+	GUIObject.UIGradient_24.Parent = GUIObject.MethodFrame
+
+	GUIObject.UICorner_25.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_25.Parent = GUIObject.MethodFrame
+
+	GUIObject.MethodButton.Name = "MethodButton"
+	GUIObject.MethodButton.Parent = GUIObject.MethodFrame
+	GUIObject.MethodButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MethodButton.BackgroundTransparency = 1.000
+	GUIObject.MethodButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.MethodButton.Font = Enum.Font.Code
+	GUIObject.MethodButton.Text = "Method: 1"
+	GUIObject.MethodButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MethodButton.TextScaled = true
+	GUIObject.MethodButton.TextSize = 14.000
+	GUIObject.MethodButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MethodButton.TextWrapped = true
+
+	GUIObject.Catalog_2.Name = "Catalog"
+	GUIObject.Catalog_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Catalog_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Catalog_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Catalog_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Catalog_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_9.Parent = GUIObject.Catalog_2
+
+	GUIObject.UICorner_34.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_34.Parent = GUIObject.Catalog_2
+
+	GUIObject.CatalogButton.Name = "CatalogButton"
+	GUIObject.CatalogButton.Parent = GUIObject.Catalog_2
+	GUIObject.CatalogButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.CatalogButton.BackgroundTransparency = 1.000
+	GUIObject.CatalogButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.CatalogButton.Font = Enum.Font.Code
+	GUIObject.CatalogButton.Text = "Catalog"
+	GUIObject.CatalogButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.CatalogButton.TextScaled = true
+	GUIObject.CatalogButton.TextSize = 14.000
+	GUIObject.CatalogButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.CatalogButton.TextWrapped = true
+
+	GUIObject.UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_33.Rotation = -90
+	GUIObject.UIGradient_33.Parent = GUIObject.Catalog_2
+
+	GUIObject.Edit_2.Name = "Edit"
+	GUIObject.Edit_2.Parent = GUIObject.ButtonFrame
+	GUIObject.Edit_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Edit_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.Edit_2.Position = UDim2.new(0.784810185, 0, 0.866666734, 0)
+	GUIObject.Edit_2.Size = UDim2.new(1, 0, 1, 0)
+
+	GUIObject.UIAspectRatioConstraint_8.Parent = GUIObject.Edit_2
+
+	GUIObject.UICorner_33.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_33.Parent = GUIObject.Edit_2
+
+	GUIObject.EditButton.Name = "EditButton"
+	GUIObject.EditButton.Parent = GUIObject.Edit_2
+	GUIObject.EditButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.EditButton.BackgroundTransparency = 1.000
+	GUIObject.EditButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.EditButton.Font = Enum.Font.Code
+	GUIObject.EditButton.Text = "Edit"
+	GUIObject.EditButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.EditButton.TextScaled = true
+	GUIObject.EditButton.TextSize = 14.000
+	GUIObject.EditButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.EditButton.TextWrapped = true
+
+	GUIObject.UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(27, 27, 27)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+	GUIObject.UIGradient_32.Rotation = -90
+	GUIObject.UIGradient_32.Parent = GUIObject.Edit_2
+
+	GUIObject.Catalog_3.Name = "Catalog"
+	GUIObject.Catalog_3.Parent = GUIObject.PageFrame
+	GUIObject.Catalog_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Catalog_3.BackgroundTransparency = 1.000
+	GUIObject.Catalog_3.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Catalog_3.Visible = false
+
+	GUIObject.UsernameFrame.Name = "UsernameFrame"
+	GUIObject.UsernameFrame.Parent = GUIObject.Catalog_3
+	GUIObject.UsernameFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.UsernameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.UsernameFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.UsernameFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
+	GUIObject.UsernameFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_27.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_27.Parent = GUIObject.UsernameFrame
+
+	GUIObject.UsernameTextbox.Name = "UsernameTextbox"
+	GUIObject.UsernameTextbox.Parent = GUIObject.UsernameFrame
+	GUIObject.UsernameTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.UsernameTextbox.BackgroundTransparency = 1.000
+	GUIObject.UsernameTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.UsernameTextbox.ClearTextOnFocus = false
+	GUIObject.UsernameTextbox.Font = Enum.Font.Code
+	GUIObject.UsernameTextbox.PlaceholderText = "Username"
+	GUIObject.UsernameTextbox.Text = ""
+	GUIObject.UsernameTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.UsernameTextbox.TextScaled = true
+	GUIObject.UsernameTextbox.TextSize = 14.000
+	GUIObject.UsernameTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.UsernameTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradient_26.Rotation = -90
+	GUIObject.UIGradient_26.Parent = GUIObject.UsernameFrame
+
+	GUIObject.AccessoryFrame.Name = "AccessoryFrame"
+	GUIObject.AccessoryFrame.Parent = GUIObject.Catalog_3
+	GUIObject.AccessoryFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.AccessoryFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AccessoryFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.AccessoryFrame.Position = UDim2.new(0.5, 0, 0.109999999, 0)
+	GUIObject.AccessoryFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_28.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_28.Parent = GUIObject.AccessoryFrame
+
+	GUIObject.AccessoryTextbox.Name = "AccessoryTextbox"
+	GUIObject.AccessoryTextbox.Parent = GUIObject.AccessoryFrame
+	GUIObject.AccessoryTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.AccessoryTextbox.BackgroundTransparency = 1.000
+	GUIObject.AccessoryTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.AccessoryTextbox.ClearTextOnFocus = false
+	GUIObject.AccessoryTextbox.Font = Enum.Font.Code
+	GUIObject.AccessoryTextbox.PlaceholderText = "Accessory Id"
+	GUIObject.AccessoryTextbox.Text = ""
+	GUIObject.AccessoryTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AccessoryTextbox.TextScaled = true
+	GUIObject.AccessoryTextbox.TextSize = 14.000
+	GUIObject.AccessoryTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.AccessoryTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradient_27.Rotation = -90
+	GUIObject.UIGradient_27.Parent = GUIObject.AccessoryFrame
+
+	GUIObject.ShirtFrame.Name = "ShirtFrame"
+	GUIObject.ShirtFrame.Parent = GUIObject.Catalog_3
+	GUIObject.ShirtFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ShirtFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ShirtFrame.Position = UDim2.new(0.5, 0, 0.194999993, 0)
+	GUIObject.ShirtFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_29.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_29.Parent = GUIObject.ShirtFrame
+
+	GUIObject.ShirtTextbox.Name = "ShirtTextbox"
+	GUIObject.ShirtTextbox.Parent = GUIObject.ShirtFrame
+	GUIObject.ShirtTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ShirtTextbox.BackgroundTransparency = 1.000
+	GUIObject.ShirtTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ShirtTextbox.ClearTextOnFocus = false
+	GUIObject.ShirtTextbox.Font = Enum.Font.Code
+	GUIObject.ShirtTextbox.PlaceholderText = "Shirt Id"
+	GUIObject.ShirtTextbox.Text = ""
+	GUIObject.ShirtTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtTextbox.TextScaled = true
+	GUIObject.ShirtTextbox.TextSize = 14.000
+	GUIObject.ShirtTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradient_28.Rotation = -90
+	GUIObject.UIGradient_28.Parent = GUIObject.ShirtFrame
+
+	GUIObject.PantsFrame.Name = "PantsFrame"
+	GUIObject.PantsFrame.Parent = GUIObject.Catalog_3
+	GUIObject.PantsFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.PantsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PantsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.PantsFrame.Position = UDim2.new(0.5, 0, 0.280000001, 0)
+	GUIObject.PantsFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_30.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_30.Parent = GUIObject.PantsFrame
+
+	GUIObject.PantsTextbox.Name = "PantsTextbox"
+	GUIObject.PantsTextbox.Parent = GUIObject.PantsFrame
+	GUIObject.PantsTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.PantsTextbox.BackgroundTransparency = 1.000
+	GUIObject.PantsTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.PantsTextbox.ClearTextOnFocus = false
+	GUIObject.PantsTextbox.Font = Enum.Font.Code
+	GUIObject.PantsTextbox.PlaceholderText = "Pants Id"
+	GUIObject.PantsTextbox.Text = ""
+	GUIObject.PantsTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PantsTextbox.TextScaled = true
+	GUIObject.PantsTextbox.TextSize = 14.000
+	GUIObject.PantsTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PantsTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradient_29.Rotation = -90
+	GUIObject.UIGradient_29.Parent = GUIObject.PantsFrame
+
+	GUIObject.ShirtGraphicFrame.Name = "ShirtGraphicFrame"
+	GUIObject.ShirtGraphicFrame.Parent = GUIObject.Catalog_3
+	GUIObject.ShirtGraphicFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ShirtGraphicFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtGraphicFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ShirtGraphicFrame.Position = UDim2.new(0.5, 0, 0.36500001, 0)
+	GUIObject.ShirtGraphicFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_31.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_31.Parent = GUIObject.ShirtGraphicFrame
+
+	GUIObject.ShirtGraphicTextbox.Name = "ShirtGraphicTextbox"
+	GUIObject.ShirtGraphicTextbox.Parent = GUIObject.ShirtGraphicFrame
+	GUIObject.ShirtGraphicTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ShirtGraphicTextbox.BackgroundTransparency = 1.000
+	GUIObject.ShirtGraphicTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ShirtGraphicTextbox.ClearTextOnFocus = false
+	GUIObject.ShirtGraphicTextbox.Font = Enum.Font.Code
+	GUIObject.ShirtGraphicTextbox.PlaceholderText = "Shirt Graphic Id"
+	GUIObject.ShirtGraphicTextbox.Text = ""
+	GUIObject.ShirtGraphicTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtGraphicTextbox.TextScaled = true
+	GUIObject.ShirtGraphicTextbox.TextSize = 14.000
+	GUIObject.ShirtGraphicTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ShirtGraphicTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradient_30.Rotation = -90
+	GUIObject.UIGradient_30.Parent = GUIObject.ShirtGraphicFrame
+
+	GUIObject.Edit.Name = "Edit"
+	GUIObject.Edit.Parent = GUIObject.PageFrame
+	GUIObject.Edit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Edit.BackgroundTransparency = 1.000
+	GUIObject.Edit.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Edit.Visible = false
+
+	GUIObject.MeshNameFrame.Name = "MeshNameFrame"
+	GUIObject.MeshNameFrame.Parent = GUIObject.Edit
+	GUIObject.MeshNameFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.MeshNameFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshNameFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.MeshNameFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
+	GUIObject.MeshNameFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICorner_32.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICorner_32.Parent = GUIObject.MeshNameFrame
+
+	GUIObject.MeshNameTextbox.Name = "MeshNameTextbox"
+	GUIObject.MeshNameTextbox.Parent = GUIObject.MeshNameFrame
+	GUIObject.MeshNameTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.MeshNameTextbox.BackgroundTransparency = 1.000
+	GUIObject.MeshNameTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.MeshNameTextbox.ClearTextOnFocus = false
+	GUIObject.MeshNameTextbox.Font = Enum.Font.Code
+	GUIObject.MeshNameTextbox.PlaceholderText = "Mesh Name"
+	GUIObject.MeshNameTextbox.Text = ""
+	GUIObject.MeshNameTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshNameTextbox.TextScaled = true
+	GUIObject.MeshNameTextbox.TextSize = 14.000
+	GUIObject.MeshNameTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MeshNameTextbox.TextWrapped = true
+
+	GUIObject.UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(76, 6, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(126, 17, 145))}
+	GUIObject.UIGradient_31.Rotation = -90
+	GUIObject.UIGradient_31.Parent = GUIObject.MeshNameFrame
+
+	GUIObject.PropertyListFrame.Name = "PropertyListFrame"
+	GUIObject.PropertyListFrame.Parent = GUIObject.Edit
+	GUIObject.PropertyListFrame.Active = true
+	GUIObject.PropertyListFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+	GUIObject.PropertyListFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.PropertyListFrame.BackgroundTransparency = 1.000
+	GUIObject.PropertyListFrame.BorderSizePixel = 0
+	GUIObject.PropertyListFrame.Position = UDim2.new(0.499999911, 0, 0.605427802, 0)
+	GUIObject.PropertyListFrame.Size = UDim2.new(0.949999988, 0, 0.74982059, 0)
+	GUIObject.PropertyListFrame.BottomImage = "rbxassetid://5946093983"
+	GUIObject.PropertyListFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
+	GUIObject.PropertyListFrame.MidImage = ""
+	GUIObject.PropertyListFrame.ScrollBarThickness = 0
+	GUIObject.PropertyListFrame.CanvasSize = UDim2.new(0, 0, 0.5, 0)
+	GUIObject.PropertyListFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	GUIObject.PropertyListFrame.TopImage = "rbxassetid://5946093983"
+
+	GUIObject.UIGridLayout_4.Parent = GUIObject.PropertyListFrame
+	GUIObject.UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+	GUIObject.UIGridLayout_4.CellPadding = UDim2.new(0,0,0,0)
+	GUIObject.UIGridLayout_4.CellSize = UDim2.new(0.300000012*3.5, 0, 0.174999997*3.5, 0)
+
+	GUIObject.EditNote.Parent = GUIObject.Edit
+	GUIObject.EditNote.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.EditNote.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.EditNote.BackgroundTransparency = 1.000
+	GUIObject.EditNote.Position = UDim2.new(0.50000006, 0, 0.110409796, 0)
+	GUIObject.EditNote.Size = UDim2.new(0.890999973, 0, 0.1, 0)
+	GUIObject.EditNote.Font = Enum.Font.Code
+	GUIObject.EditNote.Text = "Self = Change Default Mesh Part\\n--------------------------------------\\nPlayer Name = Change Personal Mesh Part"
+	GUIObject.EditNote.TextColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.EditNote.TextScaled = true
+	GUIObject.EditNote.TextSize = 14.000
+	GUIObject.EditNote.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.EditNote.TextStrokeTransparency = 0.000
+	GUIObject.EditNote.TextWrapped = true
+	GUIObject.EditNote.TextXAlignment = Enum.TextXAlignment.Left
+	GUIObject.EditNote.Visible = false
+
+	GUIObject.CharacterPreviewFrame.Name = "CharacterPreviewFrame"
+	GUIObject.CharacterPreviewFrame.Parent = GUIObject.MainFrame
+	GUIObject.CharacterPreviewFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.CharacterPreviewFrame.BackgroundTransparency = 1.000
+	GUIObject.CharacterPreviewFrame.Position = UDim2.new(-0.458589792, 0, 0, 0)
+	GUIObject.CharacterPreviewFrame.Size = UDim2.new(0.468550086, 0, 0.378379911, 0)
+
+	GUIObject.ViewportFrame.BackgroundTransparency = 1.000
+	GUIObject.ViewportFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ViewportFrame.Size = UDim2.new(1,0,1,0)
+	GUIObject.ViewportFrame.CurrentCamera = GUIObject.ViewportCamera
+	GUIObject.ViewportFrame.Parent = GUIObject.CharacterPreviewFrame
+
+	GUIObject.ViewportCamera.CFrame = CFrame.new(4, 0.300000012, -4, -0.819152057, 0, 0.57357645, 0, 1, 0, -0.57357645, 0, -0.819152057)
+	GUIObject.ViewportCamera.Parent = GUIObject.CharacterPreviewFrame
+
+	GUIObject.PreviewUIAspectRatioConstraint.Parent = GUIObject.CharacterPreviewFrame
+	GUIObject.PreviewUIAspectRatioConstraint.AspectRatio = 0.750
+	GUIObject.PreviewUIAspectRatioConstraint.DominantAxis = Enum.DominantAxis.Height
+
+	GUIObject.PreviewButton.Parent = GUIObject.CharacterPreviewFrame
+	GUIObject.PreviewButton.Name = "PreviewButton"
+	GUIObject.PreviewButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PreviewButton.BackgroundTransparency = 1.000
+	GUIObject.PreviewButton.Position = UDim2.new(0, 0, 1.00000012, 0)
+	GUIObject.PreviewButton.Size = UDim2.new(1, 0, 0.153530627, 0)
+	GUIObject.PreviewButton.Font = Enum.Font.Code
+	GUIObject.PreviewButton.Text = "Preview"
+	GUIObject.PreviewButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PreviewButton.TextScaled = true
+	GUIObject.PreviewButton.TextSize = 14.000
+	GUIObject.PreviewButton.TextStrokeTransparency = 0.000
+	GUIObject.PreviewButton.TextWrapped = true
+
+	GUIObject.ClickExecuteFrame.Name = "ClickExecuteFrame"
+	GUIObject.ClickExecuteFrame.Parent = GUIObject.Menu2
+	GUIObject.ClickExecuteFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ClickExecuteFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ClickExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ClickExecuteFrame.Position = UDim2.new(0.5, 0, 0.629999995, 0)
+	GUIObject.ClickExecuteFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UIGradientCE.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 49, 54)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 83, 100))}
+	GUIObject.UIGradientCE.Rotation = -90
+	GUIObject.UIGradientCE.Parent = GUIObject.ClickExecuteFrame
+
+	GUIObject.UICornerCE.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICornerCE.Parent = GUIObject.ClickExecuteFrame
+
+	GUIObject.ClickExecuteButton.Name = "ClickExecuteButton"
+	GUIObject.ClickExecuteButton.Parent = GUIObject.ClickExecuteFrame
+	GUIObject.ClickExecuteButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ClickExecuteButton.BackgroundTransparency = 1.000
+	GUIObject.ClickExecuteButton.BorderSizePixel = 0
+	GUIObject.ClickExecuteButton.LayoutOrder = 1
+	GUIObject.ClickExecuteButton.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ClickExecuteButton.Font = Enum.Font.Code
+	GUIObject.ClickExecuteButton.Text = "Click Execute"
+	GUIObject.ClickExecuteButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ClickExecuteButton.TextScaled = true
+	GUIObject.ClickExecuteButton.TextSize = 14.000
+	GUIObject.ClickExecuteButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ClickExecuteButton.TextStrokeTransparency = 0.000
+	GUIObject.ClickExecuteButton.TextWrapped = true
+
+	GUIObject.PositionPhysicsMultiplyFrame.Name = "PositionPhysicsMultiplyFrame"
+	GUIObject.PositionPhysicsMultiplyFrame.Parent = GUIObject.Menu2
+	GUIObject.PositionPhysicsMultiplyFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.PositionPhysicsMultiplyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PositionPhysicsMultiplyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.PositionPhysicsMultiplyFrame.Position = UDim2.new(0.5, 0, 0.714999974, 0)
+	GUIObject.PositionPhysicsMultiplyFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICornerPPM.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICornerPPM.Parent = GUIObject.PositionPhysicsMultiplyFrame
+
+	GUIObject.PositionPhysicsMultiplyText.Name = "PositionPhysicsMultiplyText"
+	GUIObject.PositionPhysicsMultiplyText.Parent = GUIObject.PositionPhysicsMultiplyFrame
+	GUIObject.PositionPhysicsMultiplyText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.PositionPhysicsMultiplyText.BackgroundTransparency = 1.000
+	GUIObject.PositionPhysicsMultiplyText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.PositionPhysicsMultiplyText.Font = Enum.Font.Code
+	GUIObject.PositionPhysicsMultiplyText.PlaceholderText = "Position Physics Multiply"
+	GUIObject.PositionPhysicsMultiplyText.Text = "1"
+	GUIObject.PositionPhysicsMultiplyText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.PositionPhysicsMultiplyText.TextScaled = true
+	GUIObject.PositionPhysicsMultiplyText.TextSize = 14.000
+	GUIObject.PositionPhysicsMultiplyText.TextWrapped = true
+
+	GUIObject.UIGradientPPM.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.UIGradientPPM.Rotation = -90
+	GUIObject.UIGradientPPM.Parent = GUIObject.PositionPhysicsMultiplyFrame
+
+	GUIObject.RotationPhysicsMultiplyFrame.Name = "RotationPhysicsMultiplyFrame"
+	GUIObject.RotationPhysicsMultiplyFrame.Parent = GUIObject.Menu2
+	GUIObject.RotationPhysicsMultiplyFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.RotationPhysicsMultiplyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.RotationPhysicsMultiplyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.RotationPhysicsMultiplyFrame.Position = UDim2.new(0.5, 0, 0.800000012, 0)
+	GUIObject.RotationPhysicsMultiplyFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICornerRPM.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICornerRPM.Parent = GUIObject.RotationPhysicsMultiplyFrame
+
+	GUIObject.RotationPhysicsMultiplyText.Name = "RotationPhysicsMultiplyText"
+	GUIObject.RotationPhysicsMultiplyText.Parent = GUIObject.RotationPhysicsMultiplyFrame
+	GUIObject.RotationPhysicsMultiplyText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.RotationPhysicsMultiplyText.BackgroundTransparency = 1.000
+	GUIObject.RotationPhysicsMultiplyText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.RotationPhysicsMultiplyText.Font = Enum.Font.Code
+	GUIObject.RotationPhysicsMultiplyText.PlaceholderText = "Rotation Physics Multiply"
+	GUIObject.RotationPhysicsMultiplyText.Text = "4"
+	GUIObject.RotationPhysicsMultiplyText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.RotationPhysicsMultiplyText.TextScaled = true
+	GUIObject.RotationPhysicsMultiplyText.TextSize = 14.000
+	GUIObject.RotationPhysicsMultiplyText.TextWrapped = true
+
+	GUIObject.UIGradientRPM.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.UIGradientRPM.Rotation = -90
+	GUIObject.UIGradientRPM.Parent = GUIObject.RotationPhysicsMultiplyFrame
+
+	GUIObject.MobileCloseButton.Name = "MobileCloseButton"
+	GUIObject.MobileCloseButton.Parent = GUIObject.MobileCloseButtonScreen
+	GUIObject.MobileCloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.MobileCloseButton.BackgroundTransparency = 1.000
+	GUIObject.MobileCloseButton.Position = UDim2.new(0.969957054, 0, 0.955650926, 0)
+	GUIObject.MobileCloseButton.Size = UDim2.new(0.0300429184, 0, 0.0443490706, 0)
+	GUIObject.MobileCloseButton.Image = "rbxassetid://264596039"
+
+	GUIObject.MCBUIAspectRatioConstraint.Parent = GUIObject.MobileCloseButton
+
+	GUIObject.SkinToneFrame.Name = "SkinToneFrame"
+	GUIObject.SkinToneFrame.Parent = GUIObject.Menu2
+	GUIObject.SkinToneFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.SkinToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.SkinToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.SkinToneFrame.Position = UDim2.new(0.5, 0, 0.88499999, 0)
+	GUIObject.SkinToneFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.STUICorner.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.STUICorner.Parent = GUIObject.SkinToneFrame
+
+	GUIObject.SkinToneText.Name = "SkinToneText"
+	GUIObject.SkinToneText.Parent = GUIObject.SkinToneFrame
+	GUIObject.SkinToneText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.SkinToneText.BackgroundTransparency = 1.000
+	GUIObject.SkinToneText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.SkinToneText.Font = Enum.Font.Code
+	GUIObject.SkinToneText.PlaceholderText = "Skin Tone [RGB] (Leave Empty To Disable)"
+	GUIObject.SkinToneText.Text = ""
+	GUIObject.SkinToneText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.SkinToneText.TextScaled = true
+	GUIObject.SkinToneText.TextSize = 14.000
+	GUIObject.SkinToneText.TextWrapped = true
+
+	GUIObject.STUIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.STUIGradient.Rotation = -90
+	GUIObject.STUIGradient.Parent = GUIObject.SkinToneFrame
+
+	GUIObject.Menu3.Name = "Menu3"
+	GUIObject.Menu3.Parent = GUIObject.PageFrame
+	GUIObject.Menu3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.Menu3.BackgroundTransparency = 1.000
+	GUIObject.Menu3.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.Menu3.Visible = false
+
+	GUIObject.BreastsScaleFrame.Name = "BreastsScaleFrame"
+	GUIObject.BreastsScaleFrame.Parent = GUIObject.Menu3
+	GUIObject.BreastsScaleFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.BreastsScaleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsScaleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.BreastsScaleFrame.Position = UDim2.new(0.5, 0, 0.0250000004, 0)
+	GUIObject.BreastsScaleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.BS1UICorner.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.BS1UICorner.Parent = GUIObject.BreastsScaleFrame
+
+	GUIObject.BreastsScaleText.Name = "BreastsScaleText"
+	GUIObject.BreastsScaleText.Parent = GUIObject.BreastsScaleFrame
+	GUIObject.BreastsScaleText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.BreastsScaleText.BackgroundTransparency = 1.000
+	GUIObject.BreastsScaleText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.BreastsScaleText.ClearTextOnFocus = false
+	GUIObject.BreastsScaleText.Font = Enum.Font.Code
+	GUIObject.BreastsScaleText.PlaceholderText = "Breasts Scale"
+	GUIObject.BreastsScaleText.Text = "1"
+	GUIObject.BreastsScaleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsScaleText.TextScaled = true
+	GUIObject.BreastsScaleText.TextSize = 14.000
+	GUIObject.BreastsScaleText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.BreastsScaleText.TextWrapped = true
+
+	GUIObject.BS1UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.BS1UIGradient.Rotation = -90
+	GUIObject.BS1UIGradient.Parent = GUIObject.BreastsScaleFrame
+
+	GUIObject.ButtsScaleFrame.Name = "ButtsScaleFrame"
+	GUIObject.ButtsScaleFrame.Parent = GUIObject.Menu3
+	GUIObject.ButtsScaleFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.ButtsScaleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ButtsScaleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.ButtsScaleFrame.Position = UDim2.new(0.5, 0, 0.109999999, 0)
+	GUIObject.ButtsScaleFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.BS2UICorner.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.BS2UICorner.Parent = GUIObject.ButtsScaleFrame
+
+	GUIObject.BS2UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.BS2UIGradient.Rotation = -90
+	GUIObject.BS2UIGradient.Parent = GUIObject.ButtsScaleFrame
+
+	GUIObject.ButtsScaleText.Name = "ButtsScaleText"
+	GUIObject.ButtsScaleText.Parent = GUIObject.ButtsScaleFrame
+	GUIObject.ButtsScaleText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.ButtsScaleText.BackgroundTransparency = 1.000
+	GUIObject.ButtsScaleText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.ButtsScaleText.Font = Enum.Font.Code
+	GUIObject.ButtsScaleText.PlaceholderText = "Butts Scale"
+	GUIObject.ButtsScaleText.Text = "1"
+	GUIObject.ButtsScaleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.ButtsScaleText.TextScaled = true
+	GUIObject.ButtsScaleText.TextSize = 14.000
+	GUIObject.ButtsScaleText.TextWrapped = true
+
+	GUIObject.OutfitIdFrame.Name = "Outfit Id"
+	GUIObject.OutfitIdFrame.Parent = GUIObject.Catalog_3
+	GUIObject.OutfitIdFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.OutfitIdFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.OutfitIdFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.OutfitIdFrame.Position = UDim2.new(0.5, 0, 0.449999988, 0)
+	GUIObject.OutfitIdFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+
+	GUIObject.UICornerUI.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.UICornerUI.Parent = GUIObject.OutfitIdFrame
+
+	GUIObject.OutfitIdTextbox.Name = "OutfitIdTextbox"
+	GUIObject.OutfitIdTextbox.Parent = GUIObject.OutfitIdFrame
+	GUIObject.OutfitIdTextbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.OutfitIdTextbox.BackgroundTransparency = 1.000
+	GUIObject.OutfitIdTextbox.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.OutfitIdTextbox.ClearTextOnFocus = false
+	GUIObject.OutfitIdTextbox.Font = Enum.Font.Code
+	GUIObject.OutfitIdTextbox.PlaceholderText = "Outfit Id"
+	GUIObject.OutfitIdTextbox.Text = ""
+	GUIObject.OutfitIdTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.OutfitIdTextbox.TextScaled = true
+	GUIObject.OutfitIdTextbox.TextSize = 14.000
+	GUIObject.OutfitIdTextbox.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.OutfitIdTextbox.TextWrapped = true
+
+	GUIObject.UIGradientUI.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(22, 45, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(52, 80, 145))}
+	GUIObject.UIGradientUI.Rotation = -90
+	GUIObject.UIGradientUI.Parent = GUIObject.OutfitIdFrame
+
+	if not UIS.KeyboardEnabled then
+		GUIObject.MobileCloseButtonScreen.Enabled = true
+	end
+
+	Function.CatalogAccessoryFrameAdd(SelectPlayer)
+	Function.GUIFunc()
+	Function.GUIUpdate()
+
+	local BREAKER = Instance.new("BoolValue")
+	BREAKER.Name = "RoClothesBreaker"
+	BREAKER.Parent = game.workspace
+
+	task.wait(2)
+
+	if BREAKER.Parent ~= nil then
+		BREAKER:Destroy()
+	end
+
+	task.spawn(function()
+		while task.wait(0.5) do
+			local BreakerObject = game.Workspace:FindFirstChild("RoClothesBreaker")
+
+			if BreakerObject then
+				for _, Connect in pairs(AllConnect) do
+					Connect:Disconnect()
+				end
+
+				GUIObject.Screen:Destroy()
+				BreakerObject:Destroy()
+				warn("RoClothes Disconnected")
+				break
+			end
+		end
+	end)
 end
 
 if RS:IsStudio() then
