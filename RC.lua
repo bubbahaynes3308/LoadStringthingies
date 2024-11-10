@@ -9547,13 +9547,8 @@ function RoClothes(Player)
 	GUIObject.MobileCloseButtonScreen.Enabled = false
 
 	if RS:IsClient() then
-		if script.Parent:FindFirstChild("IsRequired") then
-			GUIObject.Screen.Parent = script.Parent
-			GUIObject.MobileCloseButtonScreen.Parent = script.Parent
-		else
 		GUIObject.Screen.Parent = game:GetService("CoreGui")
 		GUIObject.MobileCloseButtonScreen.Parent = game:GetService("CoreGui")
-end
 	else
 		GUIObject.Screen.Parent = Player:WaitForChild("PlayerGui")
 		GUIObject.MobileCloseButtonScreen.Parent = Player:WaitForChild("PlayerGui")
