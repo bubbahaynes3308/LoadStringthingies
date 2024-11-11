@@ -382,7 +382,7 @@ function RoClothes(Player)
 				["Name"] = "Left Arm Mesh",
 				["MeshId"] = "rbxasset://11617989163.mesh",
 				["Size"] = Vector3.new(1, 2, 1),
-				["CFrame"] = CFrame.new(0.0349998474, 0, 0, -1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, -1),
+				["CFrame"] = CFrame.new(0.0349998474, 0, 0, 1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
 				["Color"] = {
@@ -400,7 +400,7 @@ function RoClothes(Player)
 				["Name"] = "Right Arm Mesh",
 				["MeshId"] = "rbxasset://11617988681.mesh",
 				["Size"] = Vector3.new(1, 2, 1),
-				["CFrame"] = CFrame.new(-0.0349998474, 0, 0, -1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, -1),
+				["CFrame"] = CFrame.new(-0.0349998474, 0, 0, 1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
 				["Color"] = {
