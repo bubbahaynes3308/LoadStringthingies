@@ -1,4 +1,6 @@
-task.wait(0.1)
+wait(0.2)
+wait(0.1)
+wait(0.111111156)
 --local X = require(script.RbxUtility).Create
 Player = game:GetService("Players").LocalPlayer
 PlayerGui = Player.PlayerGui
@@ -146,39 +148,6 @@ RWingWld.C1 = CFrame.new(1.1, 1, -0.95)
 --//=================================\\
 --|| SAZERENOS' ARTIFICIAL HEARTBEAT
 --\\=================================//
-
-ArtificialHB = Instance.new("BindableEvent", script)
-ArtificialHB.Name = "ArtificialHB"
-
-script:WaitForChild("ArtificialHB")
-
-frame = Frame_Speed
-tf = 0
-allowframeloss = false
-tossremainder = false
-lastframe = tick()
-script.ArtificialHB:Fire()
-
-game:GetService("RunService").Heartbeat:connect(function(s, p)
-	tf = tf + s
-	if tf >= frame then
-		if allowframeloss then
-			script.ArtificialHB:Fire()
-			lastframe = tick()
-		else
-			for i = 1, math.floor(tf / frame) do
-				script.ArtificialHB:Fire()
-			end
-			lastframe = tick()
-		end
-		if tossremainder then
-			tf = 0
-		else
-			tf = tf - frame * math.floor(tf / frame)
-		end
-	end
-end)
-
 --//=================================\\
 --\\=================================//
 
@@ -200,25 +169,7 @@ function NegativeAngle(NUMBER)
 	return NUMBER
 end
 
-function Swait(NUMBER)
-	if NUMBER == 0 or NUMBER == nil then
-		ArtificialHB.Event:wait()
-	else
-		for i = 1, NUMBER do
-			ArtificialHB.Event:wait()
-		end
-	end
-end
 
-function swait(NUMBER)
-	if NUMBER == 0 or NUMBER == nil then
-		ArtificialHB.Event:wait()
-	else
-		for i = 1, NUMBER do
-			ArtificialHB.Event:wait()
-		end
-	end
-end
 
 function CreateMesh(MESH, PARENT, MESHTYPE, MESHID, TEXTUREID, SCALE, OFFSET)
 	local NEWMESH = IT(MESH)
@@ -425,7 +376,7 @@ end
 --\\=================================//
 
 while true do
-	Swait()
+	wait(0.1)
 	local sensitivity = 25
 	SINE = SINE + CHANGE
 	local TORSOVELOCITY = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude 
@@ -435,6 +386,6 @@ while true do
 	SINE = SINE + CHANGE
 	RWingWld.C0 = Clerp(RWingWld.C0,CFrame.new(.15,.5,.5)*CFrame.Angles(0,math.rad(105-25*math.cos(sine/25)),0),.25)
 	LWingWld.C0 = Clerp(LWingWld.C0,CFrame.new(-.15,.5,.5)*CFrame.Angles(0,math.rad(75+25*math.cos(sine/25)),0),.25)
-	wait(0)
+	wait(0.1)
 end
 unanchor()
