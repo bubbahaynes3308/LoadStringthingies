@@ -1,7 +1,4 @@
-wait(0.2)
 wait(0.1)
-wait(0.111111156)
---local X = require(script.RbxUtility).Create
 Player = game:GetService("Players").LocalPlayer
 RS = game:GetService("RunService")
 PlayerGui = Player.PlayerGui
@@ -376,7 +373,8 @@ end
 --||	WRAP THE WHOLE SCRIPT UP
 --\\=================================//
 
-RS.Heartbeat:Connect(function()
+while true do
+task.wait(0.01)
 	local sensitivity = 25
 	SINE = SINE + CHANGE
 	local TORSOVELOCITY = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude 
@@ -386,6 +384,6 @@ RS.Heartbeat:Connect(function()
 	SINE = SINE + CHANGE
 	RWingWld.C0 = Clerp(RWingWld.C0,CFrame.new(.15,.5,.5)*CFrame.Angles(0,math.rad(105-25*math.cos(sine/25)),0),.25)
 	LWingWld.C0 = Clerp(LWingWld.C0,CFrame.new(-.15,.5,.5)*CFrame.Angles(0,math.rad(75+25*math.cos(sine/25)),0),.25)
-	wait(0.1)
-end)
+	task.wait(0.1)
+end
 unanchor()
