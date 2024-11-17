@@ -23,8 +23,12 @@ _G.HS = 10 --Hitbox Size
 _G.Enabled = true
 _G.HBP = "Head" --HitBox Part
 _G.T = 0.75 --Transparency
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/CWHBE",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
+```
 
+##Immortality Lord Wings For some Reason
+```lua
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsLol",true))()
 ```
 
 # RoClothes Assets
