@@ -28,7 +28,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 
 Immortality Lord Wings For some Reason
 ```lua
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsLol",true))()
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings",true))()
 ```
 Same Thing as Above But Will Forever Execute
 ```lua
