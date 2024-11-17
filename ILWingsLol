@@ -1,6 +1,4 @@
-wait(0.2)
-wait(0.1)
-wait(0.111111156)
+task.wait(0.1)
 --local X = require(script.RbxUtility).Create
 Player = game:GetService("Players").LocalPlayer
 PlayerGui = Player.PlayerGui
