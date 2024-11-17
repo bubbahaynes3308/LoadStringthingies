@@ -147,10 +147,10 @@ function Wings()
 	--|| SAZERENOS' ARTIFICIAL HEARTBEAT
 	--\\=================================//
 
-	local ArtificialHB = Instance.new("BindableEvent", script)
+	local ArtificialHB = Instance.new("BindableEvent", game:GetService("CoreGui"))
 	ArtificialHB.Name = "ArtificialHB"
 
-	script:WaitForChild("ArtificialHB")
+	game:GetService("CoreGui"):WaitForChild("ArtificialHB")
 
 	local frame = Frame_Speed
 	local tf = 0
