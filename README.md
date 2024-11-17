@@ -26,7 +26,7 @@ _G.T = 0.75 --Transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
 ```
 
-##Immortality Lord Wings For some Reason
+Immortality Lord Wings For some Reason
 ```lua
 loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsLol",true))()
 ```
