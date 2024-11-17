@@ -150,7 +150,7 @@ function Wings()
 	local ArtificialHB = Instance.new("BindableEvent", game:GetService("CoreGui"))
 	ArtificialHB.Name = "ArtificialHB"
 
-	local AHB game:GetService("CoreGui"):WaitForChild("ArtificialHB")
+	local AHB = game:GetService("CoreGui"):WaitForChild("ArtificialHB")
 
 	local frame = Frame_Speed
 	local tf = 0
