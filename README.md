@@ -30,6 +30,11 @@ Immortality Lord Wings For some Reason
 ```lua
 loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsLol",true))()
 ```
+Same Thing as Above But Will Forever Execute
+```lua
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsButWillForeverExecute,true))()
+```
+
 
 # RoClothes Assets
 Download The RoClothesLocalMeshes.zip File
