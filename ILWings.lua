@@ -374,7 +374,7 @@ end
 --\\=================================//
 
 while true do
-task.wait(0.02)
+task.wait(0.017)
 	local sensitivity = 25
 	SINE = SINE + CHANGE
 	local TORSOVELOCITY = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude 
@@ -384,6 +384,6 @@ task.wait(0.02)
 	SINE = SINE + CHANGE
 	RWingWld.C0 = Clerp(RWingWld.C0,CFrame.new(.15,.5,.5)*CFrame.Angles(0,math.rad(105-25*math.cos(sine/25)),0),.25)
 	LWingWld.C0 = Clerp(LWingWld.C0,CFrame.new(-.15,.5,.5)*CFrame.Angles(0,math.rad(75+25*math.cos(sine/25)),0),.25)
-	task.wait(0.02)
+	task.wait(0.017)
 end
 unanchor()
