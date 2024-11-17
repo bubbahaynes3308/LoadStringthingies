@@ -439,6 +439,11 @@ end)
 	end
 	unanchor()
 end
+
+task.wait(0.01)
 Wings()
 
-Player.CharacterAdded:Connect(Wings)
+Player.CharacterAdded:Connect(function(Plr)
+	task.wait(0.01)
+	Wings()
+end)
