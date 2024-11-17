@@ -6191,6 +6191,128 @@ function RoClothes(Player)
 				17825845537,
 			}
 		},
+["Wenda"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+115846213715202,
+	113600112515016,
+	15060628997,
+			}
+		},
+["Haruka"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightArmColor3"] = Color3.fromRGB(255, 255, 255),
+				["LeftLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["RightLegColor3"] = Color3.fromRGB(255, 255, 255),
+				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
+			},
+			["Accessory"] = {
+14129391956,16042185285,117340837898980,11984878842,15357204542,17458142060,15342071116,15236658629
+			}
+		},
+["Void"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
+			},
+			["Accessory"] = {
+7485974573,6102714255,7667152036,7731123921,6202465105,7133381697,12435601613,7331780412,4773932088,5411273917
+			}
+		},
+["Ge0deIc3"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(99, 95, 98),
+				["LeftArmColor3"] = Color3.fromRGB(99, 95, 98),
+				["RightArmColor3"] = Color3.fromRGB(99, 95, 98),
+				["LeftLegColor3"] = Color3.fromRGB(99, 95, 98),
+				["RightLegColor3"] = Color3.fromRGB(99, 95, 98),
+				["TorsoColor3"] = Color3.fromRGB(99, 95, 98),
+			},
+			["Accessory"] = {
+11337378520,5805462551,12314507095,13388777415,6597426138,13611625695,12802262425,323420663,13085530760
+			}
+		},
+["Hopelessness"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(107, 50, 124),
+				["LeftArmColor3"] = Color3.fromRGB(107, 50, 124),
+				["RightArmColor3"] = Color3.fromRGB(107, 50, 124),
+				["LeftLegColor3"] = Color3.fromRGB(163, 162, 165),
+				["RightLegColor3"] = Color3.fromRGB(163, 162, 165),
+				["TorsoColor3"] = Color3.fromRGB(17, 17, 17),
+			},
+			["Accessory"] = {
+13803985279,7173021620,73002081244979,8346545669,16735996901,7731123921,13491595552,10074834666,15525034473,13476872,7029206274,15006904921,13663529356
+			}
+		},
+["FXGrayRed"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
+			},
+			["Accessory"] = {
+15728284902,10728722826,101230424897141,7485912398,140717732611002,16975671979,12868575040,6872000929
+			}
+		},
+["FXGrayBlack"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
+			},
+			["Accessory"] = {
+17418808793,7173021620,14892162637,10728722826,7485912398,140717732611002,101230424897141,7731123921,10074834666,15006904921
+
+			}
+		},
+["FXGrayWhite"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightArmColor3"] = Color3.fromRGB(116, 116, 116),
+				["LeftLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["RightLegColor3"] = Color3.fromRGB(116, 116, 116),
+				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
+			},
+			["Accessory"] = {
+16999205044,10728705859,14892550704,8346545669,140717732611002,101230424897141,14134036137,12932952776
+			}
+		},
+--[[
+["Template"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(),
+				["LeftArmColor3"] = Color3.fromRGB(),
+				["RightArmColor3"] = Color3.fromRGB(),
+				["LeftLegColor3"] = Color3.fromRGB(),
+				["RightLegColor3"] = Color3.fromRGB(),
+				["TorsoColor3"] = Color3.fromRGB(),
+			},
+			["Accessory"] = {
+
+			}
+		},
+]]
 
 	}
 
