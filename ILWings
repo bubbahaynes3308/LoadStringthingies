@@ -376,7 +376,7 @@ end
 --||	WRAP THE WHOLE SCRIPT UP
 --\\=================================//
 
-RS.RenderStepped:Connect(function()
+RS.Heartbeat:Connect(function()
 	local sensitivity = 25
 	SINE = SINE + CHANGE
 	local TORSOVELOCITY = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude 
