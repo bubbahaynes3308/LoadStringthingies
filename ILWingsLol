@@ -1,5 +1,4 @@
-local Player = game:GetService("Players").LocalPlayer
-function Wings()
+	local Player = game:GetService("Players").LocalPlayer
 	--local X = require(script.RbxUtility).Create
 	local PlayerGui = Player.PlayerGui
 	local Cam = workspace.CurrentCamera
@@ -438,12 +437,3 @@ end)
 		wait(0)
 	end
 	unanchor()
-end
-
-task.wait(0.01)
-Wings()
-
-Player.CharacterAdded:Connect(function(Plr)
-	task.wait(0.01)
-	Wings()
-end)
