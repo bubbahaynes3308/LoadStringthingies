@@ -1,8 +1,9 @@
 _G.CustomColor = _G.Color
+_G.Rainbow = _G.RGB
+_G.Material = _G.M
 _G.R= _G.RV
 _G.G= _G.GV
 _G.B= _G.BV
-_G.Rainbow = _G.RGB
 -- Script --
 NewInstance = function(instance,parent,properties)
 	local inst = Instance.new(instance)
@@ -1049,34 +1050,34 @@ tl3.Color = ColorSequence.new(Color3.new(rValue/255,gValue/255,bValue/255))
 for i, v in pairs(m:GetChildren()) do
 	if v:IsA("Part") then
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
-		v.Material = Values.Material.Value
+		v.Material = _G.Material
 	end
 end
 for i, v in pairs(mw2:GetChildren()) do
 	if v:IsA("Part") then
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
-		v.Material = Values.Material.Value
+		v.Material = _G.Material
 	end
 end
 for i, v in pairs(mw1:GetChildren()) do
 	if v:IsA("Part") then
 		v.Transparency = 0
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
-		v.Material = Values.Material.Value
+		v.Material = _G.Material
 	end
 end
 for i, v in pairs(extrawingmod1:GetChildren()) do
 	if v:IsA("Part") then
 		v.Transparency = 0
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
-		v.Material = Values.Material.Value
+		v.Material = _G.Material
 	end
 end
 for i, v in pairs(extrawingmod2:GetChildren()) do
 	if v:IsA("Part") then
 		v.Transparency = 0
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
-		v.Material = Values.Material.Value
+		v.Material = _G.Material
 	end
 end
 
