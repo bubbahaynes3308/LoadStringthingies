@@ -1,4 +1,3 @@
-
 _G.CustomColor = _G.Color
 _G.Rainbow = _G.RGB
 _G.Material = _G.M
@@ -106,27 +105,27 @@ local b = 0
 coroutine.resume(coroutine.create(function()
 	while wait() do
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			g = g + 5
 		end
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			r = r - 5
 		end
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			b = b + 5
 		end
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			g = g - 5
 		end
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			r = r + 5
 		end
 		for i = 0, 254/5 do
-			task.wait(0.017)
+			task.wait(0.01)
 			b = b - 5
 		end
 	end
@@ -135,7 +134,8 @@ end))
 function lerp(object, newCFrame, alpha)
 	return object:lerp(newCFrame, alpha)
 end
-local Create = require(script.RbxUtility).Create
+
+local Create = Instance.new
 
 CFuncs = {	
 	["Part"] = {
@@ -1044,7 +1044,7 @@ end
 
 
 while true do
-	task.wait(0.017)
+	task.wait(0.01)
 	if _G.Rainbow == true then
 		MAINRUINCOLOR = BrickColor.new(r/255,g/255,b/255)
 		refec.Color = ColorSequence.new(Color3.new(r/255,g/255,b/255))
@@ -1100,5 +1100,5 @@ while true do
 	rwing5weld.C1=clerp(rwing5weld.C1,cf(-5.75,4,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(25 + 30 * math.cos(sine / 32)),math.rad(0),math.rad(-62.5 - 15 * math.cos(sine / 32))),.3)
 	rwing6weld.C1=clerp(rwing6weld.C1,cf(-6.75,5,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(30 + 35 * math.cos(sine / 32)),math.rad(0),math.rad(-75 - 17.5 * math.cos(sine / 32))),.3)
 	sine = sine + change
-	task.wait(0.017)
+	task.wait(0.01)
 end
