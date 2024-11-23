@@ -42,7 +42,7 @@ _G.M = "Neon" --Material
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumWings.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
 ```
 
 
