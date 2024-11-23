@@ -1,9 +1,11 @@
+
 _G.CustomColor = _G.Color
 _G.Rainbow = _G.RGB
 _G.Material = _G.M
 _G.R= _G.RV
 _G.G= _G.GV
 _G.B= _G.BV
+
 -- Script --
 NewInstance = function(instance,parent,properties)
 	local inst = Instance.new(instance)
@@ -89,7 +91,6 @@ Cos = math.cos
 Sin = math.sin
 Rad = math.rad	
 CF = CFrame.new
-local Values = script.Values
 local rValue = 255
 local gValue = 255
 local bValue = 255
@@ -105,27 +106,27 @@ local b = 0
 coroutine.resume(coroutine.create(function()
 	while wait() do
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			g = g + 5
 		end
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			r = r - 5
 		end
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			b = b + 5
 		end
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			g = g - 5
 		end
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			r = r + 5
 		end
 		for i = 0, 254/5 do
-			swait()
+			task.wait(0.017)
 			b = b - 5
 		end
 	end
@@ -902,49 +903,8 @@ end
 local Color1=Torso.BrickColor
 
 --------- SazEreno's Artificial HB --------------
-ArtificialHB = Instance.new("BindableEvent", script)
-ArtificialHB.Name = "ArtificialHB"
-
-script:WaitForChild("ArtificialHB")
-Frame_Speed = 1 / 60
-frame = Frame_Speed
-tf = 0
-allowframeloss = false
-tossremainder = false
-lastframe = tick()
-script.ArtificialHB:Fire()
-
-game:GetService("RunService").Heartbeat:connect(function(s, p)
-	tf = tf + s
-	if tf >= frame then
-		if allowframeloss then
-			script.ArtificialHB:Fire()
-			lastframe = tick()
-		else
-			for i = 1, math.floor(tf / frame) do
-				script.ArtificialHB:Fire()
-			end
-			lastframe = tick()
-		end
-		if tossremainder then
-			tf = 0
-		else
-			tf = tf - frame * math.floor(tf / frame)
-		end
-	end
-end)
 
 ------------------
-function swait(num)
-	if num == 0 or num == nil then
-		ArtificialHB.Event:wait()
-	else
-		for i = 1, num do
-			ArtificialHB.Event:wait()
-		end
-	end
-end
-
 function clerp(a,b,t) 
 	local qa = {QuaternionFromCFrame(a)}
 	local qb = {QuaternionFromCFrame(b)} 
