@@ -1,4 +1,4 @@
-local engine =require(script.ModuleScript) --loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
+local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
 
 local Materials = {
 	[Enum.Material.SmoothPlastic] = 'Smooth Plastic';
