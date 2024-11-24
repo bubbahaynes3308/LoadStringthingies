@@ -44,7 +44,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 end
 
 local ILWings = function()
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
