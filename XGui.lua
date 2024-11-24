@@ -121,9 +121,9 @@ local color1 = tab1.new("color", {
 	text = "Color Of Wings",
 })
 color1.event:Connect(function(color)
-	local r = color.r
-	local g = color.g
-	local b = color.b
+	local r = color.r * 255
+	local g = color.g * 255 
+	local b = color.b * 255
 	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
 	_G.RV = r 
 	_G.GV = g 
