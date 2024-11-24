@@ -49,11 +49,14 @@ end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 		task.wait(0.01)
-	if _G.SpectrumWingsRespawn == true then
+	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == true then
 	SpectrumWings()
-	end
-	if _G.ILWingsRespawn == true then
+	task.wait(0.01)
 	ILWings()
+	elseif _G.ILWingsRespawn == true and _G.SpectrumWingsRespawn == false then
+        ILWings()
+	elseif _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
+	SpectrumWings()
 	end
 	end)
 
