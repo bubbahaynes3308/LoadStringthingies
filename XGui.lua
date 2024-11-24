@@ -39,6 +39,7 @@ _G.WaitTime = 0.01
 -------------------ILWings
 _G.WaitTime2 = 0.017
 
+
 local SpectrumWings = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
 end
@@ -47,12 +48,17 @@ local ILWings = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
 end
 
+local BothWings = function()
+spawn(function(parameters)
+ILWings()
+end)
+SpectrumWings()
+end
+
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 		task.wait(0.01)
 	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == true then
-	SpectrumWings()
-	task.wait(0.01)
-	ILWings()
+	BothWings()
 	elseif _G.ILWingsRespawn == true and _G.SpectrumWingsRespawn == false then
         ILWings()
 	elseif _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
