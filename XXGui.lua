@@ -152,7 +152,7 @@ local tab2 = window1.new({
 local button2 = tab2.new("button", {
 	text = "Execute",
 })
-button1.event:Connect(function()
+button2.event:Connect(function()
 	print("Immortality Lord's Wings Executed")
       ILWings()
 end)
