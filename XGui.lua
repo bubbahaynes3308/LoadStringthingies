@@ -1,4 +1,4 @@
-local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
+local engine =require(script.ModuleScript) --loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
 
 local Materials = {
 	[Enum.Material.SmoothPlastic] = 'Smooth Plastic';
@@ -30,7 +30,7 @@ _G.Respawn = true
 _G.Respawn2 = true
 -------------Spectrum Wings Settings
 _G.Color = true --Enable Color
-_G.RGB = false --Enable RGB
+_G.RGB = false--Enable RGB
 _G.M = "Neon" --Material
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
@@ -39,9 +39,13 @@ _G.WaitTime = 0.01
 -------------------ILWings
 _G.WaitTime2 = 0.01
 
-local ILWings = loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
+local ILWings = function()
+	loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
+end
 
-local SpectrumWings = loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+local SpectrumWings = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	if _G.Respawn == true then
@@ -77,7 +81,7 @@ end)
 
 local label1 = tab1.new("label", {
 	text = "Spectrum Star Wings Settings",
-	color = Color3.new(1, 1, 1),
+	color = Color3.new(1, 0, 0),
 })
 
 local switch1 = tab1.new("switch", {
@@ -155,7 +159,7 @@ end)
 
 local label2 = tab2.new("label", {
 	text = "IL Wings Settings",
-	color = Color3.new(1, 1, 1),
+	color = Color3.new(1, 0, 0),
 })
 
 local switch3 = tab2.new("switch", {
