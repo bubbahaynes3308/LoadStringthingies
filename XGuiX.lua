@@ -81,7 +81,7 @@ end)
 
 local label1 = tab1.new("label", {
 	text = "Spectrum Star Wings Settings",
-	color = Color3.new(1, 0, 0),
+	color = Color3.new(1, 1, 1),
 })
 
 local switch1 = tab1.new("switch", {
@@ -117,7 +117,7 @@ end)
 slider1.set(0.01)
 
 local color1 = tab1.new("color", {
-	color = Color3.new(1, 1, 1),
+	color = Color3.fromRGB(255, 255, 255),
 	text = "Color Of Wings",
 })
 color1.event:Connect(function(color)
@@ -159,7 +159,7 @@ end)
 
 local label2 = tab2.new("label", {
 	text = "IL Wings Settings",
-	color = Color3.new(1, 0, 0),
+	color = Color3.new(1, 1, 1),
 })
 
 local switch3 = tab2.new("switch", {
