@@ -26,13 +26,14 @@ _G.T = 0.75 --Transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
 ```
 
-Immortality Lord Wings For some Reason
+Immortality Lord Wings
 ```lua
+_G.WaitTime2 = 0.01 --Animation Speed Based on Task.wait Time
 loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
 ```
-Same Thing as Above But Will Forever Execute(Finding A Work Around To Infinitely Give Wings)
+X Gui
 ```lua
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWingsButWillForeverExecute",true))()
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/XGui.lua",true))()
 ```
 Spectrum Star Glitcher Wings
 ```lua
@@ -42,6 +43,7 @@ _G.M = "Neon" --Material
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
+_G.WaitTime = 0.01 --Animation Speed Based on Task.wait Time
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
 ```
 
