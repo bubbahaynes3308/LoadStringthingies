@@ -1,10 +1,6 @@
 _G.WT = _G.WaitTime2
 wait(0.1)
 Player = game:GetService("Players").LocalPlayer
-RS = game:GetService("RunService")
-PlayerGui = Player.PlayerGui
-Cam = workspace.CurrentCamera
-Backpack = Player.Backpack
 Character = Player.Character
 Humanoid = Character.Humanoid
 RootPart = Character["HumanoidRootPart"]
@@ -57,7 +53,6 @@ local NECKC0 = CF(0, 1, 0) * ANGLES(RAD(-90), RAD(0), RAD(180))
 local RIGHTSHOULDERC0 = CF(-0.5, 0, 0) * ANGLES(RAD(0), RAD(90), RAD(0))
 local LEFTSHOULDERC0 = CF(0.5, 0, 0) * ANGLES(RAD(0), RAD(-90), RAD(0))
 local UNANCHOR = true
-script.Parent = PlayerGui
 local SINE = 5
 local CHANGE = 2 / Animation_Speed
 local mde = 0
