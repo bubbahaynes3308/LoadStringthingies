@@ -26,33 +26,33 @@ local Materials = {
 };
 
 
-_G.Respawn = true
-_G.Respawn2 = true
+_G.SpectrumWingsRespawn = true
+_G.ILWingsRespawn = true
 -------------Spectrum Wings Settings
 _G.Color = true --Enable Color
-_G.RGB = false--Enable RGB
+_G.RGB = false --Enable RGB
 _G.M = "Neon" --Material
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
 _G.WaitTime = 0.01
 -------------------ILWings
-_G.WaitTime2 = 0.01
-
-local ILWings = function()
-	loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
-end
+_G.WaitTime2 = 0.017
 
 local SpectrumWings = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+end
+
+local ILWings = function()
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 		task.wait(0.01)
-	if _G.Respawn == true then
+	if _G.SpectrumWingsRespawn == true then
 	SpectrumWings()
 	end
-	if _G.Respawn2 == true then
+	if _G.ILWingsRespawn == true then
 	ILWings()
 	end
 	end)
@@ -98,7 +98,7 @@ local switch2 = tab1.new("switch", {
 switch2.set(true)
 switch2.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
-	_G.Respawn = bool
+	_G.SpectrumWingsRespawn = bool
 end)
 
 local slider1 = tab1.new("slider", {
@@ -153,8 +153,8 @@ local button2 = tab2.new("button", {
 	text = "Execute",
 })
 button2.event:Connect(function()
-	print("Immortality Lord's Wings Executed")
-      ILWings()
+print("Immortality Lord's Wings Executed")
+ILWings()
 end)
 
 local label2 = tab2.new("label", {
@@ -168,7 +168,7 @@ local switch3 = tab2.new("switch", {
 switch3.set(true)
 switch3.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
-	_G.Respawn2 = bool
+	_G.ILWingsRespawn = bool
 end)
 
 local slider2 = tab2.new("slider", {
@@ -183,4 +183,4 @@ slider2.event:Connect(function(x)
 	print("slider value: " .. x * 0.0001)
 	_G.WaitTime2 = x * 0.0001
 end)
-slider2.set(0.01)
+slider2.set(0.017)
