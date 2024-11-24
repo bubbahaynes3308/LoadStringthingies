@@ -28,7 +28,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 
 Immortality Lord Wings
 ```lua
-_G.WaitTime2 = 0.01 --Animation Speed Based on Task.wait Time
+_G.WaitTime2 = 0.017 --Animation Speed Based on Task.wait Time
 loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
 ```
 X Gui
