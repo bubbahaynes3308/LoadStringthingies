@@ -33,7 +33,7 @@ loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/r
 ```
 X Gui
 ```lua
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/XGui.lua",true))()
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/XGuiX.lua",true))()
 ```
 Spectrum Star Glitcher Wings
 ```lua
