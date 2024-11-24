@@ -37,7 +37,6 @@ ASIN = math.asin
 ABS = math.abs
 MRANDOM = math.random
 FLOOR = math.floor
-local alreadyfixing = false
 local hue = 0;
 
 --//=================================\\
@@ -93,9 +92,11 @@ end
 --|| 	          WINGS
 --\\=================================//
 
-
+local Folder = Instance.new("Folder")
+Folder.Name = "ILWings"
+Folder.Parent = Character
 local LWing = Instance.new("Part")
-LWing.Parent = Character
+LWing.Parent = Folder
 LWing.Size = Vector3.new(4, 1, 2)
 LWing.Name = "LeftWing"
 LWing.Anchored = false
@@ -111,7 +112,7 @@ LWingMsh.Scale = Vector3.new(0.0480000004, 0.0480000004, 0.0480000004)
 LWingMsh.MeshType = "FileMesh"
 LWingMsh.MeshId = "rbxassetid://1553468234"
 local RWing = Instance.new("Part")
-RWing.Parent = Character
+RWing.Parent = Folder
 RWing.Size = Vector3.new(4, 1, 2)
 RWing.Name = "RightWing"
 RWing.Anchored = false
@@ -138,12 +139,6 @@ RWingWld.Part0 = Torso
 RWingWld.Part1 = RWing
 RWingWld.C0 = CFrame.new(0.25, 0.5, 0.5)*CFrame.fromEulerAnglesXYZ(0, 1.57, 0)
 RWingWld.C1 = CFrame.new(1.1, 1, -0.95)
-
---//=================================\\
---|| SAZERENOS' ARTIFICIAL HEARTBEAT
---\\=================================//
---//=================================\\
---\\=================================//
 
 --//=================================\\
 --|| 	      SOME FUNCTIONS
