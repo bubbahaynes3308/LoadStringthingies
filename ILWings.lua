@@ -1,4 +1,4 @@
-_G.WT = _G.WaitTime
+_G.WT = _G.WaitTime2
 wait(0.1)
 Player = game:GetService("Players").LocalPlayer
 RS = game:GetService("RunService")
