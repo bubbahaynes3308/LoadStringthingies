@@ -48,13 +48,12 @@ local SpectrumWings = function()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
+		task.wait(0.01)
 	if _G.Respawn == true then
-	task.wait(0.01)
 	SpectrumWings()
 	end
 	if _G.Respawn2 == true then
-		task.wait(0.01)
-		ILWings()
+	ILWings()
 	end
 	end)
 
@@ -155,6 +154,7 @@ local button2 = tab2.new("button", {
 })
 button1.event:Connect(function()
 	print("Immortality Lord's Wings Executed")
+      ILWings()
 end)
 
 local label2 = tab2.new("label", {
