@@ -25,10 +25,38 @@ local Materials = {
 	[Enum.Material.Glass] = 'Glass';
 };
 
+local BodyParts = {
+	"Head",
+        "HumanoidRootPart",
+	
+	[[-------R6------]],
+	"Torso",
+	"Left Arm",
+	"Right Arm",
+	"Right Leg",
+	"Left Leg",
+	
+	[[-------R15------]],
+	"UpperTorso",
+	"LowerTorso",
+	"LeftUpperArm",
+	"RightUpperArm",
+	"LeftHand",
+	"RightHand",
+	"RightLowerArm",
+	"LeftLowerArm",
+	"RightUpperLeg",
+	"LeftLowerLeg",
+	"RightLowerLeg",
+	"LeftLowerLeg",
+	"RightFoot",
+	"LeftFoot",
+};
+
 
 _G.SpectrumWingsRespawn = true
 _G.ILWingsRespawn = true
--------------Spectrum Wings Settings
+-------------------Spectrum Wings Settings
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
 _G.M = "Neon" --Material
@@ -38,33 +66,41 @@ _G.BV = 0 --Blue Color
 _G.WaitTime = 0.01
 -------------------ILWings
 _G.WaitTime2 = 0.017
-
+-------------------HBE
+_G.HS = 10 --Hitbox Size
+_G.Enabled = true
+_G.HBP = "Head" --HitBox Part
+_G.T = 0.75 --Transparency
 
 local SpectrumWings = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
 end
 
 local ILWings = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+end
+
+local HBE = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
 end
 
 local BothWings = function()
-spawn(function(parameters)
-ILWings()
-end)
-SpectrumWings()
+	spawn(function(parameters)
+		ILWings()
+	end)
+	SpectrumWings()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-		task.wait(0.01)
+	task.wait(0.01)
 	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == true then
-	BothWings()
+		BothWings()
 	elseif _G.ILWingsRespawn == true and _G.SpectrumWingsRespawn == false then
-        ILWings()
+		ILWings()
 	elseif _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
-	SpectrumWings()
+		SpectrumWings()
 	end
-	end)
+end)
 
 
 
@@ -149,7 +185,7 @@ end
 
 
 dropdown1.event:Connect(function(name)
-	print("i chose " .. name .. "For the Material")
+	print("i chose " .. name .. " For the Material")
 	_G.M = name
 end)
 
@@ -162,8 +198,8 @@ local button2 = tab2.new("button", {
 	text = "Execute",
 })
 button2.event:Connect(function()
-print("Immortality Lord's Wings Executed")
-ILWings()
+	print("Immortality Lord's Wings Executed")
+	ILWings()
 end)
 
 local label2 = tab2.new("label", {
@@ -193,3 +229,70 @@ slider2.event:Connect(function(x)
 	_G.WaitTime2 = x * 0.0001
 end)
 slider2.set(0.017)
+
+--Tab 3
+local tab3 = window1.new({
+	text = "Other",
+})
+local button3 = tab3.new("button", {
+	text = "Execute RC",
+})
+button3.event:Connect(function()
+	print("RoClothes Executed")
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
+end)
+
+local button5 = tab3.new("button", {
+	text = "Execute IY",
+})
+button5.event:Connect(function()
+	print("Infinity Yeild Executed")
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+local label2 = tab3.new("label", {
+	text = "HBE",
+	color = Color3.new(1, 1, 1),
+})
+--HBE
+local dock1 = tab3.new("dock")
+
+local button4 = dock1.new("button", {text = "Execute HBE"})
+button4.event:Connect(function()
+	print("HBE Executed")
+	HBE()
+end)
+
+local slider2 = dock1.new("slider", { size = 75, text = "Size", min = 1, max = 30 })
+slider2.event:Connect(function(x)
+	print("HB Size: ", x)
+	_G.HS = x
+end)
+
+local dropdown2 = tab3.new("dropdown", {
+	text = "Body Part",
+})
+
+for i, v in pairs(BodyParts) do
+	dropdown2.new(v)
+end
+
+
+dropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " For the Body Part")
+	_G.HBP = name
+end)
+
+local slider3 = tab3.new("slider", {
+	text = "Transparency",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 0,
+	max = 10,
+	value = 1,
+	rounding = 1,
+})
+slider3.event:Connect(function(x)
+	print("slider value: " .. x * 0.1)
+	_G.T = x * 0.1
+end)
+slider3.set(5)
