@@ -71,6 +71,14 @@ _G.HS = 10 --Hitbox Size
 _G.Enabled = true
 _G.HBP = "Head" --HitBox Part
 _G.T = 0.75 --Transparency
+------------------R15ToR6
+_G.Method = 1 -- 1/Maximum (2 is Maximum)
+_G.TorsoType = "Male" -- Male/Female
+_G.RobloxShirt = "true" -- true/false
+_G.SizeLock = "false" -- true/false
+_G.R15PT = "true" -- true/false
+_G.R6PT = "false" -- true/false
+_G.Target = game.Players.LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
 
 local SpectrumWings = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
@@ -78,6 +86,10 @@ end
 
 local ILWings = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+end
+
+local R15ToR6 = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
 end
 
 local HBE = function()
