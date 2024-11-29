@@ -262,6 +262,15 @@ button5.event:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
+local button6 = tab3.new("button", {
+	text = "Regretevator Paranoia",
+})
+button6.event:Connect(function()
+	print("Infinity Yeild Executed")
+	loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+
+end)
+
 local label2 = tab3.new("label", {
 	text = "HBE",
 	color = Color3.new(1, 1, 1),
