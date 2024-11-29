@@ -47,6 +47,11 @@ _G.WaitTime = 0.01 --Animation Speed Based on Task.wait Time
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
 ```
 
+Regretevator Paranoia(Universal but most used in regretevator and is also permenant)
+```lua
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+```
+
 
 # RoClothes Assets
 Download The RoClothesLocalMeshes.zip File
