@@ -20,7 +20,6 @@ ANXIETY.IgnoreGuiInset = true
 ANXIETY.DisplayOrder = -50000
 ANXIETY.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ANXIETY.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-ANXIETY.Parent = game:GetService("MaterialService"):WaitForChild("MainModule"):WaitForChild("Other"):WaitForChild("Paranoia"):WaitForChild("X"):WaitForChild("LocalScript"):WaitForChild("Paranoia")
 
 local fearMusic = Instance.new("Sound")
 fearMusic.Name = "fearMusic"
