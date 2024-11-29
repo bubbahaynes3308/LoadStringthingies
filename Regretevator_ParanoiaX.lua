@@ -88,7 +88,7 @@ Gui.Enabled = true
 		ReverbFX.WetLevel = -80
         Gui.Parent = CoreUi
 		ColorCorrect.Parent = Lighting
-		if game.GameId == 4972273297 then
+		if game.PlaceId == 4972273297 then
 		ChorusFX.Parent = SService.MASTER
 		EchoFX.Parent = SService.MASTER
 		EqualizerFX.Parent = SService.MASTER
