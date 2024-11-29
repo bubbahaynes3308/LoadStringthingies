@@ -101,7 +101,7 @@ Gui.Enabled = true
 			EchoFX.Parent = SService
 			EqualizerFX.Parent = SService
 			ReverbFX.Parent = SService
-			EqualizerFX2.Parent = SService
+			--EqualizerFX2.Parent = SService
 			FlangeFX.Parent = SService
 		end
 
