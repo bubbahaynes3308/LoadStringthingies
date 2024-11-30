@@ -1,6 +1,8 @@
 _G.CustomColor = _G.Color
-_G.Rainbow = _G.RGB
+_G.Rainbow = _G.ZRGB
 _G.Material = _G.M
+_G.TZ = _G.TransZ
+_G.RZ = _G.ReflectZ
 _G.R= _G.RV
 _G.G= _G.GV
 _G.B= _G.BV
@@ -1016,33 +1018,40 @@ tl5.Color = ColorSequence.new(Color3.new(rValue/255,gValue/255,bValue/255))
 tl6.Color = ColorSequence.new(Color3.new(rValue/255,gValue/255,bValue/255))
 for i, v in pairs(m:GetChildren()) do
 	if v:IsA("Part") then
+		v.Transparency = _G.TZ
+		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
 	end
 end
 for i, v in pairs(mw2:GetChildren()) do
 	if v:IsA("Part") then
+		v.Transparency = _G.TZ
+		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
 	end
 end
 for i, v in pairs(mw1:GetChildren()) do
 	if v:IsA("Part") then
-		v.Transparency = 0
+		v.Transparency = _G.TZ
+		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
 	end
 end
 for i, v in pairs(extrawingmod1:GetChildren()) do
 	if v:IsA("Part") then
-		v.Transparency = 0
+		v.Transparency = _G.TZ
+		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
 	end
 end
 for i, v in pairs(extrawingmod2:GetChildren()) do
 	if v:IsA("Part") then
-		v.Transparency = 0
+		v.Transparency = _G.TZ
+		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
 	end
