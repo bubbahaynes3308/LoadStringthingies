@@ -1,8 +1,6 @@
 local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
 
 local Materials = {
-	[Enum.Material.SmoothPlastic] = 'Smooth Plastic';
-	[Enum.Material.Plastic] = 'Plastic';
 	[Enum.Material.Brick] = 'Brick';
 	[Enum.Material.Cobblestone] = 'Cobblestone';
 	[Enum.Material.Concrete] = 'Concrete';
@@ -11,6 +9,7 @@ local Materials = {
 	[Enum.Material.Fabric] = 'Fabric';
 	[Enum.Material.Foil] = 'Foil';
 	[Enum.Material.ForceField] = 'ForceField';
+	[Enum.Material.Glass] = 'Glass';
 	[Enum.Material.Granite] = 'Granite';
 	[Enum.Material.Grass] = 'Grass';
 	[Enum.Material.Ice] = 'Ice';
@@ -18,24 +17,25 @@ local Materials = {
 	[Enum.Material.Metal] = 'Metal';
 	[Enum.Material.Neon] = 'Neon';
 	[Enum.Material.Pebble] = 'Pebble';
+	[Enum.Material.Plastic] = 'Plastic';
 	[Enum.Material.Sand] = 'Sand';
 	[Enum.Material.Slate] = 'Slate';
-	[Enum.Material.Wood] = 'Wood';
+	[Enum.Material.SmoothPlastic] = 'Smooth Plastic';
 	[Enum.Material.WoodPlanks] = 'Wood Planks';
-	[Enum.Material.Glass] = 'Glass';
+	[Enum.Material.Wood] = 'Wood';
 };
 
 local BodyParts = {
 	"Head",
-        "HumanoidRootPart",
-	
+	"HumanoidRootPart",
+
 	[[-------R6------]],
 	"Torso",
 	"Left Arm",
 	"Right Arm",
 	"Right Leg",
 	"Left Leg",
-	
+
 	[[-------R15------]],
 	"UpperTorso",
 	"LowerTorso",
@@ -46,7 +46,7 @@ local BodyParts = {
 	"RightLowerArm",
 	"LeftLowerArm",
 	"RightUpperLeg",
-	"LeftLowerLeg",
+	"LeftUpperLeg",
 	"RightLowerLeg",
 	"LeftLowerLeg",
 	"RightFoot",
@@ -60,11 +60,20 @@ _G.ILWingsRespawn = true
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
 _G.M = "Neon" --Material
+_G.TransZ = 0.5
+_G.ReflectZ = 0.5
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
 _G.WaitTime = 0.01
 -------------------ILWings
+_G.ZRGB = false
+_G.M2 = "Glass"
+_G.TransX = 0.5
+_G.ReflectX = 0.5
+_G.RV2 = 255
+_G.GV2 = 255
+_G.BV2 = 255
 _G.WaitTime2 = 0.017
 -------------------HBE
 _G.HS = 10 --Hitbox Size
@@ -89,7 +98,7 @@ local ILWings = function()
 end
 
 local R15ToR6 = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
 end
 
 local HBE = function()
@@ -122,7 +131,7 @@ local window1 = engine.new({
 })
 
 window1.open()
----------------------Tab1
+-------------------------------------------------------------------------------------------------------------------Tab1
 local tab1 = window1.new({
 	text = "Spectrum Wings",
 })
@@ -186,11 +195,21 @@ color1.event:Connect(function(color)
 	_G.BV = b
 end)
 
+local slider5 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+slider5.event:Connect(function(x)
+	print("Transparency: ", x * 0.01)
+	_G.TransZ = x * 0.01
+end)
+
+local slider6 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+slider6.event:Connect(function(x)
+	print("Reflectance: ", x * 0.01)
+	_G.ReflectZ = x * 0.01
+end)
+
 local dropdown1 = tab1.new("dropdown", {
 	text = "Material",
 })
-
-table.sort(Materials)
 for i, v in pairs(Materials) do
 	dropdown1.new(v)
 end
@@ -201,7 +220,7 @@ dropdown1.event:Connect(function(name)
 	_G.M = name
 end)
 
---------------------Tab2
+------------------------------------------------------------------------------------------------------------------Tab2
 local tab2 = window1.new({
 	text = "IL Wings",
 })
@@ -228,6 +247,53 @@ switch3.event:Connect(function(bool)
 	_G.ILWingsRespawn = bool
 end)
 
+local switch3 = tab2.new("switch", {
+	text = "RGB";
+})
+switch3.set(false)
+switch3.event:Connect(function(bool)
+	print("RGB set to: ", bool)
+	_G.ZRGB = bool
+end)
+
+local dropdown2 = tab1.new("dropdown", {
+	text = "Material",
+})
+for i, v in pairs(Materials) do
+	dropdown2.new(v)
+end
+
+dropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " For the Material")
+	_G.M2 = name
+end)
+
+local color2 = tab2.new("color", {
+	color = Color3.fromRGB(255, 255, 255),
+	text = "Color Of Wings",
+})
+color2.event:Connect(function(color)
+	local r = color.r * 255
+	local g = color.g * 255 
+	local b = color.b * 255
+	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
+	_G.RV2 = r 
+	_G.GV2 = g 
+	_G.BV2 = b
+end)
+
+local slider3 = tab2.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+slider3.event:Connect(function(x)
+	print("Transparency: ", x * 0.01)
+	_G.TransX = x * 0.01
+end)
+
+local slider4 = tab2.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+slider4.event:Connect(function(x)
+	print("Reflectance: ", x * 0.01)
+	_G.ReflectX = x * 0.01
+end)
+
 local slider2 = tab2.new("slider", {
 	text = "Task.Wait() Time",
 	color = Color3.new(0.8, 0.5, 0),
@@ -240,9 +306,9 @@ slider2.event:Connect(function(x)
 	print("slider value: " .. x * 0.0001)
 	_G.WaitTime2 = x * 0.0001
 end)
-slider2.set(0.017)
+slider2.set(0.015)
 
---Tab 3
+-------------------------------------------------------------------------------------------------------------------Tab 3
 local tab3 = window1.new({
 	text = "Other",
 })
@@ -271,20 +337,20 @@ button6.event:Connect(function()
 
 end)
 
-local button6 = tab3.new("button", {
-	text = "Execute Dark Dex V5",
-})
-button6.event:Connect(function()
-	print("Dark Dex V5 Executed")
-	loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
-end)
-
 local button7 = tab3.new("button", {
 	text = "Execute IY Dex",
 })
 button7.event:Connect(function()
 	print("IY Dex Executed")
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end)
+
+local button8 = tab3.new("button", {
+	text = "Execute Dark Dex V5",
+})
+button8.event:Connect(function()
+	print("Dark Dex V5 Executed")
+	loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
 end)
 
 local label2 = tab3.new("label", {
