@@ -71,9 +71,9 @@ _G.ZRGB = false
 _G.M2 = "Glass"
 _G.TransX = 0.5
 _G.ReflectX = 0.5
-_G.RV2 = 255
-_G.GV2 = 255
-_G.BV2 = 255
+_G.RV2 = 0
+_G.GV2 = 0
+_G.BV2 = 0
 _G.WaitTime2 = 0.017
 -------------------HBE
 _G.HS = 10 --Hitbox Size
@@ -182,7 +182,7 @@ end)
 slider1.set(0.01)
 
 local color1 = tab1.new("color", {
-	color = Color3.fromRGB(255, 255, 255),
+	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Wings",
 })
 color1.event:Connect(function(color)
@@ -271,7 +271,7 @@ dropdown2.event:Connect(function(name)
 end)
 
 local color2 = tab2.new("color", {
-	color = Color3.fromRGB(255, 255, 255),
+	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Wings",
 })
 color2.event:Connect(function(color)
