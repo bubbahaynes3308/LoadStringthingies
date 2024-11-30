@@ -1,5 +1,5 @@
 _G.CustomColor = _G.Color
-_G.Rainbow = _G.ZRGB
+_G.Rainbow = _G.RGB
 _G.Material = _G.M
 _G.TZ = _G.TransZ
 _G.RZ = _G.ReflectZ
