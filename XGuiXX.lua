@@ -211,6 +211,7 @@ local dropdown1 = tab1.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
+	table.sort(v)
 	dropdown1.new(v)
 end
 
@@ -260,6 +261,7 @@ local dropdown2 = tab2.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
+	table.sort(v)
 	dropdown2.new(v)
 end
 
