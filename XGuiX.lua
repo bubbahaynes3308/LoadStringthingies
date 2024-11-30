@@ -256,7 +256,7 @@ switch3.event:Connect(function(bool)
 	_G.ZRGB = bool
 end)
 
-local dropdown2 = tab1.new("dropdown", {
+local dropdown2 = tab2.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
