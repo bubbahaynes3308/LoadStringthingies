@@ -1,3 +1,10 @@
+_G.Rxinbow = _G.ZRGB
+_G.Material2 = _G.M2
+_G.Reflecance2 = _G.ReflectX
+_G.Transparency2= _G.TransX
+_G.R2= _G.RV2
+_G.G2= _G.GV2
+_G.B2= _G.BV2
 _G.WT = _G.WaitTime2
 wait(0.1)
 Player = game:GetService("Players").LocalPlayer
@@ -88,6 +95,38 @@ function cn2(x,y,z)
 	return cn(x*SIZEE,y*SIZEE,z*SIZEE)
 end
 
+local r = 255
+local g = 0
+local b = 0
+coroutine.resume(coroutine.create(function()
+	while wait() do
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			g = g + 5
+		end
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			r = r - 5
+		end
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			b = b + 5
+		end
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			g = g - 5
+		end
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			r = r + 5
+		end
+		for i = 0, 254/5 do
+			task.wait(_G.WT)
+			b = b - 5
+		end
+	end
+end))
+
 --//=================================\\
 --|| 	          WINGS
 --\\=================================//
@@ -97,15 +136,18 @@ Folder.Name = "ILWings"
 Folder.Parent = Character
 local LWing = Instance.new("Part")
 LWing.Parent = Folder
-LWing.Size = Vector3.new(4, 1, 2)
+LWing.Size = Vector3.new(0.001, 0.001, 0.001)
 LWing.Name = "LeftWing"
 LWing.Anchored = false
 LWing.Locked = true
-LWing.Color = Color3.fromRGB(0,0,0)
+LWing.Color = Color3.fromRGB(_G.R2,_G.G2,_G.B2)
+LWing.Material = _G.Material2
+LWing.Transparency = _G.Transparency2
+LWing.Reflectance = _G.Reflecance2
 LWing.CanCollide = false
 LWing.CanTouch = false
 LWing.CanQuery = false
-LWing.Massless = false
+LWing.Massless = true
 local LWingMsh = Instance.new("SpecialMesh")
 LWingMsh.Parent = LWing
 LWingMsh.Offset = Vector3.new()
@@ -114,15 +156,18 @@ LWingMsh.MeshType = "FileMesh"
 LWingMsh.MeshId = "rbxassetid://1553468234"
 local RWing = Instance.new("Part")
 RWing.Parent = Folder
-RWing.Size = Vector3.new(4, 1, 2)
+RWing.Size = Vector3.new(0.001, 0.001, 0.001)
 RWing.Name = "RightWing"
 RWing.Anchored = false
 RWing.Locked = true
-RWing.Color = Color3.fromRGB(0,0,0)
+RWing.Color = Color3.fromRGB(_G.R2,_G.G2,_G.B2)
+RWing.Material = _G.Material2
+RWing.Transparency = _G.Transparency2
+RWing.Reflectance = _G.Reflecance2
 RWing.CanCollide = false
 RWing.CanTouch = false
 RWing.CanQuery = false
-RWing.Massless = false
+RWing.Massless = true
 local RWingMsh = Instance.new("SpecialMesh")
 RWingMsh.Parent = RWing
 RWingMsh.Offset = Vector3.new()
@@ -367,7 +412,14 @@ end
 --\\=================================//
 
 while true do
-task.wait(_G.WT)
+	task.wait(_G.WT)
+	if _G.Rxinbow == true then
+		for _, v in pairs(Folder:GetChildren()) do
+			if v:IsA("Part") then
+		v.Color = Color3.new(r/255,g/255,b/255)
+			end
+		end
+		end
 	local sensitivity = 25
 	SINE = SINE + CHANGE
 	local TORSOVELOCITY = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude 
