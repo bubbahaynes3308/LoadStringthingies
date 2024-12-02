@@ -1,5 +1,10 @@
 # LoadStrings:
 
+X Gui
+```lua
+loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/XGuiX.lua",true))()
+```
+
 R15 To R6:
 ```lua
 _G.Method = 1 -- 1/Maximum (2 is Maximum)
@@ -31,10 +36,7 @@ Immortality Lord Wings
 _G.WaitTime2 = 0.017 --Animation Speed Based on Task.wait Time
 loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
 ```
-X Gui
-```lua
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/XGuiX.lua",true))()
-```
+
 Spectrum Star Glitcher Wings
 ```lua
 _G.Color = false --Enable Color
