@@ -133,7 +133,7 @@ local window1 = engine.new({
 window1.open()
 -------------------------------------------------------------------------------------------------------------------Tab1
 local tab1 = window1.new({
-	text = "Spectrum Wings",
+	text = "SWings",
 })
 
 local button1 = tab1.new("button", {
@@ -149,15 +149,6 @@ local label1 = tab1.new("label", {
 	color = Color3.new(1, 1, 1),
 })
 
-local switch1 = tab1.new("switch", {
-	text = "RGB";
-})
-switch1.set(false)
-switch1.event:Connect(function(bool)
-	print("RGB set to: ", bool)
-	_G.RGB = bool
-end)
-
 local switch2 = tab1.new("switch", {
 	text = "On Respawn Re Execute?";
 })
@@ -165,6 +156,15 @@ switch2.set(true)
 switch2.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
 	_G.SpectrumWingsRespawn = bool
+end)
+
+local switch1 = tab1.new("switch", {
+	text = "RGB";
+})
+switch1.set(false)
+switch1.event:Connect(function(bool)
+	print("RGB set to: ", bool)
+	_G.RGB = bool
 end)
 
 local slider1 = tab1.new("slider", {
@@ -223,7 +223,7 @@ end)
 
 ------------------------------------------------------------------------------------------------------------------Tab2
 local tab2 = window1.new({
-	text = "IL Wings",
+	text = "ILWings",
 })
 
 local button2 = tab2.new("button", {
@@ -257,18 +257,21 @@ switch3.event:Connect(function(bool)
 	_G.ZRGB = bool
 end)
 
-local dropdown2 = tab2.new("dropdown", {
-	text = "Material",
+local slider2 = tab2.new("slider", {
+	text = "Task.Wait() Time",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 1,
+	max = 1000,
+	value = 1,
+	rounding = 1,
 })
-for i, v in pairs(Materials) do
-	table.sort(Materials)
-	dropdown2.new(v)
-end
-
-dropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " For the Material")
-	_G.M2 = name
+slider2.event:Connect(function(x)
+	print("slider value: " .. x * 0.0001)
+	_G.WaitTime2 = x * 0.0001
 end)
+slider2.set(0.015)
+
+
 
 local color2 = tab2.new("color", {
 	color = Color3.fromRGB(0, 0, 0),
@@ -284,8 +287,8 @@ color2.event:Connect(function(color)
 	_G.BV2 = b
 end)
 
-local slider3 = tab2.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
-slider3.event:Connect(function(x)
+local slider7 = tab2.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+slider7.event:Connect(function(x)
 	print("Transparency: ", x * 0.01)
 	_G.TransX = x * 0.01
 end)
@@ -296,20 +299,104 @@ slider4.event:Connect(function(x)
 	_G.ReflectX = x * 0.01
 end)
 
-local slider2 = tab2.new("slider", {
-	text = "Task.Wait() Time",
+local dropdown2 = tab2.new("dropdown", {
+	text = "Material",
+})
+for i, v in pairs(Materials) do
+	table.sort(Materials)
+	dropdown2.new(v)
+end
+
+dropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " For the Material")
+	_G.M2 = name
+end)
+
+-------------------------------------------------------------------------------------------------------------------Tab 4
+
+local tab4 = window1.new({
+	text = "R15ToR6",
+})
+
+local button7 = tab4.new("button", {text = "R6ify"})
+button7.event:Connect(function()
+	print("Converted R15 to R6 Cliently")
+	R15ToR6()
+end)
+
+local slider8 = tab4.new("slider", {
+	text = "Method",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
-	max = 1000,
+	max = 2,
 	value = 1,
 	rounding = 1,
 })
-slider2.event:Connect(function(x)
-	print("slider value: " .. x * 0.0001)
-	_G.WaitTime2 = x * 0.0001
+slider8.event:Connect(function(x)
+	print("Method: " .. x)
+	_G.Method = x 
 end)
-slider2.set(0.015)
+slider8.set(1)
 
+local switch4 = tab4.new("switch", {
+	text = "Roblox Shirt";
+})
+switch4.set(true)
+switch4.event:Connect(function(bool)
+	print("Roblox Shirt set to: ", bool)
+	_G.RobloxShirt = bool
+end)
+
+local switch5 = tab4.new("switch", {
+	text = "Size Lock";
+})
+switch5.set(false)
+switch5.event:Connect(function(bool)
+	print("Size Lock set to: ", bool)
+	_G.SizeLock = bool
+end)
+
+local switch6 = tab4.new("switch", {
+	text = "R15 Part Transparency";
+})
+switch6.set(true)
+switch6.event:Connect(function(bool)
+	print("R15PT set to: ", bool)
+	_G.R15PT = bool
+end)
+
+local switch7 = tab4.new("switch", {
+	text = "R6 Part Transparency";
+})
+switch7.set(false)
+switch7.event:Connect(function(bool)
+	print("R6PT set to: ", bool)
+	_G.R6PT = bool
+end)
+
+local dropdown3 = tab4.new("dropdown", {
+	text = "Target",
+})
+
+dropdown3.new("LocalPlayer")
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+	dropdown3.new(v.Name)
+end
+
+dropdown3.event:Connect(function(name)
+	_G.Target = game:GetService("Players")[name]
+	print("i chose " .. name)
+end)
+
+local dropdown4 = tab4.new("dropdown", {
+	text = "Torso Type",
+})
+dropdown4.new("Male")
+dropdown4.new("Female")
+dropdown4.event:Connect(function(name)
+	_G.TorsoType = name
+	print("i chose " .. name)
+end)
 -------------------------------------------------------------------------------------------------------------------Tab 3
 local tab3 = window1.new({
 	text = "Other",
@@ -355,11 +442,12 @@ button8.event:Connect(function()
 	loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
 end)
 
+--HBE
 local label2 = tab3.new("label", {
 	text = "HBE",
 	color = Color3.new(1, 1, 1),
 })
---HBE
+
 local dock1 = tab3.new("dock")
 
 local button4 = dock1.new("button", {text = "Execute HBE"})
@@ -401,3 +489,5 @@ slider3.event:Connect(function(x)
 	_G.T = x * 0.1
 end)
 slider3.set(5)
+
+
