@@ -54,14 +54,14 @@ local BodyParts = {
 };
 
 
-_G.SpectrumWingsRespawn = true
-_G.ILWingsRespawn = true
+_G.SpectrumWingsRespawn = false
+_G.ILWingsRespawn = false
 -------------------Spectrum Wings Settings
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
 _G.M = "Neon" --Material
-_G.TransZ = 0.5
-_G.ReflectZ = 0.5
+_G.TransZ = 0
+_G.ReflectZ = 0
 _G.RV = 0 --Red Color
 _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
@@ -69,8 +69,8 @@ _G.WaitTime = 0.01
 -------------------ILWings
 _G.ZRGB = false
 _G.M2 = "Glass"
-_G.TransX = 0.5
-_G.ReflectX = 0.5
+_G.TransX = 0
+_G.ReflectX = 0
 _G.RV2 = 0
 _G.GV2 = 0
 _G.BV2 = 0
@@ -152,7 +152,7 @@ local label1 = tab1.new("label", {
 local switch2 = tab1.new("switch", {
 	text = "On Respawn Re Execute?";
 })
-switch2.set(true)
+switch2.set(false)
 switch2.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
 	_G.SpectrumWingsRespawn = bool
@@ -242,7 +242,7 @@ local label2 = tab2.new("label", {
 local switch3 = tab2.new("switch", {
 	text = "On Respawn Re Execute?";
 })
-switch3.set(true)
+switch3.set(false)
 switch3.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
 	_G.ILWingsRespawn = bool
