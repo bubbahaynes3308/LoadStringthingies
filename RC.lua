@@ -6139,6 +6139,32 @@ function RoClothes(Player)
 
 			}
 		},
+                ["Shark2"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(205,205,205),
+				["LeftArmColor3"] = Color3.fromRGB(205,205,205),
+				["RightArmColor3"] = Color3.fromRGB(205,205,205),
+				["LeftLegColor3"] = Color3.fromRGB(205,205,205),
+				["RightLegColor3"] = Color3.fromRGB(205,205,205),
+				["TorsoColor3"] = Color3.fromRGB(205,205,205),
+			},
+			["Accessory"] = {
+				17649531118;
+				4773932088;
+				17649520840;
+				16112752598;
+				13491595552;
+				7731123921;
+				14023758925;
+				17649513846;
+				17636708724;
+				17634290161;
+				7173021620;
+				--Faces
+                                17649505815;
+
+			}
+		},
 		["Ic3y"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(50, 50, 50),
@@ -6296,6 +6322,38 @@ function RoClothes(Player)
 			},
 			["Accessory"] = {
 16999205044,10728705859,14892550704,8346545669,140717732611002,101230424897141,14134036137,12932952776
+			}
+		},
+["XGray"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(105, 105, 105),
+				["LeftArmColor3"] = Color3.fromRGB(105, 105, 105),
+				["RightArmColor3"] = Color3.fromRGB(105, 105, 105),
+				["LeftLegColor3"] = Color3.fromRGB(105, 105, 105),
+				["RightLegColor3"] = Color3.fromRGB(105, 105, 105),
+				["TorsoColor3"] = Color3.fromRGB(105, 105, 105),
+			},
+			["Accessory"] = {
+                        131370815777054;
+13491595552;
+7731123921;
+7173021620;
+18408920592;
+10945217165;
+
+			}
+		},
+["FL-X"] = {
+			["Body Color"] = {
+				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightArmColor3"] = Color3.fromRGB(0, 0, 0),
+				["LeftLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["RightLegColor3"] = Color3.fromRGB(0, 0, 0),
+				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
+			},
+			["Accessory"] = {
+16961182161,123435464536059,17537172140,6785481051,5313561767,7540653662,12369145028,6076716760,5700157892,17549292698,6102712313,6076723579
 			}
 		},
 --[[
