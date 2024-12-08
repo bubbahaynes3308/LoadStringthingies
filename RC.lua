@@ -8842,7 +8842,7 @@ function RoClothes(Player)
 
 					if PropertyName == "Color" then
 						Textbox.Text = tostring(Value.Color)
-						Textbox.TextColor3 = Value.Color
+						Textbox.TextColor3 = Color3.fromRGB(Value.Color.R, Value.Color.G, Value.Color.B)
 						Textbox.TextStrokeTransparency = 0
 						Textbox.TextStrokeColor3 = Color3.new(1,1,1)
 					else
