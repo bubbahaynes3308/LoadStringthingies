@@ -1,6 +1,6 @@
 local Target = game:GetService("Players").LocalPlayer
 local Player = Target.Character
-local Furrything = game:GetObjects('rbxassetid://97685755805615')[1]:Clone()
+local Furrything = game:GetObjects('rbxassetid://97685755805615')[1]:Clone() --game:GetObjects('rbxasset://FurrymodelThing.rbxm')[1]:Clone() if the asset ever Gets Deleted
 Furrything.Parent = Player
 
 local Head = Furrything.Welds["Head"]
