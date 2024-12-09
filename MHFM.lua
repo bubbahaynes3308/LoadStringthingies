@@ -17,6 +17,7 @@ Player["Left Arm"].Transparency = 1
 Player["Left Leg"].Transparency = 1
 Player["Right Arm"].Transparency = 1
 Player["Right Leg"].Transparency = 1
+Player["Head"]:FindFirstChildOfClass("Decal").Transparency = 1
 
 Player["Head"].Color = Color3.fromRGB(226, 154, 66)
 Player["Torso"].Color = Color3.fromRGB(226, 154, 66)
