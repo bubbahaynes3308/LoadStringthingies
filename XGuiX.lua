@@ -53,7 +53,8 @@ local BodyParts = {
 	"LeftFoot",
 };
 
-
+_G.MMFDRespawn = false
+_G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
 -------------------Spectrum Wings Settings
@@ -105,21 +106,35 @@ local HBE = function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
 end
 
-local BothWings = function()
-	spawn(function(parameters)
-		ILWings()
-	end)
-	SpectrumWings()
+local MMFD = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MMFD",true))()
+end
+
+local MHF = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-	task.wait(0.01)
-	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == true then
-		BothWings()
-	elseif _G.ILWingsRespawn == true and _G.SpectrumWingsRespawn == false then
+	task.wait(0.025)
+	if _G.MMFDRespawn == true then
+		spawn(function()
+			MMFD()
+		end)
+	end
+	if _G.MHFRespawn == true then
+		spawn(function()
+			MHF()
+		end)
+	end
+	if _G.ILWingsRespawn == true then
+		spawn(function()
 		ILWings()
-	elseif _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
-		SpectrumWings()
+	end)
+		end
+	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
+		spawn(function()
+			SpectrumWings()
+		end)
 	end
 end)
 
@@ -315,7 +330,7 @@ end)
 -------------------------------------------------------------------------------------------------------------------Tab 4
 
 local tab4 = window1.new({
-	text = "R15ToR6",
+	text = "R15TR6&Morphs",
 })
 
 local button7 = tab4.new("button", {text = "R6ify"})
@@ -397,6 +412,56 @@ dropdown4.event:Connect(function(name)
 	_G.TorsoType = name
 	print("i chose " .. name)
 end)
+
+local label3 = tab4.new("label", {
+	text = "Morphs",
+	color = Color3.new(1, 1, 1),
+})
+
+local button9 = tab4.new("button", {
+	text = "MidnightHorrorsFurry",
+})
+button9.event:Connect(function()
+	print("Midnight Horrors Furry Executed")
+	MHF()
+end)
+
+local switch9 = tab4.new("switch", {
+	text = "Reapply On Respawn";
+})
+switch9.set(false)
+switch9.event:Connect(function(bool)
+	print("Re Execute on Respawn set to: ", bool)
+	_G.MHFRespawn = bool
+end)
+
+
+local label4 = tab4.new("label", {
+	text = "-----------------",
+	color = Color3.new(1, 1, 1),
+})
+
+
+local button10 = tab4.new("button", {
+	text = "MarshmellowDemon",
+})
+button10.event:Connect(function()
+	print("Marshmellow Demon Executed")
+	MMFD()
+end)
+
+local switch8 = tab4.new("switch", {
+	text = "Reapply On Respawn";
+})
+switch8.set(false)
+switch8.event:Connect(function(bool)
+	print("Re Execute on Respawn set to: ", bool)
+	_G.MMFDRespawn = bool
+end)
+
+
+
+
 -------------------------------------------------------------------------------------------------------------------Tab 3
 local tab3 = window1.new({
 	text = "Other",
@@ -418,7 +483,7 @@ button5.event:Connect(function()
 end)
 
 local button6 = tab3.new("button", {
-	text = "Regretevator Paranoia",
+	text = "Regret Paranoia",
 })
 button6.event:Connect(function()
 	print("Regretevator Paranoia Executed")
@@ -489,5 +554,4 @@ slider3.event:Connect(function(x)
 	_G.T = x * 0.1
 end)
 slider3.set(5)
-
 
