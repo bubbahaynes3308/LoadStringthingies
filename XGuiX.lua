@@ -91,50 +91,54 @@ _G.R6PT = "false" -- true/false
 _G.Target = game.Players.LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
 
 local SpectrumWings = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
+	end)
 end
 
 local ILWings = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+	spawn(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+		end)
 end
 
 local R15ToR6 = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
+	spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
+			end)
 end
 
 local HBE = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
+	spawn(function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
+				end)
 end
 
 local MMFD = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MMFD",true))()
+	spawn(function()
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MMFD",true))()
+					end)
 end
 
 local MHF = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
+	spawn(function()
+							loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
+						end)
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(0.025)
 	if _G.MMFDRespawn == true then
-		spawn(function()
 			MMFD()
-		end)
 	end
 	if _G.MHFRespawn == true then
-		spawn(function()
 			MHF()
-		end)
 	end
 	if _G.ILWingsRespawn == true then
-		spawn(function()
 		ILWings()
-	end)
 		end
-	if _G.SpectrumWingsRespawn == true and _G.ILWingsRespawn == false  then
-		spawn(function()
+	if _G.SpectrumWingsRespawn == true then
 			SpectrumWings()
-		end)
 	end
 end)
 
