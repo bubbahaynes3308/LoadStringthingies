@@ -625,7 +625,9 @@ local button3 = tab3.new("button", {
 })
 button3.event:Connect(function()
 	print("RoClothes Executed")
+		spawn(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
+				end)
 end)
 
 local button5 = tab3.new("button", {
@@ -633,7 +635,9 @@ local button5 = tab3.new("button", {
 })
 button5.event:Connect(function()
 	print("Infinity Yeild Executed")
+		spawn(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+						end)
 end)
 
 local button6 = tab3.new("button", {
@@ -641,7 +645,9 @@ local button6 = tab3.new("button", {
 })
 button6.event:Connect(function()
 	print("Regretevator Paranoia Executed")
+		spawn(function()
 	loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+								end)
 
 end)
 
@@ -650,7 +656,9 @@ local button7 = tab3.new("button", {
 })
 button7.event:Connect(function()
 	print("IY Dex Executed")
+		spawn(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+										end)
 end)
 
 local button8 = tab3.new("button", {
@@ -658,7 +666,9 @@ local button8 = tab3.new("button", {
 })
 button8.event:Connect(function()
 	print("Dark Dex V5 Executed")
+		spawn(function()
 	loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
+			end)
 end)
 
 --HBE
