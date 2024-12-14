@@ -9,14 +9,9 @@ _G.WT = _G.WaitTime2
 wait(0.1)
 Player = game:GetService("Players").LocalPlayer
 Character = Player.Character
-Humanoid = Character.Humanoid
-RootPart = Character["HumanoidRootPart"]
-Torso = Character["Torso"]
-Head = Character["Head"]
-RightArm = Character["Right Arm"]
-LeftArm = Character["Left Arm"]
-RightLeg = Character["Right Leg"]
-LeftLeg = Character["Left Leg"]
+Humanoid = Character:WaitForChild("Humanoid")
+RootPart = Character:WaitForChild("HumanoidRootPart")
+Torso = Character:WaitForChild("Torso")
 RootJoint = RootPart["RootJoint"]
 Neck = Torso["Neck"]
 RightShoulder = Torso["Right Shoulder"]
