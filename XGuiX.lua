@@ -52,7 +52,7 @@ local BodyParts = {
 	"RightFoot",
 	"LeftFoot",
 };
-
+_G.RespawnWaitTime = 0.025
 _G.MMFDRespawn = false
 _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
@@ -144,7 +144,7 @@ local Tails = function()
 end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-	task.wait(0.025)
+	task.wait(_G.RespawnWaitTime)
 	if _G.MMFDRespawn == true then
 			MMFD()
 	end
@@ -605,6 +605,21 @@ end)
 local tab3 = window1.new({
 	text = "Other",
 })
+
+local RespawnWaitTimeSlider = tab3.new("slider", {
+	text = "Transparency",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 1,
+	max = 1000,
+	value = 1,
+	rounding = 1,
+})
+RespawnWaitTimeSlider.event:Connect(function(x)
+	print("slider value: " .. x * 0.001)
+	_G.RespawnWaitTime = x * 0.001
+end)
+RespawnWaitTimeSlider.set(1)
+
 local button3 = tab3.new("button", {
 	text = "Execute RC",
 })
@@ -693,3 +708,4 @@ slider3.event:Connect(function(x)
 	_G.T = x * 0.1
 end)
 slider3.set(5)
+
