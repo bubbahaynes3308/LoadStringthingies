@@ -1,12 +1,3 @@
-_G.RTailValue = 255
-_G.GTailValue = 255
-_G.BTailValue = 255
-_G.TailValue = 4
-_G.Trans7 = 0
-_G.Reflect7 = 0
-_G.M3 = "Neon"
-_G.XRGB = false
-_G.TorsoColorValue = false
 _G.UseTorsoColor = _G.TorsoColorValue
 _G.NumberOfTails = _G.TailValue
 _G.RTValue = _G.RTailValue
