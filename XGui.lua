@@ -1,4 +1,5 @@
 local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))() --loadstring(game:HttpGet("https://raw.githubusercontent.com/Eazvy/UILibs/refs/heads/main/Librarys/Elerium/Example"))()
+
 local Materials = {
 	[Enum.Material.Brick] = 'Brick';
 	[Enum.Material.Cobblestone] = 'Cobblestone';
@@ -406,12 +407,12 @@ local Tailsswitch4 = tab1.new("switch", {
 })
 Tailsswitch4.set(false)
 Tailsswitch4.event:Connect(function(bool)
-	print("RGB set to: ", bool)
+	print("Use Torso Color set to: ", bool)
 	_G.TorsoColorValue = bool
 end)
 
 local Tailsslider2 = tab1.new("slider", {
-	text = "Task.Wait() Time",
+	text = "Amount Of Tails",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
 	max = 4,
