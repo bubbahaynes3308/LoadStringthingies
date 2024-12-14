@@ -607,7 +607,7 @@ local tab3 = window1.new({
 })
 
 local RespawnWaitTimeSlider = tab3.new("slider", {
-	text = "Transparency",
+	text = "Respawn Wait Time",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
 	max = 1000,
