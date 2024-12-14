@@ -91,7 +91,7 @@ _G.Trans7 = 0
 _G.Reflect7 = 0
 _G.M3 = "Neon"
 _G.XRGB = false
-_G.TorsoColorValue = true
+_G.TorsoColorValue = false
 ------------------R15ToR6
 _G.Method = 1 -- 1/Maximum (2 is Maximum)
 _G.TorsoType = "Male" -- Male/Female
