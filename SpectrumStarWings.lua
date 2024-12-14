@@ -23,9 +23,9 @@ end
 plr = game:GetService("Players").LocalPlayer
 Player = plr 
 char = plr.Character
-hum = char.Humanoid
-t = char.Torso
-h = char.Head
+hum = char:WaitForChild("Humanoid")
+t = char:WaitForChild("Torso")
+h = char:WaitForChild("Head")
 ra = char["Right Arm"]
 la = char["Left Arm"]
 rl = char["Right Leg"]
