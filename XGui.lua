@@ -1,4 +1,4 @@
-local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
+local engine =  loadstring(game:HttpGet("https://raw.githubusercontent.com/Eazvy/UILibs/refs/heads/main/Librarys/Elerium/Example"))()  --loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))() 
 
 local Materials = {
 	[Enum.Material.Brick] = 'Brick';
@@ -57,6 +57,7 @@ _G.MMFDRespawn = false
 _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
+_G.TailsRespawn = false
 -------------------Spectrum Wings Settings
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
@@ -81,6 +82,16 @@ _G.HS = 10 --Hitbox Size
 _G.Enabled = true
 _G.HBP = "Head" --HitBox Part
 _G.T = 0.75 --Transparency
+------------------Tails
+_G.RTailValue = 0
+_G.GTailValue = 0
+_G.BTailValue = 0
+_G.TailValue = 0
+_G.Trans7 = 0
+_G.Reflect7 = 0
+_G.M3 = "Neon"
+_G.XRGB = false
+_G.TorsoColorValue = true
 ------------------R15ToR6
 _G.Method = 1 -- 1/Maximum (2 is Maximum)
 _G.TorsoType = "Male" -- Male/Female
@@ -126,10 +137,19 @@ local MHF = function()
 						end)
 end
 
+local Tails = function()
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Tails.lua",true))()
+	end)
+end
+
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(0.025)
 	if _G.MMFDRespawn == true then
 			MMFD()
+	end
+	if _G.TailsRespawn == true then
+		Tails()
 	end
 	if _G.MHFRespawn == true then
 			MHF()
@@ -152,7 +172,12 @@ local window1 = engine.new({
 window1.open()
 -------------------------------------------------------------------------------------------------------------------Tab1
 local tab1 = window1.new({
-	text = "SWings",
+	text = "Main",
+})
+
+local SGWingsLabel = tab1.new("label", {
+	text = "Spectrum Star Wings ",
+	color = Color3.new(1, 1, 1),
 })
 
 local button1 = tab1.new("button", {
@@ -240,12 +265,17 @@ dropdown1.event:Connect(function(name)
 	_G.M = name
 end)
 
-------------------------------------------------------------------------------------------------------------------Tab2
-local tab2 = window1.new({
-	text = "ILWings",
+local TailsSlS = tab1.new("label", {
+	text = "                  ",
+	color = Color3.new(1, 1, 1),
 })
 
-local button2 = tab2.new("button", {
+local ILWingsLabel = tab1.new("label", {
+	text = "Immortality Lord Wings ",
+	color = Color3.new(1, 1, 1),
+})
+
+local button2 = tab1.new("button", {
 	text = "Execute",
 })
 button2.event:Connect(function()
@@ -253,12 +283,12 @@ button2.event:Connect(function()
 	ILWings()
 end)
 
-local label2 = tab2.new("label", {
+local label2 = tab1.new("label", {
 	text = "IL Wings Settings",
 	color = Color3.new(1, 1, 1),
 })
 
-local switch3 = tab2.new("switch", {
+local switch3 = tab1.new("switch", {
 	text = "On Respawn Re Execute?";
 })
 switch3.set(false)
@@ -267,7 +297,7 @@ switch3.event:Connect(function(bool)
 	_G.ILWingsRespawn = bool
 end)
 
-local switch3 = tab2.new("switch", {
+local switch3 = tab1.new("switch", {
 	text = "RGB";
 })
 switch3.set(false)
@@ -276,7 +306,7 @@ switch3.event:Connect(function(bool)
 	_G.ZRGB = bool
 end)
 
-local slider2 = tab2.new("slider", {
+local slider2 = tab1.new("slider", {
 	text = "Task.Wait() Time",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -292,7 +322,7 @@ slider2.set(0.015)
 
 
 
-local color2 = tab2.new("color", {
+local color2 = tab1.new("color", {
 	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Wings",
 })
@@ -306,19 +336,19 @@ color2.event:Connect(function(color)
 	_G.BV2 = b
 end)
 
-local slider7 = tab2.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+local slider7 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
 slider7.event:Connect(function(x)
 	print("Transparency: ", x * 0.01)
 	_G.TransX = x * 0.01
 end)
 
-local slider4 = tab2.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+local slider4 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
 slider4.event:Connect(function(x)
 	print("Reflectance: ", x * 0.01)
 	_G.ReflectX = x * 0.01
 end)
 
-local dropdown2 = tab2.new("dropdown", {
+local dropdown2 = tab1.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
@@ -329,6 +359,102 @@ end
 dropdown2.event:Connect(function(name)
 	print("i chose " .. name .. " For the Material")
 	_G.M2 = name
+end)
+
+local TailsSl = tab1.new("label", {
+	text = "                  ",
+	color = Color3.new(1, 1, 1),
+})
+
+local TailsLabel = tab1.new("label", {
+	text = "Tails",
+	color = Color3.new(1, 1, 1),
+})
+
+local Tailsbutton2 = tab1.new("button", {
+	text = "Execute",
+})
+Tailsbutton2.event:Connect(function()
+	print("Tails Executed")
+	Tails()
+end)
+
+local Tailslabel2 = tab1.new("label", {
+	text = "Tails Settings",
+	color = Color3.new(1, 1, 1),
+})
+
+local Tailsswitch3 = tab1.new("switch", {
+	text = "On Respawn Re Execute?";
+})
+Tailsswitch3.set(false)
+Tailsswitch3.event:Connect(function(bool)
+	print("Re Execute on Respawn set to: ", bool)
+	_G.TailsRespawn = bool
+end)
+
+local Tailsswitch3 = tab1.new("switch", {
+	text = "RGB";
+})
+Tailsswitch3.set(false)
+Tailsswitch3.event:Connect(function(bool)
+	print("RGB set to: ", bool)
+	_G.XRGB = bool
+end)
+
+local Tailsslider2 = tab1.new("slider", {
+	text = "Task.Wait() Time",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 1,
+	max = 4,
+	value = 1,
+	rounding = 1,
+})
+Tailsslider2.event:Connect(function(x)
+	print("Amount Of Tails: " .. x)
+	_G.TailValue = x
+end)
+Tailsslider2.set(1)
+
+
+
+local Tailscolor2 = tab1.new("color", {
+	color = Color3.fromRGB(0, 0, 0),
+	text = "Color Of Tails",
+})
+Tailscolor2.event:Connect(function(color)
+	local r = color.r * 255
+	local g = color.g * 255 
+	local b = color.b * 255
+	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
+	_G.RTailValue = r 
+	_G.GTailValue = g 
+	_G.BTailValue = b
+end)
+
+local Tailsslider7 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+Tailsslider7.event:Connect(function(x)
+	print("Transparency: ", x * 0.01)
+	_G.Trans7 = x * 0.01
+end)
+
+local Tailsslider4 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+Tailsslider4.event:Connect(function(x)
+	print("Reflectance: ", x * 0.01)
+	_G.Reflect7 = x * 0.01
+end)
+
+local Tailsdropdown2 = tab1.new("dropdown", {
+	text = "Material",
+})
+for i, v in pairs(Materials) do
+	table.sort(Materials)
+	Tailsdropdown2.new(v)
+end
+
+Tailsdropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " For the Material")
+	_G.M3 = name
 end)
 
 -------------------------------------------------------------------------------------------------------------------Tab 4
@@ -558,4 +684,3 @@ slider3.event:Connect(function(x)
 	_G.T = x * 0.1
 end)
 slider3.set(5)
-
