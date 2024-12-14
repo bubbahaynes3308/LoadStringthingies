@@ -402,6 +402,15 @@ Tailsswitch3.event:Connect(function(bool)
 	_G.XRGB = bool
 end)
 
+local Tailsswitch4 = tab1.new("switch", {
+	text = "Use Torso Color";
+})
+Tailsswitch4.set(false)
+Tailsswitch4.event:Connect(function(bool)
+	print("RGB set to: ", bool)
+	_G.TorsoColorValue = bool
+end)
+
 local Tailsslider2 = tab1.new("slider", {
 	text = "Task.Wait() Time",
 	color = Color3.new(0.8, 0.5, 0),
