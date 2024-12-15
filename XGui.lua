@@ -147,7 +147,7 @@ end
 
 local GeodeHatting = function()
 	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
 	end)
 end
 
