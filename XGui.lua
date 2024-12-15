@@ -614,7 +614,7 @@ local switch8 = MorphingTab.new("switch", {
 })
 switch8.set(false)
 switch8.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
+	print("ReHat Character Set to: ", bool)
 	_G.GeodeHattingRespawn = bool
 end)
 
