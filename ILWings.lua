@@ -1,3 +1,4 @@
+_G.UseTorsoC = _G.TorsoCValue
 _G.Rxinbow = _G.ZRGB
 _G.Material2 = _G.M2
 _G.Reflecance2 = _G.ReflectX
@@ -414,6 +415,13 @@ while true do
 		v.Color = Color3.new(r/255,g/255,b/255)
 			end
 		end
+		end
+		if _G.UseTorsoC == true then
+			for _, v in pairs(Folder:GetChildren()) do
+				if v:IsA("Part") then
+					v.Color = Color3.new(Torso.Color.R, Torso.Color.G, Torso.Color.B)
+				end
+			end
 		end
 	local sensitivity = 25
 	SINE = SINE + CHANGE

@@ -85,6 +85,7 @@ _G.GV = 0 --Green Color
 _G.BV = 0 --Blue Color
 _G.WaitTime = 0.01
 -------------------ILWings
+_G.TorsoCValue = false
 _G.ZRGB = false
 _G.M2 = "Glass"
 _G.TransX = 0
@@ -324,6 +325,15 @@ switch3.set(false)
 switch3.event:Connect(function(bool)
 	print("RGB set to: ", bool)
 	_G.ZRGB = bool
+end)
+
+local Tswitch3 = MainTab.new("switch", {
+	text = "RGB";
+})
+Tswitch3.set(false)
+Tswitch3.event:Connect(function(bool)
+	print("RGB set to: ", bool)
+	_G.TorsoCValue = bool
 end)
 
 local slider2 = MainTab.new("slider", {
