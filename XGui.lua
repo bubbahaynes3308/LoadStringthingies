@@ -24,6 +24,22 @@ local Materials = {
 	[Enum.Material.WoodPlanks] = 'Wood Planks';
 	[Enum.Material.Wood] = 'Wood';
 };
+local FullHatSetNames = {
+	"Fed",
+	"FoodDemons",
+	"GeodeIc3",
+	"GeodeSn0w",
+	"Gnarpy",
+	"Hunter",
+	"Maidify",
+	"Melanie",
+	"NewerMelanie",
+	"WolframNightstalker",
+};
+local ExtraValue2 = {
+"Normal",
+"UwU",	
+}
 
 local BodyParts = {
 	"Head",
@@ -53,7 +69,7 @@ local BodyParts = {
 	"LeftFoot",
 };
 _G.RespawnWaitTime = 0.025
-_G.MMFDRespawn = false
+_G.GeodeHattingRespawn = false
 _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
@@ -100,6 +116,10 @@ _G.SizeLock = "false" -- true/false
 _G.R15PT = "true" -- true/false
 _G.R6PT = "false" -- true/false
 _G.Target = game.Players.LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
+------------------GeodeHatting
+_G.K1 = "Gnarpy" 
+_G.K2 = 1 
+_G.K3 = "Normal"
 
 local SpectrumWings = function()
 	spawn(function()
@@ -109,32 +129,32 @@ end
 
 local ILWings = function()
 	spawn(function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
-		end)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
+	end)
 end
 
 local R15ToR6 = function()
 	spawn(function()
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
-			end)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/R15ToR6.lua",true))()
+	end)
 end
 
 local HBE = function()
 	spawn(function()
-					loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
-				end)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
+	end)
 end
 
-local MMFD = function()
+local GeodeHatting = function()
 	spawn(function()
-						loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MMFD",true))()
-					end)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting",true))()
+	end)
 end
 
 local MHF = function()
 	spawn(function()
-							loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
-						end)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
+	end)
 end
 
 local Tails = function()
@@ -145,20 +165,20 @@ end
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
-	if _G.MMFDRespawn == true then
-			MMFD()
+	if _G.GeodeHattingRespawn == true then
+		GeodeHatting()
 	end
 	if _G.TailsRespawn == true then
 		Tails()
 	end
 	if _G.MHFRespawn == true then
-			MHF()
+		MHF()
 	end
 	if _G.ILWingsRespawn == true then
 		ILWings()
-		end
+	end
 	if _G.SpectrumWingsRespawn == true then
-			SpectrumWings()
+		SpectrumWings()
 	end
 end)
 
@@ -170,17 +190,17 @@ local window1 = engine.new({
 })
 
 window1.open()
--------------------------------------------------------------------------------------------------------------------Tab1
-local tab1 = window1.new({
+-------------------------------------------------------------------------------------------------------------------MainTab
+local MainTab = window1.new({
 	text = "Main",
 })
 
-local SGWingsLabel = tab1.new("label", {
+local SGWingsLabel = MainTab.new("label", {
 	text = "Spectrum Star Wings ",
 	color = Color3.new(1, 1, 1),
 })
 
-local button1 = tab1.new("button", {
+local button1 = MainTab.new("button", {
 	text = "Execute",
 })
 button1.event:Connect(function()
@@ -188,12 +208,12 @@ button1.event:Connect(function()
 	SpectrumWings()
 end)
 
-local label1 = tab1.new("label", {
+local label1 = MainTab.new("label", {
 	text = "Spectrum Star Wings Settings",
 	color = Color3.new(1, 1, 1),
 })
 
-local switch2 = tab1.new("switch", {
+local switch2 = MainTab.new("switch", {
 	text = "On Respawn Re Execute?";
 })
 switch2.set(false)
@@ -202,7 +222,7 @@ switch2.event:Connect(function(bool)
 	_G.SpectrumWingsRespawn = bool
 end)
 
-local switch1 = tab1.new("switch", {
+local switch1 = MainTab.new("switch", {
 	text = "RGB";
 })
 switch1.set(false)
@@ -211,7 +231,7 @@ switch1.event:Connect(function(bool)
 	_G.RGB = bool
 end)
 
-local slider1 = tab1.new("slider", {
+local slider1 = MainTab.new("slider", {
 	text = "Task.Wait() Time",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -225,7 +245,7 @@ slider1.event:Connect(function(x)
 end)
 slider1.set(0.01)
 
-local color1 = tab1.new("color", {
+local color1 = MainTab.new("color", {
 	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Wings",
 })
@@ -239,19 +259,19 @@ color1.event:Connect(function(color)
 	_G.BV = b
 end)
 
-local slider5 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+local slider5 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
 slider5.event:Connect(function(x)
 	print("Transparency: ", x * 0.01)
 	_G.TransZ = x * 0.01
 end)
 
-local slider6 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+local slider6 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
 slider6.event:Connect(function(x)
 	print("Reflectance: ", x * 0.01)
 	_G.ReflectZ = x * 0.01
 end)
 
-local dropdown1 = tab1.new("dropdown", {
+local dropdown1 = MainTab.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
@@ -265,17 +285,17 @@ dropdown1.event:Connect(function(name)
 	_G.M = name
 end)
 
-local TailsSlS = tab1.new("label", {
+local TailsSlS = MainTab.new("label", {
 	text = "                  ",
 	color = Color3.new(1, 1, 1),
 })
 
-local ILWingsLabel = tab1.new("label", {
+local ILWingsLabel = MainTab.new("label", {
 	text = "Immortality Lord Wings ",
 	color = Color3.new(1, 1, 1),
 })
 
-local button2 = tab1.new("button", {
+local button2 = MainTab.new("button", {
 	text = "Execute",
 })
 button2.event:Connect(function()
@@ -283,12 +303,12 @@ button2.event:Connect(function()
 	ILWings()
 end)
 
-local label2 = tab1.new("label", {
+local label2 = MainTab.new("label", {
 	text = "IL Wings Settings",
 	color = Color3.new(1, 1, 1),
 })
 
-local switch3 = tab1.new("switch", {
+local switch3 = MainTab.new("switch", {
 	text = "On Respawn Re Execute?";
 })
 switch3.set(false)
@@ -297,7 +317,7 @@ switch3.event:Connect(function(bool)
 	_G.ILWingsRespawn = bool
 end)
 
-local switch3 = tab1.new("switch", {
+local switch3 = MainTab.new("switch", {
 	text = "RGB";
 })
 switch3.set(false)
@@ -306,7 +326,7 @@ switch3.event:Connect(function(bool)
 	_G.ZRGB = bool
 end)
 
-local slider2 = tab1.new("slider", {
+local slider2 = MainTab.new("slider", {
 	text = "Task.Wait() Time",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -322,7 +342,7 @@ slider2.set(0.015)
 
 
 
-local color2 = tab1.new("color", {
+local color2 = MainTab.new("color", {
 	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Wings",
 })
@@ -336,19 +356,19 @@ color2.event:Connect(function(color)
 	_G.BV2 = b
 end)
 
-local slider7 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+local slider7 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
 slider7.event:Connect(function(x)
 	print("Transparency: ", x * 0.01)
 	_G.TransX = x * 0.01
 end)
 
-local slider4 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+local slider4 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
 slider4.event:Connect(function(x)
 	print("Reflectance: ", x * 0.01)
 	_G.ReflectX = x * 0.01
 end)
 
-local dropdown2 = tab1.new("dropdown", {
+local dropdown2 = MainTab.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
@@ -361,17 +381,17 @@ dropdown2.event:Connect(function(name)
 	_G.M2 = name
 end)
 
-local TailsSl = tab1.new("label", {
+local TailsSl = MainTab.new("label", {
 	text = "                  ",
 	color = Color3.new(1, 1, 1),
 })
 
-local TailsLabel = tab1.new("label", {
+local TailsLabel = MainTab.new("label", {
 	text = "Tails",
 	color = Color3.new(1, 1, 1),
 })
 
-local Tailsbutton2 = tab1.new("button", {
+local Tailsbutton2 = MainTab.new("button", {
 	text = "Execute",
 })
 Tailsbutton2.event:Connect(function()
@@ -379,12 +399,12 @@ Tailsbutton2.event:Connect(function()
 	Tails()
 end)
 
-local Tailslabel2 = tab1.new("label", {
+local Tailslabel2 = MainTab.new("label", {
 	text = "Tails Settings",
 	color = Color3.new(1, 1, 1),
 })
 
-local Tailsswitch3 = tab1.new("switch", {
+local Tailsswitch3 = MainTab.new("switch", {
 	text = "On Respawn Re Execute?";
 })
 Tailsswitch3.set(false)
@@ -393,7 +413,7 @@ Tailsswitch3.event:Connect(function(bool)
 	_G.TailsRespawn = bool
 end)
 
-local Tailsswitch3 = tab1.new("switch", {
+local Tailsswitch3 = MainTab.new("switch", {
 	text = "RGB";
 })
 Tailsswitch3.set(false)
@@ -402,7 +422,7 @@ Tailsswitch3.event:Connect(function(bool)
 	_G.XRGB = bool
 end)
 
-local Tailsswitch4 = tab1.new("switch", {
+local Tailsswitch4 = MainTab.new("switch", {
 	text = "Use Torso Color";
 })
 Tailsswitch4.set(false)
@@ -411,7 +431,7 @@ Tailsswitch4.event:Connect(function(bool)
 	_G.TorsoColorValue = bool
 end)
 
-local Tailsslider2 = tab1.new("slider", {
+local Tailsslider2 = MainTab.new("slider", {
 	text = "Amount Of Tails",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -427,7 +447,7 @@ Tailsslider2.set(1)
 
 
 
-local Tailscolor2 = tab1.new("color", {
+local Tailscolor2 = MainTab.new("color", {
 	color = Color3.fromRGB(0, 0, 0),
 	text = "Color Of Tails",
 })
@@ -441,19 +461,19 @@ Tailscolor2.event:Connect(function(color)
 	_G.BTailValue = b
 end)
 
-local Tailsslider7 = tab1.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
+local Tailsslider7 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
 Tailsslider7.event:Connect(function(x)
 	print("Transparency: ", x * 0.01)
 	_G.Trans7 = x * 0.01
 end)
 
-local Tailsslider4 = tab1.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
+local Tailsslider4 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
 Tailsslider4.event:Connect(function(x)
 	print("Reflectance: ", x * 0.01)
 	_G.Reflect7 = x * 0.01
 end)
 
-local Tailsdropdown2 = tab1.new("dropdown", {
+local Tailsdropdown2 = MainTab.new("dropdown", {
 	text = "Material",
 })
 for i, v in pairs(Materials) do
@@ -468,17 +488,17 @@ end)
 
 -------------------------------------------------------------------------------------------------------------------Tab 4
 
-local tab4 = window1.new({
+local MorphingTab = window1.new({
 	text = "R15TR6&Morphs",
 })
 
-local button7 = tab4.new("button", {text = "R6ify"})
+local button7 = MorphingTab.new("button", {text = "R6ify"})
 button7.event:Connect(function()
 	print("Converted R15 to R6 Cliently")
 	R15ToR6()
 end)
 
-local slider8 = tab4.new("slider", {
+local slider8 = MorphingTab.new("slider", {
 	text = "Method",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -492,7 +512,7 @@ slider8.event:Connect(function(x)
 end)
 slider8.set(1)
 
-local switch4 = tab4.new("switch", {
+local switch4 = MorphingTab.new("switch", {
 	text = "Roblox Shirt";
 })
 switch4.set(true)
@@ -501,7 +521,7 @@ switch4.event:Connect(function(bool)
 	_G.RobloxShirt = bool
 end)
 
-local switch5 = tab4.new("switch", {
+local switch5 = MorphingTab.new("switch", {
 	text = "Size Lock";
 })
 switch5.set(false)
@@ -510,7 +530,7 @@ switch5.event:Connect(function(bool)
 	_G.SizeLock = bool
 end)
 
-local switch6 = tab4.new("switch", {
+local switch6 = MorphingTab.new("switch", {
 	text = "R15 Part Transparency";
 })
 switch6.set(true)
@@ -519,7 +539,7 @@ switch6.event:Connect(function(bool)
 	_G.R15PT = bool
 end)
 
-local switch7 = tab4.new("switch", {
+local switch7 = MorphingTab.new("switch", {
 	text = "R6 Part Transparency";
 })
 switch7.set(false)
@@ -528,7 +548,7 @@ switch7.event:Connect(function(bool)
 	_G.R6PT = bool
 end)
 
-local dropdown3 = tab4.new("dropdown", {
+local dropdown3 = MorphingTab.new("dropdown", {
 	text = "Target",
 })
 
@@ -542,7 +562,7 @@ dropdown3.event:Connect(function(name)
 	print("i chose " .. name)
 end)
 
-local dropdown4 = tab4.new("dropdown", {
+local dropdown4 = MorphingTab.new("dropdown", {
 	text = "Torso Type",
 })
 dropdown4.new("Male")
@@ -552,12 +572,12 @@ dropdown4.event:Connect(function(name)
 	print("i chose " .. name)
 end)
 
-local label3 = tab4.new("label", {
+local label3 = MorphingTab.new("label", {
 	text = "Morphs",
 	color = Color3.new(1, 1, 1),
 })
 
-local button9 = tab4.new("button", {
+local button9 = MorphingTab.new("button", {
 	text = "MidnightHorrorsFurry",
 })
 button9.event:Connect(function()
@@ -565,7 +585,7 @@ button9.event:Connect(function()
 	MHF()
 end)
 
-local switch9 = tab4.new("switch", {
+local switch9 = MorphingTab.new("switch", {
 	text = "Reapply On Respawn";
 })
 switch9.set(false)
@@ -575,21 +595,21 @@ switch9.event:Connect(function(bool)
 end)
 
 
-local label4 = tab4.new("label", {
+local label4 = MorphingTab.new("label", {
 	text = "-----------------",
 	color = Color3.new(1, 1, 1),
 })
 
 
-local button10 = tab4.new("button", {
-	text = "MarshmellowDemon",
+local button10 = MorphingTab.new("button", {
+	text = "Geode Hatting",
 })
 button10.event:Connect(function()
-	print("Marshmellow Demon Executed")
-	MMFD()
+	print("Hatting Executed")
+	GeodeHatting()
 end)
 
-local switch8 = tab4.new("switch", {
+local switch8 = MorphingTab.new("switch", {
 	text = "Reapply On Respawn";
 })
 switch8.set(false)
@@ -598,15 +618,53 @@ switch8.event:Connect(function(bool)
 	_G.MMFDRespawn = bool
 end)
 
+local HattingDropdown1 = MorphingTab.new("dropdown", {
+	text = "Hat Set",
+})
+for i, v in pairs(FullHatSetNames) do
+	HattingDropdown1.new(v)
+end
+
+HattingDropdown1.event:Connect(function(name)
+	print("i chose " .. name .. " As The Hat Set")
+	_G.K1 = name
+end)
+
+local HattingFDSlider = MorphingTab.new("slider", {
+	text = "Food Demon Number",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 1,
+	max = 76,
+	value = 1,
+	rounding = 5,
+})
+Tailsslider2.event:Connect(function(x)
+	print("Amount Of Tails: " .. x)
+	_G.TailValue = x
+end)
+Tailsslider2.set(1)
+
+local HattingDropdown2 = MorphingTab.new("dropdown", {
+	text = "2nd Extra Value",
+})
+for i, v in pairs(ExtraValue2) do
+	HattingDropdown2.new(v)
+end
+
+HattingDropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " As The 2nd Extra Value")
+	_G.K3 = name
+end)
+
 
 
 
 -------------------------------------------------------------------------------------------------------------------Tab 3
-local tab3 = window1.new({
+local OthersTab = window1.new({
 	text = "Other",
 })
 
-local RespawnWaitTimeSlider = tab3.new("slider", {
+local RespawnWaitTimeSlider = OthersTab.new("slider", {
 	text = "Respawn Wait Time",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 1,
@@ -620,64 +678,64 @@ RespawnWaitTimeSlider.event:Connect(function(x)
 end)
 RespawnWaitTimeSlider.set(1)
 
-local button3 = tab3.new("button", {
+local button3 = OthersTab.new("button", {
 	text = "Execute RC",
 })
 button3.event:Connect(function()
 	print("RoClothes Executed")
-		spawn(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
-				end)
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
+	end)
 end)
 
-local button5 = tab3.new("button", {
+local button5 = OthersTab.new("button", {
 	text = "Execute IY",
 })
 button5.event:Connect(function()
 	print("Infinity Yeild Executed")
-		spawn(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-						end)
+	spawn(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end)
 end)
 
-local button6 = tab3.new("button", {
+local button6 = OthersTab.new("button", {
 	text = "Regret Paranoia",
 })
 button6.event:Connect(function()
 	print("Regretevator Paranoia Executed")
-		spawn(function()
-	loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
-								end)
+	spawn(function()
+		loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+	end)
 
 end)
 
-local button7 = tab3.new("button", {
+local button7 = OthersTab.new("button", {
 	text = "Execute IY Dex",
 })
 button7.event:Connect(function()
 	print("IY Dex Executed")
-		spawn(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
-										end)
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+	end)
 end)
 
-local button8 = tab3.new("button", {
+local button8 = OthersTab.new("button", {
 	text = "Execute Dark Dex V5",
 })
 button8.event:Connect(function()
 	print("Dark Dex V5 Executed")
-		spawn(function()
-	loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
-			end)
+	spawn(function()
+		loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
+	end)
 end)
 
 --HBE
-local label2 = tab3.new("label", {
+local label2 = OthersTab.new("label", {
 	text = "HBE",
 	color = Color3.new(1, 1, 1),
 })
 
-local dock1 = tab3.new("dock")
+local dock1 = OthersTab.new("dock")
 
 local button4 = dock1.new("button", {text = "Execute HBE"})
 button4.event:Connect(function()
@@ -691,7 +749,7 @@ slider2.event:Connect(function(x)
 	_G.HS = x
 end)
 
-local dropdown2 = tab3.new("dropdown", {
+local dropdown2 = OthersTab.new("dropdown", {
 	text = "Body Part",
 })
 
@@ -705,7 +763,7 @@ dropdown2.event:Connect(function(name)
 	_G.HBP = name
 end)
 
-local slider3 = tab3.new("slider", {
+local slider3 = OthersTab.new("slider", {
 	text = "Transparency",
 	color = Color3.new(0.8, 0.5, 0),
 	min = 0,
@@ -718,4 +776,3 @@ slider3.event:Connect(function(x)
 	_G.T = x * 0.1
 end)
 slider3.set(5)
-
