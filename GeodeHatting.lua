@@ -1,7 +1,7 @@
 local HatPack = _G.K1
 local ExtraValue = _G.K2
 local ExtraValue2 = _G.K3
-local Z = game:GetService("ReplicatedStorage").GeodeHatting:Clone() --game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
+local Z = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
 local X = Z.XHat
 local Plr = game:GetService("Players").LocalPlayer
 local HatPackage = X[HatPack]:Clone()
