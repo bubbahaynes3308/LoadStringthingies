@@ -714,7 +714,7 @@ local button6 = OthersTab.new("button", {
 button6.event:Connect(function()
 	print("Regretevator Paranoia Executed")
 	spawn(function()
-		loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Regretevator_Paranoia.lua",true))()
 	end)
 
 end)
@@ -735,7 +735,7 @@ local button8 = OthersTab.new("button", {
 button8.event:Connect(function()
 	print("Dark Dex V5 Executed")
 	spawn(function()
-		loadstring(game:HttpGet('https://github.com/AlterX404/DarkDEX-V5/raw/refs/heads/main/DarkDEX-V5'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/AlterX404/DarkDEX-V5/refs/heads/main/DarkDEX-V5'))()
 	end)
 end)
 

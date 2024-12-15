@@ -34,7 +34,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 Immortality Lord Wings
 ```lua
 _G.WaitTime2 = 0.017 --Animation Speed Based on Task.wait Time
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/ILWings.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/ILWings.lua",true))()
 ```
 
 Spectrum Star Glitcher Wings
@@ -51,7 +51,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadS
 
 Regretevator Paranoia(Universal but most used in regretevator and is also permenant)
 ```lua
-loadstring(game:HttpGet("https://github.com/bubbahaynes3308/LoadStringthingies/raw/refs/heads/main/Regretevator_Paranoia.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Regretevator_Paranoia.lua",true))()
 ```
 
 
