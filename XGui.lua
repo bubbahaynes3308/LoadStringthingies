@@ -141,7 +141,7 @@ end
 
 local HBE = function()
 	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/HBE.lua",true))()
 	end)
 end
 
