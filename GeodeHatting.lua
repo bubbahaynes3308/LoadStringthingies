@@ -1,7 +1,7 @@
 local HatPack = _G.K1
 local ExtraValue = _G.K2
 local ExtraValue2 = _G.K3
-local Z = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
+local Z = game:GetService("ReplicatedStorage").GeodeHatting:Clone() --game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
 local X = Z.XHat
 local Plr = game:GetService("Players").LocalPlayer
 local HatPackage = X[HatPack]:Clone()
@@ -87,9 +87,17 @@ for _, PlrHats in pairs(Player:GetChildren()) do
 		PlrHats:Destroy()
 		end
 	end
-	if HatPackage:HasTag("Headless") or  ExtraValue ~= "42" or ExtraValue ~= "41" or ExtraValue ~= "31" or ExtraValue ~= "30" or ExtraValue ~= "29" or ExtraValue ~= "66" or ExtraValue ~= "67" or ExtraValue ~= "68" or ExtraValue ~= "69" or ExtraValue ~= "70" or ExtraValue ~= "71" or ExtraValue ~= "72" or ExtraValue ~= "74" or ExtraValue ~= "73" then --Invisible Head
-		HiddenLimbs.InvisibleHead.Parent = Player["Head"]
+	if HatPackage:HasTag("Headless") or  ExtraValue == "42" or ExtraValue == "41" or ExtraValue == "31" or ExtraValue == "30" or ExtraValue == "29" or ExtraValue == "66" or ExtraValue == "67" or ExtraValue == "68" or ExtraValue == "69" or ExtraValue == "70" or ExtraValue == "71" or ExtraValue == "72" or ExtraValue == "74" or ExtraValue == "73" then --Invisible Head
+		HiddenLimbs.InvisibleHead:Clone().Parent = Player["Head"]
+
 	end
+	if HatPackage:HasTag("FullBody") or  ExtraValue == "42" or ExtraValue == "41" or ExtraValue == "31" or ExtraValue == "30" or ExtraValue == "29" or ExtraValue == "66" or ExtraValue == "67" or ExtraValue == "68" or ExtraValue == "69" or ExtraValue == "70" or ExtraValue == "71" or ExtraValue == "72" or ExtraValue == "74" or ExtraValue == "73" then --Invisible Full Body
+	HiddenLimbs.HiddenTorso:Clone().Parent = Player["Torso"]
+	HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
+	HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
+	HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
+		HiddenLimbs.RL:Clone().Parent = Player["Right Leg"]
+		end
 	
 	for _, PossibleDecal in pairs(Player["Head"]:GetChildren()) do
 		if  PossibleDecal:IsA("Decal") then
