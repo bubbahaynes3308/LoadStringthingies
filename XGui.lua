@@ -168,11 +168,11 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
 	if _G.GeodeHattingRespawn == true then
 		GeodeHatting()
 	end
-	if _G.TailsRespawn == true then
-		Tails()
-	end
 	if _G.MHFRespawn == true then
 		MHF()
+	end
+	if _G.TailsRespawn == true then
+		Tails()
 	end
 	if _G.ILWingsRespawn == true then
 		ILWings()
@@ -615,7 +615,7 @@ local switch8 = MorphingTab.new("switch", {
 switch8.set(false)
 switch8.event:Connect(function(bool)
 	print("Re Execute on Respawn set to: ", bool)
-	_G.MMFDRespawn = bool
+	_G.GeodeHattingRespawn = bool
 end)
 
 local HattingDropdown1 = MorphingTab.new("dropdown", {
@@ -639,8 +639,8 @@ local HattingFDSlider = MorphingTab.new("slider", {
 	rounding = 5,
 })
 Tailsslider2.event:Connect(function(x)
-	print("Amount Of Tails: " .. x)
-	_G.TailValue = x
+	print("Food Demon #" .. x)
+	_G.K2 = x
 end)
 Tailsslider2.set(1)
 
