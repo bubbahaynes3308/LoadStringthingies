@@ -328,11 +328,11 @@ switch3.event:Connect(function(bool)
 end)
 
 local Tswitch3 = MainTab.new("switch", {
-	text = "RGB";
+	text = "Use Torso Color";
 })
 Tswitch3.set(false)
 Tswitch3.event:Connect(function(bool)
-	print("RGB set to: ", bool)
+	print("Use Torso Color has been set to: ", bool)
 	_G.TorsoCValue = bool
 end)
 
