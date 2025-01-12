@@ -191,6 +191,10 @@ function RoClothes(Player)
 	GUIObject.STUICorner = Instance.new("UICorner")
 	GUIObject.SkinToneText = Instance.new("TextBox")
 	GUIObject.STUIGradient = Instance.new("UIGradient")
+	GUIObject.NippleToneFrame = Instance.new("Frame")
+	GUIObject.STUIXCorner = Instance.new("UICorner")
+	GUIObject.NippleToneText = Instance.new("TextBox")
+	GUIObject.STUIXGradient = Instance.new("UIGradient")
 
 	GUIObject.Menu3_3 = Instance.new("Frame")
 	GUIObject.M3UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -227,7 +231,7 @@ function RoClothes(Player)
 	local TS = game:GetService("TweenService")
 	local MPS = game:GetService("MarketplaceService")
 
-	local CVersion = "0.7"
+	local CVersion = "Modified X.7"
 
 	local Method = 1
 	local MaxMethod = 2
@@ -288,6 +292,7 @@ function RoClothes(Player)
 			},
 			CatalogAccessory = {},
 			SkinTone = nil,
+			NippleTone = nil,
 			BreastsScale = 1,
 			ButtsScale = 1,
 			BreastsType = 1,
@@ -6139,7 +6144,7 @@ function RoClothes(Player)
 
 			}
 		},
-                ["Shark2"] = {
+		["Shark2"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(205,205,205),
 				["LeftArmColor3"] = Color3.fromRGB(205,205,205),
@@ -6161,7 +6166,7 @@ function RoClothes(Player)
 				17634290161;
 				7173021620;
 				--Faces
-                                17649505815;
+				17649505815;
 
 			}
 		},
@@ -6217,7 +6222,7 @@ function RoClothes(Player)
 				17825845537,
 			}
 		},
-["Wenda"] = {
+		["Wenda"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -6227,12 +6232,12 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
 			},
 			["Accessory"] = {
-115846213715202,
-	113600112515016,
-	15060628997,
+				115846213715202,
+				113600112515016,
+				15060628997,
 			}
 		},
-["Haruka"] = {
+		["Haruka"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(255, 255, 255),
 				["LeftArmColor3"] = Color3.fromRGB(255, 255, 255),
@@ -6242,10 +6247,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(255, 255, 255),
 			},
 			["Accessory"] = {
-14129391956,16042185285,117340837898980,11984878842,15357204542,17458142060,15342071116,15236658629
+				14129391956,16042185285,117340837898980,11984878842,15357204542,17458142060,15342071116,15236658629
 			}
 		},
-["Void"] = {
+		["Void"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -6255,10 +6260,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
 			},
 			["Accessory"] = {
-7485974573,6102714255,7667152036,7731123921,6202465105,7133381697,12435601613,7331780412,4773932088,5411273917
+				7485974573,6102714255,7667152036,7731123921,6202465105,7133381697,12435601613,7331780412,4773932088,5411273917
 			}
 		},
-["Ge0deIc3"] = {
+		["Ge0deIc3"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(99, 95, 98),
 				["LeftArmColor3"] = Color3.fromRGB(99, 95, 98),
@@ -6268,10 +6273,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(99, 95, 98),
 			},
 			["Accessory"] = {
-11337378520,5805462551,12314507095,13388777415,6597426138,13611625695,12802262425,323420663,13085530760
+				11337378520,5805462551,12314507095,13388777415,6597426138,13611625695,12802262425,323420663,13085530760
 			}
 		},
-["Hopelessness"] = {
+		["Hopelessness"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(107, 50, 124),
 				["LeftArmColor3"] = Color3.fromRGB(107, 50, 124),
@@ -6281,10 +6286,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(17, 17, 17),
 			},
 			["Accessory"] = {
-13803985279,7173021620,73002081244979,8346545669,16735996901,7731123921,13491595552,10074834666,15525034473,13476872,7029206274,15006904921,13663529356
+				13803985279,7173021620,73002081244979,8346545669,16735996901,7731123921,13491595552,10074834666,15525034473,13476872,7029206274,15006904921,13663529356
 			}
 		},
-["FXGrayRed"] = {
+		["FXGrayRed"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
 				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
@@ -6294,10 +6299,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
 			},
 			["Accessory"] = {
-15728284902,10728722826,101230424897141,7485912398,140717732611002,16975671979,12868575040,6872000929
+				15728284902,10728722826,101230424897141,7485912398,140717732611002,16975671979,12868575040,6872000929
 			}
 		},
-["FXGrayBlack"] = {
+		["FXGrayBlack"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
 				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
@@ -6307,11 +6312,11 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
 			},
 			["Accessory"] = {
-17418808793,7173021620,14892162637,10728722826,7485912398,140717732611002,101230424897141,7731123921,10074834666,15006904921
+				17418808793,7173021620,14892162637,10728722826,7485912398,140717732611002,101230424897141,7731123921,10074834666,15006904921
 
 			}
 		},
-["FXGrayWhite"] = {
+		["FXGrayWhite"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(116, 116, 116),
 				["LeftArmColor3"] = Color3.fromRGB(116, 116, 116),
@@ -6321,10 +6326,10 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(116, 116, 116),
 			},
 			["Accessory"] = {
-16999205044,10728705859,14892550704,8346545669,140717732611002,101230424897141,14134036137,12932952776
+				16999205044,10728705859,14892550704,8346545669,140717732611002,101230424897141,14134036137,12932952776
 			}
 		},
-["XGray"] = {
+		["XGray"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(105, 105, 105),
 				["LeftArmColor3"] = Color3.fromRGB(105, 105, 105),
@@ -6334,16 +6339,16 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(105, 105, 105),
 			},
 			["Accessory"] = {
-                        131370815777054;
-13491595552;
-7731123921;
-7173021620;
-18408920592;
-10945217165;
+				131370815777054;
+				13491595552;
+				7731123921;
+				7173021620;
+				18408920592;
+				10945217165;
 
 			}
 		},
-["FL-X"] = {
+		["FL-X"] = {
 			["Body Color"] = {
 				["HeadColor3"] = Color3.fromRGB(0, 0, 0),
 				["LeftArmColor3"] = Color3.fromRGB(0, 0, 0),
@@ -6353,7 +6358,7 @@ function RoClothes(Player)
 				["TorsoColor3"] = Color3.fromRGB(0, 0, 0),
 			},
 			["Accessory"] = {
-16961182161,123435464536059,17537172140,6785481051,5313561767,7540653662,12369145028,6076716760,5700157892,17549292698,6102712313,6076723579
+				16961182161,123435464536059,17537172140,6785481051,5313561767,7540653662,12369145028,6076716760,5700157892,17549292698,6102712313,6076723579
 			}
 		},
 --[[
@@ -6621,6 +6626,44 @@ function RoClothes(Player)
 			}
 		},
 		["Roblox Clothes Without Breasts"] = {
+			["Weld"] = {
+				[5] = "Torso Shirt",
+				[6] = "Left Butt Shirt",
+				[7] = "Right Butt Shirt",
+			},
+			["Unvisible"] = {
+			}
+		},
+		["Roblox Pants Only"] = {
+			["Weld"] = {
+				[6] = "Left Butt Shirt",
+				[7] = "Right Butt Shirt",
+			},
+			["Unvisible"] = {
+			}
+		},
+		["Roblox Shirt Only"] = {
+			["Weld"] = {
+				[1] = "Breasts Pants",
+				[2] = "Breasts Shirt",
+				[3] = "Left Breast 2",
+				[4] = "Right Breast 2",
+				[5] = "Torso Shirt",
+				[6] = "Left Butt Shirt",
+				[7] = "Right Butt Shirt",
+			},
+			["Unvisible"] = {
+				"Left Nipple",
+				"Right Nipple",
+				"Left Breast",
+				"Right Breast",
+				"Pussy Closed",
+				"Clitoris Closed",
+				"Vagina Closed",
+				"Vulva Closed",
+			}
+		},
+		["Roblox Shirt Only Without Breasts"] = {
 			["Weld"] = {
 				[5] = "Torso Shirt",
 				[6] = "Left Butt Shirt",
@@ -7181,7 +7224,13 @@ function RoClothes(Player)
 	end
 
 	function Function.AreolaDecalCreate(ObjectInstance, Character, Extra, Data)
-		if table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts") or (not table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") and (ObjectInstance.Name ~= "Left Breast" and ObjectInstance.Name ~= "Right Breast")) then
+		if table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts") or
+			table.find(PlayerData[Data].CurrentClothes, "Roblox Pants Only")  or
+			table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only Without Breasts") or 
+			(not table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes")   or
+				table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") and
+				(ObjectInstance.Name ~= "Left Breast" and ObjectInstance.Name ~= "Right Breast"))
+		then
 			for i = 1, 2 do
 				local Decal = Instance.new("Decal", ObjectInstance)
 				Decal.Color3 = Color3.fromRGB(255, 167, 169)
@@ -7189,12 +7238,17 @@ function RoClothes(Player)
 				Decal.Face = "Left"
 				Decal.Name = "Areola Decal".." "..tostring(i)
 				PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
+				if table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only") then
+					Decal.Transparency = 1
+				end
 
 				if Extra.Tone == "Dark" then
 					local H,S,V = ObjectInstance.Color:ToHSV()
 					local DarkerColorCode = Color3.fromHSV(H,S,V+(-DarkerColorPercentage * V/100))
 
 					Decal.Color3 = DarkerColorCode
+				elseif Extra.Tone == "OwnColor" then
+					Decal.Color3 = PlayerData[Data].NippleTone
 				end
 			end
 		end
@@ -7207,13 +7261,15 @@ function RoClothes(Player)
 		Decal.Face = "Front"
 		Decal.Name = "Areola Decal"
 		PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
-
+		
 
 		if Extra.Tone == "Dark" then
 			local H,S,V = ObjectInstance.Color:ToHSV()
 			local DarkerColorCode = Color3.fromHSV(H,S,V+(-DarkerColorPercentage * V/100))
 
 			Decal.Color3 = DarkerColorCode
+		elseif Extra.Tone == "OwnColor" then
+			Decal.Color3 = PlayerData[Data].NippleTone
 		end
 	end
 
@@ -7224,12 +7280,15 @@ function RoClothes(Player)
 		Decal.Face = "Right"
 		Decal.Name = "Areola Decal"
 		PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
+		
 
 		if Extra.Tone == "Dark" then
 			local H,S,V = ObjectInstance.Color:ToHSV()
 			local DarkerColorCode = Color3.fromHSV(H,S,V+(-DarkerColorPercentage * V/100))
 
 			Decal.Color3 = DarkerColorCode
+		elseif Extra.Tone == "OwnColor" then
+			Decal.Color3 = PlayerData[Data].NippleTone
 		end
 	end
 
@@ -7239,6 +7298,8 @@ function RoClothes(Player)
 			local DarkerColorCode = Color3.fromHSV(H,S,V+(-DarkerColorPercentage * V/100))
 
 			ObjectInstance.Color = DarkerColorCode
+		elseif Extra.Tone == "OwnColor" then
+			ObjectInstance.Color = PlayerData[Data].NippleTone
 		end
 	end
 
@@ -7248,6 +7309,8 @@ function RoClothes(Player)
 			local DarkerColorCode = Color3.fromHSV(H,S,V+(-Darker2ColorPercentage * V/100))
 
 			ObjectInstance.Color = DarkerColorCode
+		elseif Extra.Tone == "OwnColor" then
+			ObjectInstance.Color = PlayerData[Data].NippleTone
 		end
 	end
 
@@ -7263,7 +7326,7 @@ function RoClothes(Player)
 		local RCF0 = CFrame.new(0.246000007, 0.63499999, -0.451000005, -0.157161966, -0.1847606, -0.970135868, -0.0996441022, 0.980297148, -0.170553446, 0.982533038, 0.0698638037, -0.172475725)
 		local RCF1 = CFrame.new(0.200000003, 0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-		M, YM, ZM = Function.MultiplyCalculate(Torso.Size, BodyPartSize[Torso.Name])
+		local XM, YM, ZM = Function.MultiplyCalculate(Torso.Size, BodyPartSize[Torso.Name])
 
 		local RealtimeProperty = PlayerData[Data].CurrentPartList.RealtimeUpdateList.Mesh[LB]
 
@@ -7325,21 +7388,21 @@ function RoClothes(Player)
 	end
 
 	function Function.ShirtTexture(ObjectInstance, Character, Extra, Data)	
-		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only")) or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
 			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
 			SP.ColorMap = Extra.Shirt.ShirtTemplate
 		end
 	end
 
 	function Function.PantsTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Pants Only") then
 			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
 			SP.ColorMap = Extra.Pants.PantsTemplate
 		end
 	end
 
 	function Function.TorsoShirtTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.Shirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only")) or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
 			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
 			SP.ColorMap = Extra.Shirt.ShirtTemplate
 			SP.AlphaMode = Enum.AlphaMode.Transparency
@@ -7348,7 +7411,7 @@ function RoClothes(Player)
 	end
 
 	function Function.TorsoPantsTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Pants Only") then
 			local SP = Instance.new("SurfaceAppearance", ObjectInstance)
 			SP.ColorMap = Extra.Pants.PantsTemplate
 			SP.AlphaMode = Enum.AlphaMode.Transparency
@@ -7357,13 +7420,13 @@ function RoClothes(Player)
 	end
 
 	function Function.BulgeTexture(ObjectInstance, Character, Extra, Data)
-		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.Pants and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Pants Only") then
 			ObjectInstance.TextureID = Extra.Pants.PantsTemplate
 		end
 	end
 
 	function Function.TorsoShirtGraphic(ObjectInstance, Character, Extra, Data)
-		if Extra.TShirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
+		if Extra.TShirt and (table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes") or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only")) or (table.find(PlayerData[Data].CurrentClothes, "Roblox Shirt Only Without Breasts")) or table.find(PlayerData[Data].CurrentClothes, "Roblox Clothes Without Breasts")) then
 			local Decal = Instance.new("Decal", ObjectInstance)
 			Decal.Texture = Extra.TShirt.Graphic
 		end
@@ -9416,7 +9479,9 @@ function RoClothes(Player)
 		local ToneConnect = GUIObject.ToneButton.MouseButton1Click:Connect(function()
 			if PlayerData[SelectPlayer].Tone == "Base" then
 				PlayerData[SelectPlayer].Tone = "Dark"
-			else
+			elseif PlayerData[SelectPlayer].Tone == "Dark" then
+				PlayerData[SelectPlayer].Tone = "OwnColor"
+				else
 				PlayerData[SelectPlayer].Tone = "Base"
 			end
 
@@ -9523,6 +9588,19 @@ function RoClothes(Player)
 
 				PlayerData[SelectPlayer].SkinTone = Color
 				GUIObject.SkinToneText.TextColor3 = Color
+			end
+		end)
+		
+		local NippleToneConnect = GUIObject.NippleToneText.FocusLost:Connect(function()
+			local Text = GUIObject.NippleToneText.Text
+
+			if Text == "" then
+				PlayerData[SelectPlayer].NippleTone = nil
+			else
+				local Color = Function.StringTo(Text, "RGB")
+
+				PlayerData[SelectPlayer].NippleTone = Color
+				GUIObject.NippleToneText.TextColor3 = Color
 			end
 		end)
 
@@ -9670,6 +9748,7 @@ function RoClothes(Player)
 		table.insert(AllConnect, ClickExecuteConnect)
 		table.insert(AllConnect, MobileCloseConnect)
 		table.insert(AllConnect, SkinToneConnect)
+		table.insert(AllConnect, NippleToneConnect)
 		table.insert(AllConnect, BreastsTypeConnect)
 		table.insert(AllConnect, OutfitIdConnect)
 	end
@@ -9709,6 +9788,7 @@ function RoClothes(Player)
 	Function.UIStrokeCreate(GUIObject.PositionPhysicsMultiplyFrame)
 	Function.UIStrokeCreate(GUIObject.RotationPhysicsMultiplyFrame)
 	Function.UIStrokeCreate(GUIObject.SkinToneFrame)
+	Function.UIStrokeCreate(GUIObject.NippleToneFrame)
 	Function.UIStrokeCreate(GUIObject.Menu3_3)
 	Function.UIStrokeCreate(GUIObject.BreastsScaleFrame)
 	Function.UIStrokeCreate(GUIObject.ButtsScaleFrame)
@@ -11048,8 +11128,8 @@ function RoClothes(Player)
 	GUIObject.SkinToneFrame.AnchorPoint = Vector2.new(0.5, 0)
 	GUIObject.SkinToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	GUIObject.SkinToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	GUIObject.SkinToneFrame.Position = UDim2.new(0.5, 0, 0.88499999, 0)
-	GUIObject.SkinToneFrame.Size = UDim2.new(0.891309202, 0, 0.0646399707, 0)
+	GUIObject.SkinToneFrame.Position = UDim2.new(0.271, 0, 0.885, 0)
+	GUIObject.SkinToneFrame.Size = UDim2.new(0.434, 0, 0.0646, 0)
 
 	GUIObject.STUICorner.CornerRadius = UDim.new(0.25, 0)
 	GUIObject.STUICorner.Parent = GUIObject.SkinToneFrame
@@ -11070,6 +11150,37 @@ function RoClothes(Player)
 	GUIObject.STUIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
 	GUIObject.STUIGradient.Rotation = -90
 	GUIObject.STUIGradient.Parent = GUIObject.SkinToneFrame
+	
+	
+	GUIObject.NippleToneFrame.Name = "NippleToneFrame"
+	GUIObject.NippleToneFrame.Parent = GUIObject.Menu2
+	GUIObject.NippleToneFrame.AnchorPoint = Vector2.new(0.5, 0)
+	GUIObject.NippleToneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.NippleToneFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GUIObject.NippleToneFrame.Position = UDim2.new(0.729, 0, 0.885, 0)
+	GUIObject.NippleToneFrame.Size = UDim2.new(0.433, 0, 0.0646, 0)
+
+	GUIObject.STUIXCorner.CornerRadius = UDim.new(0.25, 0)
+	GUIObject.STUIXCorner.Parent = GUIObject.NippleToneFrame
+
+	GUIObject.NippleToneText.Name = "NippleToneText"
+	GUIObject.NippleToneText.Parent = GUIObject.NippleToneFrame
+	GUIObject.NippleToneText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	GUIObject.NippleToneText.BackgroundTransparency = 1.000
+	GUIObject.NippleToneText.Size = UDim2.new(1, 0, 1, 0)
+	GUIObject.NippleToneText.Font = Enum.Font.Code
+	GUIObject.NippleToneText.PlaceholderText = "Nipple Tone [RGB] (Leave Empty To Disable)"
+	GUIObject.NippleToneText.Text = ""
+	GUIObject.NippleToneText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GUIObject.NippleToneText.TextScaled = true
+	GUIObject.NippleToneText.TextSize = 14.000
+	GUIObject.NippleToneText.TextWrapped = true
+
+	GUIObject.STUIXGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 54, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 100, 67))}
+	GUIObject.STUIXGradient.Rotation = -90
+	GUIObject.STUIXGradient.Parent = GUIObject.NippleToneFrame
+	
+	
 
 	GUIObject.Menu3.Name = "Menu3"
 	GUIObject.Menu3.Parent = GUIObject.PageFrame
