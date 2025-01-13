@@ -141,6 +141,7 @@ for _, PlrHats in pairs(Player:GetChildren()) do
 		Prt.Parent = Player
 		if Prt:IsA("Accessory") or Prt:IsA("Hat") then
 			addAccoutrement(Player, Prt)
+			Prt.Handle.CanCollide = false
 		end
 	end
 	end
