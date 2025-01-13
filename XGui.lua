@@ -35,6 +35,10 @@ local FullHatSetNames = {
 	"Melanie",
 	"NewerMelanie",
 	"WolframNightstalker",
+	"Xolly-Normal",
+	"Xolly-Xmas",
+	"Xolly-Princess",
+	"Xolly-Dreamer",
 };
 local ExtraValue2 = {
 "Normal",
