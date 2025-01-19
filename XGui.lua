@@ -24,39 +24,32 @@ local Materials = {
 	[Enum.Material.WoodPlanks] = 'Wood Planks';
 	[Enum.Material.Wood] = 'Wood';
 };
-local FullHatSetNames = {
-	"Fed",
-	"FoodDemons",
-	"GeodeIc3",
-	"GeodeSn0w",
-	"Gnarpy",
-	"Hunter",
-	"Maidify",
-	"Melanie",
-	"NewerMelanie",
-	"WolframNightstalker",
-	"Xolly-Normal",
-	"Xolly-Xmas",
-	"Xolly-Princess",
-	"Xolly-Dreamer",
-};
+
+
+local Hatting = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
+
+local FullHatSetNames = {};
+
+for I,V in pairs(Hatting.XHat:GetChildren()) do
+	table.insert(FullHatSetNames, V.Name)
+end
+
+
 local ExtraValue2 = {
-"Normal",
-"UwU",	
+	"Normal",
+	"UwU",	
 }
 
 local BodyParts = {
 	"Head",
 	"HumanoidRootPart",
-
-	[[-------R6------]],
+	[[-R6-]],
 	"Torso",
 	"Left Arm",
 	"Right Arm",
 	"Right Leg",
 	"Left Leg",
-
-	[[-------R15------]],
+	[[-R15-]],
 	"UpperTorso",
 	"LowerTorso",
 	"LeftUpperArm",
@@ -120,7 +113,7 @@ _G.RobloxShirt = "true" -- true/false
 _G.SizeLock = "false" -- true/false
 _G.R15PT = "true" -- true/false
 _G.R6PT = "false" -- true/false
-_G.Target = game.Players.LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
+_G.Target = game:GetService("Players").LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
 ------------------GeodeHatting
 _G.K1 = "Gnarpy" 
 _G.K2 = 1 
@@ -168,7 +161,7 @@ local Tails = function()
 	end)
 end
 
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
 	if _G.GeodeHattingRespawn == true then
 		GeodeHatting()
@@ -785,8 +778,8 @@ local slider3 = OthersTab.new("slider", {
 	value = 1,
 	rounding = 1,
 })
+slider3.set(5)
 slider3.event:Connect(function(x)
 	print("slider value: " .. x * 0.1)
 	_G.T = x * 0.1
 end)
-slider3.set(5)
