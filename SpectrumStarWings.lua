@@ -1022,6 +1022,7 @@ for i, v in pairs(m:GetChildren()) do
 		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
+		v.Massless = true
 	end
 end
 for i, v in pairs(mw2:GetChildren()) do
@@ -1030,6 +1031,7 @@ for i, v in pairs(mw2:GetChildren()) do
 		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
+		v.Massless = true
 	end
 end
 for i, v in pairs(mw1:GetChildren()) do
@@ -1038,6 +1040,7 @@ for i, v in pairs(mw1:GetChildren()) do
 		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
+		v.Massless = true
 	end
 end
 for i, v in pairs(extrawingmod1:GetChildren()) do
@@ -1046,6 +1049,7 @@ for i, v in pairs(extrawingmod1:GetChildren()) do
 		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
+		v.Massless = true
 	end
 end
 for i, v in pairs(extrawingmod2:GetChildren()) do
@@ -1054,6 +1058,7 @@ for i, v in pairs(extrawingmod2:GetChildren()) do
 		v.Reflectance = _G.RZ
 		v.Color = Color3.new(rValue/255,gValue/255,bValue/255)
 		v.Material = _G.Material
+		v.Massless = true
 	end
 end
 
