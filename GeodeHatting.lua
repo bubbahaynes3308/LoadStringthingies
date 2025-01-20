@@ -1,5 +1,5 @@
 local HatPack = _G.K1
-local ExtraValue = tostring(_G.K2)
+local ExtraValue =  _G.K2
 local ExtraValue2 = _G.K3
 local Z = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
 local X = Z.XHat
@@ -7,8 +7,10 @@ local Plr = game:GetService("Players").LocalPlayer
 local HatPackage = X[HatPack]:Clone()
 local HiddenLimbs = Z.HiddenLimbs
 local Player = Plr.Character
+local HatsResized = {}
+local Connections = {}
 if HatPack == "FoodDemons" then
-	NewHats = HatPackage[ExtraValue]
+	NewHats = HatPackage[tostring(ExtraValue)]
 elseif HatPack == "WolframNightstalker" then
 	NewHats = HatPackage["NewHats".. ExtraValue2]
 else
@@ -24,6 +26,7 @@ function weldAttachments(attach1, attach2)
 	weld.C0 = attach1.CFrame
 	weld.C1 = attach2.CFrame
 	weld.Parent = attach1.Parent
+	weld.Name = "AccessoryWeld".. weld.Parent.Name
 	return weld
 end
 
@@ -104,10 +107,17 @@ function RemoveHatsAndRecolor()
 	end
 
 	for _, PossibleDecal in pairs(Player["Head"]:GetChildren()) do
-		if  PossibleDecal:IsA("Decal") then
+		if  PossibleDecal:IsA("Decal") and PossibleDecal.Name == "face" then
+			if HatPackage:HasTag("FaceIncluded") then
+				PossibleDecal.Texture = HatPackage:GetAttribute("Face")
+			else
 			PossibleDecal.Transparency = 1
+			end
+			if HatPackage:HasTag("FaceAnimated") then
+				HatPackage["AnimatedFace"]:Clone().Parent = PossibleDecal
+			end
 		end
-	end
+		end
 
 
 
@@ -149,7 +159,53 @@ function AddNewHats()
 			Prt.Handle.Massless = true
 		end
 	end
+	
 end
+
+local function processCharacterAccessories(character)
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid then
+		warn("Humanoid not found in character")
+		return
+	end
+
+	local scale = character:GetScale() -- Assuming uniform scaling, adjust as needed
+
+	local headHats = {}
+	local waistAccessories = {}
+	local otherAccessories = {}
+
+	for _, accessory in character:GetChildren() do
+		if accessory:IsA("Accessory") then
+			local handle = accessory:FindFirstChild("Handle")
+			if handle and handle:IsA("BasePart") then
+				-- Scale the handle and its descendants
+				handle.Size = handle.Size * scale
+				for _, descendant in handle:GetDescendants() do
+					if descendant:IsA("BasePart") then
+						descendant.Size = descendant.Size * scale
+					elseif descendant:IsA("SpecialMesh") then
+						descendant.Scale = descendant.Scale * scale
+					end
+				end
+
+				-- Separate head hats, waist accessories, and other accessories
+				local hatAttachment = handle:FindFirstChild("HatAttachment")
+				local waistAttachment = handle:FindFirstChild("WaistAttachment")
+				if hatAttachment then
+					table.insert(headHats, accessory)
+				elseif waistAttachment then
+					table.insert(waistAccessories, accessory)
+					-- Adjust waist accessory position
+					local waistPosition = waistAttachment.Position * scale
+					handle.Position = waistPosition
+				else
+					table.insert(otherAccessories, accessory)
+				end
+			end
+		end
+	end
+	end
 
 function Execute()
 	spawn(function()
@@ -157,6 +213,17 @@ function Execute()
 	end)
 	wait(0.025)
 	AddNewHats()
+	wait(0.025)
+	processCharacterAccessories(Player)
+	if Player:GetScale() ~= 1 then 	Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1 = CFrame.new(Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.X, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Y, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Z*1.5)
+		for _,v in pairs(Player:GetDescendants()) do
+			if v:IsA("Weld") and v.Name == "AccessoryWeldLeft Arm" or v.Name ==  "AccessoryWeldRight Arm" or v.Name ==  "AccessoryWeldLeft Leg" or v.Name ==  "AccessoryWeldRight Leg" then
+				v.C1 = CFrame.new(0, -1 * Player:GetScale(), -0.05)
+			end
+		end
+	end
 end
 
 Execute()
+
+
