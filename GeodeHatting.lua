@@ -148,11 +148,31 @@ function RemoveHatsAndRecolor()
 	end
 end
 
+if HatPackage:HasTag("UseBodyColors") then --i Used Tags To Differ Them From Getting set Without one
+	local BodyColors = NewHats:WaitForChild("Body Colors", 2.5)
+	local HeadColor = BodyColors.HeadColor3
+	local TorsoColor = BodyColors.TorsoColor3
+	local LeftArmColor = BodyColors.LeftArmColor3
+	local LeftLegColor = BodyColors.LeftLegColor3
+	local RightArmColor = BodyColors.RightArmColor3
+	local RightLegColor = BodyColors.RightLegColor3
+	Player["Head"].Color = Color3.fromRGB(HeadColor.R, HeadColor.G, HeadColor.B)
+	Player["Torso"].Color = Color3.fromRGB(TorsoColor.R, TorsoColor.G, TorsoColor.B)
+	Player["Left Arm"].Color = Color3.fromRGB(LeftArmColor.R, LeftArmColor.G, LeftArmColor.B)
+	Player["Left Leg"].Color = Color3.fromRGB(LeftLegColor.R, LeftLegColor.G, LeftLegColor.B)
+	Player["Right Arm"].Color = Color3.fromRGB(RightArmColor.R, RightArmColor.G, RightArmColor.B)
+	Player["Right Leg"].Color = Color3.fromRGB(RightLegColor.R, RightLegColor.G, RightLegColor.B)
+end
+
 --------------------------------------------------------------------------------------------------------
 
 function AddNewHats()
 	for _, Prt in pairs(NewHats:GetChildren()) do
 		Prt.Parent = Player
+		if HatPackage:HasTag("HeadMesh") then
+			Player["Head"]:FindFirstChildOfClass("SpecialMesh"):Destroy()
+			HatPackage:WaitForChild("HeadMesh", 50):Clone().Parent = Player["Head"]
+		end
 		if Prt:IsA("Accessory") or Prt:IsA("Hat") then
 			addAccoutrement(Player, Prt)
 			Prt.Handle.CanCollide = false
