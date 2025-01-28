@@ -25,6 +25,7 @@ local Materials = {
 	[Enum.Material.Wood] = 'Wood';
 };
 
+local Players = game:GetService("Players")
 
 local Hatting = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
 
@@ -113,11 +114,12 @@ _G.RobloxShirt = "true" -- true/false
 _G.SizeLock = "false" -- true/false
 _G.R15PT = "true" -- true/false
 _G.R6PT = "false" -- true/false
-_G.Target = game:GetService("Players").LocalPlayer  -- game.Players:WaitForChild("OtherPlayerName")
+_G.Target = Players.LocalPlayer  -- Players:WaitForChild("OtherPlayerName")
 ------------------GeodeHatting
 _G.K1 = "Gnarpy" 
 _G.K2 = 1 
 _G.K3 = "Normal"
+_G.K4 = Players.LocalPlayer
 
 local SpectrumWings = function()
 	spawn(function()
@@ -161,7 +163,7 @@ local Tails = function()
 	end)
 end
 
-game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
 	if _G.GeodeHattingRespawn == true then
 		GeodeHatting()
@@ -560,12 +562,12 @@ local dropdown3 = MorphingTab.new("dropdown", {
 })
 
 dropdown3.new("LocalPlayer")
-for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+for i, v in pairs(Players:GetPlayers()) do
 	dropdown3.new(v.Name)
 end
 
 dropdown3.event:Connect(function(name)
-	_G.Target = game:GetService("Players")[name]
+	_G.Target = Players[name]
 	print("i chose " .. name)
 end)
 
@@ -623,6 +625,22 @@ switch8.set(false)
 switch8.event:Connect(function(bool)
 	print("ReHat Character Set to: ", bool)
 	_G.GeodeHattingRespawn = bool
+end)
+
+---place player set here _G.K4 = game:GetService
+
+local HattingPlayerdropdown = MorphingTab.new("dropdown", {
+	text = "Player",
+})
+
+HattingPlayerdropdown.new("LocalPlayer")
+for i, v in pairs(Players:GetPlayers()) do
+	HattingPlayerdropdown.new(v.Name)
+end
+
+HattingPlayerdropdown.event:Connect(function(name)
+	_G.K4 = Players[name]
+	print("i chose " .. name)
 end)
 
 local HattingDropdown1 = MorphingTab.new("dropdown", {
@@ -783,3 +801,4 @@ slider3.event:Connect(function(x)
 	print("slider value: " .. x * 0.1)
 	_G.T = x * 0.1
 end)
+
