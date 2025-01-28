@@ -565,6 +565,9 @@ dropdown3.new("LocalPlayer")
 for i, v in pairs(Players:GetPlayers()) do
 	dropdown3.new(v.Name)
 end
+Players.PlayerAdded:Connect(function(Plr)
+	dropdown3.new(Plr.Name)
+end)
 
 dropdown3.event:Connect(function(name)
 	_G.Target = Players[name]
@@ -637,6 +640,9 @@ HattingPlayerdropdown.new("LocalPlayer")
 for i, v in pairs(Players:GetPlayers()) do
 	HattingPlayerdropdown.new(v.Name)
 end
+Players.PlayerAdded:Connect(function(Plr)
+	HattingPlayerdropdown.new(Plr.Name)
+end)
 
 HattingPlayerdropdown.event:Connect(function(name)
 	_G.K4 = Players[name]
