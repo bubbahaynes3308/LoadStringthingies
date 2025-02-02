@@ -669,11 +669,11 @@ local HattingFDSlider = MorphingTab.new("slider", {
 	value = 1,
 	rounding = 5,
 })
-Tailsslider2.event:Connect(function(x)
+HattingFDSlider.event:Connect(function(x)
 	print("Food Demon #" .. x)
 	_G.K2 = x
 end)
-Tailsslider2.set(1)
+HattingFDSlider.set(1)
 
 local HattingDropdown2 = MorphingTab.new("dropdown", {
 	text = "2nd Extra Value",
