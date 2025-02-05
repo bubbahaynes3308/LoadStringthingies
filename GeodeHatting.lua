@@ -259,9 +259,15 @@ end
 
 Execute()
 
+local HatPackageS = HatPackage
+local ExtraValueSave = ExtraValue
+local ExtraValue2Save = ExtraValue2
 Plr.CharacterAdded:Connect(function()
 	if SaveOutfit == true then
 		task.wait(0.1)
+		HatPackage = HatPackageS
+		ExtraValue = ExtraValueSave
+		ExtraValue2 = ExtraValue2Save
 		Player = Plr.Character
 		spawn(function()
 			Execute()
