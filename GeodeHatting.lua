@@ -1,6 +1,7 @@
 local HatPack = _G.K1
 local ExtraValue =  _G.K2
 local ExtraValue2 = _G.K3
+local SaveOutfit = _G.K5
 local Z = game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
 local X = Z.XHat
 local Plr = _G.K4
@@ -9,13 +10,7 @@ local HiddenLimbs = Z.HiddenLimbs
 local Player = Plr.Character
 local HatsResized = {}
 local Connections = {}
-if HatPack == "FoodDemons" then
-	NewHats = HatPackage[tostring(ExtraValue)]
-elseif HatPack == "WolframNightstalker" then
-	NewHats = HatPackage["NewHats".. ExtraValue2]
-else
-	NewHats = HatPackage["NewHats"]
-end
+
 
 ------------------------------------------Below Is What Welds The Hats Together--------------------------------------------------------------
 
@@ -77,6 +72,24 @@ end
 ------------------------------------------Above Is What Welds The Hats Together--------------------------------------------------------------
 
 function RemoveHatsAndRecolor()
+if HatPack == "FoodDemons" then
+	NewHats = HatPackage[tostring(ExtraValue)]:Clone()
+elseif HatPack == "WolframNightstalker" then
+	NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
+else
+	NewHats = HatPackage["NewHats"]:Clone()
+end
+
+if game.PlaceId == 10449761463 then
+		for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
+			if  PlrHats:IsA("Accessory") or 
+				PlrHats:IsA("Hat")
+			then
+				PlrHats:Destroy()
+			end
+		end
+	end
+	
 	for _, PlrHats in pairs(Player:GetChildren()) do
 		if  PlrHats:IsA("Accessory") or 
 			PlrHats:IsA("Hat") or 
@@ -246,4 +259,21 @@ end
 
 Execute()
 
-
+Plr.CharacterAdded:Connect(function()
+	if SaveOutfit == true then
+		task.wait(0.1)
+		Player = Plr.Character
+		spawn(function()
+			Execute()
+		end)
+	end
+end)
+task.spawn(function()
+	while task.wait(0.5) do
+		local BreakerObject = game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue")
+		if BreakerObject then
+			SaveOutfit = false
+			game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue"):Destroy()
+		end
+	end
+end)

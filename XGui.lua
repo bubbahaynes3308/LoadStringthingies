@@ -120,6 +120,7 @@ _G.K1 = "Gnarpy"
 _G.K2 = 1 
 _G.K3 = "Normal"
 _G.K4 = Players.LocalPlayer
+_G.K5 = false
 
 local SpectrumWings = function()
 	spawn(function()
@@ -162,6 +163,14 @@ local Tails = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Tails.lua",true))()
 	end)
 end
+
+local StopAutoOutfit = function()
+	spawn(function()
+		local DeleteValue = Instance.new("BoolValue", game:GetService("ReplicatedStorage"))
+        DeleteValue.Name = _G.K4.Name.."DeleteValue"
+	end)
+end
+
 
 Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
@@ -621,6 +630,14 @@ button10.event:Connect(function()
 	GeodeHatting()
 end)
 
+local buttonDisabler = MorphingTab.new("button", {
+	text = "Disable AutoOutfitter",
+})
+buttonDisabler.event:Connect(function()
+	print("Hatting Executed")
+	StopAutoOutfit()
+end)
+
 local switch8 = MorphingTab.new("switch", {
 	text = "Reapply On Respawn";
 })
@@ -628,6 +645,15 @@ switch8.set(false)
 switch8.event:Connect(function(bool)
 	print("ReHat Character Set to: ", bool)
 	_G.GeodeHattingRespawn = bool
+end)
+
+local AutoOutfit = MorphingTab.new("switch", {
+	text = "ReOutfit Target On Respawn";
+})
+AutoOutfit.set(false)
+AutoOutfit.event:Connect(function(bool)
+	print("ReOutfit Character Set to: ", bool)
+	_G.K5 = bool
 end)
 
 ---place player set here _G.K4 = game:GetService
