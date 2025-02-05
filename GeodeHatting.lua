@@ -264,17 +264,19 @@ local ExtraValueSave = ExtraValue
 local ExtraValue2Save = ExtraValue2
 local PlrS = Plr
 PlrS.CharacterAdded:Connect(function()
+	task.spawn(function()
 	if SaveOutfit == true then
 		task.wait(0.1)
 		HatPackage = HatPackageS
 		ExtraValue = ExtraValueSave
 		ExtraValue2 = ExtraValue2Save
 		Player = PlrS.Character
-		spawn(function()
+		task.spawn(function()
 			Execute()
 		end)
 	end
-end)
+	end)
+	end)
 task.spawn(function()
 	while task.wait(0.5) do
 		local BreakerObject = game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue")
