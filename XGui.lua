@@ -149,7 +149,7 @@ end
 
 local GeodeHatting = function()
 	spawn(function()
-		--loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
+		--no longer being used loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
 		local HatPack = _G.K1
 		local ExtraValue = _G.K2
 		local ExtraValue2 = _G.K3
@@ -231,7 +231,7 @@ local GeodeHatting = function()
             NewHats = HatPackage["NewHats"]:Clone()
 			end
 			if game.PlaceId == 10449761463 then
-				for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
+				for _, PlrHats in pairs(Player["FakeHead"]:GetChildren()) do
 					if  PlrHats:IsA("Accessory") or 
 						PlrHats:IsA("Hat")
 					then
