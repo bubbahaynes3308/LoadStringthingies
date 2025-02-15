@@ -407,15 +407,18 @@ local GeodeHatting = function()
 				RemoveHatsAndRecolor()
 			end)
 			wait(0.025)
-			AddNewHats()
-			wait(0.025)
-			processCharacterAccessories(Player)
-			if Player:GetScale() ~= 1 then 	Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1 = CFrame.new(Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.X, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Y, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Z* Player:GetScale())
-				for _,v in pairs(Player:GetDescendants()) do
-					if v:IsA("Weld") and v.Name == "AccessoryWeldLeft Arm" or v.Name ==  "AccessoryWeldRight Arm" or v.Name ==  "AccessoryWeldLeft Leg" or v.Name ==  "AccessoryWeldRight Leg" then
-						v.C1 = CFrame.new(0, -1 * Player:GetScale(), -0.05)
-					end
-				end
+			if Player:GetScale() ~= 1 then
+				local SavedScale = Player:GetScale()
+				Player:ScaleTo(1)
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
+				task.wait(0.025)
+				Player:ScaleTo(SavedScale)
+			else
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
 			end
 		end
 
