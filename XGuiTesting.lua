@@ -68,7 +68,6 @@ local BodyParts = {
 	"LeftFoot",
 };
 _G.RespawnWaitTime = 0.025
-_G.GeodeHattingRespawn = false
 _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
@@ -480,9 +479,6 @@ end
 
 Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
-	if _G.GeodeHattingRespawn == true then
-		GeodeHatting()
-	end
 	if _G.MHFRespawn == true then
 		MHF()
 	end
@@ -942,15 +938,6 @@ local buttonDisabler = MorphingTab.new("button", {
 buttonDisabler.event:Connect(function()
 	print("Hatting Executed")
 	StopAutoOutfit()
-end)
-
-local switch8 = MorphingTab.new("switch", {
-	text = "Reapply On Respawn";
-})
-switch8.set(false)
-switch8.event:Connect(function(bool)
-	print("ReHat Character Set to: ", bool)
-	_G.GeodeHattingRespawn = bool
 end)
 
 local AutoOutfit = MorphingTab.new("switch", {
