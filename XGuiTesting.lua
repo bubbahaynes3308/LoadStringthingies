@@ -400,6 +400,12 @@ local GeodeHatting = function()
 				end
 			end
 		end
+		
+		local function Rescale(NewScale)
+			Player:ScaleTo(1)
+			wait(0.025)
+			Player:ScaleTo(NewScale)
+		end
 
 		local function Execute()
 			spawn(function()
@@ -441,6 +447,14 @@ local GeodeHatting = function()
 
 				Execute()
 			end
+		end)
+		
+		task.spawn(function()
+		local  SavedScale = Player:GetScale()
+		repeat task.wait(0.5) until SavedScale ~= Player:GetScale()
+			local NewScale = Player:GetScale()
+			Rescale(NewScale)
+			SavedScale = NewScale
 		end)
 
 		table.insert(AllConnect, CharacterConnect)
@@ -1076,6 +1090,26 @@ button8.event:Connect(function()
 	print("Dark Dex V5 Executed")
 	spawn(function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/AlterX404/DarkDEX-V5/refs/heads/main/DarkDEX-V5'))()
+	end)
+end)
+
+local buttonX = OthersTab.new("button", {
+	text = "Execute Aimbot",
+})
+buttonX.event:Connect(function()
+	print("Aimbot Executed")
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/FixedAimbot.lua",true))()
+	end)
+end)
+
+local buttonZ = OthersTab.new("button", {
+	text = "Execute Aimbot",
+})
+buttonZ.event:Connect(function()
+	print("Aimbot Executed")
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/ESPs/refs/heads/main/BlissESP.lua",true))()
 	end)
 end)
 
