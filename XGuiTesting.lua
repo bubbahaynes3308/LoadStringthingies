@@ -1104,10 +1104,10 @@ buttonX.event:Connect(function()
 end)
 
 local buttonZ = OthersTab.new("button", {
-	text = "Execute Aimbot",
+	text = "Execute Esp",
 })
 buttonZ.event:Connect(function()
-	print("Aimbot Executed")
+	print("ESP Executed")
 	spawn(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blissful4992/ESPs/refs/heads/main/BlissESP.lua",true))()
 	end)
