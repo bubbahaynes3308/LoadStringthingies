@@ -417,6 +417,20 @@ local GeodeHatting = function()
 				AddNewHats()
 				wait(0.025)
 				processCharacterAccessories(Player)
+				wait(0.025)
+				if HatPackage:HasTag("UniverseIsR63d") then
+					local P1 = Player["Left LegAccessory"].Handle.Clothing
+					local P2 = Player["Right LegAccessory"].Handle.Clothing
+					local S = Player["TorsoAccessory"].Handle.Clothing
+					local Shirt = Player:FindFirstChildOfClass("Shirt")
+					local Pants = Player:FindFirstChildOfClass("Pants")
+					if Shirt then
+						S.TextureID = Shirt.ShirtTemplate
+					end
+					if Pants then
+						P1.TextureID = Pants.PantsTemplate
+						P2.TextureID = Pants.PantsTemplate
+					end
 			end
 		end
 
