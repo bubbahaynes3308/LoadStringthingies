@@ -430,7 +430,8 @@ local GeodeHatting = function()
 					if Pants then
 						P1.TextureID = Pants.PantsTemplate
 						P2.TextureID = Pants.PantsTemplate
-					end
+				end
+							end
 			end
 		end
 
