@@ -276,8 +276,8 @@ local GeodeHatting = function()
 			
 			if HatPackage:HasTag("UniverseIsR63d") then --Invisible Full Body
 				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
-				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
-				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
+				HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
+				HiddenLimbs.RL:Clone().Parent = Player["Right Leg"]
 			end
 
 			for _, PossibleDecal in pairs(Player["Head"]:GetChildren()) do
@@ -419,8 +419,8 @@ local GeodeHatting = function()
 				processCharacterAccessories(Player)
 				wait(0.025)
 				if HatPackage:HasTag("UniverseIsR63d") then
-					local P1 = Player["Left LegAccessory"].Handle.Clothing
-					local P2 = Player["Right LegAccessory"].Handle.Clothing
+					local P1 = Player["Left LegAccessory"].Handle.L_Leg
+					local P2 = Player["Right LegAccessory"].Handle.R_Leg
 					local S = Player["TorsoAccessory"].Handle.Clothing
 					local Shirt = Player:FindFirstChildOfClass("Shirt")
 					local Pants = Player:FindFirstChildOfClass("Pants")
