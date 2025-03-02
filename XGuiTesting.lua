@@ -449,6 +449,7 @@ local GeodeHatting = function()
 				local BreakerObject = game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue")
 				if BreakerObject then
 					SaveOutfit = false
+					print("AutoOutfitter Disabled")
 					game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue"):Destroy()
 				end
 			end
