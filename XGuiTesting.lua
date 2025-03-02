@@ -428,8 +428,8 @@ local GeodeHatting = function()
 					local T2 = Player["TorsoAccessory"].Handle.B.B2
 					local Shirt = Player:FindFirstChildOfClass("Shirt")
 					local Pants = Player:FindFirstChildOfClass("Pants")
-				    P1.Color = Player["Left Leg"].Color
-					P2.Color = Player["Right Leg"].Color
+				    L1.Color = Player["Left Leg"].Color
+					L2.Color = Player["Right Leg"].Color
 					T1.Color = Player["Torso"].Color
 					T2.Color = Player["Torso"].Color
 					if Shirt then
