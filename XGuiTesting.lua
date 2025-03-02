@@ -28,11 +28,11 @@ local Materials = {
 
 local Players = game:GetService("Players")
 
-local Hatting =  game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
+local XIIX =  game:GetObjects("rbxasset://XIIXPack.Rbxm")[1]:Clone()
 
 local FullHatSetNames = {};
 
-for I,V in pairs(Hatting.XHat:GetChildren()) do
+for I,V in pairs(XIIX.GeodesHatting.XHat:GetChildren()) do
 	table.insert(FullHatSetNames, V.Name)
 end
 
@@ -153,7 +153,7 @@ local GeodeHatting = function()
 		local ExtraValue = _G.K2
 		local ExtraValue2 = _G.K3
 		local SaveOutfit = _G.K5
-		local X = Hatting.XHat
+		local X = XIIX.XHat
 		local Plr = _G.K4
 		local HatPackage = X[HatPack]:Clone()
 		local HiddenLimbs = Hatting.HiddenLimbs
@@ -171,7 +171,6 @@ local GeodeHatting = function()
 			weld.C0 = attach1.CFrame
 			weld.C1 = attach2.CFrame
 			weld.Parent = attach1.Parent
-			weld.Name = "AccessoryWeld".. weld.Parent.Name
 			return weld
 		end
 
@@ -219,16 +218,20 @@ local GeodeHatting = function()
 				end
 			end
 		end
+
 		------------------------------------------Above Is What Welds The Hats Together--------------------------------------------------------------
 
 		local function RemoveHatsAndRecolor()
+			
 			if HatPack == "FoodDemons" then
-            NewHats = HatPackage[tostring(ExtraValue)]:Clone()
+				NewHats = HatPackage[tostring(ExtraValue)]:Clone()
 			elseif HatPack == "WolframNightstalker" then
-            NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
+				NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
 			else
-            NewHats = HatPackage["NewHats"]:Clone()
+				NewHats = HatPackage["NewHats"]:Clone()
 			end
+			
+			if not HatPackage:HasTag("UniverseTagentVarrient") then
 			if game.PlaceId == 10449761463 then
 				for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
 					if  PlrHats:IsA("Accessory") or 
@@ -251,7 +254,8 @@ local GeodeHatting = function()
 				then
 					PlrHats:Destroy()
 				end
-			end
+				end
+				end
 			if HatPackage:HasTag("Headless") or  ExtraValue == "42" or ExtraValue == "41" or ExtraValue == "31" or ExtraValue == "30" or ExtraValue == "29" or ExtraValue == "66" or ExtraValue == "67" or ExtraValue == "68" or ExtraValue == "69" or ExtraValue == "70" or ExtraValue == "71" or ExtraValue == "72" or ExtraValue == "74" or ExtraValue == "73" then --Invisible Head
 				HiddenLimbs.InvisibleHead:Clone().Parent = Player["Head"]
 
@@ -265,6 +269,12 @@ local GeodeHatting = function()
 			end
 			if HatPackage:HasTag("HiddenTopBody") then --Invisible Full Body
 				HiddenLimbs.HiddenTorso:Clone().Parent = Player["Torso"]
+				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
+				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
+			end
+			
+			if HatPackage:HasTag("UniverseIsR63d") then --Invisible Full Body
+				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
 				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
 				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
 			end
@@ -287,19 +297,13 @@ local GeodeHatting = function()
 
 			if HatPackage:HasTag("HasColors") then --i Used Tags To Differ Them From Getting set Without one
 				if  HatPack == "FoodDemons" and ExtraValue ~= "42" or ExtraValue ~= "41" or ExtraValue ~= "31" or ExtraValue ~= "30" or ExtraValue ~= "29" or ExtraValue ~= "66" or ExtraValue ~= "67" or ExtraValue ~= "68" or ExtraValue ~= "69" or ExtraValue ~= "70" or ExtraValue ~= "71" or ExtraValue ~= "72" or ExtraValue ~= "74" or ExtraValue ~= "73" then			---These Extra Values in question Have no Body Color And Use Hidden Limbs 
-					local BodyColors = NewHats:WaitForChild("Body Colors", 2.5)
-					local HeadColor = BodyColors.HeadColor3
-					local TorsoColor = BodyColors.TorsoColor3
-					local LeftArmColor = BodyColors.LeftArmColor3
-					local LeftLegColor = BodyColors.LeftLegColor3
-					local RightArmColor = BodyColors.RightArmColor3
-					local RightLegColor = BodyColors.RightLegColor3
-					Player["Head"].Color = Color3.fromRGB(HeadColor.R, HeadColor.G, HeadColor.B)
-					Player["Torso"].Color = Color3.fromRGB(TorsoColor.R, TorsoColor.G, TorsoColor.B)
-					Player["Left Arm"].Color = Color3.fromRGB(LeftArmColor.R, LeftArmColor.G, LeftArmColor.B)
-					Player["Left Leg"].Color = Color3.fromRGB(LeftLegColor.R, LeftLegColor.G, LeftLegColor.B)
-					Player["Right Arm"].Color = Color3.fromRGB(RightArmColor.R, RightArmColor.G, RightArmColor.B)
-					Player["Right Leg"].Color = Color3.fromRGB(RightLegColor.R, RightLegColor.G, RightLegColor.B)
+					--[[local BodyColor = NewHats:FindFirstChildOfClass("Body Colors")
+					Player["Head"].Color = BodyColor.HeadColor3
+					Player["Torso"].Color = BodyColor.TorsoColor3
+					Player["Left Arm"].Color = BodyColor.LeftArmColor3
+					Player["Left Leg"].Color = BodyColor.LeftLegColor3
+					Player["Right Arm"].Color = BodyColor.RightArmColor3
+					Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 				else
 					Player["Head"].Color = HatPackage:GetAttribute("Color")
 					Player["Torso"].Color = HatPackage:GetAttribute("Color")
@@ -310,8 +314,8 @@ local GeodeHatting = function()
 				end
 			end
 		end
-		
-				if HatPackage:HasTag("UseAttributesColors") then --i Used Tags To Differ Them From Getting set Without one
+
+		if HatPackage:HasTag("UseAttributesColors") then --i Used Tags To Differ Them From Getting set Without one
 			Player["Head"].Color = HatPackage:GetAttribute("Color")
 			Player["Torso"].Color = HatPackage:GetAttribute("Color")
 			Player["Left Arm"].Color = HatPackage:GetAttribute("Color")
@@ -321,19 +325,13 @@ local GeodeHatting = function()
 		end
 
 		if HatPackage:HasTag("UseBodyColors") then --i Used Tags To Differ Them From Getting set Without one
-			local BodyColors = NewHats:WaitForChild("Body Colors", 2.5)
-			local HeadColor = BodyColors.HeadColor3
-			local TorsoColor = BodyColors.TorsoColor3
-			local LeftArmColor = BodyColors.LeftArmColor3
-			local LeftLegColor = BodyColors.LeftLegColor3
-			local RightArmColor = BodyColors.RightArmColor3
-			local RightLegColor = BodyColors.RightLegColor3
-			Player["Head"].Color = Color3.fromRGB(HeadColor.R, HeadColor.G, HeadColor.B)
-			Player["Torso"].Color = Color3.fromRGB(TorsoColor.R, TorsoColor.G, TorsoColor.B)
-			Player["Left Arm"].Color = Color3.fromRGB(LeftArmColor.R, LeftArmColor.G, LeftArmColor.B)
-			Player["Left Leg"].Color = Color3.fromRGB(LeftLegColor.R, LeftLegColor.G, LeftLegColor.B)
-			Player["Right Arm"].Color = Color3.fromRGB(RightArmColor.R, RightArmColor.G, RightArmColor.B)
-			Player["Right Leg"].Color = Color3.fromRGB(RightLegColor.R, RightLegColor.G, RightLegColor.B)
+			--[[local BodyColor = HatPackage.NewHats:FindFirstChildOfClass("Body Colors")
+			Player["Head"].Color = BodyColor.HeadColor3
+			Player["Torso"].Color = BodyColor.TorsoColor3
+			Player["Left Arm"].Color = BodyColor.LeftArmColor3
+			Player["Left Leg"].Color = BodyColor.LeftLegColor3
+			Player["Right Arm"].Color = BodyColor.RightArmColor3
+			Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 		end
 
 
@@ -400,12 +398,6 @@ local GeodeHatting = function()
 				end
 			end
 		end
-		
-		local function Rescale(NewScale)
-			Player:ScaleTo(1)
-			wait(0.025)
-			Player:ScaleTo(NewScale)
-		end
 
 		local function Execute()
 			spawn(function()
@@ -448,14 +440,6 @@ local GeodeHatting = function()
 				Execute()
 			end
 		end)
-		
-		task.spawn(function()
-		local  SavedScale = Player:GetScale()
-		repeat task.wait(0.5) until SavedScale ~= Player:GetScale()
-			local NewScale = Player:GetScale()
-			Rescale(NewScale)
-			SavedScale = NewScale
-		end)
 
 		table.insert(AllConnect, CharacterConnect)
 
@@ -473,7 +457,58 @@ end
 
 local MHF = function()
 	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
+		local Target = game:GetService("Players").LocalPlayer
+		local Player = Target.Character
+		local Furrything = XIIX["FurryMorph"]:Clone() --game:GetObjects('rbxasset://FurrymodelThing.rbxm')[1]:Clone() if the asset ever Gets Deleted
+		Furrything.Parent = Player
+
+		local Head = Furrything.Welds["Head"]
+		local Torso = Furrything.Welds["Torso"]
+		local Left_Arm = Furrything.Welds["Left Arm"]
+		local Right_Arm = Furrything.Welds["Right Arm"]
+		local Left_Leg = Furrything.Welds["Left Leg"]
+		local Right_Leg = Furrything.Welds["Right Leg"]
+
+
+		Player["Head"].Transparency = 1
+		Player["Torso"].Transparency = 1
+		Player["Left Arm"].Transparency = 1
+		Player["Left Leg"].Transparency = 1
+		Player["Right Arm"].Transparency = 1
+		Player["Right Leg"].Transparency = 1
+		Player["Head"]:FindFirstChildOfClass("Decal").Transparency = 1
+
+		Player["Head"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Torso"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Left Arm"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Left Leg"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Right Arm"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Right Leg"].Color = Color3.fromRGB(226, 154, 66)
+
+
+		for _, H in pairs(Head:GetChildren()) do
+			H.Part0 = Player["Head"]
+		end
+
+		for _, T in pairs(Torso:GetChildren()) do
+			T.Part0 = Player["Torso"]
+		end
+
+		for _, LA in pairs(Left_Arm:GetChildren()) do
+			LA.Part0 = Player["Left Arm"]
+		end
+
+		for _, LL in pairs(Left_Leg:GetChildren()) do
+			LL.Part0 = Player["Left Leg"]
+		end
+
+		for _, RA in pairs(Right_Arm:GetChildren()) do
+			RA.Part0 = Player["Right Arm"]
+		end
+
+		for _, RL in pairs(Right_Leg:GetChildren()) do
+			RL.Part0 = Player["Right Leg"]
+		end
 	end)
 end
 
@@ -826,6 +861,94 @@ local MorphingTab = window1.new({
 	text = "R15TR6&Morphs",
 })
 
+
+local button10 = MorphingTab.new("button", {
+	text = "Geode Hatting",
+})
+button10.event:Connect(function()
+	print("Hatting Executed")
+	GeodeHatting()
+end)
+
+local buttonDisabler = MorphingTab.new("button", {
+	text = "Disable AutoOutfitter",
+})
+buttonDisabler.event:Connect(function()
+	print("Attempted To Stop The Reoutfitting")
+	StopAutoOutfit()
+end)
+
+local AutoOutfit = MorphingTab.new("switch", {
+	text = "ReOutfit Target On Respawn";
+})
+AutoOutfit.set(false)
+AutoOutfit.event:Connect(function(bool)
+	print("ReOutfit Character Set to: ", bool)
+	_G.K5 = bool
+end)
+
+---place player set here _G.K4 = game:GetService
+
+local HattingPlayerdropdown = MorphingTab.new("dropdown", {
+	text = "Player",
+})
+
+HattingPlayerdropdown.new("LocalPlayer")
+for i, v in pairs(Players:GetPlayers()) do
+	HattingPlayerdropdown.new(v.Name)
+end
+Players.PlayerAdded:Connect(function(Plr)
+	HattingPlayerdropdown.new(Plr.Name)
+end)
+
+HattingPlayerdropdown.event:Connect(function(name)
+	_G.K4 = Players[name]
+	print("i chose " .. name)
+end)
+
+local HattingDropdown1 = MorphingTab.new("dropdown", {
+	text = "Hat Set",
+})
+for i, v in pairs(FullHatSetNames) do
+	HattingDropdown1.new(v)
+end
+
+HattingDropdown1.event:Connect(function(name)
+	print("i chose " .. name .. " As The Hat Set")
+	_G.K1 = name
+end)
+
+local HattingFDSlider = MorphingTab.new("slider", {
+	text = "Food Demon Number",
+	color = Color3.new(0.8, 0.5, 0),
+	min = 1,
+	max = 76,
+	value = 1,
+	rounding = 5,
+})
+HattingFDSlider.event:Connect(function(x)
+	print("Food Demon #" .. x)
+	_G.K2 = x
+end)
+HattingFDSlider.set(1)
+
+local HattingDropdown2 = MorphingTab.new("dropdown", {
+	text = "2nd Extra Value",
+})
+for i, v in pairs(ExtraValue2) do
+	HattingDropdown2.new(v)
+end
+
+HattingDropdown2.event:Connect(function(name)
+	print("i chose " .. name .. " As The 2nd Extra Value")
+	_G.K3 = name
+end)
+
+local label4 = MorphingTab.new("label", {
+	text = "-----------------",
+	color = Color3.new(1, 1, 1),
+})
+
 local button7 = MorphingTab.new("button", {text = "R6ify"})
 button7.event:Connect(function()
 	print("Converted R15 to R6 Cliently")
@@ -932,93 +1055,7 @@ switch9.event:Connect(function(bool)
 end)
 
 
-local label4 = MorphingTab.new("label", {
-	text = "-----------------",
-	color = Color3.new(1, 1, 1),
-})
 
-
-local button10 = MorphingTab.new("button", {
-	text = "Geode Hatting",
-})
-button10.event:Connect(function()
-	print("Hatting Executed")
-	GeodeHatting()
-end)
-
-local buttonDisabler = MorphingTab.new("button", {
-	text = "Disable AutoOutfitter",
-})
-buttonDisabler.event:Connect(function()
-	print("Hatting Executed")
-	StopAutoOutfit()
-end)
-
-local AutoOutfit = MorphingTab.new("switch", {
-	text = "ReOutfit Target On Respawn";
-})
-AutoOutfit.set(false)
-AutoOutfit.event:Connect(function(bool)
-	print("ReOutfit Character Set to: ", bool)
-	_G.K5 = bool
-end)
-
----place player set here _G.K4 = game:GetService
-
-local HattingPlayerdropdown = MorphingTab.new("dropdown", {
-	text = "Player",
-})
-
-HattingPlayerdropdown.new("LocalPlayer")
-for i, v in pairs(Players:GetPlayers()) do
-	HattingPlayerdropdown.new(v.Name)
-end
-Players.PlayerAdded:Connect(function(Plr)
-	HattingPlayerdropdown.new(Plr.Name)
-end)
-
-HattingPlayerdropdown.event:Connect(function(name)
-	_G.K4 = Players[name]
-	print("i chose " .. name)
-end)
-
-local HattingDropdown1 = MorphingTab.new("dropdown", {
-	text = "Hat Set",
-})
-for i, v in pairs(FullHatSetNames) do
-	HattingDropdown1.new(v)
-end
-
-HattingDropdown1.event:Connect(function(name)
-	print("i chose " .. name .. " As The Hat Set")
-	_G.K1 = name
-end)
-
-local HattingFDSlider = MorphingTab.new("slider", {
-	text = "Food Demon Number",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 76,
-	value = 1,
-	rounding = 5,
-})
-HattingFDSlider.event:Connect(function(x)
-	print("Food Demon #" .. x)
-	_G.K2 = x
-end)
-HattingFDSlider.set(1)
-
-local HattingDropdown2 = MorphingTab.new("dropdown", {
-	text = "2nd Extra Value",
-})
-for i, v in pairs(ExtraValue2) do
-	HattingDropdown2.new(v)
-end
-
-HattingDropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " As The 2nd Extra Value")
-	_G.K3 = name
-end)
 
 
 
@@ -1110,6 +1147,16 @@ buttonZ.event:Connect(function()
 	print("Open Aimbot Executed")
 	spawn(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua",true))()
+	end)
+end)
+
+local buttonZ = OthersTab.new("button", {
+	text = "Execute Domain X",
+})
+buttonZ.event:Connect(function()
+	print("X Executed")
+	spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/domainx/refs/heads/main/source",true))()
 	end)
 end)
 
