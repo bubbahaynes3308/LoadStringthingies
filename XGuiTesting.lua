@@ -621,6 +621,12 @@ local StopAutoOutfit = function()
 	end)
 end
 
+local StopExtraArms = function()
+	spawn(function()
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."ExtraArms"]:Destroy()
+	end)
+end
+
 
 Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
@@ -1038,6 +1044,37 @@ end
 HattingDropdown2.event:Connect(function(name)
 	print("i chose " .. name .. " As The 2nd Extra Value")
 	_G.K3 = name
+end)
+
+local h5 = MorphingTab.new("label", {
+	text = "--------Heian Arms---------",
+	color = Color3.new(1, 1, 1),
+})
+
+
+local H3 = MorphingTab.new("button", {
+	text = "Give Extra Arms",
+})
+H3.event:Connect(function()
+	print("Given Extra Arms")
+	HeianArms()
+end)
+
+local H2 = MorphingTab.new("button", {
+	text = "Disable AutoOutfitter",
+})
+H2.event:Connect(function()
+	print("Attempted To Stop The Reoutfitting")
+	StopExtraArms()
+end)
+
+local H1 = MorphingTab.new("switch", {
+	text = "ReAdd Extra Arms on Respawn";
+})
+H1.set(false)
+H1.event:Connect(function(bool)
+	print("ReAddExtraArms Set to: ", bool)
+	_G.ReAddExtraArms = bool
 end)
 
 local label4 = MorphingTab.new("label", {
