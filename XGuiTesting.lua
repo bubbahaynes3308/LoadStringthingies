@@ -122,6 +122,8 @@ _G.K3 = "Normal"
 _G.K4 = Players.LocalPlayer
 _G.K5 = false
 
+_G.ReAddArms = false
+
 local SpectrumWings = function()
 	spawn(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/SpectrumStarWings.lua",true))()
@@ -468,17 +470,87 @@ local GeodeHatting = function()
 		table.insert(AllConnect, CharacterConnect)
 
 		task.spawn(function()
-			while task.wait(0.5) do
-				local BreakerObject = game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue")
-				if BreakerObject then
+			if  SaveOutfit == true then
+				local BreakerObject = Instance.new("BoolValue")
+				BreakerObject.Parent = game:GetService("ReplicatedStorage")
+				BreakerObject.Name = Plr.Name.."DeleteValue"
+                     BreakerObject.Destroying:Connect(function()
 					SaveOutfit = false
+					for _, Connect in pairs(AllConnect) do
+						Connect:Disconnect()
+					end
 					print("AutoOutfitter Disabled")
-					game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue"):Destroy()
+					end)
 				end
-			end
-		end)
+			end)
 	end)
 end
+
+local Heian = function()
+	spawn(function()
+local ReAddExtraArms = _G.ReAddArms
+local Player = game:GetService("Players").LocalPlayer
+local ExtraArmsX = XIIX.HeianArms
+local function Execute()
+local Character = Player.Character
+local ExtraArms = ExtraArmsX:Clone()
+local Shirt = Character:FindFirstChildWhichIsA("Shirt")
+local SetAssets = Instance.new("Folder")
+SetAssets.Name = "SetAssets"
+SetAssets.Parent = Character
+if Shirt then
+	Shirt:Clone().Parent = ExtraArms
+end
+Character.ChildAdded:Connect(function(X)
+	if not X:IsA("Shirt") then
+	else
+		local CopiedShirt = ExtraArms:FindFirstChildWhichIsA("Shirt")
+		if CopiedShirt then
+			CopiedShirt:Destroy()
+		end
+		X:Clone().Parent = ExtraArms
+	end
+end)
+ExtraArms.Parent = SetAssets
+ExtraArms.Clear.Handle.Value = script
+ExtraArms.Clear.Enabled = true
+local Torso = Character.Torso
+local LeftArm = Character["Left Arm"]
+local RightArm = Character["Right Arm"]
+local NormalScale = 1
+game:GetService("RunService").RenderStepped:Connect(function()
+	ExtraArms.Torso.CFrame = Torso.CFrame
+	ExtraArms["Left Arm"].Color = LeftArm.Color
+	ExtraArms["Right Arm"].Color = RightArm.Color
+	ExtraArms.Torso.CanCollide = false
+	if Character:GetScale() ~= NormalScale then
+		ExtraArms:ScaleTo(Character:GetScale())
+		NormalScale = Character:GetScale()
+	end
+	end)
+end
+
+Execute()
+
+if ReAddExtraArms == true then
+	local Remote = Instance.new("BoolValue")
+	Remote.Parent = game:GetService("ReplicatedStorage")
+	Remote.Name = Player.Name .."ExtraArms"
+	
+	Remote.Destroying:Connect(function()
+		ReAddExtraArms = false
+		warn("ExtraArms Disabled")
+	end)
+end
+
+Player.CharacterAdded:Connect(function()
+	if ReAddExtraArms == true then
+	task.wait(0.025)
+		Execute()
+		end
+		end)
+	end)
+	end
 
 local MHF = function()
 	spawn(function()
@@ -545,8 +617,7 @@ end
 
 local StopAutoOutfit = function()
 	spawn(function()
-		local DeleteValue = Instance.new("BoolValue", game:GetService("ReplicatedStorage"))
-		DeleteValue.Name = _G.K4.Name.."DeleteValue"
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."DeleteValue"]:Destroy()
 	end)
 end
 
@@ -1061,6 +1132,8 @@ local label3 = MorphingTab.new("label", {
 	text = "Morphs",
 	color = Color3.new(1, 1, 1),
 })
+
+
 
 local button9 = MorphingTab.new("button", {
 	text = "MidnightHorrorsFurry",
