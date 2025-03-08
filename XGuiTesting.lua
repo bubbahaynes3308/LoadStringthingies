@@ -486,7 +486,7 @@ local GeodeHatting = function()
 	end)
 end
 
-local Heian = function()
+local GiveHeianArms = function()
 	spawn(function()
 local ReAddExtraArms = _G.ReAddArms
 local Player = game:GetService("Players").LocalPlayer
@@ -544,8 +544,8 @@ if ReAddExtraArms == true then
 end
 
 Player.CharacterAdded:Connect(function()
+repeat task.wait(0.5) until Player.Character.Parent ~= nil
 	if ReAddExtraArms == true then
-	task.wait(0.025)
 		Execute()
 		end
 		end)
@@ -1057,14 +1057,14 @@ local H3 = MorphingTab.new("button", {
 })
 H3.event:Connect(function()
 	print("Given Extra Arms")
-	HeianArms()
+	GiveHeianArms()
 end)
 
 local H2 = MorphingTab.new("button", {
-	text = "Disable AutoOutfitter",
+	text = "Disable AutoExtraArmsGiver",
 })
 H2.event:Connect(function()
-	print("Attempted To Stop The Reoutfitting")
+	print("Attempted To Stop Giving the Extra Arms")
 	StopExtraArms()
 end)
 
@@ -1073,8 +1073,32 @@ local H1 = MorphingTab.new("switch", {
 })
 H1.set(false)
 H1.event:Connect(function(bool)
-	print("ReAddExtraArms Set to: ", bool)
-	_G.ReAddExtraArms = bool
+	print("ReAddArms Set to: ", bool)
+	_G.ReAddArms = bool
+end)
+
+local label3 = MorphingTab.new("label", {
+	text = "----Morphs----",
+	color = Color3.new(1, 1, 1),
+})
+
+
+
+local button9 = MorphingTab.new("button", {
+	text = "MidnightHorrorsFurry",
+})
+button9.event:Connect(function()
+	print("Midnight Horrors Furry Executed")
+	MHF()
+end)
+
+local switch9 = MorphingTab.new("switch", {
+	text = "Reapply On Respawn";
+})
+switch9.set(false)
+switch9.event:Connect(function(bool)
+	print("Re Execute on Respawn set to: ", bool)
+	_G.MHFRespawn = bool
 end)
 
 local label4 = MorphingTab.new("label", {
@@ -1342,4 +1366,3 @@ slider3.event:Connect(function(x)
 	print("slider value: " .. x * 0.1)
 	_G.T = x * 0.1
 end)
-

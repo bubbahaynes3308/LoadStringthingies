@@ -88,13 +88,20 @@ Gui.Enabled = true
 		ReverbFX.WetLevel = -80
         Gui.Parent = CoreUi
 		ColorCorrect.Parent = Lighting
-		if game.PlaceId == 4972273297 then
+		if game.PlaceId == 4972273297 then --Regretevator
 		ChorusFX.Parent = SService.MASTER
 		EchoFX.Parent = SService.MASTER
 		EqualizerFX.Parent = SService.MASTER
 		ReverbFX.Parent = SService.MASTER
 		EqualizerFX2.Parent = SService.MASTER.MUSIC
 		FlangeFX.Parent = SService.MASTER.MUSIC
+		elseif game.PlaceId == 9391468976 then --Jujustu Sheinanigans
+		ChorusFX.Parent = SService.Effect
+		EchoFX.Parent = SService.Effect
+		EqualizerFX.Parent = SService.Effect
+		ReverbFX.Parent = SService.Effect
+		EqualizerFX2.Parent = SService.Music
+		FlangeFX.Parent = SService.Music
 		else
 			ChorusFX.Parent = SService
 			EchoFX.Parent = SService
