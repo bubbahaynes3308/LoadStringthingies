@@ -36,6 +36,10 @@ for I,V in pairs(XIIX.GeodesHatting.XHat:GetChildren()) do
 	table.insert(FullHatSetNames, V.Name)
 end
 
+table.sort(FullHatSetNames,function(a,b)
+    return a < b
+end)
+
 
 local ExtraValue2 = {
 	"Normal",
@@ -72,6 +76,10 @@ _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
 _G.TailsRespawn = false
+
+_G.ReAddArms = false
+_G.ReAddNCWings = false
+_G.AuraOnly = false
 -------------------Spectrum Wings Settings
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
@@ -121,8 +129,6 @@ _G.K2 = 1
 _G.K3 = "Normal"
 _G.K4 = Players.LocalPlayer
 _G.K5 = false
-
-_G.ReAddArms = false
 
 local SpectrumWings = function()
 	spawn(function()
@@ -225,7 +231,7 @@ local GeodeHatting = function()
 		------------------------------------------Above Is What Welds The Hats Together--------------------------------------------------------------
 
 		local function RemoveHatsAndRecolor()
-			
+
 			if HatPack == "FoodDemons" then
 				NewHats = HatPackage[tostring(ExtraValue)]:Clone()
 			elseif HatPack == "WolframNightstalker" then
@@ -233,32 +239,32 @@ local GeodeHatting = function()
 			else
 				NewHats = HatPackage["NewHats"]:Clone()
 			end
-			
-			if not HatPackage:HasTag("UniverseTagentVarrient") then
-			if game.PlaceId == 10449761463 then
-				for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
+
+			if not HatPackage:HasTag("Addon") then
+				if game.PlaceId == 10449761463 then
+					for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
+						if  PlrHats:IsA("Accessory") or 
+							PlrHats:IsA("Hat")
+						then
+							PlrHats:Destroy()
+						end
+					end
+				end
+
+				for _, PlrHats in pairs(Player:GetChildren()) do
+
 					if  PlrHats:IsA("Accessory") or 
-						PlrHats:IsA("Hat")
+						PlrHats:IsA("Hat") or 
+						PlrHats:IsA("BodyColors") or 
+						PlrHats:IsA("CharacterMesh") or 
+						PlrHats:IsA("Pants") or 
+						PlrHats:IsA("Shirt") or 
+						PlrHats:IsA("ShirtGraphic")  
 					then
 						PlrHats:Destroy()
 					end
 				end
 			end
-
-			for _, PlrHats in pairs(Player:GetChildren()) do
-
-				if  PlrHats:IsA("Accessory") or 
-					PlrHats:IsA("Hat") or 
-					PlrHats:IsA("BodyColors") or 
-					PlrHats:IsA("CharacterMesh") or 
-					PlrHats:IsA("Pants") or 
-					PlrHats:IsA("Shirt") or 
-					PlrHats:IsA("ShirtGraphic")  
-				then
-					PlrHats:Destroy()
-				end
-				end
-				end
 			if HatPackage:HasTag("Headless") or  ExtraValue == "42" or ExtraValue == "41" or ExtraValue == "31" or ExtraValue == "30" or ExtraValue == "29" or ExtraValue == "66" or ExtraValue == "67" or ExtraValue == "68" or ExtraValue == "69" or ExtraValue == "70" or ExtraValue == "71" or ExtraValue == "72" or ExtraValue == "74" or ExtraValue == "73" then --Invisible Head
 				HiddenLimbs.InvisibleHead:Clone().Parent = Player["Head"]
 
@@ -275,7 +281,7 @@ local GeodeHatting = function()
 				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
 				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
 			end
-			
+
 			if HatPackage:HasTag("UniverseIsR63d") then --Invisible Full Body
 				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
 				HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
@@ -410,12 +416,20 @@ local GeodeHatting = function()
 			if Player:GetScale() ~= 1 then
 				local SavedScale = Player:GetScale()
 				Player:ScaleTo(1)
+				if HatPackage:HasTag("AddonWithClothes") then
+					script:FindFirstChildOfClass("Shirt"):Destroy()
+					script:FindFirstChildOfClass("Pants"):Destroy()
+				end
 				AddNewHats()
 				wait(0.025)
 				processCharacterAccessories(Player)
 				task.wait(0.025)
 				Player:ScaleTo(SavedScale)
 			else
+				if HatPackage:HasTag("AddonWithClothes") then
+					Player:FindFirstChildOfClass("Shirt"):Destroy()
+					Player:FindFirstChildOfClass("Pants"):Destroy()
+				end
 				AddNewHats()
 				wait(0.025)
 				processCharacterAccessories(Player)
@@ -430,7 +444,7 @@ local GeodeHatting = function()
 					local T2 = Player["TorsoAccessory"].Handle.B.B2
 					local Shirt = Player:FindFirstChildOfClass("Shirt")
 					local Pants = Player:FindFirstChildOfClass("Pants")
-				    L1.Color = Player["Left Leg"].Color
+					L1.Color = Player["Left Leg"].Color
 					L2.Color = Player["Right Leg"].Color
 					T1.Color = Player["Torso"].Color
 					T2.Color = Player["Torso"].Color
@@ -440,8 +454,8 @@ local GeodeHatting = function()
 					if Pants then
 						P1.TextureID = Pants.PantsTemplate
 						P2.TextureID = Pants.PantsTemplate
+					end
 				end
-							end
 			end
 		end
 
@@ -474,83 +488,71 @@ local GeodeHatting = function()
 				local BreakerObject = Instance.new("BoolValue")
 				BreakerObject.Parent = game:GetService("ReplicatedStorage")
 				BreakerObject.Name = Plr.Name.."DeleteValue"
-                     BreakerObject.Destroying:Connect(function()
+				BreakerObject.Destroying:Connect(function()
 					SaveOutfit = false
 					for _, Connect in pairs(AllConnect) do
 						Connect:Disconnect()
 					end
 					print("AutoOutfitter Disabled")
-					end)
-				end
-			end)
-	end)
-end
-
-local GiveHeianArms = function()
-	spawn(function()
-local ReAddExtraArms = _G.ReAddArms
-local Player = game:GetService("Players").LocalPlayer
-local ExtraArmsX = XIIX.HeianArms
-local function Execute()
-local Character = Player.Character
-local ExtraArms = ExtraArmsX:Clone()
-local Shirt = Character:FindFirstChildWhichIsA("Shirt")
-local SetAssets = Instance.new("Folder")
-SetAssets.Name = "SetAssets"
-SetAssets.Parent = Character
-if Shirt then
-	Shirt:Clone().Parent = ExtraArms
-end
-Character.ChildAdded:Connect(function(X)
-	if not X:IsA("Shirt") then
-	else
-		local CopiedShirt = ExtraArms:FindFirstChildWhichIsA("Shirt")
-		if CopiedShirt then
-			CopiedShirt:Destroy()
-		end
-		X:Clone().Parent = ExtraArms
-	end
-end)
-ExtraArms.Parent = SetAssets
-ExtraArms.Clear.Handle.Value = script
-ExtraArms.Clear.Enabled = true
-local Torso = Character.Torso
-local LeftArm = Character["Left Arm"]
-local RightArm = Character["Right Arm"]
-local NormalScale = 1
-game:GetService("RunService").RenderStepped:Connect(function()
-	ExtraArms.Torso.CFrame = Torso.CFrame
-	ExtraArms["Left Arm"].Color = LeftArm.Color
-	ExtraArms["Right Arm"].Color = RightArm.Color
-	ExtraArms.Torso.CanCollide = false
-	if Character:GetScale() ~= NormalScale then
-		ExtraArms:ScaleTo(Character:GetScale())
-		NormalScale = Character:GetScale()
-	end
-	end)
-end
-
-Execute()
-
-if ReAddExtraArms == true then
-	local Remote = Instance.new("BoolValue")
-	Remote.Parent = game:GetService("ReplicatedStorage")
-	Remote.Name = Player.Name .."ExtraArms"
-	
-	Remote.Destroying:Connect(function()
-		ReAddExtraArms = false
-		warn("ExtraArms Disabled")
-	end)
-end
-
-Player.CharacterAdded:Connect(function()
-repeat task.wait(0.5) until Player.Character.Parent ~= nil
-	if ReAddExtraArms == true then
-		Execute()
-		end
+				end)
+			end
 		end)
 	end)
-	end
+end
+	
+	local GiveNightChild = function()
+	spawn(function()
+		local ReAddWings = _G.ReAddNCWings
+		local AuraOnly = _G.AuraOnly
+		local Player = game:GetService("Players").LocalPlayer
+		local NightChildX = XIIX.NightChild
+		local function Execute()
+			local Character = Player.Character
+			local NightChild = NightChildX:Clone()
+			local Wings = NightChild.GlitcherModel
+			local MainWelds = Wings.MainWelds
+			local humanoid = Character:FindFirstChildOfClass("Humanoid")
+			local Torso = Character.Torso
+			Wings.Parent = Character
+			MainWelds["Aura(HRP)"].Part0 = Character["HumanoidRootPart"]
+			if  AuraOnly == false then
+			MainWelds.Primary.Part0 = Torso
+			MainWelds.Primary.Parent = Torso
+			local X = Instance.new("Animation")
+			X.AnimationId = game:GetService("KeyframeSequenceProvider"):RegisterKeyframeSequence(NightChild.Animation)
+			local Animation = humanoid:loadAnimation(X)
+				Animation:Play()
+				end
+			local NormalScale = 1
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if Character:GetScale() ~= NormalScale then
+					Wings:ScaleTo(Character:GetScale())
+					NormalScale = Character:GetScale()
+				end
+			end)
+		end
+
+		Execute()
+
+		if ReAddWings == true then
+			local Remote = Instance.new("BoolValue")
+			Remote.Parent = game:GetService("ReplicatedStorage")
+			Remote.Name = Player.Name .."NightChild"
+
+			Remote.Destroying:Connect(function()
+				ReAddWings = false
+				warn("NightChild Disabled")
+			end)
+		end
+
+		Player.CharacterAdded:Connect(function()
+			repeat task.wait(0.5) until Player.Character.Parent ~= nil
+			if ReAddWings == true then
+				Execute()
+			end
+		end)
+	end)
+end
 
 local MHF = function()
 	spawn(function()
@@ -624,6 +626,12 @@ end
 local StopExtraArms = function()
 	spawn(function()
 		game:GetService("ReplicatedStorage")[_G.K4.Name.."ExtraArms"]:Destroy()
+	end)
+end
+
+local StopNightChild = function()
+	spawn(function()
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."NightChild"]:Destroy()
 	end)
 end
 
@@ -1077,6 +1085,46 @@ H1.event:Connect(function(bool)
 	_G.ReAddArms = bool
 end)
 
+local N5 = MorphingTab.new("label", {
+	text = "--------Nightchild---------",
+	color = Color3.new(1, 1, 1),
+})
+
+
+local N3 = MorphingTab.new("button", {
+	text = "Give Extra Arms",
+})
+N3.event:Connect(function()
+	print("Given Extra Arms")
+	GiveNightChild()
+end)
+
+local N2 = MorphingTab.new("button", {
+	text = "Disable Nightchild",
+})
+N2.event:Connect(function()
+	print("Attempted To Stop Giving Nightchild")
+	StopNightChild()
+end)
+
+local N1 = MorphingTab.new("switch", {
+	text = "ReAdd Nightchild on Respawn";
+})
+N1.set(false)
+N1.event:Connect(function(bool)
+	print("ReAddNCWings Set to: ", bool)
+	_G.ReAddNCWings = bool
+end)
+
+local N0 = MorphingTab.new("switch", {
+	text = "Aura Only";
+})
+N0.set(false)
+N0.event:Connect(function(bool)
+	print("AuraOnly Set to: ", bool)
+	_G.AuraOnly = bool
+end)
+
 local label3 = MorphingTab.new("label", {
 	text = "----Morphs----",
 	color = Color3.new(1, 1, 1),
@@ -1188,37 +1236,6 @@ dropdown4.event:Connect(function(name)
 	_G.TorsoType = name
 	print("i chose " .. name)
 end)
-
-local label3 = MorphingTab.new("label", {
-	text = "Morphs",
-	color = Color3.new(1, 1, 1),
-})
-
-
-
-local button9 = MorphingTab.new("button", {
-	text = "MidnightHorrorsFurry",
-})
-button9.event:Connect(function()
-	print("Midnight Horrors Furry Executed")
-	MHF()
-end)
-
-local switch9 = MorphingTab.new("switch", {
-	text = "Reapply On Respawn";
-})
-switch9.set(false)
-switch9.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
-	_G.MHFRespawn = bool
-end)
-
-
-
-
-
-
-
 -------------------------------------------------------------------------------------------------------------------Tab 3
 local OthersTab = window1.new({
 	text = "Other",
