@@ -1095,7 +1095,7 @@ local N3 = MorphingTab.new("button", {
 	text = "Give Nightchild",
 })
 N3.event:Connect(function()
-	print("Given Extra Arms")
+	print("Given Nightchild")
 	GiveNightChild()
 end)
 
