@@ -519,7 +519,7 @@ end
 			MainWelds.Primary.Part0 = Torso
 			MainWelds.Primary.Parent = Torso
 			local X = Instance.new("Animation")
-			X.AnimationId = game:GetService("KeyframeSequenceProvider"):RegisterKeyframeSequence(NightChild.Animation)
+			X.AnimationId = "rbxassetid://108543973852055"  --game:GetService("KeyframeSequenceProvider"):RegisterKeyframeSequence(NightChild.Animation)
 			local Animation = humanoid:loadAnimation(X)
 				Animation:Play()
 				end
