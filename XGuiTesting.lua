@@ -499,6 +499,73 @@ local GeodeHatting = function()
 		end)
 	end)
 end
+
+local GiveHeianArms = function()
+	spawn(function()
+		local ReAddExtraArms = _G.ReAddArms
+		local Player = game:GetService("Players").LocalPlayer
+		local ExtraArmsX = XIIX.HeianArms
+		local function Execute()
+			local Character = Player.Character
+			local ExtraArms = ExtraArmsX:Clone()
+			local Shirt = Character:FindFirstChildWhichIsA("Shirt")
+			local SetAssets = Instance.new("Folder")
+			SetAssets.Name = "SetAssets"
+			SetAssets.Parent = Character
+			if Shirt then
+				Shirt:Clone().Parent = ExtraArms
+			end
+			Character.ChildAdded:Connect(function(X)
+				if not X:IsA("Shirt") then
+				else
+					local CopiedShirt = ExtraArms:FindFirstChildWhichIsA("Shirt")
+					if CopiedShirt then
+						CopiedShirt:Destroy()
+					end
+					X:Clone().Parent = ExtraArms
+				end
+			end)
+			ExtraArms.Parent = SetAssets
+			ExtraArms.Clear.Handle.Value = script
+			ExtraArms.Clear.Enabled = true
+			local Torso = Character.Torso
+			local LeftArm = Character["Left Arm"]
+			local RightArm = Character["Right Arm"]
+			local NormalScale = 1
+			game:GetService("RunService").RenderStepped:Connect(function()
+				ExtraArms.Torso.CFrame = Torso.CFrame
+				ExtraArms["Left Arm"].Color = LeftArm.Color
+				ExtraArms["Right Arm"].Color = RightArm.Color
+				ExtraArms.Torso.CanCollide = false
+				if Character:GetScale() ~= NormalScale then
+					ExtraArms:ScaleTo(Character:GetScale())
+					NormalScale = Character:GetScale()
+				end
+			end)
+		end
+
+		Execute()
+
+		if ReAddExtraArms == true then
+			local Remote = Instance.new("BoolValue")
+			Remote.Parent = game:GetService("ReplicatedStorage")
+			Remote.Name = Player.Name .."ExtraArms"
+
+			Remote.Destroying:Connect(function()
+				ReAddExtraArms = false
+				warn("ExtraArms Disabled")
+			end)
+		end
+
+		Player.CharacterAdded:Connect(function()
+			repeat task.wait(0.5) until Player.Character.Parent ~= nil
+			if ReAddExtraArms == true then
+				Execute()
+			end
+		end)
+	end)
+end
+
 	
 	local GiveNightChild = function()
 	spawn(function()
