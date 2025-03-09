@@ -506,6 +506,61 @@ end
 		local AuraOnly = _G.AuraOnly
 		local Player = game:GetService("Players").LocalPlayer
 		local NightChildX = XIIX.NightChild
+		local TweenService = game:GetService("TweenService")
+		local RunService = game:GetService("RunService")
+local function playKeyframes(rig : Model, keyframes : KeyframeSequence)
+	local offset = {}
+
+	local function getMotor6DFromPose(pose : Pose) : Motor6D		
+		for i, v in rig:GetDescendants() do
+			if v:IsA("Motor6D") and v.Part1.Name == pose.Name and v.Part0.Name == pose.Parent.Name then -- and v.Part0.Name == poseParentName
+				return v
+			end
+		end
+	end
+
+	local children : {Keyframe}? = keyframes:GetKeyframes()
+
+	table.sort(children, function(a, b)
+		return a.Time < b.Time
+	end)
+
+	for nth, keyframe in children do
+		local time = 0
+
+		if children[nth + 1] then
+			time = children[nth + 1].Time - keyframe.Time
+		end
+
+		for _, pose : Pose? in keyframe:GetDescendants() do
+			local limb = getMotor6DFromPose(pose)
+
+			if limb and pose.CFrame ~= CFrame.new() then
+				offset[limb] = offset[limb] or limb.C0
+
+				local EasingStyle, EasingDirection = 
+					Enum.EasingStyle[pose.EasingStyle.Name], Enum.EasingDirection[pose.EasingDirection.Name]
+
+				local ticked = tick()
+
+				spawn(function()
+					--transform
+					while tick() - ticked < time do
+						local cframe = limb.C0
+
+						-- n / time
+						limb.C0 = cframe:Lerp(offset[limb] * pose.CFrame, TweenService:GetValue((tick() - ticked) / time, EasingStyle, EasingDirection))
+						RunService.PreSimulation:Wait()	
+					end
+
+					limb.C0 = offset[limb] * pose.CFrame
+				end)
+			end
+		end
+
+		wait(time)
+	end
+end
 		local function Execute()
 			local Character = Player.Character
 			local NightChild = NightChildX:Clone()
@@ -518,10 +573,7 @@ end
 			if  AuraOnly == false then
 			MainWelds.Primary.Part0 = Torso
 			MainWelds.Primary.Parent = Torso
-			local X = Instance.new("Animation")
-			X.AnimationId = "rbxassetid://108543973852055"  --game:GetService("KeyframeSequenceProvider"):RegisterKeyframeSequence(NightChild.Animation)
-			local Animation = humanoid:loadAnimation(X)
-				Animation:Play()
+			playKeyframes(Character,NightChild.Animation)
 				end
 			local NormalScale = 1
 			game:GetService("RunService").RenderStepped:Connect(function()
