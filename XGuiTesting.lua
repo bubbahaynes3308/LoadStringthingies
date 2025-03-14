@@ -526,8 +526,7 @@ local GiveHeianArms = function()
 				end
 			end)
 			ExtraArms.Parent = SetAssets
-			ExtraArms.Clear.Handle.Value = script
-			ExtraArms.Clear.Enabled = true
+			ExtraArms.Handle.Value = ExtraArms
 			local Torso = Character.Torso
 			local LeftArm = Character["Left Arm"]
 			local RightArm = Character["Right Arm"]
@@ -556,6 +555,10 @@ local GiveHeianArms = function()
 				warn("ExtraArms Disabled")
 			end)
 		end
+		
+		ExtraArms.Handle.Value.Destroying:Connect(function()
+	ExtraArms.Parent:Destroy()
+end)
 
 		Player.CharacterAdded:Connect(function()
 			repeat task.wait(0.5) until Player.Character.Parent ~= nil
@@ -745,6 +748,12 @@ end
 local StopExtraArms = function()
 	spawn(function()
 		game:GetService("ReplicatedStorage")[_G.K4.Name.."ExtraArms"]:Destroy()
+	end)
+end
+
+local DeleteExtraArms = function()
+	spawn(function()
+		Players.LocalPlayer.Character.SetAssets.HeianArms.Handle:Destroy()
 	end)
 end
 
