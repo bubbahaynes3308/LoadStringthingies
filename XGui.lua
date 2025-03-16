@@ -1,41 +1,60 @@
 
-local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))() --loadstring(game:HttpGet("https://raw.githubusercontent.com/Eazvy/UILibs/refs/heads/main/Librarys/Elerium/Example"))()
+local Main = loadstring(game:HttpGet("https://twix.cyou/Fluent.txt", true))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
-local Materials = {
-	[Enum.Material.Brick] = 'Brick';
-	[Enum.Material.Cobblestone] = 'Cobblestone';
-	[Enum.Material.Concrete] = 'Concrete';
-	[Enum.Material.CorrodedMetal] = 'Corroded Metal';
-	[Enum.Material.DiamondPlate] = 'Diamond Plate';
-	[Enum.Material.Fabric] = 'Fabric';
-	[Enum.Material.Foil] = 'Foil';
-	[Enum.Material.ForceField] = 'ForceField';
-	[Enum.Material.Glass] = 'Glass';
-	[Enum.Material.Granite] = 'Granite';
-	[Enum.Material.Grass] = 'Grass';
-	[Enum.Material.Ice] = 'Ice';
-	[Enum.Material.Marble] = 'Marble';
-	[Enum.Material.Metal] = 'Metal';
-	[Enum.Material.Neon] = 'Neon';
-	[Enum.Material.Pebble] = 'Pebble';
-	[Enum.Material.Plastic] = 'Plastic';
-	[Enum.Material.Sand] = 'Sand';
-	[Enum.Material.Slate] = 'Slate';
-	[Enum.Material.SmoothPlastic] = 'Smooth Plastic';
-	[Enum.Material.WoodPlanks] = 'Wood Planks';
-	[Enum.Material.Wood] = 'Wood';
-};
 
 local Players = game:GetService("Players")
 
-local Hatting =  game:GetObjects("rbxasset://GeodesHatting.Rbxm")[1]:Clone()
+local XIIX = game:GetService("ReplicatedStorage").X  --game:GetObjects("rbxasset://XIIXPack.Rbxm")[1]:Clone()
 
-local FullHatSetNames = {};
-
-for I,V in pairs(Hatting.XHat:GetChildren()) do
-	table.insert(FullHatSetNames, V.Name)
+function SortTable(SelectedTable)
+	table.sort(SelectedTable,function(a,b)
+		return a < b
+	end)
 end
 
+local Materials = {};
+local FullHatSetNames = {};
+local PlayersTable = {"LocalPlayer"}
+
+for I,V in pairs(Enum.Material:GetEnumItems()) do
+	table.insert(Materials, V.Name)
+end
+SortTable(Materials)
+
+----------------------------------------
+
+for I,V in pairs(XIIX.GeodesHatting.XHat:GetChildren()) do
+	table.insert(FullHatSetNames, V.Name)
+end
+SortTable(FullHatSetNames)
+
+
+----------------------------------------
+
+for I,V in pairs(Players:GetPlayers()) do
+	table.insert(PlayersTable, V.Name)
+end
+
+SortTable(PlayersTable)
+
+function AddPlayer(Player)
+	table.insert(PlayersTable, Player.Name)
+	SortTable(PlayersTable)
+end
+
+function RemovePlayer(Player)
+	table.remove(PlayersTable, table.find(PlayersTable,Player.Name))
+	SortTable(PlayersTable)
+end
+
+Players.PlayerAdded:Connect(AddPlayer)
+Players.PlayerRemoving:Connect(RemovePlayer)
+
+
+
+local SX = {"Male", "Female"}
 
 local ExtraValue2 = {
 	"Normal",
@@ -67,12 +86,16 @@ local BodyParts = {
 	"RightFoot",
 	"LeftFoot",
 };
+
 _G.RespawnWaitTime = 0.025
-_G.GeodeHattingRespawn = false
 _G.MHFRespawn = false
 _G.SpectrumWingsRespawn = false
 _G.ILWingsRespawn = false
 _G.TailsRespawn = false
+
+_G.ReAddArms = false
+_G.ReAddNCWings = false
+_G.AuraOnly = false
 -------------------Spectrum Wings Settings
 _G.Color = true --Enable Color
 _G.RGB = false --Enable RGB
@@ -149,15 +172,16 @@ end
 
 local GeodeHatting = function()
 	spawn(function()
-		--no longer being used loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
+		--loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
 		local HatPack = _G.K1
 		local ExtraValue = _G.K2
 		local ExtraValue2 = _G.K3
 		local SaveOutfit = _G.K5
-		local X = Hatting.XHat
+		local RX = XIIX.GeodesHatting
+		local X = RX.XHat
 		local Plr = _G.K4
 		local HatPackage = X[HatPack]:Clone()
-		local HiddenLimbs = Hatting.HiddenLimbs
+		local HiddenLimbs = RX.HiddenLimbs
 		local Player = Plr.Character
 		local HatsResized = {}
 		local Connections = {}
@@ -172,7 +196,6 @@ local GeodeHatting = function()
 			weld.C0 = attach1.CFrame
 			weld.C1 = attach2.CFrame
 			weld.Parent = attach1.Parent
-			weld.Name = "AccessoryWeld".. weld.Parent.Name
 			return weld
 		end
 
@@ -220,37 +243,42 @@ local GeodeHatting = function()
 				end
 			end
 		end
+
 		------------------------------------------Above Is What Welds The Hats Together--------------------------------------------------------------
 
 		local function RemoveHatsAndRecolor()
+
 			if HatPack == "FoodDemons" then
-            NewHats = HatPackage[tostring(ExtraValue)]:Clone()
+				NewHats = HatPackage[tostring(ExtraValue)]:Clone()
 			elseif HatPack == "WolframNightstalker" then
-            NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
+				NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
 			else
-            NewHats = HatPackage["NewHats"]:Clone()
+				NewHats = HatPackage["NewHats"]:Clone()
 			end
-			if game.PlaceId == 10449761463 then
-				for _, PlrHats in pairs(Player["FakeHead"]:GetChildren()) do
+
+			if not HatPackage:HasTag("Addon") then
+				if game.PlaceId == 10449761463 then
+					for _, PlrHats in pairs(Player:WaitForChild("FakeHead",50):GetChildren()) do
+						if  PlrHats:IsA("Accessory") or 
+							PlrHats:IsA("Hat")
+						then
+							PlrHats:Destroy()
+						end
+					end
+				end
+
+				for _, PlrHats in pairs(Player:GetChildren()) do
+
 					if  PlrHats:IsA("Accessory") or 
-						PlrHats:IsA("Hat")
+						PlrHats:IsA("Hat") or 
+						PlrHats:IsA("BodyColors") or 
+						PlrHats:IsA("CharacterMesh") or 
+						PlrHats:IsA("Pants") or 
+						PlrHats:IsA("Shirt") or 
+						PlrHats:IsA("ShirtGraphic")  
 					then
 						PlrHats:Destroy()
 					end
-				end
-			end
-
-			for _, PlrHats in pairs(Player:GetChildren()) do
-
-				if  PlrHats:IsA("Accessory") or 
-					PlrHats:IsA("Hat") or 
-					PlrHats:IsA("BodyColors") or 
-					PlrHats:IsA("CharacterMesh") or 
-					PlrHats:IsA("Pants") or 
-					PlrHats:IsA("Shirt") or 
-					PlrHats:IsA("ShirtGraphic")  
-				then
-					PlrHats:Destroy()
 				end
 			end
 			if HatPackage:HasTag("Headless") or  ExtraValue == "42" or ExtraValue == "41" or ExtraValue == "31" or ExtraValue == "30" or ExtraValue == "29" or ExtraValue == "66" or ExtraValue == "67" or ExtraValue == "68" or ExtraValue == "69" or ExtraValue == "70" or ExtraValue == "71" or ExtraValue == "72" or ExtraValue == "74" or ExtraValue == "73" then --Invisible Head
@@ -268,6 +296,12 @@ local GeodeHatting = function()
 				HiddenLimbs.HiddenTorso:Clone().Parent = Player["Torso"]
 				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
 				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
+			end
+
+			if HatPackage:HasTag("UniverseIsR63d") then --Invisible Full Body
+				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
+				HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
+				HiddenLimbs.RL:Clone().Parent = Player["Right Leg"]
 			end
 
 			for _, PossibleDecal in pairs(Player["Head"]:GetChildren()) do
@@ -288,19 +322,13 @@ local GeodeHatting = function()
 
 			if HatPackage:HasTag("HasColors") then --i Used Tags To Differ Them From Getting set Without one
 				if  HatPack == "FoodDemons" and ExtraValue ~= "42" or ExtraValue ~= "41" or ExtraValue ~= "31" or ExtraValue ~= "30" or ExtraValue ~= "29" or ExtraValue ~= "66" or ExtraValue ~= "67" or ExtraValue ~= "68" or ExtraValue ~= "69" or ExtraValue ~= "70" or ExtraValue ~= "71" or ExtraValue ~= "72" or ExtraValue ~= "74" or ExtraValue ~= "73" then			---These Extra Values in question Have no Body Color And Use Hidden Limbs 
-					local BodyColors = NewHats:WaitForChild("Body Colors", 2.5)
-					local HeadColor = BodyColors.HeadColor3
-					local TorsoColor = BodyColors.TorsoColor3
-					local LeftArmColor = BodyColors.LeftArmColor3
-					local LeftLegColor = BodyColors.LeftLegColor3
-					local RightArmColor = BodyColors.RightArmColor3
-					local RightLegColor = BodyColors.RightLegColor3
-					Player["Head"].Color = Color3.fromRGB(HeadColor.R, HeadColor.G, HeadColor.B)
-					Player["Torso"].Color = Color3.fromRGB(TorsoColor.R, TorsoColor.G, TorsoColor.B)
-					Player["Left Arm"].Color = Color3.fromRGB(LeftArmColor.R, LeftArmColor.G, LeftArmColor.B)
-					Player["Left Leg"].Color = Color3.fromRGB(LeftLegColor.R, LeftLegColor.G, LeftLegColor.B)
-					Player["Right Arm"].Color = Color3.fromRGB(RightArmColor.R, RightArmColor.G, RightArmColor.B)
-					Player["Right Leg"].Color = Color3.fromRGB(RightLegColor.R, RightLegColor.G, RightLegColor.B)
+					--[[local BodyColor = NewHats:FindFirstChildOfClass("Body Colors")
+					Player["Head"].Color = BodyColor.HeadColor3
+					Player["Torso"].Color = BodyColor.TorsoColor3
+					Player["Left Arm"].Color = BodyColor.LeftArmColor3
+					Player["Left Leg"].Color = BodyColor.LeftLegColor3
+					Player["Right Arm"].Color = BodyColor.RightArmColor3
+					Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 				else
 					Player["Head"].Color = HatPackage:GetAttribute("Color")
 					Player["Torso"].Color = HatPackage:GetAttribute("Color")
@@ -311,8 +339,8 @@ local GeodeHatting = function()
 				end
 			end
 		end
-		
-				if HatPackage:HasTag("UseAttributesColors") then --i Used Tags To Differ Them From Getting set Without one
+
+		if HatPackage:HasTag("UseAttributesColors") then --i Used Tags To Differ Them From Getting set Without one
 			Player["Head"].Color = HatPackage:GetAttribute("Color")
 			Player["Torso"].Color = HatPackage:GetAttribute("Color")
 			Player["Left Arm"].Color = HatPackage:GetAttribute("Color")
@@ -322,19 +350,13 @@ local GeodeHatting = function()
 		end
 
 		if HatPackage:HasTag("UseBodyColors") then --i Used Tags To Differ Them From Getting set Without one
-			local BodyColors = NewHats:WaitForChild("Body Colors", 2.5)
-			local HeadColor = BodyColors.HeadColor3
-			local TorsoColor = BodyColors.TorsoColor3
-			local LeftArmColor = BodyColors.LeftArmColor3
-			local LeftLegColor = BodyColors.LeftLegColor3
-			local RightArmColor = BodyColors.RightArmColor3
-			local RightLegColor = BodyColors.RightLegColor3
-			Player["Head"].Color = Color3.fromRGB(HeadColor.R, HeadColor.G, HeadColor.B)
-			Player["Torso"].Color = Color3.fromRGB(TorsoColor.R, TorsoColor.G, TorsoColor.B)
-			Player["Left Arm"].Color = Color3.fromRGB(LeftArmColor.R, LeftArmColor.G, LeftArmColor.B)
-			Player["Left Leg"].Color = Color3.fromRGB(LeftLegColor.R, LeftLegColor.G, LeftLegColor.B)
-			Player["Right Arm"].Color = Color3.fromRGB(RightArmColor.R, RightArmColor.G, RightArmColor.B)
-			Player["Right Leg"].Color = Color3.fromRGB(RightLegColor.R, RightLegColor.G, RightLegColor.B)
+			--[[local BodyColor = HatPackage.NewHats:FindFirstChildOfClass("Body Colors")
+			Player["Head"].Color = BodyColor.HeadColor3
+			Player["Torso"].Color = BodyColor.TorsoColor3
+			Player["Left Arm"].Color = BodyColor.LeftArmColor3
+			Player["Left Leg"].Color = BodyColor.LeftLegColor3
+			Player["Right Arm"].Color = BodyColor.RightArmColor3
+			Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 		end
 
 
@@ -407,13 +429,47 @@ local GeodeHatting = function()
 				RemoveHatsAndRecolor()
 			end)
 			wait(0.025)
-			AddNewHats()
-			wait(0.025)
-			processCharacterAccessories(Player)
-			if Player:GetScale() ~= 1 then 	Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1 = CFrame.new(Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.X, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Y, Player["Torso"]:WaitForChild("AccessoryWeldTorso").C1.Z* Player:GetScale())
-				for _,v in pairs(Player:GetDescendants()) do
-					if v:IsA("Weld") and v.Name == "AccessoryWeldLeft Arm" or v.Name ==  "AccessoryWeldRight Arm" or v.Name ==  "AccessoryWeldLeft Leg" or v.Name ==  "AccessoryWeldRight Leg" then
-						v.C1 = CFrame.new(0, -1 * Player:GetScale(), -0.05)
+			if Player:GetScale() ~= 1 then
+				local SavedScale = Player:GetScale()
+				Player:ScaleTo(1)
+				if HatPackage:HasTag("AddonWithClothes") then
+					script:FindFirstChildOfClass("Shirt"):Destroy()
+					script:FindFirstChildOfClass("Pants"):Destroy()
+				end
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
+				task.wait(0.025)
+				Player:ScaleTo(SavedScale)
+			else
+				if HatPackage:HasTag("AddonWithClothes") then
+					Player:FindFirstChildOfClass("Shirt"):Destroy()
+					Player:FindFirstChildOfClass("Pants"):Destroy()
+				end
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
+				wait(0.025)
+				if HatPackage:HasTag("UniverseIsR63d") then
+					local P1 = Player["Left LegAccessory"].Handle.L_Leg
+					local P2 = Player["Right LegAccessory"].Handle.R_Leg
+					local S = Player["TorsoAccessory"].Handle.B.Clothing
+					local L1 = Player["Left LegAccessory"].Handle.Skin
+					local L2 = Player["Right LegAccessory"].Handle.Clothes
+					local T1 = Player["TorsoAccessory"].Handle.B.B1
+					local T2 = Player["TorsoAccessory"].Handle.B.B2
+					local Shirt = Player:FindFirstChildOfClass("Shirt")
+					local Pants = Player:FindFirstChildOfClass("Pants")
+					L1.Color = Player["Left Leg"].Color
+					L2.Color = Player["Right Leg"].Color
+					T1.Color = Player["Torso"].Color
+					T2.Color = Player["Torso"].Color
+					if Shirt then
+						S.TextureID = Shirt.ShirtTemplate
+					end
+					if Pants then
+						P1.TextureID = Pants.PantsTemplate
+						P2.TextureID = Pants.PantsTemplate
 					end
 				end
 			end
@@ -444,12 +500,194 @@ local GeodeHatting = function()
 		table.insert(AllConnect, CharacterConnect)
 
 		task.spawn(function()
-			while task.wait(0.5) do
-				local BreakerObject = game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue")
-				if BreakerObject then
+			if  SaveOutfit == true then
+				local BreakerObject = Instance.new("BoolValue")
+				BreakerObject.Parent = game:GetService("ReplicatedStorage")
+				BreakerObject.Name = Plr.Name.."DeleteValue"
+				BreakerObject.Destroying:Connect(function()
 					SaveOutfit = false
-					game:GetService("ReplicatedStorage"):FindFirstChild(Plr.Name.."DeleteValue"):Destroy()
+					for _, Connect in pairs(AllConnect) do
+						Connect:Disconnect()
+					end
+					print("AutoOutfitter Disabled")
+				end)
+			end
+		end)
+	end)
+end
+
+local GiveHeianArms = function()
+	spawn(function()
+		local ReAddExtraArms = _G.ReAddArms
+		local Player = game:GetService("Players").LocalPlayer
+		local ExtraArmsX = XIIX.HeianArms
+		local function Execute()
+			local Character = Player.Character
+			local ExtraArms = ExtraArmsX:Clone()
+			local Shirt = Character:FindFirstChildWhichIsA("Shirt")
+			local SetAssets = Instance.new("Folder")
+			SetAssets.Name = "SetAssets"
+			SetAssets.Parent = Character
+			if Shirt then
+				Shirt:Clone().Parent = ExtraArms
+			end
+			Character.ChildAdded:Connect(function(X)
+				if not X:IsA("Shirt") then
+				else
+					local CopiedShirt = ExtraArms:FindFirstChildWhichIsA("Shirt")
+					if CopiedShirt then
+						CopiedShirt:Destroy()
+					end
+					X:Clone().Parent = ExtraArms
 				end
+			end)
+			ExtraArms.Parent = SetAssets
+			ExtraArms.Handle.Value = ExtraArms
+			local Torso = Character.Torso
+			local LeftArm = Character["Left Arm"]
+			local RightArm = Character["Right Arm"]
+			local NormalScale = 1
+			
+			ExtraArms.Handle.Value.Destroying:Connect(function()
+				ExtraArms.Parent:Destroy()
+			end)
+			game:GetService("RunService").RenderStepped:Connect(function()
+				ExtraArms.Torso.CFrame = Torso.CFrame
+				ExtraArms["Left Arm"].Color = LeftArm.Color
+				ExtraArms["Right Arm"].Color = RightArm.Color
+				ExtraArms.Torso.CanCollide = false
+				if Character:GetScale() ~= NormalScale then
+					ExtraArms:ScaleTo(Character:GetScale())
+					NormalScale = Character:GetScale()
+				end
+			end)
+		end
+
+		Execute()
+
+		if ReAddExtraArms == true then
+			local Remote = Instance.new("BoolValue")
+			Remote.Parent = game:GetService("ReplicatedStorage")
+			Remote.Name = Player.Name .."ExtraArms"
+
+			Remote.Destroying:Connect(function()
+				ReAddExtraArms = false
+				warn("ExtraArms Disabled")
+			end)
+		end
+
+		
+
+		Player.CharacterAdded:Connect(function()
+			repeat task.wait(0.5) until Player.Character.Parent ~= nil
+			if ReAddExtraArms == true then
+				Execute()
+			end
+		end)
+	end)
+end
+
+local GiveNightChild = function()
+	spawn(function()
+		local ReAddWings = _G.ReAddNCWings
+		local AuraOnly = _G.AuraOnly
+		local Player = game:GetService("Players").LocalPlayer
+		local NightChildX = XIIX.NightChild
+		local TweenService = game:GetService("TweenService")
+		local RunService = game:GetService("RunService")
+		local function playKeyframes(rig : Model, keyframes : KeyframeSequence)
+			local offset = {}
+
+			local function getMotor6DFromPose(pose : Pose) : Motor6D		
+				for i, v in rig:GetDescendants() do
+					if v:IsA("Motor6D") and v.Part1.Name == pose.Name and v.Part0.Name == pose.Parent.Name then -- and v.Part0.Name == poseParentName
+						return v
+					end
+				end
+			end
+
+			local children : {Keyframe}? = keyframes:GetKeyframes()
+
+			table.sort(children, function(a, b)
+				return a.Time < b.Time
+			end)
+
+			for nth, keyframe in children do
+				local time = 0
+
+				if children[nth + 1] then
+					time = children[nth + 1].Time - keyframe.Time
+				end
+
+				for _, pose : Pose? in keyframe:GetDescendants() do
+					local limb = getMotor6DFromPose(pose)
+
+					if limb and pose.CFrame ~= CFrame.new() then
+						offset[limb] = offset[limb] or limb.C0
+
+						local EasingStyle, EasingDirection = 
+							Enum.EasingStyle[pose.EasingStyle.Name], Enum.EasingDirection[pose.EasingDirection.Name]
+
+						local ticked = tick()
+
+						spawn(function()
+							--transform
+							while tick() - ticked < time do
+								local cframe = limb.C0
+
+								-- n / time
+								limb.C0 = cframe:Lerp(offset[limb] * pose.CFrame, TweenService:GetValue((tick() - ticked) / time, EasingStyle, EasingDirection))
+								RunService.PreSimulation:Wait()	
+							end
+
+							limb.C0 = offset[limb] * pose.CFrame
+						end)
+					end
+				end
+
+				wait(time)
+			end
+		end
+		local function Execute()
+			local Character = Player.Character
+			local NightChild = NightChildX:Clone()
+			local Wings = NightChild.GlitcherModel
+			local MainWelds = Wings.MainWelds
+			local humanoid = Character:FindFirstChildOfClass("Humanoid")
+			local Torso = Character.Torso
+			Wings.Parent = Character
+			MainWelds["Aura(HRP)"].Part0 = Character["HumanoidRootPart"]
+			if  AuraOnly == false then
+				MainWelds.Primary.Part0 = Torso
+				MainWelds.Primary.Parent = Torso
+				playKeyframes(Character,NightChild.Animation)
+			end
+			local NormalScale = 1
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if Character:GetScale() ~= NormalScale then
+					Wings:ScaleTo(Character:GetScale())
+					NormalScale = Character:GetScale()
+				end
+			end)
+		end
+
+		Execute()
+
+		if ReAddWings == true then
+			local Remote = Instance.new("BoolValue")
+			Remote.Parent = game:GetService("ReplicatedStorage")
+			Remote.Name = Player.Name .."NightChild"
+
+			Remote.Destroying:Connect(function()
+				ReAddWings = false
+				warn("NightChild Disabled")
+			end)
+		end
+
+		Player.CharacterAdded:Connect(function()
+			repeat task.wait(0.5) until Player.Character.Parent ~= nil
+			if ReAddWings == true then
+				Execute()
 			end
 		end)
 	end)
@@ -457,7 +695,58 @@ end
 
 local MHF = function()
 	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/MHFM.lua",true))()
+		local Target = Players.LocalPlayer
+		local Player = Target.Character
+		local Furrything = XIIX["FurryMorph"]:Clone() --game:GetObjects('rbxasset://FurrymodelThing.rbxm')[1]:Clone() if the asset ever Gets Deleted
+		Furrything.Parent = Player
+
+		local Head = Furrything.Welds["Head"]
+		local Torso = Furrything.Welds["Torso"]
+		local Left_Arm = Furrything.Welds["Left Arm"]
+		local Right_Arm = Furrything.Welds["Right Arm"]
+		local Left_Leg = Furrything.Welds["Left Leg"]
+		local Right_Leg = Furrything.Welds["Right Leg"]
+
+
+		Player["Head"].Transparency = 1
+		Player["Torso"].Transparency = 1
+		Player["Left Arm"].Transparency = 1
+		Player["Left Leg"].Transparency = 1
+		Player["Right Arm"].Transparency = 1
+		Player["Right Leg"].Transparency = 1
+		Player["Head"]:FindFirstChildOfClass("Decal").Transparency = 1
+
+		Player["Head"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Torso"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Left Arm"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Left Leg"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Right Arm"].Color = Color3.fromRGB(226, 154, 66)
+		Player["Right Leg"].Color = Color3.fromRGB(226, 154, 66)
+
+
+		for _, H in pairs(Head:GetChildren()) do
+			H.Part0 = Player["Head"]
+		end
+
+		for _, T in pairs(Torso:GetChildren()) do
+			T.Part0 = Player["Torso"]
+		end
+
+		for _, LA in pairs(Left_Arm:GetChildren()) do
+			LA.Part0 = Player["Left Arm"]
+		end
+
+		for _, LL in pairs(Left_Leg:GetChildren()) do
+			LL.Part0 = Player["Left Leg"]
+		end
+
+		for _, RA in pairs(Right_Arm:GetChildren()) do
+			RA.Part0 = Player["Right Arm"]
+		end
+
+		for _, RL in pairs(Right_Leg:GetChildren()) do
+			RL.Part0 = Player["Right Leg"]
+		end
 	end)
 end
 
@@ -469,17 +758,25 @@ end
 
 local StopAutoOutfit = function()
 	spawn(function()
-		local DeleteValue = Instance.new("BoolValue", game:GetService("ReplicatedStorage"))
-		DeleteValue.Name = _G.K4.Name.."DeleteValue"
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."DeleteValue"]:Destroy()
+	end)
+end
+
+local StopExtraArms = function()
+	spawn(function()
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."ExtraArms"]:Destroy()
+	end)
+end
+
+local StopNightChild = function()
+	spawn(function()
+		game:GetService("ReplicatedStorage")[_G.K4.Name.."NightChild"]:Destroy()
 	end)
 end
 
 
 Players.LocalPlayer.CharacterAdded:Connect(function()
 	task.wait(_G.RespawnWaitTime)
-	if _G.GeodeHattingRespawn == true then
-		GeodeHatting()
-	end
 	if _G.MHFRespawn == true then
 		MHF()
 	end
@@ -496,644 +793,962 @@ end)
 
 
 
-local window1 = engine.new({
-	text = "X Gui",
-	size = UDim2.new(300, 200),
+local window1 = Main:CreateWindow({
+	Title = "X Gui Fluent Edition",
+	SubTitle = "by 『Ｘ』",
+	TabWidth = 160,
+	Size = UDim2.fromOffset(580, 460),
+	Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+	Theme = "Dark",
+	MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
 
-window1.open()
+
+local Tabs = {
+	MainTab = window1:AddTab({ Title = "Main", Icon = "box" }),
+	MorphingTab = window1:AddTab({ Title = "Morphs/R15ToR6", Icon = "box" }),
+	Other = window1:AddTab({ Title = "Other", Icon = "box" }),
+	Settings = window1:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+do
+
 -------------------------------------------------------------------------------------------------------------------MainTab
-local MainTab = window1.new({
-	text = "Main",
-})
+	
+	local SSG = Tabs.MainTab:AddSection("Spectrum Star Wings")
+	
+	Tabs.MainTab:AddButton({
+		Title = "Execute",
+		Description = "Executes The Wings",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Spectrum Wings Executed",
+				Duration = 3
+			})
+			SpectrumWings()
+		end
+	})
 
-local SGWingsLabel = MainTab.new("label", {
-	text = "Spectrum Star Wings ",
-	color = Color3.new(1, 1, 1),
-})
+	local label1 = Tabs.MainTab:AddParagraph({
+		Title  = "Spectrum Star Wings Settings",
+		color = Color3.new(1, 1, 1),
+	})
+	
+	local SWR = Tabs.MainTab:AddToggle("SpectrumWingsRespawn", {Title = "On Respawn ReExecute", Default = false })
+	
+	SWR:OnChanged(function()
+		_G.SpectrumWingsRespawn = Main.Options["SpectrumWingsRespawn"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "SpectrumWingsRespawn Value: " .. tostring(Main.Options["SpectrumWingsRespawn"].Value),
+			Duration = 3
+		})
+		
+		
+	end)
+	
+	local SWRGB = Tabs.MainTab:AddToggle("RGB", {Title = "RGB", Default = false })
 
-local button1 = MainTab.new("button", {
-	text = "Execute",
-})
-button1.event:Connect(function()
-	print("Spectrum Wings Executed")
-	SpectrumWings()
-end)
-
-local label1 = MainTab.new("label", {
-	text = "Spectrum Star Wings Settings",
-	color = Color3.new(1, 1, 1),
-})
-
-local switch2 = MainTab.new("switch", {
-	text = "On Respawn Re Execute?";
-})
-switch2.set(false)
-switch2.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
-	_G.SpectrumWingsRespawn = bool
-end)
-
-local switch1 = MainTab.new("switch", {
-	text = "RGB";
-})
-switch1.set(false)
-switch1.event:Connect(function(bool)
-	print("RGB set to: ", bool)
-	_G.RGB = bool
-end)
-
-local slider1 = MainTab.new("slider", {
-	text = "Task.Wait() Time",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 1000,
-	value = 1,
-	rounding = 1,
-})
-slider1.event:Connect(function(x)
-	print("slider value: " .. x * 0.0001)
-	_G.WaitTime = x * 0.0001
-end)
-slider1.set(0.01)
-
-local color1 = MainTab.new("color", {
-	color = Color3.fromRGB(0, 0, 0),
-	text = "Color Of Wings",
-})
-color1.event:Connect(function(color)
-	local r = color.r * 255
-	local g = color.g * 255 
-	local b = color.b * 255
-	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
-	_G.RV = r 
-	_G.GV = g 
-	_G.BV = b
-end)
-
-local slider5 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
-slider5.event:Connect(function(x)
-	print("Transparency: ", x * 0.01)
-	_G.TransZ = x * 0.01
-end)
-
-local slider6 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
-slider6.event:Connect(function(x)
-	print("Reflectance: ", x * 0.01)
-	_G.ReflectZ = x * 0.01
-end)
-
-local dropdown1 = MainTab.new("dropdown", {
-	text = "Material",
-})
-for i, v in pairs(Materials) do
+	SWRGB:OnChanged(function()
+		_G.RGB = Main.Options["RGB"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "RGB Value: " .. tostring(Main.Options["RGB"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local SGTWS = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Task.Wait() Time",
+		Description = "Animation Speed",
+		Default = 1,
+		Min = 1,
+		Max = 1000,
+		Rounding = 1
+	})
+	SGTWS:OnChanged(function(Value)
+		print("WaitTime value: " .. Value * 0.0001)
+		_G.WaitTime = Value * 0.0001
+	end)
+	
+	local SGWCPWT = Tabs.MainTab:AddColorpicker("TransparencyColorpicker", {
+		Title = "Color and Transparency",
+		Description = "Color and Transparency For the Wings",
+		Transparency = 0,
+		Default = Color3.fromRGB(255, 255, 255)
+	})
+	
+	SGWCPWT:OnChanged(function()
+		local r = SGWCPWT.Value.r * 255
+		local g = SGWCPWT.Value.g * 255 
+		local b = SGWCPWT.Value.b * 255
+		print(
+			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
+			"Wing Transparency:", SGWCPWT.Transparency * 0.01
+		)
+		_G.RV = r 
+		_G.GV = g 
+		_G.BV = b
+		_G.TransZ = SGWCPWT.Transparency * 0.01
+	end)
+	
+	local SGWReflect = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Reflectance",
+		Description = "The Wings Reflectance",
+		Default = 1,
+		Min = 1,
+		Max = 100,
+		Rounding = 1
+	})
+	SGWReflect:OnChanged(function(Value)
+		print("ReflectZ value: " .. Value * 0.01)
+		_G.ReflectZ = Value * 0.01
+	end)
+	
 	table.sort(Materials)
-	dropdown1.new(v)
-end
+	local SWM = Tabs.MainTab:AddDropdown("Dropdown", {
+		Title = "Material Of Wings",
+		Values = Materials,
+		Multi = false,
+		Default = "Neon",
+	})
+	SWM:SetValue("Neon")
+	SWM:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Wing Material: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.M = Value
+	end)
+	
+	--------------------------------------------------------
+	
+	local ILW = Tabs.MainTab:AddSection("Immortality Lord Wings")
+
+	Tabs.MainTab:AddButton({
+		Title = "Execute",
+		Description = "Executes The Wings",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Immortality Lord Wings Executed",
+				Duration = 3
+			})
+			ILWings()
+		end
+	})
+
+	local ILWlabel = Tabs.MainTab:AddParagraph({
+		Title  = "Immortality Lord Wings Settings",
+		color = Color3.new(1, 1, 1),
+	})
+
+	local ILR = Tabs.MainTab:AddToggle("ILWingsRespawn", {Title = "On Respawn ReExecute", Default = false })
+
+	ILR:OnChanged(function()
+		_G.ILWingsRespawn = Main.Options["ILWingsRespawn"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "ILWingsRespawn Value: " .. tostring(Main.Options["ILWingsRespawn"].Value),
+			Duration = 3
+		})
 
 
-dropdown1.event:Connect(function(name)
-	print("i chose " .. name .. " For the Material")
-	_G.M = name
-end)
+	end)
 
-local TailsSlS = MainTab.new("label", {
-	text = "                  ",
-	color = Color3.new(1, 1, 1),
-})
+	local ILRGB = Tabs.MainTab:AddToggle("ZRGB", {Title = "RGB", Default = false })
 
-local ILWingsLabel = MainTab.new("label", {
-	text = "Immortality Lord Wings ",
-	color = Color3.new(1, 1, 1),
-})
+	ILRGB:OnChanged(function()
+		_G.ZRGB = Main.Options["ZRGB"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "ZRGB Value: " .. tostring(Main.Options["RGB"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local ILBodyColor = Tabs.MainTab:AddToggle("ILBC", {Title = "Use Body Color", Default = false })
 
-local button2 = MainTab.new("button", {
-	text = "Execute",
-})
-button2.event:Connect(function()
-	print("Immortality Lord's Wings Executed")
-	ILWings()
-end)
+	ILBodyColor:OnChanged(function()
+		_G.TorsoCValue = Main.Options["ILBC"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "IL Body Color Value: " .. tostring(Main.Options["RGB"].Value),
+			Duration = 3
+		})
+	end)
 
-local label2 = MainTab.new("label", {
-	text = "IL Wings Settings",
-	color = Color3.new(1, 1, 1),
-})
+	local ILTWS = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Task.Wait() Time",
+		Description = "Animation Speed",
+		Default = 1,
+		Min = 1,
+		Max = 1000,
+		Rounding = 1
+	})
+	ILTWS:OnChanged(function(Value)
+		print("WaitTime value: " .. Value * 0.0001)
+		_G.WaitTime2 = Value * 0.0001
+	end)
 
-local switch3 = MainTab.new("switch", {
-	text = "On Respawn Re Execute?";
-})
-switch3.set(false)
-switch3.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
-	_G.ILWingsRespawn = bool
-end)
+	local ILWCPWT = Tabs.MainTab:AddColorpicker("TransparencyColorpicker", {
+		Title = "Color and Transparency",
+		Description = "Color and Transparency For the Wings",
+		Transparency = 0,
+		Default = Color3.fromRGB(255, 255, 255)
+	})
 
-local switch3 = MainTab.new("switch", {
-	text = "RGB";
-})
-switch3.set(false)
-switch3.event:Connect(function(bool)
-	print("RGB set to: ", bool)
-	_G.ZRGB = bool
-end)
+	ILWCPWT:OnChanged(function()
+		local r = ILWCPWT.Value.r * 255
+		local g = ILWCPWT.Value.g * 255 
+		local b = ILWCPWT.Value.b * 255
+		print(
+			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
+			"Wing Transparency:", ILWCPWT.Transparency * 0.01
+		)
+		_G.RV2 = r 
+		_G.GV2 = g 
+		_G.BV2 = b
+		_G.TransX = ILWCPWT.Transparency * 0.01
+	end)
 
-local Tswitch3 = MainTab.new("switch", {
-	text = "Use Torso Color";
-})
-Tswitch3.set(false)
-Tswitch3.event:Connect(function(bool)
-	print("Use Torso Color has been set to: ", bool)
-	_G.TorsoCValue = bool
-end)
+	local ILWReflect = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Reflectance",
+		Description = "The Wings Reflectance",
+		Default = 1,
+		Min = 1,
+		Max = 100,
+		Rounding = 1
+	})
+	ILWReflect:OnChanged(function(Value)
+		print("ReflectZ value: " .. Value * 0.01)
+		_G.ReflectX = Value * 0.01
+	end)
 
-local slider2 = MainTab.new("slider", {
-	text = "Task.Wait() Time",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 1000,
-	value = 1,
-	rounding = 1,
-})
-slider2.event:Connect(function(x)
-	print("slider value: " .. x * 0.0001)
-	_G.WaitTime2 = x * 0.0001
-end)
-slider2.set(0.015)
-
-
-
-local color2 = MainTab.new("color", {
-	color = Color3.fromRGB(0, 0, 0),
-	text = "Color Of Wings",
-})
-color2.event:Connect(function(color)
-	local r = color.r * 255
-	local g = color.g * 255 
-	local b = color.b * 255
-	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
-	_G.RV2 = r 
-	_G.GV2 = g 
-	_G.BV2 = b
-end)
-
-local slider7 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
-slider7.event:Connect(function(x)
-	print("Transparency: ", x * 0.01)
-	_G.TransX = x * 0.01
-end)
-
-local slider4 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
-slider4.event:Connect(function(x)
-	print("Reflectance: ", x * 0.01)
-	_G.ReflectX = x * 0.01
-end)
-
-local dropdown2 = MainTab.new("dropdown", {
-	text = "Material",
-})
-for i, v in pairs(Materials) do
 	table.sort(Materials)
-	dropdown2.new(v)
-end
+	local ILM = Tabs.MainTab:AddDropdown("Dropdown", {
+		Title = "Material Of Wings",
+		Values = Materials,
+		Multi = false,
+		Default = "Neon",
+	})
+	ILM:SetValue("Neon")
+	ILM:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Wing Material: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.M2 = Value
+	end)
+	
+	
+	------------------------------------------------------
+	
+	local Tail = Tabs.MainTab:AddSection("Tails")
 
-dropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " For the Material")
-	_G.M2 = name
-end)
+	Tabs.MainTab:AddButton({
+		Title = "Execute",
+		Description = "Executes The Tails",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Tails Executed",
+				Duration = 3
+			})
+			Tails()
+		end
+	})
 
-local TailsSl = MainTab.new("label", {
-	text = "                  ",
-	color = Color3.new(1, 1, 1),
-})
+	local Taillabel = Tabs.MainTab:AddParagraph({
+		Title  = "Tails Settings",
+		color = Color3.new(1, 1, 1),
+	})
 
-local TailsLabel = MainTab.new("label", {
-	text = "Tails",
-	color = Color3.new(1, 1, 1),
-})
+	local TailR = Tabs.MainTab:AddToggle("TailsRespawn", {Title = "On Respawn ReExecute", Default = false })
 
-local Tailsbutton2 = MainTab.new("button", {
-	text = "Execute",
-})
-Tailsbutton2.event:Connect(function()
-	print("Tails Executed")
-	Tails()
-end)
+	TailR:OnChanged(function()
+		_G.TailsRespawn = Main.Options["TailsRespawn"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "TailsRespawn Value: " .. tostring(Main.Options["TailsRespawn"].Value),
+			Duration = 3
+		})
+	end)
 
-local Tailslabel2 = MainTab.new("label", {
-	text = "Tails Settings",
-	color = Color3.new(1, 1, 1),
-})
+	local TailRGB = Tabs.MainTab:AddToggle("XRGB", {Title = "RGB", Default = false })
 
-local Tailsswitch3 = MainTab.new("switch", {
-	text = "On Respawn Re Execute?";
-})
-Tailsswitch3.set(false)
-Tailsswitch3.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
-	_G.TailsRespawn = bool
-end)
+	TailRGB:OnChanged(function()
+		_G.XRGB = Main.Options["XRGB"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "XRGB Value: " .. tostring(Main.Options["RGB"].Value),
+			Duration = 3
+		})
+	end)
 
-local Tailsswitch3 = MainTab.new("switch", {
-	text = "RGB";
-})
-Tailsswitch3.set(false)
-Tailsswitch3.event:Connect(function(bool)
-	print("RGB set to: ", bool)
-	_G.XRGB = bool
-end)
+	local TailBodyColor = Tabs.MainTab:AddToggle("TailBC", {Title = "Use Body Color", Default = false })
 
-local Tailsswitch4 = MainTab.new("switch", {
-	text = "Use Torso Color";
-})
-Tailsswitch4.set(false)
-Tailsswitch4.event:Connect(function(bool)
-	print("Use Torso Color set to: ", bool)
-	_G.TorsoColorValue = bool
-end)
+	TailBodyColor:OnChanged(function()
+		_G.TorsoCValue = Main.Options["TailBC"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Tail Body Color Value: " .. tostring(Main.Options["RGB"].Value),
+			Duration = 3
+		})
+	end)
 
-local Tailsslider2 = MainTab.new("slider", {
-	text = "Amount Of Tails",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 4,
-	value = 1,
-	rounding = 1,
-})
-Tailsslider2.event:Connect(function(x)
-	print("Amount Of Tails: " .. x)
-	_G.TailValue = x
-end)
-Tailsslider2.set(1)
+	local TailTWS = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Amount Of Tails",
+		Description = "How Many Tails you want",
+		Default = 1,
+		Min = 1,
+		Max = 4,
+		Rounding = 1
+	})
+	TailTWS:OnChanged(function(Value)
+		print("Amount Of Tails: " .. Value)
+		_G.TailValue = Value 
+	end)
 
+	local TailCPWT = Tabs.MainTab:AddColorpicker("TransparencyColorpicker", {
+		Title = "Color and Transparency",
+		Description = "Color and Transparency For the Wings",
+		Transparency = 0,
+		Default = Color3.fromRGB(255, 255, 255)
+	})
 
+	TailCPWT:OnChanged(function()
+		local r = TailCPWT.Value.r * 255
+		local g = TailCPWT.Value.g * 255 
+		local b = TailCPWT.Value.b * 255
+		print(
+			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
+			"Wing Transparency:", TailCPWT.Transparency * 0.01
+		)
+		_G.RTailValue = r 
+		_G.GTailValue = g 
+		_G.BTailValue = b
+		_G.Trans7 = TailCPWT.Transparency * 0.01
+	end)
 
-local Tailscolor2 = MainTab.new("color", {
-	color = Color3.fromRGB(0, 0, 0),
-	text = "Color Of Tails",
-})
-Tailscolor2.event:Connect(function(color)
-	local r = color.r * 255
-	local g = color.g * 255 
-	local b = color.b * 255
-	print("Wing Color is now (" .. r ..",".. g .."," .. b .. ")") 
-	_G.RTailValue = r 
-	_G.GTailValue = g 
-	_G.BTailValue = b
-end)
+	local TailReflect = Tabs.MainTab:AddSlider("Slider", {
+		Title = "Reflectance",
+		Description = "The Wings Reflectance",
+		Default = 1,
+		Min = 1,
+		Max = 100,
+		Rounding = 1
+	})
+	TailReflect:OnChanged(function(Value)
+		print("ReflectZ value: " .. Value * 0.01)
+		_G.Reflect7 = Value * 0.01
+	end)
 
-local Tailsslider7 = MainTab.new("slider", { size = 150, text = "Transparency", min = 0, max = 100, })
-Tailsslider7.event:Connect(function(x)
-	print("Transparency: ", x * 0.01)
-	_G.Trans7 = x * 0.01
-end)
-
-local Tailsslider4 = MainTab.new("slider", { size = 150, text = "Reflectance", min = 0, max = 100, })
-Tailsslider4.event:Connect(function(x)
-	print("Reflectance: ", x * 0.01)
-	_G.Reflect7 = x * 0.01
-end)
-
-local Tailsdropdown2 = MainTab.new("dropdown", {
-	text = "Material",
-})
-for i, v in pairs(Materials) do
 	table.sort(Materials)
-	Tailsdropdown2.new(v)
-end
-
-Tailsdropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " For the Material")
-	_G.M3 = name
-end)
-
--------------------------------------------------------------------------------------------------------------------Tab 4
-
-local MorphingTab = window1.new({
-	text = "R15TR6&Morphs",
-})
-
-local button7 = MorphingTab.new("button", {text = "R6ify"})
-button7.event:Connect(function()
-	print("Converted R15 to R6 Cliently")
-	R15ToR6()
-end)
-
-local slider8 = MorphingTab.new("slider", {
-	text = "Method",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 2,
-	value = 1,
-	rounding = 1,
-})
-slider8.event:Connect(function(x)
-	print("Method: " .. x)
-	_G.Method = x 
-end)
-slider8.set(1)
-
-local switch4 = MorphingTab.new("switch", {
-	text = "Roblox Shirt";
-})
-switch4.set(true)
-switch4.event:Connect(function(bool)
-	print("Roblox Shirt set to: ", bool)
-	_G.RobloxShirt = bool
-end)
-
-local switch5 = MorphingTab.new("switch", {
-	text = "Size Lock";
-})
-switch5.set(false)
-switch5.event:Connect(function(bool)
-	print("Size Lock set to: ", bool)
-	_G.SizeLock = bool
-end)
-
-local switch6 = MorphingTab.new("switch", {
-	text = "R15 Part Transparency";
-})
-switch6.set(true)
-switch6.event:Connect(function(bool)
-	print("R15PT set to: ", bool)
-	_G.R15PT = bool
-end)
-
-local switch7 = MorphingTab.new("switch", {
-	text = "R6 Part Transparency";
-})
-switch7.set(false)
-switch7.event:Connect(function(bool)
-	print("R6PT set to: ", bool)
-	_G.R6PT = bool
-end)
-
-local dropdown3 = MorphingTab.new("dropdown", {
-	text = "Target",
-})
-
-dropdown3.new("LocalPlayer")
-for i, v in pairs(Players:GetPlayers()) do
-	dropdown3.new(v.Name)
-end
-Players.PlayerAdded:Connect(function(Plr)
-	dropdown3.new(Plr.Name)
-end)
-
-dropdown3.event:Connect(function(name)
-	_G.Target = Players[name]
-	print("i chose " .. name)
-end)
-
-local dropdown4 = MorphingTab.new("dropdown", {
-	text = "Torso Type",
-})
-dropdown4.new("Male")
-dropdown4.new("Female")
-dropdown4.event:Connect(function(name)
-	_G.TorsoType = name
-	print("i chose " .. name)
-end)
-
-local label3 = MorphingTab.new("label", {
-	text = "Morphs",
-	color = Color3.new(1, 1, 1),
-})
-
-local button9 = MorphingTab.new("button", {
-	text = "MidnightHorrorsFurry",
-})
-button9.event:Connect(function()
-	print("Midnight Horrors Furry Executed")
-	MHF()
-end)
-
-local switch9 = MorphingTab.new("switch", {
-	text = "Reapply On Respawn";
-})
-switch9.set(false)
-switch9.event:Connect(function(bool)
-	print("Re Execute on Respawn set to: ", bool)
-	_G.MHFRespawn = bool
-end)
-
-
-local label4 = MorphingTab.new("label", {
-	text = "-----------------",
-	color = Color3.new(1, 1, 1),
-})
-
-
-local button10 = MorphingTab.new("button", {
-	text = "Geode Hatting",
-})
-button10.event:Connect(function()
-	print("Hatting Executed")
-	GeodeHatting()
-end)
-
-local buttonDisabler = MorphingTab.new("button", {
-	text = "Disable AutoOutfitter",
-})
-buttonDisabler.event:Connect(function()
-	print("Hatting Executed")
-	StopAutoOutfit()
-end)
-
-local switch8 = MorphingTab.new("switch", {
-	text = "Reapply On Respawn";
-})
-switch8.set(false)
-switch8.event:Connect(function(bool)
-	print("ReHat Character Set to: ", bool)
-	_G.GeodeHattingRespawn = bool
-end)
-
-local AutoOutfit = MorphingTab.new("switch", {
-	text = "ReOutfit Target On Respawn";
-})
-AutoOutfit.set(false)
-AutoOutfit.event:Connect(function(bool)
-	print("ReOutfit Character Set to: ", bool)
-	_G.K5 = bool
-end)
-
----place player set here _G.K4 = game:GetService
-
-local HattingPlayerdropdown = MorphingTab.new("dropdown", {
-	text = "Player",
-})
-
-HattingPlayerdropdown.new("LocalPlayer")
-for i, v in pairs(Players:GetPlayers()) do
-	HattingPlayerdropdown.new(v.Name)
-end
-Players.PlayerAdded:Connect(function(Plr)
-	HattingPlayerdropdown.new(Plr.Name)
-end)
-
-HattingPlayerdropdown.event:Connect(function(name)
-	_G.K4 = Players[name]
-	print("i chose " .. name)
-end)
-
-local HattingDropdown1 = MorphingTab.new("dropdown", {
-	text = "Hat Set",
-})
-for i, v in pairs(FullHatSetNames) do
-	HattingDropdown1.new(v)
-end
-
-HattingDropdown1.event:Connect(function(name)
-	print("i chose " .. name .. " As The Hat Set")
-	_G.K1 = name
-end)
-
-local HattingFDSlider = MorphingTab.new("slider", {
-	text = "Food Demon Number",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 76,
-	value = 1,
-	rounding = 5,
-})
-HattingFDSlider.event:Connect(function(x)
-	print("Food Demon #" .. x)
-	_G.K2 = x
-end)
-HattingFDSlider.set(1)
-
-local HattingDropdown2 = MorphingTab.new("dropdown", {
-	text = "2nd Extra Value",
-})
-for i, v in pairs(ExtraValue2) do
-	HattingDropdown2.new(v)
-end
-
-HattingDropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " As The 2nd Extra Value")
-	_G.K3 = name
-end)
-
-
-
-
--------------------------------------------------------------------------------------------------------------------Tab 3
-local OthersTab = window1.new({
-	text = "Other",
-})
-
-local RespawnWaitTimeSlider = OthersTab.new("slider", {
-	text = "Respawn Wait Time",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 1,
-	max = 1000,
-	value = 1,
-	rounding = 1,
-})
-RespawnWaitTimeSlider.event:Connect(function(x)
-	print("slider value: " .. x * 0.001)
-	_G.RespawnWaitTime = x * 0.001
-end)
-RespawnWaitTimeSlider.set(1)
-
-local button3 = OthersTab.new("button", {
-	text = "Execute RC",
-})
-button3.event:Connect(function()
-	print("RoClothes Executed")
-	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
-	end)
-end)
-
-local button5 = OthersTab.new("button", {
-	text = "Execute IY",
-})
-button5.event:Connect(function()
-	print("Infinity Yeild Executed")
-	spawn(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-	end)
-end)
-
-local button6 = OthersTab.new("button", {
-	text = "Regret Paranoia",
-})
-button6.event:Connect(function()
-	print("Regretevator Paranoia Executed")
-	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Regretevator_Paranoia.lua",true))()
+	local TailM = Tabs.MainTab:AddDropdown("Dropdown", {
+		Title = "Material Of Wings",
+		Values = Materials,
+		Multi = false,
+		Default = "Neon",
+	})
+	TailM:SetValue("Neon")
+	TailM:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Wing Material: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.M3 = Value
 	end)
 
-end)
-
-local button7 = OthersTab.new("button", {
-	text = "Execute IY Dex",
-})
-button7.event:Connect(function()
-	print("IY Dex Executed")
-	spawn(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+	------------------------------------------------------------------------------------------------- End Of MainTab
+	
+	
+	
+	local GH = Tabs.MorphingTab:AddSection("GeodesHatting")
+	
+	Tabs.MorphingTab:AddButton({
+		Title = "Execute",
+		Description = "Executes The Selected Hat Set",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "GeodesHatting Executed: ".. tostring(_G.K1),
+				Duration = 3
+			})
+			GeodeHatting()
+		end
+	})
+	
+	Tabs.MorphingTab:AddButton({
+		Title = "Stop AutoOutfitter",
+		Description = "Deletes A Value In Replicated Storage To Stop The AutoOutfitting",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Attempted To Stop AutoOutfitter For ".. tostring(_G.K4),
+				Duration = 3
+			})
+			StopAutoOutfit()
+		end
+	})
+	
+	local GHHatset = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "Hat Set",
+		Values = FullHatSetNames,
+		Multi = false,
+		Default = 1,
+	})
+	GHHatset:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Hat Set: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.K1 = Value
 	end)
-end)
-
-local button8 = OthersTab.new("button", {
-	text = "Execute Dark Dex V5",
-})
-button8.event:Connect(function()
-	print("Dark Dex V5 Executed")
-	spawn(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/AlterX404/DarkDEX-V5/refs/heads/main/DarkDEX-V5'))()
+	
+	local GHPlayer = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "Player",
+		Values = PlayersTable,
+		Multi = false,
+		Default = 1,
+	})
+	GHPlayer:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Selected Player: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.K4 = Players[Value]
 	end)
-end)
+	
+	local GHAutoOutfit = Tabs.MorphingTab:AddToggle("AutoOutfit", {Title = "ReOutfit On Respawn", Default = false })
 
---HBE
-local label2 = OthersTab.new("label", {
-	text = "HBE",
-	color = Color3.new(1, 1, 1),
-})
+	GHAutoOutfit:OnChanged(function()
+		_G.K5 = Main.Options["AutoOutfit"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "AutoOutfit Value: " .. tostring(Main.Options["AutoOutfit"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local GHE1 = Tabs.MorphingTab:AddSlider("Slider", {
+		Title = "Extra Value 1",
+		Description = "Food Demon Number",
+		Default = 1,
+		Min = 1,
+		Max = 75,
+		Rounding = 1
+	})
+	GHE1:OnChanged(function(Value)
+		print("Food Demon: " .. Value)
+		_G.K2 = Value 
+	end)
+	
+	local GHE2 = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "Extra Value 2",
+		Values = ExtraValue2,
+		Multi = false,
+		Default = 1,
+	})
+	GHE2:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Extra Value 2: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.K3 = Value
+	end)
+	
+	
+	------------------------------------------------
+	
+	local Heian = Tabs.MorphingTab:AddSection("Heian Arms")
 
-local dock1 = OthersTab.new("dock")
+	Tabs.MorphingTab:AddButton({
+		Title = "Execute",
+		Description = "Gives 2 Extra Arms",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Heian Arms Executed",
+				Duration = 3
+			})
+			GiveHeianArms()
+		end
+	})
 
-local button4 = dock1.new("button", {text = "Execute HBE"})
-button4.event:Connect(function()
-	print("HBE Executed")
-	HBE()
-end)
+	Tabs.MorphingTab:AddButton({
+		Title = "Stop Extra Amrs",
+		Description = "Deletes A Value In Replicated Storage To Stop Giving you Extra Arms",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Attempted To Stop AutoArmGiver",
+				Duration = 3
+			})
+			StopExtraArms()
+		end
+	})
+	
+	local HeianAutoGiver = Tabs.MorphingTab:AddToggle("HeianAutoGiver", {Title = "ReGive Extra Arms On Respawn", Default = false })
 
-local slider2 = dock1.new("slider", { size = 75, text = "Size", min = 1, max = 30 })
-slider2.event:Connect(function(x)
-	print("HB Size: ", x)
-	_G.HS = x
-end)
+	HeianAutoGiver:OnChanged(function()
+		_G.ReAddArms = Main.Options["HeianAutoGiver"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "HeianAutoGiver Value: " .. tostring(Main.Options["HeianAutoGiver"].Value),
+			Duration = 3
+		})
+	end)
+	
+	--------------------------------------------------------
+	
+	
+	local NC = Tabs.MorphingTab:AddSection("NightChild")
 
-local dropdown2 = OthersTab.new("dropdown", {
-	text = "Body Part",
-})
+	Tabs.MorphingTab:AddButton({
+		Title = "Execute",
+		Description = "Gives NightChild",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "NightChild Executed",
+				Duration = 3
+			})
+			GiveNightChild()
+		end
+	})
 
-for i, v in pairs(BodyParts) do
-	dropdown2.new(v)
+	Tabs.MorphingTab:AddButton({
+		Title = "Stop Extra Amrs",
+		Description = "Deletes A Value In Replicated Storage To Stop Giving you Extra Arms",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Attempted To Stop AutoArmGiver",
+				Duration = 3
+			})
+			StopNightChild()
+		end
+	})
+
+	local NCAutoGiver = Tabs.MorphingTab:AddToggle("NCAutoGiver", {Title = "Give Nightchild On Respawn", Default = false })
+
+	NCAutoGiver:OnChanged(function()
+		_G.ReAddNCWings = Main.Options["NCAutoGiver"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "NCAutoGiver Value: " .. tostring(Main.Options["NCAutoGiver"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local NCAuraOnly = Tabs.MorphingTab:AddToggle("NCAuraOnly", {Title = "Aura Only", Default = false })
+
+	NCAuraOnly:OnChanged(function()
+		_G.AuraOnly = Main.Options["NCAuraOnly"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "NCAuraOnly Value: " .. tostring(Main.Options["NCAuraOnly"].Value),
+			Duration = 3
+		})
+	end)
+	
+	
+-------------------------------------------------------
+	local MH = Tabs.MorphingTab:AddSection("Midnight Horrors Furry")
+	
+	Tabs.MorphingTab:AddButton({
+		Title = "Execute Morph",
+		Description = "Morphs You Into That One Furry From Midnight Horrors",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed MHF",
+				Duration = 3
+			})
+			MHF()
+		end
+	})
+
+	local MHFAutoExecute = Tabs.MorphingTab:AddToggle("MHFAutoExecute", {Title = "Give Morph On Respawn", Default = false })
+
+	MHFAutoExecute:OnChanged(function()
+		_G.ReAddNCWings = Main.Options["MHFAutoExecute"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "MHFAutoExecute Value: " .. tostring(Main.Options["MHFAutoExecute"].Value),
+			Duration = 3
+		})
+	end)
+	
+	------------------------------------------
+	
+	local R15TR6 = Tabs.MorphingTab:AddSection("R15 To R6")
+	
+	Tabs.MorphingTab:AddButton({
+		Title = "Execute Conversion",
+		Description = "Converts a R15 To R6 Cliently",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Conversion",
+				Duration = 3
+			})
+			R15ToR6()
+		end
+	})
+	
+	local R6M = Tabs.MorphingTab:AddSlider("Slider", {
+		Title = "Method",
+		Default = 1,
+		Min = 1,
+		Max = 2,
+		Rounding = 2
+	})
+	R6M:OnChanged(function(Value)
+		print("Method: " .. Value)
+		_G.Method = Value 
+	end)
+	
+	local R6AC = Tabs.MorphingTab:AddToggle("R6AC", {Title = "Converter Avatar Clothes", Default = true })
+
+	R6AC:OnChanged(function()
+		_G.RobloxShirt = Main.Options["R6AC"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Roblox Avatar Clothes Value: " .. tostring(Main.Options["R6AC"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local R6SL = Tabs.MorphingTab:AddToggle("SL", {Title = "Converter Size Lock", Default = false })
+
+	R6SL:OnChanged(function()
+		_G.SizeLock = Main.Options["SL"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Roblox Avatar Clothes Value: " .. tostring(Main.Options["SL"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local R15T = Tabs.MorphingTab:AddToggle("R15T", {Title = "R15 Part Transparent", Default = true })
+
+	R15T:OnChanged(function()
+		_G.R15PT = Main.Options["R15T"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Roblox R15 Parts Transparant Value: " .. tostring(Main.Options["SL"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local R6T = Tabs.MorphingTab:AddToggle("R6T", {Title = "R6 Part Transparent", Default = false })
+
+	R6T:OnChanged(function()
+		_G.SizeLock = Main.Options["R6T"].Value
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Roblox R6 Parts Transparant Value: " .. tostring(Main.Options["R6T"].Value),
+			Duration = 3
+		})
+	end)
+	
+	local R6Player = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "Player",
+		Values = PlayersTable,
+		Multi = false,
+		Default = 1,
+	})
+	R6Player:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Selected Player: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.Target = Players[Value]
+	end)
+	
+	local R6Torso = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "R6 Torso Type",
+		Values = SX,
+		Multi = false,
+		Default = 1,
+	})
+	R6Torso:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Selected Torso: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.TorsoType = Value
+	end)
+	
+	------------------------------------------------------------------------------------------------- End Of Morphing Tab
+	--[[Required Parts for OthersTab
+	2Sliders(RespawnWaitTime Would Now Be In Settings)
+	1 Buttons
+	1 DropDown
+	]]
+	
+	Tabs.Other:AddButton({
+		Title = "Roclothes",
+		Description = "This Is Modified",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Roclothes",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/RC.lua",true))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Client Regretevator Paranoia",
+		Description = "Its Wierdly Cool I guess(Only Visual)",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Regretevator Paranoia",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/Regretevator_Paranoia.lua",true))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Infinite Yield",
+		Description = "The Client Admin",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Infinite Yield",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Domain X",
+		Description = "The Client Taskbar",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Domain X",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/domainx/refs/heads/main/source",true))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Dex V1 Remastered",
+		Description = "The Dex From Infinite Yield",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Dex V1R",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Dark Dex V5",
+		Description = "This Dex is For When V1R is Not Working",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Dex V5",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/AlterX404/DarkDEX-V5/refs/heads/main/DarkDEX-V5'))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Aimbot",
+		Description = "Some Aimbot That Its UI Was Broken",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Aimbot",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/FixedAimbot.lua",true))()
+			end)
+		end
+	})
+	
+	Tabs.Other:AddButton({
+		Title = "Open Aimbot",
+		Description = "Open Source Aimbot + Esp",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed Open Aimbot",
+				Duration = 3
+			})
+			spawn(function()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua",true))()
+			end)
+		end
+	})
+	
+	local HBES = Tabs.Other:AddSection("Hitbox Expander")
+	
+	Tabs.Other:AddButton({
+		Title = "Execute",
+		Description = "Executes The Hitbox Expander",
+		Callback = function()
+			Main:Notify({
+				Title = "X Gui",
+				Content = "Executed HBE",
+				Duration = 3
+			})
+			HBE()
+		end
+	})
+	
+	local HBESize = Tabs.MorphingTab:AddSlider("Slider", {
+		Title = "Hitbox Size",
+		Description = "Size Of Hitbox",
+		Default = 1,
+		Min = 1,
+		Max = 30,
+		Rounding = 1
+	})
+	HBESize:OnChanged(function(Value)
+		print("Size: " .. Value)
+		_G.HS = Value 
+	end)
+	
+	local HBET = Tabs.MorphingTab:AddSlider("Slider", {
+		Title = "Hitbox Transparency",
+		Description = "Food Demon Number",
+		Default = 1,
+		Min = 0,
+		Max = 10,
+		Rounding = 1
+	})
+	HBET:OnChanged(function(Value)
+		print("Hitbox Transparency: " .. Value)
+		_G.T = Value * 0.1
+	end)
+
+	local HBEBP = Tabs.MorphingTab:AddDropdown("Dropdown", {
+		Title = "Body Part",
+		Values = BodyParts,
+		Multi = false,
+		Default = 1,
+	})
+	HBEBP:OnChanged(function(Value)
+		Main:Notify({
+			Title = "X Gui",
+			Content = "Selected Body Part: " .. tostring(Value),
+			Duration = 3
+		})
+		_G.HBP = Value
+	end)
+	
+	--------------------------------------------------------------------------
+	
+	local HBET = Tabs.Settings:AddSlider("Slider", {
+		Title = "Respawn Wait Time",
+		Description = "Time For Task.Wait To Trigger The ReExecution",
+		Default = 1,
+		Min = 0,
+		Max = 1000,
+		Rounding = 1
+	})
+	HBET:OnChanged(function(Value)
+		print("Hitbox Transparency: " .. Value)
+		_G.RespawnWaitTime = Value * 0.001
+	end)
+	
+	local InterfaceSection = Tabs.Settings:AddSection("Interface")
+
+	InterfaceSection:AddDropdown("InterfaceTheme", {
+		Title = "Theme",
+		Description = "Changes the interface theme.",
+		Values = Main.Themes,
+		Default = Main.Theme,
+		Callback = function(Value)
+			Main:SetTheme(Value)
+		end
+	})
+
+	if Main.UseAcrylic then
+		InterfaceSection:AddToggle("AcrylicToggle", {
+			Title = "Acrylic",
+			Description = "The blurred background requires graphic quality 8+",
+			Default = Main.Acrylic,
+			Callback = function(Value)
+				Main:ToggleAcrylic(Value)
+			end
+		})
+	end
+
+	InterfaceSection:AddToggle("TransparentToggle", {
+		Title = "Transparency",
+		Description = "Makes the interface transparent.",
+		Default = Main.Transparency,
+		Callback = function(Value)
+			Main:ToggleTransparency(Value)
+		end
+	})
+
+	InterfaceSection:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = "RightShift" })
+	Main.MinimizeKeybind = Main.Options.MenuKeybind 
 end
 
+window1:SelectTab(1)
+	
+	
+SaveManager:SetLibrary(Main)
+InterfaceManager:SetLibrary(Main)
 
-dropdown2.event:Connect(function(name)
-	print("i chose " .. name .. " For the Body Part")
-	_G.HBP = name
-end)
+	SaveManager:IgnoreThemeSettings()
 
-local slider3 = OthersTab.new("slider", {
-	text = "Transparency",
-	color = Color3.new(0.8, 0.5, 0),
-	min = 0,
-	max = 10,
-	value = 1,
-	rounding = 1,
-})
-slider3.set(5)
-slider3.event:Connect(function(x)
-	print("slider value: " .. x * 0.1)
-	_G.T = x * 0.1
-end)
+	SaveManager:SetIgnoreIndexes({})
+	InterfaceManager:SetFolder("XGui")
+	SaveManager:SetFolder("XGui/specific-game")
 
+	InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+	SaveManager:BuildConfigSection(Tabs.Settings)
+
+
+
+do
+	Main:Notify({
+		Title = "X Gui",
+		Content = "X loaded.",
+		Duration = 8
+	})
+
+SaveManager:LoadAutoloadConfig()
+	
+end
