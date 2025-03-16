@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Players = game:GetService("Players")
 
-local XIIX = game:GetService("ReplicatedStorage").X  --game:GetObjects("rbxasset://XIIXPack.Rbxm")[1]:Clone()
+local XIIX = game:GetObjects("rbxasset://XIIXPack.Rbxm")[1]:Clone()
 
 function SortTable(SelectedTable)
 	table.sort(SelectedTable,function(a,b)
@@ -1685,49 +1685,12 @@ do
 		Rounding = 1
 	})
 	HBET:OnChanged(function(Value)
-		print("Hitbox Transparency: " .. Value)
+		print("Respawn Wait Time: " .. Value * 0.001)
 		_G.RespawnWaitTime = Value * 0.001
 	end)
-	
-	local InterfaceSection = Tabs.Settings:AddSection("Interface")
-
-	InterfaceSection:AddDropdown("InterfaceTheme", {
-		Title = "Theme",
-		Description = "Changes the interface theme.",
-		Values = Main.Themes,
-		Default = Main.Theme,
-		Callback = function(Value)
-			Main:SetTheme(Value)
-		end
-	})
-
-	if Main.UseAcrylic then
-		InterfaceSection:AddToggle("AcrylicToggle", {
-			Title = "Acrylic",
-			Description = "The blurred background requires graphic quality 8+",
-			Default = Main.Acrylic,
-			Callback = function(Value)
-				Main:ToggleAcrylic(Value)
-			end
-		})
-	end
-
-	InterfaceSection:AddToggle("TransparentToggle", {
-		Title = "Transparency",
-		Description = "Makes the interface transparent.",
-		Default = Main.Transparency,
-		Callback = function(Value)
-			Main:ToggleTransparency(Value)
-		end
-	})
-
-	InterfaceSection:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = "RightShift" })
-	Main.MinimizeKeybind = Main.Options.MenuKeybind 
 end
 
 window1:SelectTab(1)
-	
-	
 SaveManager:SetLibrary(Main)
 InterfaceManager:SetLibrary(Main)
 
@@ -1746,7 +1709,7 @@ do
 	Main:Notify({
 		Title = "X Gui",
 		Content = "X loaded.",
-		Duration = 8
+		Duration = 5
 	})
 
 SaveManager:LoadAutoloadConfig()
