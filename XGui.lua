@@ -800,7 +800,7 @@ local window1 = Main:CreateWindow({
 	Size = UDim2.fromOffset(580, 460),
 	Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
 	Theme = "Dark",
-	MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+	MinimizeKey = Enum.KeyCode.RightControl -- Used when theres no MinimizeKeybind
 })
 
 
@@ -1633,7 +1633,7 @@ do
 		end
 	})
 	
-	local HBESize = Tabs.MorphingTab:AddSlider("Slider", {
+	local HBESize = Tabs.Other:AddSlider("Slider", {
 		Title = "Hitbox Size",
 		Description = "Size Of Hitbox",
 		Default = 1,
@@ -1646,9 +1646,9 @@ do
 		_G.HS = Value 
 	end)
 	
-	local HBET = Tabs.MorphingTab:AddSlider("Slider", {
+	local HBET = Tabs.Other:AddSlider("Slider", {
 		Title = "Hitbox Transparency",
-		Description = "Food Demon Number",
+		Description = "",
 		Default = 1,
 		Min = 0,
 		Max = 10,
@@ -1659,7 +1659,7 @@ do
 		_G.T = Value * 0.1
 	end)
 
-	local HBEBP = Tabs.MorphingTab:AddDropdown("Dropdown", {
+	local HBEBP = Tabs.Other:AddDropdown("Dropdown", {
 		Title = "Body Part",
 		Values = BodyParts,
 		Multi = false,
