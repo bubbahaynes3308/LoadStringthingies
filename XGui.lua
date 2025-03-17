@@ -509,7 +509,7 @@ local GeodeHatting = function()
 					for _, Connect in pairs(AllConnect) do
 						Connect:Disconnect()
 					end
-					print("AutoOutfitter Disabled")
+					warn("AutoOutfitter Disabled")
 				end)
 			end
 		end)
@@ -868,7 +868,7 @@ do
 		Rounding = 1
 	})
 	SGTWS:OnChanged(function(Value)
-		print("WaitTime value: " .. Value * 0.0001)
+		warn("WaitTime value: " .. Value * 0.0001)
 		_G.WaitTime = Value * 0.0001
 	end)
 	
@@ -883,7 +883,7 @@ do
 		local r = SGWCPWT.Value.r * 255
 		local g = SGWCPWT.Value.g * 255 
 		local b = SGWCPWT.Value.b * 255
-		print(
+		warn(
 			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
 			"Wing Transparency:", SGWCPWT.Transparency * 0.01
 		)
@@ -902,7 +902,7 @@ do
 		Rounding = 1
 	})
 	SGWReflect:OnChanged(function(Value)
-		print("ReflectZ value: " .. Value * 0.01)
+		warn("ReflectZ value: " .. Value * 0.01)
 		_G.ReflectZ = Value * 0.01
 	end)
 	
@@ -989,7 +989,7 @@ do
 		Rounding = 1
 	})
 	ILTWS:OnChanged(function(Value)
-		print("WaitTime value: " .. Value * 0.0001)
+		warn("WaitTime value: " .. Value * 0.0001)
 		_G.WaitTime2 = Value * 0.0001
 	end)
 
@@ -1004,7 +1004,7 @@ do
 		local r = ILWCPWT.Value.r * 255
 		local g = ILWCPWT.Value.g * 255 
 		local b = ILWCPWT.Value.b * 255
-		print(
+		warn(
 			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
 			"Wing Transparency:", ILWCPWT.Transparency * 0.01
 		)
@@ -1023,7 +1023,7 @@ do
 		Rounding = 1
 	})
 	ILWReflect:OnChanged(function(Value)
-		print("ReflectZ value: " .. Value * 0.01)
+		warn("ReflectZ value: " .. Value * 0.01)
 		_G.ReflectX = Value * 0.01
 	end)
 
@@ -1109,7 +1109,7 @@ do
 		Rounding = 1
 	})
 	TailTWS:OnChanged(function(Value)
-		print("Amount Of Tails: " .. Value)
+		warn("Amount Of Tails: " .. Value)
 		_G.TailValue = Value 
 	end)
 
@@ -1124,7 +1124,7 @@ do
 		local r = TailCPWT.Value.r * 255
 		local g = TailCPWT.Value.g * 255 
 		local b = TailCPWT.Value.b * 255
-		print(
+		warn(
 			"Wing Color changed: (".. r .. ","..g ..",".. b.."),",
 			"Wing Transparency:", TailCPWT.Transparency * 0.01
 		)
@@ -1143,7 +1143,7 @@ do
 		Rounding = 1
 	})
 	TailReflect:OnChanged(function(Value)
-		print("ReflectZ value: " .. Value * 0.01)
+		warn("ReflectZ value: " .. Value * 0.01)
 		_G.Reflect7 = Value * 0.01
 	end)
 
@@ -1246,7 +1246,7 @@ do
 		Rounding = 1
 	})
 	GHE1:OnChanged(function(Value)
-		print("Food Demon: " .. Value)
+		warn("Food Demon: " .. Value)
 		_G.K2 = Value 
 	end)
 	
@@ -1413,7 +1413,7 @@ do
 		Rounding = 2
 	})
 	R6M:OnChanged(function(Value)
-		print("Method: " .. Value)
+		warn("Method: " .. Value)
 		_G.Method = Value 
 	end)
 	
@@ -1642,7 +1642,7 @@ do
 		Rounding = 1
 	})
 	HBESize:OnChanged(function(Value)
-		print("Size: " .. Value)
+		warn("Size: " .. Value)
 		_G.HS = Value 
 	end)
 	
@@ -1655,7 +1655,7 @@ do
 		Rounding = 1
 	})
 	HBET:OnChanged(function(Value)
-		print("Hitbox Transparency: " .. Value)
+		warn("Hitbox Transparency: " .. Value)
 		_G.T = Value * 0.1
 	end)
 
@@ -1685,7 +1685,7 @@ do
 		Rounding = 1
 	})
 	HBET:OnChanged(function(Value)
-		print("Respawn Wait Time: " .. Value * 0.001)
+		warn("Respawn Wait Time: " .. Value * 0.001)
 		_G.RespawnWaitTime = Value * 0.001
 	end)
 end
