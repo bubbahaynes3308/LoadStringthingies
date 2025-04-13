@@ -266,6 +266,21 @@ local GeodeHatting = function()
 						end
 					end
 				end
+				
+				for _, Meshes in pairs(Player:GetDescendants()) do
+					
+					if  Meshes.Name == "GirlTorso" or 
+						Meshes.Name == "HiddenTorso" or 
+						Meshes.Name == "InvisibleHead" or 
+						Meshes.Name == "LA" or 
+						Meshes.Name == "LL" or 
+						Meshes.Name == "RA" or 
+						Meshes.Name == "RL" or 
+						Meshes.Name == "Torso"
+					then
+						Meshes:Destroy()
+					end
+				end
 
 				for _, PlrHats in pairs(Player:GetChildren()) do
 
