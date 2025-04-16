@@ -514,15 +514,31 @@ local m2 = Instance.new("Model",Folder)
 local m3 = Instance.new("Model",Folder)
 local m4 = Instance.new("Model", Folder)
 local m5 = Instance.new("Model", Folder)
-			local mw1 = Instance.new("Model",Folder)
-			local mw2 = Instance.new("Model",Folder)
-			local mw3 = Instance.new("Model", Folder)
-			local mw4 = Instance.new("Model", Folder)
-			local mw5 =  Instance.new("Model", Folder)
-			local colorizermod = Instance.new("Model",Folder)
-			local colorizermod2 = Instance.new("Model",Folder)
-			local extrawingmod1 = Instance.new("Model",Folder)
-			local extrawingmod2 = Instance.new("Model",Folder)
+local mw1 = Instance.new("Model",Folder)
+local mw2 = Instance.new("Model",Folder)
+local mw3 = Instance.new("Model", Folder)
+local mw4 = Instance.new("Model", Folder)
+local mw5 =  Instance.new("Model", Folder)
+local colorizermod = Instance.new("Model",Folder)
+local colorizermod2 = Instance.new("Model",Folder)
+local extrawingmod1 = Instance.new("Model",Folder)
+local extrawingmod2 = Instance.new("Model",Folder)
+m.Name = "m"
+m2.Name = "m2"
+m3.Name = "m3"
+m4.Name = "m4"
+m5.Name = "m5"
+mw1.Name = "mw1"
+mw2.Name = "mw2"
+mw3.Name = "mw3"
+mw4.Name = "mw4"
+mw5.Name = "mw5"
+colorizermod.Name = "colorizermod"
+colorizermod2.Name = "colorizermod2"
+extrawingmod1.Name = "extrawingmod1"
+extrawingmod2.Name = "extrawingmod2"
+
+			
 
 			local handle = CreateParta(m,1,1,"Neon",MAINCOLOR)
 			CreateMeshXX(handle,"Brick",0.5,0.5,0.5)
