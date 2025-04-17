@@ -807,7 +807,7 @@ end)
 
 
 local window1 = Main:CreateWindow({
-	Title = "X Gui Fluent Edition",
+	Title = "X Gui: Fluent Edition",
 	SubTitle = "by 『Ｘ』",
 	TabWidth = 160,
 	Size = UDim2.fromOffset(580, 460),
@@ -1466,7 +1466,7 @@ do
 	local R6T = Tabs.MorphingTab:AddToggle("R6T", {Title = "R6 Part Transparent", Default = false })
 
 	R6T:OnChanged(function()
-		_G.SizeLock = Main.Options["R6T"].Value
+		_G.R6PT = Main.Options["R6T"].Value
 		Main:Notify({
 			Title = "X Gui",
 			Content = "Roblox R6 Parts Transparant Value: " .. tostring(Main.Options["R6T"].Value),
