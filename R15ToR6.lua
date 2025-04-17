@@ -277,7 +277,7 @@ function Convert(Player)
 	end
 
 	Player.CharacterAdded:Connect(function(Character)
-		repeat task.wait(0.1) until Character:FindFirstChild("HumanoidRootPart")
+		repeat task.wait(0.025) until Character:FindFirstChild("HumanoidRootPart")
 		ConvertedPart = {}
 
 		Converter(Character)
