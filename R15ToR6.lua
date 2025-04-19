@@ -1,5 +1,5 @@
 
-local Method = _G.Method -- 1/Maximum (2 is Maximum)
+local Method = _G.Method -- 1/Maximum (2 is Maximum) Third Method Was Scrapped Because Meshes For it Wouldnt work as the method used a Package. (Female:https://www.roblox.com/bundles/546195/R6, Male:https://www.roblox.com/bundles/546195/R6)
 local TorsoType = _G.TorsoType -- Male/Female
 local RobloxShirt = _G.RobloxShirt -- true/false
 local SizeLock = _G.SizeLock -- true/false

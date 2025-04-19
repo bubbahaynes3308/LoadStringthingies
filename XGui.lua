@@ -1119,7 +1119,7 @@ do
 		Default = 1,
 		Min = 1,
 		Max = 4,
-		Rounding = 1
+		Rounding = 0
 	})
 	TailTWS:OnChanged(function(Value)
 		warn("Amount Of Tails: " .. Value)
@@ -1230,6 +1230,7 @@ do
 		Multi = false,
 		Default = 1,
 	})
+	GHPlayer:SetValue("LocalPlayer")
 	GHPlayer:OnChanged(function(Value)
 		Main:Notify({
 			Title = "X Gui",
@@ -1256,7 +1257,7 @@ do
 		Default = 1,
 		Min = 1,
 		Max = 75,
-		Rounding = 1
+		Rounding = 0
 	})
 	GHE1:OnChanged(function(Value)
 		warn("Food Demon: " .. Value)
@@ -1423,7 +1424,7 @@ do
 		Default = 1,
 		Min = 1,
 		Max = 2,
-		Rounding = 2
+		Rounding = 0
 	})
 	R6M:OnChanged(function(Value)
 		warn("Method: " .. Value)
@@ -1480,6 +1481,7 @@ do
 		Multi = false,
 		Default = 1,
 	})
+	R6Player:SetValue("LocalPlayer")
 	R6Player:OnChanged(function(Value)
 		Main:Notify({
 			Title = "X Gui",
