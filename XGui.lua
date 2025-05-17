@@ -383,7 +383,9 @@ local GeodeHatting = function()
 					local P = Player:WaitForChild("SetAssets",10):WaitForChild("HeianArms",10)
 					for z,x in pairs(Prt:GetDescendants()) do
 						if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" and P then
-							x.Parent.Parent:Clone().Parent = P
+						local x = x.Parent.Parent:Clone()
+							x.Parent = P
+							addAccoutrement(P, x)
 						end
 						if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
 							P["Left Arm"].Transparency = 1
