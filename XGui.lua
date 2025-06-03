@@ -379,32 +379,31 @@ local GeodeHatting = function()
 		local function AddNewHats()
 			for _, Prt in pairs(NewHats:GetChildren()) do
 				Prt.Parent = Player
-				if HatPackage:HasTag("CanHaveExtraArms") then
-					local P = Player:WaitForChild("SetAssets",10):WaitForChild("HeianArms",10)
-					for z,x in pairs(Prt:GetDescendants()) do
-						if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" and P then
-						local x = x.Parent.Parent:Clone()
-							x.Parent = P
-							addAccoutrement(P, x)
-						end
-						if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
-							P["Left Arm"].Transparency = 1
-							P["Right Arm"].Transparency = 1
-						end
-					end
-				end
-				if HatPackage:HasTag("HeadMesh") then --i Used Tags To Differ Them From Getting set Without one
-					Player["Head"]:FindFirstChildOfClass("SpecialMesh"):Destroy()
-					HatPackage:WaitForChild("HeadMesh", 50):Clone().Parent = Player["Head"]
-				end
 				if Prt:IsA("Accessory") or Prt:IsA("Hat") then
-					addAccoutrement(Player, Prt)
+					--addAccoutrement(Player, Prt)
 					Prt.Handle.Anchored = false
 					Prt.Handle.CanCollide = false
 					Prt.Handle.Massless = true
 				end
+				if HatPackage:HasTag("HeadMesh") then --V1 Used Tags To Differ Them From Getting set Without one
+					Player["Head"]:FindFirstChildOfClass("SpecialMesh"):Destroy()
+					HatPackage:WaitForChild("HeadMesh", 50):Clone().Parent = Player["Head"]
+				end
+				if HatPackage:HasTag("CanHaveExtraArms") then
+					for z,x in pairs(Prt:GetDescendants()) do
+						if Player:FindFirstChild("SetAssets") then
+							local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
+							if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
+								x.Parent.Parent:Clone().Parent = P
+							end
+							if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
+								P["Left Arm"].Transparency = 1
+								P["Right Arm"].Transparency = 1
+							end
+						end
+					end
+				end
 			end
-
 		end
 
 		local function processCharacterAccessories(character)

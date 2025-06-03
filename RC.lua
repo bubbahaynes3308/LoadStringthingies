@@ -331,7 +331,7 @@ function RoClothes(Player)
 			["Torso"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Torso Mesh",
-				["MeshId"] = "rbxasset://13181228593.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181228593.mesh",
 				["Size"] = Vector3.new(2.04, 2.06, 1.06),
 				["CFrame"] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 				["Transparency"] = 0,
@@ -349,7 +349,7 @@ function RoClothes(Player)
 			["Left Leg"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Leg Mesh",
-				["MeshId"] = "rbxasset://7332360863.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7332360863.mesh",
 				["Size"] = Vector3.new(1.213, 2.18, 1.201),
 				["CFrame"] = CFrame.new(-0.0359992981, 0.0627000332, 0.0440006256, -4.37113883e-08, 0, -1, 0, 0.999999881, 0, 1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -367,7 +367,7 @@ function RoClothes(Player)
 			["Right Leg"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Leg Mesh",
-				["MeshId"] = "rbxasset://7332415457.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7332415457.mesh",
 				["Size"] = Vector3.new(1.213, 2.18, 1.201),
 				["CFrame"] = CFrame.new(0.0359992981, 0.0627000332, 0.0440006256, -4.37113883e-08, 0, -1, 0, 0.999999881, 0, 1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -385,7 +385,7 @@ function RoClothes(Player)
 			["Left Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Arm Mesh",
-				["MeshId"] = "rbxasset://11617989163.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11617988681.mesh", --"rbxasset://RoClothes/11617989163.mesh"
 				["Size"] = Vector3.new(1, 2, 1),
 				["CFrame"] = CFrame.new(0.0349998474, 0, 0, 1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, 1),
 				["Transparency"] = 0,
@@ -403,7 +403,7 @@ function RoClothes(Player)
 			["Right Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Arm Mesh",
-				["MeshId"] = "rbxasset://11617988681.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11617989163.mesh", --"rbxasset://RoClothes/11617988681.mesh",
 				["Size"] = Vector3.new(1, 2, 1),
 				["CFrame"] = CFrame.new(-0.0349998474, 0, 0, 1, 0, -8.74227766e-08, 0, 0.999999881, 0, 8.74227766e-08, 0, 1),
 				["Transparency"] = 0,
@@ -421,7 +421,7 @@ function RoClothes(Player)
 			["Left Butt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Butt",
-				["MeshId"] = "rbxasset://13181475662.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181475662.mesh",
 				["Size"] = Vector3.new(1.252, 1.239, 1.263),
 				["CFrame"] = CFrame.new(-0.532000542, -0.961999893, 0.328999966, -1, 3.52998995e-06, -5.08968776e-07, 3.69696932e-06, 1, -1.92065613e-06, 5.08962978e-07, -1.92066227e-06, -1),
 				["Transparency"] = 0,
@@ -440,7 +440,7 @@ function RoClothes(Player)
 			["Right Butt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Butt",
-				["MeshId"] = "rbxasset://13181475663.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181475663.mesh",
 				["Size"] = Vector3.new(1.252, 1.239, 1.263),
 				["CFrame"] = CFrame.new(0.532000542, -0.961999893, 0.328999966, -1, 3.52998995e-06, -6.08968776e-07, 3.69696932e-06, 1, -1.92065613e-06, 6.08962978e-07, -1.92066227e-06, -1),
 				["Transparency"] = 0,
@@ -459,7 +459,7 @@ function RoClothes(Player)
 			["Left Breast"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Breast",
-				["MeshId"] = "rbxasset://17645666081.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17645666081.mesh",
 				["Size"] = Vector3.new(1.15, 1.403, 0.98),
 				["CFrame"] = CFrame.new(-0.24647522, 0.635471106, -0.450698853, 0.320868134, 0.223423854, -0.920394123, -0.184720367, 0.967879057, 0.170553446, 0.928935945, 0.115290381, 0.351832479),
 				["CFrame1"] = CFrame.new(0.200012207, 0.400005341, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
@@ -479,7 +479,7 @@ function RoClothes(Player)
 			["Right Breast"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Breast",
-				["MeshId"] = "rbxasset://17645666081.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17645666081.mesh",
 				["Size"] = Vector3.new(1.15, 1.403, 0.98),
 				["CFrame"] = CFrame.new(0.24647522, 0.635471106, -0.450698853, -0.320868134, -0.223423854, -0.920394123, -0.184720367, 0.967879057, -0.170553446, 0.928935945, 0.115290381, -0.351832479),
 				["CFrame1"] = CFrame.new(0.200012207, 0.400005341, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
@@ -499,7 +499,7 @@ function RoClothes(Player)
 			["Left Nipple"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Nipple",
-				["MeshId"] = "rbxasset://17645756055.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17645756055.mesh",
 				["Size"] = Vector3.new(0.129, 0.067, 0.129),
 				["CFrame"] = CFrame.new(-0.572320938, -0.203234434, 0.00150489807, 0.000296547514, 0.999854326, -0.0170696471, -0.982211947, 0.0029140336, -0.18775323, -0.187775597, 0.0168216899, 0.982067883),
 				["Transparency"] = 0,
@@ -518,7 +518,7 @@ function RoClothes(Player)
 			["Right Nipple"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Nipple",
-				["MeshId"] = "rbxasset://17645756055.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17645756055.mesh",
 				["Size"] = Vector3.new(0.129, 0.067, 0.129),
 				["CFrame"] = CFrame.new(-0.572320938, -0.203234434, 0.00150489807, -0.000296547514, 0.999854326, -0.0170696471, -0.982211947, 0.0029140336, 0.18775323, 0.187775597, 0.0168216899, 0.982067883),
 				["Transparency"] = 0,
@@ -661,7 +661,7 @@ function RoClothes(Player)
 				["Material"] = Enum.Material.SmoothPlastic,
 				["Shape"] = Enum.PartType.Block,
 				["Color"] = {
-					["Tone"] = "Base",
+					["Tone"] = "Base", --Attempt To index nil With Name When Using GeodesHatting:GeodeIc3???
 					["Color"] = "Parent"
 				},
 				["Parent"] = {
@@ -721,7 +721,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://5270413936.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5270413936.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -742,7 +742,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://5270413632.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5270413632.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -764,7 +764,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7220038121.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7220038121.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -786,7 +786,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7220038121.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7220038121.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -847,7 +847,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7223274409.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7223274409.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -869,7 +869,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7223274409.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7223274409.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -886,7 +886,7 @@ function RoClothes(Player)
 			["Pussy Closed"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Pussy Closed",
-				["MeshId"] = "rbxasset://17633723189.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17633723189.mesh",
 				["Size"] = Vector3.new(0.82, 0.876, 0.825),
 				["CFrame"] = CFrame.new(0, -0.925573111, -0.0344238281, -1, 0, 0, 1.1765762e-13, 1, 0, 0, 0, -1),
 				["Transparency"] = 0,
@@ -902,7 +902,7 @@ function RoClothes(Player)
 			["Clitoris Closed"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Clitoris",
-				["MeshId"] = "rbxasset://17633756976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17633756976.mesh",
 				["Size"] = Vector3.new(0.016, 0.032, 0.013),
 				["CFrame"] = CFrame.new(0, -0.0782728195, 0.396118164, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 				["Transparency"] = 0,
@@ -920,7 +920,7 @@ function RoClothes(Player)
 			["Vulva Closed"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Vulva",
-				["MeshId"] = "rbxasset://17633771118.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17633771118.mesh",
 				["Size"] = Vector3.new(0.049, 0.339, 0.569),
 				["CFrame"] = CFrame.new(0, -0.231252432, 0.116136551, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 				["Transparency"] = 0,
@@ -938,7 +938,7 @@ function RoClothes(Player)
 			["Vagina Closed"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Vagina",
-				["MeshId"] = "rbxasset://17633784085.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17633784085.mesh",
 				["Size"] = Vector3.new(0.048, 0.357, 0.555),
 				["CFrame"] = CFrame.new(0, -0.218520164, 0.12276268, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 				["Transparency"] = 0,
@@ -957,7 +957,7 @@ function RoClothes(Player)
 			["School Shirt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "School Shirt",
-				["MeshId"] = "rbxasset://8708773284.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8708773284.mesh",
 				["Size"] = Vector3.new(1.95, 1.237, 2.063),
 				["CFrame"] = CFrame.new(0., 0.395723343, -0.401777267, -4.4567679e-07, 4.7127628e-06, -1, 1.06013331e-05, 1, 4.71275825e-06, 1, -1.06013313e-05, -4.4572667e-07),
 				["Transparency"] = 0,
@@ -973,7 +973,7 @@ function RoClothes(Player)
 			["School Collor"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Collor",
-				["MeshId"] = "rbxasset://8708773488.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8708773488.mesh",
 				["Size"] = Vector3.new(1.833, 0.681, 2.05),
 				["CFrame"] = CFrame.new(0.0488710403, 0.292836428, -0.00204086304, 1, -7.24058646e-06, -2.78201196e-06, 8.68098778e-06, 0.999997139, -1.66889549e-06, 2.3908276e-06, -1.04128333e-06, 1.00000143),
 				["Transparency"] = 0,
@@ -990,7 +990,7 @@ function RoClothes(Player)
 			["School Bow"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Bow",
-				["MeshId"] = "rbxasset://8708773674.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8708773674.mesh",
 				["Size"] = Vector3.new(0.87, 1.255, 1.917),
 				["CFrame"] = CFrame.new(-0.598809242, -0.0214169025, -0.00198173523, 1, -7.24058646e-06, -2.78201196e-06, 8.68098778e-06, 0.999997139, -1.66889549e-06, 2.3908276e-06, -1.04128333e-06, 1.00000143),
 				["Transparency"] = 0,
@@ -1007,7 +1007,7 @@ function RoClothes(Player)
 			["Skirt 1"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Skirt",
-				["MeshId"] = "rbxasset://8609086938.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8609086938.mesh",
 				["Size"] = Vector3.new(1.85, 1.405, 2.619),
 				["CFrame"] = CFrame.new(-0.0003657341, -0.680291414, 0.209050179, -2.56359476e-06, -2.94868323e-06, -1.00000048, -2.50712965e-05, 0.999999046, -3.85198973e-06, 1, 2.55514824e-05, 1.07363007e-07),
 				["Transparency"] = 0,
@@ -1023,7 +1023,7 @@ function RoClothes(Player)
 			["Skirt 2"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Skirt",
-				["MeshId"] = "rbxasset://11389496406.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11389496406.mesh",
 				["Size"] = Vector3.new(2.666, 1.507, 2.062),
 				["CFrame"] = CFrame.new(0.0089969635, -0.731234312, 0.254065514, -1.00000048, 2.71013369e-06, 3.48198853e-07, 1.80675625e-06, 0.999999046, 9.60324201e-07, -4.78581001e-07, 1.44048965e-06, -1),
 				["Transparency"] = 0,
@@ -1039,7 +1039,7 @@ function RoClothes(Player)
 			["School Left Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Arm Clothes",
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["Size"] = Vector3.new(1.089, 0.983, 1.051),
 				["CFrame"] = CFrame.new(0.038, 0.517, 0),
 				["Transparency"] = 0,
@@ -1055,7 +1055,7 @@ function RoClothes(Player)
 			["School Right Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Arm Clothes",
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["Size"] = Vector3.new(1.089, 0.983, 1.051),
 				["CFrame"] = CFrame.new(-0.038, 0.517, 0),
 				["Transparency"] = 0,
@@ -1071,7 +1071,7 @@ function RoClothes(Player)
 			["Bra"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Bra",
-				["MeshId"] = "rbxasset://11381019021.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11381019021.mesh",
 				["Size"] = Vector3.new(1.86, 1.101, 1.868),
 				["CFrame"] = CFrame.new(0.00900268555, 0.499922037, -0.390037537, -1, 5.42022599e-06, -8.69745577e-07, 5.42022826e-06, 1, -2.88098545e-06, 8.69729888e-07, -2.88098977e-06, -1),
 				["Transparency"] = 0,
@@ -1087,7 +1087,7 @@ function RoClothes(Player)
 			["Panty"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Panty",
-				["MeshId"] = "rbxasset://11377850676.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11377850676.mesh",
 				["Size"] = Vector3.new(1.783, 1.12, 1.484),
 				["CFrame"] = CFrame.new(-1.90734863e-06, -0.912999868, 0.160000801, -1, 5.42022508e-06, -1.01899627e-06, 5.42022826e-06, 1, -2.88098499e-06, 1.01898058e-06, -2.88099e-06, -1),
 				["Transparency"] = 0,
@@ -1103,7 +1103,7 @@ function RoClothes(Player)
 			["Apron 1"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Apron",
-				["MeshId"] = "rbxasset://6491183076.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6491183076.mesh",
 				["Size"] = Vector3.new(1.893, 2.61, 1.989),
 				["CFrame"] = CFrame.new(7.62939453e-06, -0.251567364, -0.391598701, -1.83562111e-06, 1.28747515e-05, 1, -6.72226906e-06, 1, -1.28747643e-05, -1, -6.72229271e-06, -1.83553448e-06),
 				["Transparency"] = 0,
@@ -1119,7 +1119,7 @@ function RoClothes(Player)
 			["Apron 2"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Apron",
-				["MeshId"] = "rbxasset://11405661031.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11405661031.mesh",
 				["Size"] = Vector3.new(2.001, 3.588, 1.835),
 				["CFrame"] = CFrame.new(0, -0.756999969, -0.472000122, -1, -3.24366835e-12, 1.50995803e-07, 3.24366835e-12, 1, -4.8978031e-19, -1.50995803e-07, 0, -1),
 				["Transparency"] = 0,
@@ -1135,7 +1135,7 @@ function RoClothes(Player)
 			["Bodyless Shirt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Shirt",
-				["MeshId"] = "rbxasset://9867233353.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9867233353.mesh",
 				["Size"] = Vector3.new(2.121, 0.538, 1.158),
 				["CFrame"] = CFrame.new(1.71661377e-05, 0.797148228, 0.00380325317, 1, 6.32340789e-06, -1.3013792e-07, -6.32385991e-06, 1, -4.80156132e-07, 1.3065187e-07, 4.80156814e-07, 1),
 				["Transparency"] = 0,
@@ -1152,7 +1152,7 @@ function RoClothes(Player)
 			["Bodyless Neck"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Neck",
-				["MeshId"] = "rbxasset://4342469442.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4342469442.mesh",
 				["Size"] = Vector3.new(1.312, 0.301, 1.354),
 				["CFrame"] = CFrame.new(0.00418663025, 1.09489012, 0.00360298157, 1, -5.37213937e-12, 6.13908924e-12, -5.37213937e-12, 1, -1.63373362e-23, 6.13908924e-12, -1.63373346e-23, 1),
 				["Transparency"] = 0,
@@ -1169,7 +1169,7 @@ function RoClothes(Player)
 			["Bodyless Right Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Sleeve",
-				["MeshId"] = "rbxasset://9867233367.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9867233367.mesh",
 				["Size"] = Vector3.new(1.175, 1.87, 1.133),
 				["CFrame"] = CFrame.new(-0.0374875069, 0.0970358849, 0, 1, 6.3234088e-06, -1.30139284e-07, -6.32385809e-06, 0.999999881, -4.80156075e-07, 1.30650506e-07, 4.80156814e-07, 1),
 				["Transparency"] = 0,
@@ -1186,7 +1186,7 @@ function RoClothes(Player)
 			["Bodyless Left Arm"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Sleeve",
-				["MeshId"] = "rbxasset://9867233360.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9867233360.mesh",
 				["Size"] = Vector3.new(1.175, 1.87, 1.133),
 				["CFrame"] = CFrame.new(0.0415430069, 0.0967195034, 0.0065574646, 1, 6.3234138e-06, -1.30144741e-07, -6.32385309e-06, 0.999999881, -4.80156075e-07, 1.30645049e-07, 4.80156814e-07, 1),
 				["Transparency"] = 0,
@@ -1203,8 +1203,8 @@ function RoClothes(Player)
 			["Dress Bra"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Bra",
-				["MeshId"] = "rbxasset://8811986211.mesh",
-				["TextureId"] = "rbxasset://395191839.png",
+				["MeshId"] = "rbxasset://RoClothes/8811986211.mesh",
+				["TextureId"] = "rbxasset://RoClothes/395191839.png",
 				["Size"] = Vector3.new(2.054, 1.488, 2),
 				["CFrame"] = CFrame.new(1.90734863e-05, 0.295036316, -0.409999847, 6.08214521e-07, 1.17440368e-05, -1, 2.40081545e-06, 1, 1.17440377e-05, 1, -2.4008225e-06, 6.08186326e-07),
 				["Transparency"] = 0,
@@ -1220,7 +1220,7 @@ function RoClothes(Player)
 			["Dress Rope"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Rope",
-				["MeshId"] = "rbxasset://8811988447.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8811988447.mesh",
 				["Size"] = Vector3.new(1.463, 0.492, 1.826),
 				["CFrame"] = CFrame.new(7.62939453e-06, -0.292956591, -0.172002792, 6.08214521e-07, 1.17440368e-05, -1, 2.40081545e-06, 1, 1.17440377e-05, 1, -2.4008225e-06, 6.08186326e-07),
 				["Transparency"] = 0,
@@ -1236,7 +1236,7 @@ function RoClothes(Player)
 			["Dress Skirt In"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Skirt In",
-				["MeshId"] = "rbxasset://8811988165.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8811988165.mesh",
 				["Size"] = Vector3.new(2.052, 1.423, 2.684),
 				["CFrame"] = CFrame.new(3.81469727e-06, -0.948948383, 0.077996254, 6.08214521e-07, 1.17440368e-05, -1, 2.40081545e-06, 1, 1.17440377e-05, 1, -2.4008225e-06, 6.08186326e-07),
 				["Transparency"] = 0,
@@ -1252,8 +1252,8 @@ function RoClothes(Player)
 			["Dress Skirt Out"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Skirt Out",
-				["MeshId"] = "rbxasset://8811987828.mesh",
-				["TextureId"] = "rbxasset://395191839.png",
+				["MeshId"] = "rbxasset://RoClothes/8811987828.mesh",
+				["TextureId"] = "rbxasset://RoClothes/395191839.png",
 				["Size"] = Vector3.new(2.139, 1.438, 2.702),
 				["CFrame"] = CFrame.new(7.62939453e-06, -0.83894968, 0.0949964523, 6.08214521e-07, 1.17440368e-05, -1, 2.40081545e-06, 1, 1.17440377e-05, 1, -2.4008225e-06, 6.08186326e-07),
 				["Transparency"] = 0,
@@ -1269,7 +1269,7 @@ function RoClothes(Player)
 			["Birdly Dress"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Dress",
-				["MeshId"] = "rbxasset://8533956808.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8533956808.mesh",
 				["Size"] = Vector3.new(2.55, 2.649, 2.777),
 				["CFrame"] = CFrame.new(7.62939453e-06, -0.255959034, -0.136188507, -5.48989405e-08, -1.88403271e-09, -1, -4.65476489e-07, 1, -1.88494753e-09, 1, 4.65473931e-07, -5.48980879e-08),
 				["Transparency"] = 0,
@@ -1285,7 +1285,7 @@ function RoClothes(Player)
 			["Birdly Dress Bottom"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Dress Bottom",
-				["MeshId"] = "rbxasset://8533957053.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8533957053.mesh",
 				["Size"] = Vector3.new(2.253, 1.889, 3.177),
 				["CFrame"] = CFrame.new(0.0135879517, -0.964025736, 0.237159729, -5.42543361e-08, 1.51019786e-09, -1, -4.65476489e-07, 1, -1.88494731e-09, 1, 4.92539243e-07, -5.55426922e-08),
 				["Transparency"] = 0,
@@ -1302,7 +1302,7 @@ function RoClothes(Player)
 			["Birdly Dress Sling"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Sling",
-				["MeshId"] = "rbxasset://8533957545.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8533957545.mesh",
 				["Size"] = Vector3.new(2.003, 1.454, 1.783),
 				["CFrame"] = CFrame.new(-0.0349998474, 0.305000067, -0.469562531, -4.3711843e-08, -1.44881884e-09, -1, -4.69112194e-07, 1, -1.44980017e-09, 1, 4.69109466e-07, -4.37109335e-08),
 				["Transparency"] = 0,
@@ -1366,7 +1366,7 @@ function RoClothes(Player)
 			["Birdly Dress Right Sleeve"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Sleeve",
-				["MeshId"] = "rbxasset://8477756263.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8477756263.mesh",
 				["Size"] = Vector3.new(1.068, 1.202, 1.052),
 				["CFrame"] = CFrame.new(-0.0390014648, -0.245999813, 0.00850009918, 1.13686838e-13, 3.7566391e-13, 1, 3.41060459e-13, 0.999999881, 1.25221285e-13, -1, -1.02318154e-12, -3.41060513e-13),
 				["Transparency"] = 0,
@@ -1383,7 +1383,7 @@ function RoClothes(Player)
 			["Birdly Dress Right Sleeve 2"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Sleeve 2",
-				["MeshId"] = "rbxasset://8533957322.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8533957322.mesh",
 				["Size"] = Vector3.new(1.059, 0.947, 1.152),
 				["CFrame"] = CFrame.new(-0.0125274658, -0.134218693, 0.00903892517, -4.9860995e-07, -1.62974948e-06, -0.999995708, -9.83640348e-06, 0.99999845, -2.19345497e-06, 1.00000191, 1.45387166e-05, -7.21604636e-07),
 				["Transparency"] = 0,
@@ -1399,7 +1399,7 @@ function RoClothes(Player)
 			["Birdly Dress Left Sleeve"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Sleeve",
-				["MeshId"] = "rbxasset://8477756263.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8477756263.mesh",
 				["Size"] = Vector3.new(1.068, 1.202, 1.052),
 				["CFrame"] = CFrame.new(0.0390014648, -0.250999689, 0.00899982452, -4.37112746e-08, -3.23716395e-13, 1, -1.59999963e-05, 0.999999881, 1.25221299e-13, -1, -1.6e-05, -4.37117293e-08),
 				["Transparency"] = 0,
@@ -1416,7 +1416,7 @@ function RoClothes(Player)
 			["Birdly Dress Left Sleeve 2"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Sleeve 2",
-				["MeshId"] = "rbxasset://8533957322.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8533957322.mesh",
 				["Size"] = Vector3.new(1.059, 0.947, 1.152),
 				["CFrame"] = CFrame.new(0.0060005188, -0.133999825, 0.00899982452, -4.37106387e-08, 2.26175061e-07, 1, 2.81108601e-06, 0.999999881, -2.26174407e-07, -1, 2.81108487e-06, -4.37117293e-08),
 				["Transparency"] = 0,
@@ -1432,7 +1432,7 @@ function RoClothes(Player)
 			["Right Shoe"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Shoe",
-				["MeshId"] = "rbxasset://6860788547.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6860788547.mesh",
 				["Size"] = Vector3.new(1.108, 0.771, 1.15),
 				["CFrame"] = CFrame.new(-7.62939453e-06, -0.689962208, 0.0800008774, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -1448,7 +1448,7 @@ function RoClothes(Player)
 			["Left Shoe"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Shoe",
-				["MeshId"] = "rbxasset://6860787685.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6860787685.mesh",
 				["Size"] = Vector3.new(1.108, 0.771, 1.15),
 				["CFrame"] = CFrame.new(-7.62939453e-06, -0.689962208, 0.0800008774, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -1464,7 +1464,7 @@ function RoClothes(Player)
 			["Right Sock"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Sock",
-				["MeshId"] = "rbxasset://6721517477.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6721517477.mesh",
 				["Size"] = Vector3.new(1.296, 1.524, 1.189),
 				["CFrame"] = CFrame.new(0.0279846191, -0.307503283, 0.0619983673, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -1481,7 +1481,7 @@ function RoClothes(Player)
 			["Left Sock"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Sock",
-				["MeshId"] = "rbxasset://6721513769.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6721513769.mesh",
 				["Size"] = Vector3.new(1.296, 1.524, 1.189),
 				["CFrame"] = CFrame.new(-0.0279998779, -0.307499111, 0.0620002747, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08),
 				["Transparency"] = 0,
@@ -1503,7 +1503,7 @@ function RoClothes(Player)
 					["Tone"] = "Base"
 				},
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://10080455422.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10080455422.mesh",
 				["Name"] = "Sweater",
 				["Parent"] = {
 					[1] = "Torso"
@@ -1520,7 +1520,7 @@ function RoClothes(Player)
 					["Tone"] = "Base"
 				},
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://4729777667.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4729777667.mesh",
 				["Name"] = "Tie",
 				["Parent"] = {
 					[1] = "Torso",
@@ -1537,7 +1537,7 @@ function RoClothes(Player)
 					["Tone"] = "Base"
 				},
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://4342469442.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4342469442.mesh",
 				["Name"] = "Neck",
 				["Parent"] = {
 					[1] = "Torso",
@@ -1554,13 +1554,13 @@ function RoClothes(Player)
 				},
 				["Instance"] = "Mesh",
 				["Material"] = Enum.Material.Fabric,
-				["MeshId"] = "rbxasset://6297176322.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6297176322.mesh",
 				["Name"] = "Bra",
 				["Parent"] = {
 					[1] = "Torso"
 				},
 				["Size"] = Vector3.new(1.8829039335250854, 1.1392192840576172, 1.8722314834594727),
-				["TextureId"] = "rbxasset://12038926049.png",
+				["TextureId"] = "rbxasset://RoClothes/12038926049.png",
 				["Transparency"] = 0
 			},
 			["Cow Panty"] = {
@@ -1571,13 +1571,13 @@ function RoClothes(Player)
 				},
 				["Instance"] = "Mesh",
 				["Material"] = Enum.Material.Fabric,
-				["MeshId"] = "rbxasset://6297229742.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6297229742.mesh",
 				["Name"] = "Panty",
 				["Parent"] = {
 					[1] = "Torso"
 				},
 				["Size"] = Vector3.new(1.1498957872390747, 0.9570162296295166, 1.8741321563720703),
-				["TextureId"] = "rbxasset://12038931250.png",
+				["TextureId"] = "rbxasset://RoClothes/12038931250.png",
 				["Transparency"] = 0
 			},
 			["Right Bunny Band"] = {
@@ -1587,7 +1587,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.249682188, -0.632135391, -0.000693321228, -1.30402327e-07, 9.93718913e-06, -1.00000191, -4.80150504e-07, 0.999996066, 6.32364572e-06, 1, 2.40081181e-06, -6.51925802e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6861074681.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6861074681.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1606,7 +1606,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.00239944458, 0.94911027, -0.584125519, 1.00000191, 7.52851292e-06, -6.48738978e-06, -6.32364663e-06, 0.766041756, -0.642784894, 6.51925802e-07, 0.642788827, 0.766043425),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://4596067364.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4596067364.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1624,7 +1624,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.250300884, -0.632102489, -0.000693321228, 1.30402327e-07, 9.93718913e-06, 1.00000191, 4.80150504e-07, 0.999996066, -6.32364572e-06, -1, 2.40081181e-06, 6.51925802e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6861074681.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6861074681.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1643,7 +1643,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.000400066376, -0.507106781, 0.837873459, -1.30402327e-07, 9.93718913e-06, -1.00000191, -4.80150561e-07, 0.999996185, 6.32364663e-06, 1, 2.40081181e-06, -6.51925802e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://5620377615.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5620377615.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1661,7 +1661,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.00040102005, -0.65, -0.00508785248, -1.30402327e-07, 9.93718913e-06, -1.00000191, -4.80150561e-07, 0.999996185, 6.32364663e-06, 1, 2.40081181e-06, -6.51925802e-07),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6859161870.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6859161870.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1680,7 +1680,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.000400781631, -0.583568573, -0.142845154, -1.30402327e-07, 9.93718913e-06, -1.00000191, -4.80150561e-07, 0.999996185, 6.32364663e-06, 1, 2.40081181e-06, -6.51925802e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6858823726.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6858823726.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1699,9 +1699,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0499756336, 1.00000286, -0.400989532, 1.00000191, 9.93718913e-06, -1.30402327e-07, -6.32364663e-06, 0.999996185, -4.80150561e-07, 6.51925802e-07, 2.40081181e-06, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://227430350.mesh",
+				["MeshId"] = "rbxasset://RoClothes/227430350.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://709231552.png",
+				["TextureId"] = "rbxasset://RoClothes/709231552.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(255, 255, 255),
@@ -1717,7 +1717,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.036002636, 0.0627008677, 0.0440006256, 5.10434063e-07, 3.83933411e-06, -1.00000405, 2.04068738e-06, 0.999991536, -3.83933548e-06, 1, 2.0406876e-06, -5.97857024e-07),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://7332415457.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7332415457.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1736,7 +1736,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0349985957, 0.0630007982, 0.0440015793, 5.10434063e-07, 3.83933411e-06, -1.00000405, 2.04068738e-06, 0.999991536, -3.83933548e-06, 1, 2.0406876e-06, -5.97857024e-07),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://7332360863.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7332360863.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1755,7 +1755,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.531559527, -0.961991549, 0.329221725, -1.00000381, 3.73439707e-06, -5.2154769e-07, -3.73439661e-06, 0.999992371, -1.9206509e-06, -5.21547918e-07, 1.9206509e-06, -1),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://11617724988.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11617724988.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1774,7 +1774,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.531559527, -0.961991549, 0.329221725, 1.00000381, 3.73836701e-06, 5.21722257e-07, 3.73908415e-06, 0.999992371, 1.92064363e-06, 5.21373238e-07, 1.92065818e-06, 1),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://11617724536.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11617724536.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1789,7 +1789,7 @@ function RoClothes(Player)
 			["Pussy String"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Pussy String",
-				["MeshId"] = "rbxasset://17633723189.mesh",
+				["MeshId"] = "rbxasset://RoClothes/17633723189.mesh",
 				["Size"] = Vector3.new(0.825, 0.881, 0.83),
 				["CFrame"] = CFrame.new(-0.00103759766, -0.925573111, -0.0344238281, -1, 0, 0, 1.1765762e-13, 1, 0, 0, 0, -1),
 				["Transparency"] = 1,
@@ -1810,7 +1810,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0158348083, 0.137589216, -0.375313759, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755484302.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755484302.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1828,9 +1828,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(9.53674316e-06, 0.838002682, -0.133995056, 1.00000191, 6.32366346e-06, -3.91171568e-07, -2.71014164e-06, 0.999996185, -1.44047965e-06, 9.12697146e-07, 3.36114272e-06, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6552973009.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6552973009.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6552973038.png",
+				["TextureId"] = "rbxasset://RoClothes/6552973038.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(17.00000088661909, 17.00000088661909, 17.00000088661909),
@@ -1846,7 +1846,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0173130035, 0.400683284, 0.0307683945, 3.91171568e-07, 0.140735254, 0.990049183, 1.44047942e-06, 0.990043938, -0.140730858, -1, 3.4561358e-06, 4.30604814e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755489604.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755489604.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1864,7 +1864,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0169596672, 0.398624897, 0.0307683945, 3.91171568e-07, 0.140735254, 0.990049183, 1.44047942e-06, 0.990043938, -0.140730858, -1, 3.4561358e-06, 4.30604814e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755488785.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755488785.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1882,7 +1882,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-6.19888306e-06, -0.942862988, 0.134953499, 3.47460087e-07, 6.32366346e-06, 1.00000191, 1.44047976e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 8.68985751e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755486346.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755486346.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1900,9 +1900,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-1.10927677, -0.976359367, -0.527161598, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755510910.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755510910.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6755510955.png",
+				["TextureId"] = "rbxasset://RoClothes/6755510955.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -1918,7 +1918,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.939169407, -0.702218771, -0.459594727, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755513230.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755513230.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1936,9 +1936,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(1.09738016, -0.995746374, -0.421038628, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755512558.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755512558.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6755512610.png",
+				["TextureId"] = "rbxasset://RoClothes/6755512610.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -1954,7 +1954,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.958770752, -0.695994139, -0.425095558, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755511825.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755511825.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1972,7 +1972,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0492196083, 0.450606108, 1.06449509, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://6747382163.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6747382163.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -1990,9 +1990,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(5.7220459e-06, 0.895759344, -0.0647373199, 1.00000191, 6.32366346e-06, -3.91171568e-07, -2.71014164e-06, 0.999996185, -1.44047965e-06, 9.12697146e-07, 3.36114272e-06, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://4487737814.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4487737814.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://4503276365.png",
+				["TextureId"] = "rbxasset://RoClothes/4503276365.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(17.00000088661909, 17.00000088661909, 17.00000088661909),
@@ -2008,7 +2008,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.600448608, 0.825362921, -0.182882309, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755487966.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755487966.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2026,7 +2026,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.568787098, 0.825255632, -0.179076195, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755487288.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755487288.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2044,7 +2044,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0150403976, 0.318082809, -1.26292038, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://6764807950.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6764807950.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2062,7 +2062,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0169978142, 0.197001457, -1.33299923, 3.47460087e-07, 6.32366346e-06, 1.00000191, 1.44047976e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 8.68985751e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://6764749054.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6764749054.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2080,7 +2080,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0162010193, 0.0697808266, -1.3160944, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755508155.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755508155.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2098,7 +2098,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0158338547, 0.233896255, -1.20333481, 3.91171568e-07, 6.32366346e-06, 1.00000191, 1.44047965e-06, 0.999996185, -2.71014164e-06, -1, 3.36114272e-06, 9.12697146e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6755507454.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6755507454.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2116,7 +2116,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.00039768219, -1.25011444, 0.194470406, -1.00000381, 5.42021326e-06, -1.30387627e-06, -1.80679251e-06, 0.999992371, -4.80162407e-06, 2.60781945e-07, -9.60322382e-07, -1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://5971239783.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5971239783.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2134,7 +2134,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(1.90734863e-06, 0.343997478, -0.375999451, 1.00000191, 5.42023372e-06, 7.82324321e-07, -1.80671861e-06, 0.999996185, 2.88097726e-06, -2.60770037e-07, -9.60333523e-07, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6671745090.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6671745090.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2153,7 +2153,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0396080017, 0.0808815956, -0.000538825989, -1.00000191, 5.42023372e-06, -7.82324321e-07, 1.80671839e-06, 0.999996066, -2.88097681e-06, 2.60770037e-07, -9.60333523e-07, -1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2172,7 +2172,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.040397644, 0.081091404, -0.000540733337, 1.00000191, 5.42023372e-06, 7.82324321e-07, -1.80671839e-06, 0.999996066, 2.88097681e-06, -2.60770037e-07, -9.60333523e-07, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2191,7 +2191,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.00216674805, -0.184390783, -0.217723846, 1.00000191, 5.42023372e-06, 7.82324321e-07, -1.80671861e-06, 0.999996185, 2.88097726e-06, -2.60770037e-07, -9.60333523e-07, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6671818838.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6671818838.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2209,7 +2209,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-1.90734863e-06, -0.212999821, -0.229743958, 1, 1.35507053e-05, -1.30411507e-07, -1.35507053e-05, 1, -4.80143228e-07, 1.30405496e-07, 4.80145786e-07, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6745689310.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6745689310.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2228,7 +2228,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.492490768, -0.214658141, 0.00777053833, -0.147934914, -0.964880586, 0.217073083, -0.953003764, 0.197749659, 0.229518548, -0.264384061, -0.172917604, -0.94878912),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6567309030.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6567309030.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2247,7 +2247,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.491999626, -0.215000153, -0.00799942017, 0.151539236, -0.967152357, 0.204088852, 0.95300144, 0.197756082, 0.229523182, -0.262343675, 0.159715176, 0.951665103),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6567308335.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6567308335.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2266,7 +2266,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0, 0.343346596, -0.393656731, 1.26016982e-06, 9.03369892e-06, -1.00000191, 4.80163362e-06, 0.999996185, 5.42016687e-06, 1, -2.88100068e-06, 7.38593769e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6697964510.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6697964510.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2284,7 +2284,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-9.53674316e-06, -0.942420244, 0.204673767, 1.00000191, 9.12287305e-06, -2.84610906e-07, -5.42016687e-06, 0.984804869, -0.173642576, -7.82305165e-07, 0.173645124, 0.984808266),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6668707772.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6668707772.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2302,7 +2302,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(9.89437103e-06, 0.999995947, 1.90734863e-06, 1.00000191, 9.93718913e-06, -1.30402327e-07, -6.32364663e-06, 0.999996185, -4.80150561e-07, 6.51925802e-07, 2.40081181e-06, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://4857299880.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4857299880.mesh",
 				["DoubleSided"] = false,
 				["TextureId"] = "",
 				["Color"] = {
@@ -2321,7 +2321,7 @@ function RoClothes(Player)
 				["CFrame1"] = CFrame.new(0, 0.3, 0),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7606070501.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7606070501.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2340,7 +2340,7 @@ function RoClothes(Player)
 				["CFrame1"] = CFrame.new(0, 0.3, 0),
 				["Transparency"] = 1,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7606070501.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7606070501.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2354,7 +2354,7 @@ function RoClothes(Player)
 			["Torso Shirt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Torso Shirt",
-				["MeshId"] = "rbxasset://13181228593.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181228593.mesh",
 				["Size"] = Vector3.new(2.043, 2.063, 1.063),
 				["CFrame"] = CFrame.new(-0.000350952148, -2.38418579e-07, 0.000198364258, 1, -6.42401909e-10, 5.82085699e-11, 6.44266418e-10, 1, 3.74475617e-20, -5.82085699e-11, -5.42651863e-23, 1),
 				["Transparency"] = 1,
@@ -2373,7 +2373,7 @@ function RoClothes(Player)
 			["Right Butt Shirt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Right Butt Shirt",
-				["MeshId"] = "rbxasset://13181475636.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181475636.mesh",
 				["Size"] = Vector3.new(1.248, 0.563, 1.259),
 				["CFrame"] = CFrame.new(0, 0.339, 0),
 				["Transparency"] = 1,
@@ -2391,7 +2391,7 @@ function RoClothes(Player)
 			["Left Butt Shirt"] = {
 				["Instance"] = "Mesh",
 				["Name"] = "Left Butt Shirt",
-				["MeshId"] = "rbxasset://13181475635.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13181475635.mesh",
 				["Size"] = Vector3.new(1.248, 0.563, 1.259),
 				["CFrame"] = CFrame.new(0, 0.339, 0),
 				["Transparency"] = 1,
@@ -2414,7 +2414,7 @@ function RoClothes(Player)
 				--["CFrame"] = CFrame.new(-0.360874176, 0.38800168, -0.483547688, 0.36783731, 0.290563017, -0.883328319, -0.0900876448, 0.956592739, 0.27714473, 0.925514758, -0.0223651696, 0.378048182),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7220038121.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7220038121.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2434,7 +2434,7 @@ function RoClothes(Player)
 				--["CFrame"] = CFrame.new(0.360874176, 0.38800168, -0.483547688, -0.36783731, -0.290563017, -0.883328319, -0.0900876448, 0.956592739, -0.27714473, 0.925514758, -0.0223651696, -0.378048182),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7220038121.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7220038121.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2453,7 +2453,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0349998474, 0.0500049591, 6.68022949e-07, 1, 3.61347907e-06, 5.2154661e-07, -3.61347952e-06, 0.999999881, 1.92065818e-06, -5.21539732e-07, -1.92066045e-06, 1),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2471,8 +2471,8 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-5.7220459e-06, -0.150007486, -0.0499997325, 4.77835215e-07, 3.61347907e-06, -1, 1.92065863e-06, 1, 3.61347998e-06, 1, -1.92066045e-06, 4.77828337e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8279606564.mesh",
-				["TextureId"] = "rbxasset://187645444.png",
+				["MeshId"] = "rbxasset://RoClothes/8279606564.mesh",
+				["TextureId"] = "rbxasset://RoClothes/187645444.png",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2508,7 +2508,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.000124454498, 6.77108765e-05, 5.24520874e-05, -0.843650639, 0.0103908479, 0.536791861, -0.46789664, 0.476090997, -0.744587123, -0.26329869, -0.879334688, -0.39679274),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://8745487512.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8745487512.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2527,7 +2527,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-9.15527344e-05, -6.10351562e-05, 0.000244140625, 0.897830784, -0.402056038, -0.179584816, 0.0126717985, -0.384072006, 0.923216105, -0.440158159, -0.831167638, -0.339736879),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://8745487512.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8745487512.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2546,7 +2546,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0437135696, -0.0103340149, -0.00108528137, -0.0263926424, -0.725746155, -0.687458217, -0.00533926487, -0.687584579, 0.726083398, -0.99964118, 0.0228355527, 0.0142710507),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://4932869451.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4932869451.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2565,7 +2565,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0437135696, -0.0103340149, -0.00108528137, -0.0263926424, -0.725746155, -0.687458217, -0.00533926487, -0.687584579, 0.726083398, -0.99964118, 0.0228355527, 0.0142710507),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://4932869451.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4932869451.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2584,7 +2584,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0435810089, -0.0102119446, -0.000776290894, -0.0263970345, -0.725711107, -0.687493086, -0.00526610017, -0.687622249, 0.726049662, -0.999637723, 0.0227859654, 0.014329521),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://6773710025.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6773710025.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2603,7 +2603,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0435810089, -0.0102119446, -0.000776290894, -0.0263970345, -0.725711107, -0.687493086, -0.00526610017, -0.687622249, 0.726049662, -0.999637723, 0.0227859654, 0.014329521),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://6773710025.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6773710025.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2622,7 +2622,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00749999983, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12625658678.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12625658678.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2641,7 +2641,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00749999983, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12625658678.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12625658678.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2660,7 +2660,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7791686946.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7791686946.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2679,7 +2679,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7791686946.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7791686946.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2698,7 +2698,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://11394330816.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11394330816.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2717,7 +2717,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://11394330816.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11394330816.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2736,7 +2736,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00700000022, 0, 1.5048154e-07, -0.707106769, -0.707106829, 1.06770166e-07, -0.707106829, 0.707106769, -1, -1.81904426e-07, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://13050350514.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13050350514.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2755,7 +2755,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00700000022, 0, 1.5048154e-07, -0.707106769, -0.707106829, 1.06770166e-07, -0.707106829, 0.707106769, -1, -1.81904426e-07, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://13050350514.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13050350514.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2774,7 +2774,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0253143311, -0.00280761719, -0.0009765625, -0.517758846, 0.0350331329, -0.854810536, 0.845839381, -0.128981292, -0.517609715, -0.128386974, -0.991031468, 0.037148416),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7063311226.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7063311226.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2793,7 +2793,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0253143311, -0.00280761719, -0.0009765625, -0.517758846, 0.0350331329, -0.854810536, 0.845839381, -0.128981292, -0.517609715, -0.128386974, -0.991031468, 0.037148416),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7063311226.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7063311226.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2812,7 +2812,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, 0.00249999994, 0, -6.30587635e-08, -0.707106769, -0.707106829, -1.06770166e-07, -0.707106829, 0.707106769, -1, 1.20087179e-07, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12488261246.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12488261246.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2831,7 +2831,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, 0.00249999994, 0, -6.30587635e-08, -0.707106769, -0.707106829, -1.06770166e-07, -0.707106829, 0.707106769, -1, 1.20087179e-07, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12488261246.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12488261246.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2850,7 +2850,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, -0.707106769, 0, -0.707106769, 0.707106769, -1, 3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://13076200715.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13076200715.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2869,7 +2869,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, -0.707106769, 0, -0.707106769, 0.707106769, -1, 3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://13076200715.mesh",
+				["MeshId"] = "rbxasset://RoClothes/13076200715.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2888,8 +2888,8 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0850000009, -0.0149999997, 0, -2.24199738e-07, -0.98480773, -0.173648342, -2.62201709e-08, -0.173648342, 0.98480773, -1, 2.25346724e-07, 1.31100855e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://8184647568.mesh",
-				["TextureId"] = "rbxasset://8184767343.png",
+				["MeshId"] = "rbxasset://RoClothes/8184647568.mesh",
+				["TextureId"] = "rbxasset://RoClothes/8184767343.png",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2908,8 +2908,8 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0850000009, -0.0149999997, 0, -2.24199738e-07, -0.98480773, -0.173648342, -2.62201709e-08, -0.173648342, 0.98480773, -1, 2.25346724e-07, 1.31100855e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://8184647568.mesh",
-				["TextureId"] = "rbxasset://8184767343.png",
+				["MeshId"] = "rbxasset://RoClothes/8184647568.mesh",
+				["TextureId"] = "rbxasset://RoClothes/8184767343.png",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2928,7 +2928,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12755883933.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12755883933.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2947,7 +2947,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12755883933.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12755883933.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2966,7 +2966,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, -0.707106769, 0, 0.707106769, -0.707106769, 1, -3.09086197e-08, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12005265476.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12005265476.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -2985,7 +2985,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, -0.707106769, 0, 0.707106769, -0.707106769, 1, -3.09086197e-08, -3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12005265476.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12005265476.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3004,7 +3004,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, 0, 0, -1.82268053e-07, -0.707106769, 0.707106829, -1.06770166e-07, -0.707106829, -0.707106769, 1, -2.04380882e-07, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12576150000.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12576150000.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3023,7 +3023,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, 0, 0, -1.82268053e-07, -0.707106769, 0.707106829, -1.06770166e-07, -0.707106829, -0.707106769, 1, -2.04380882e-07, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12576150000.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12576150000.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3042,7 +3042,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12157209535.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12157209535.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3061,7 +3061,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12157209535.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12157209535.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3080,7 +3080,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00700000022, 0, 1.36806619e-08, -0.707106769, -0.707106829, 6.18172393e-08, 0.707106829, -0.707106769, 1, -3.40377007e-08, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12720313083.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12720313083.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3099,7 +3099,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0250000004, -0.00700000022, 0, 1.36806619e-08, -0.707106769, -0.707106829, 6.18172393e-08, 0.707106829, -0.707106769, 1, -3.40377007e-08, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12720313083.mesh",
+				["MeshId"] = "rbxasset://RoClothes/12720313083.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3118,7 +3118,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://5385291202.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5385291202.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3137,7 +3137,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -4.37113883e-08, -0.707106769, 0.707106769, 0, -0.707106769, -0.707106769, 1, -3.09086197e-08, 3.09086197e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://5385291202.mesh",
+				["MeshId"] = "rbxasset://RoClothes/5385291202.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3156,7 +3156,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -1.82268053e-07, -0.707106769, 0.707106829, -1.06770166e-07, -0.707106829, -0.707106769, 1, -2.04380882e-07, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7601850077.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7601850077.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3175,7 +3175,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0500000007, -0.00700000022, 0, -1.82268053e-07, -0.707106769, 0.707106829, -1.06770166e-07, -0.707106829, -0.707106769, 1, -2.04380882e-07, 5.3385083e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://7601850077.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7601850077.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3194,7 +3194,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.075000003, -0.00700000022, 0, -4.37113883e-08, -0.866025448, -0.49999997, 0, 0.49999997, -0.866025448, 1, -3.78551732e-08, -2.18556924e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://11486064816.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11486064816.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3213,7 +3213,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.075000003, -0.00700000022, 0, -4.37113883e-08, -0.866025448, -0.49999997, 0, 0.49999997, -0.866025448, 1, -3.78551732e-08, -2.18556924e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://11486064816.mesh",
+				["MeshId"] = "rbxasset://RoClothes/11486064816.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3232,8 +3232,8 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0700000003, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12662159629.mesh",
-				["TextureId"] = "rbxasset://12662175794.png",
+				["MeshId"] = "rbxasset://RoClothes/12662159629.mesh",
+				["TextureId"] = "rbxasset://RoClothes/12662175794.png",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3252,8 +3252,8 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0700000003, -0.00700000022, 0, -4.37113883e-08, -1, 4.37113883e-08, 0, -4.37113883e-08, -1, 1, -4.37113883e-08, 1.91068547e-15),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://12662159629.mesh",
-				["TextureId"] = "rbxasset://12662175794.png",
+				["MeshId"] = "rbxasset://RoClothes/12662159629.mesh",
+				["TextureId"] = "rbxasset://RoClothes/12662175794.png",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3272,9 +3272,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0, 0.200000048, -0.412475586, -4.37121699e-08, 1.87848313e-13, -1, -1.25055521e-12, 1, 6.26161585e-14, 1, 3.75166564e-12, -4.37137331e-08),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866883591.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866883591.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6866883603.png",
+				["TextureId"] = "rbxasset://RoClothes/6866883603.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -3291,7 +3291,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0307617188, 0.412641048, 0.00299072266, 1.09897246e-06, 1.28800411e-05, 0.999997139, -1.31012484e-06, 0.999996185, -1.06076859e-05, -0.999998212, 3.49747182e-07, -1.35971584e-06),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6771341341.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6771341341.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3308,7 +3308,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0307617188, 0.415190697, 0.00299072266, 1.09897246e-06, 1.28800411e-05, 0.999997139, -1.31012484e-06, 0.999996185, -1.06076859e-05, -0.999998212, 3.49747182e-07, -1.35971584e-06),
 				["Transparency"] = 0.3499999940395355,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6771345897.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6771345897.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3325,7 +3325,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.020690918, 0.338274598, 0.0269775391, 1.09897246e-06, 1.28800411e-05, 0.999997139, -1.31012484e-06, 0.999996185, -1.06076859e-05, -0.999998212, 3.49747182e-07, -1.35971584e-06),
 				["Transparency"] = 0.3499999940395355,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6771356972.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6771356972.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3342,9 +3342,9 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0297241211, 0.189261675, -0.575317383, 0.999997139, 1.2926811e-05, 2.77690333e-08, -1.06076859e-05, 0.996190906, 0.0871559456, -1.35971584e-06, -0.0871544704, 0.996193111),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://6237876025.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6237876025.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6237701996.png",
+				["TextureId"] = "rbxasset://RoClothes/6237701996.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -3360,7 +3360,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0392456055, 0.415163279, 0.00299072266, 1.09897246e-06, 1.28800411e-05, 0.999997139, -1.31012484e-06, 0.999996185, -1.06076859e-05, -0.999998212, 3.49747182e-07, -1.35971584e-06),
 				["Transparency"] = 0.3499999940395355,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6771345897.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6771345897.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3377,7 +3377,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0392456055, 0.41261363, 0.00299072266, 1.09897246e-06, 1.28800411e-05, 0.999997139, -1.31012484e-06, 0.999996185, -1.06076859e-05, -0.999998212, 3.49747182e-07, -1.35971584e-06),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6771341341.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6771341341.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3394,7 +3394,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.422241211, 0.163582802, -0.427978516, -0.496243387, 0.165055707, 0.852343678, -0.0562241822, 0.973587394, -0.221271366, -0.866356492, -0.157726616, -0.473860145),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3411,7 +3411,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.177307129, 0.401250362, -0.555358887, -0.355953306, 0.934499025, -1.0984179e-06, 9.28247482e-06, 5.56737234e-09, -0.999998927, -0.934500456, -0.355956137, -9.1735601e-06),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3428,7 +3428,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0985107422, -0.38054657, -0.576965332, 0.965921223, -5.12373163e-07, -0.258819193, 0.0268451702, 0.994606495, 0.100190066, 0.257421494, -0.103724286, 0.960714638),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3445,7 +3445,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.43737793, -0.163431168, -0.373474121, 2.88029014e-07, 1.26513214e-06, 0.99999547, -0.0705631599, 0.997506678, -3.15570605e-06, -0.997505426, -0.0705628172, -2.0076036e-06),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3462,7 +3462,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.352539062, -0.0939350128, -0.450317383, 0.666839063, 0.48791337, -0.563255787, -0.372748435, 0.872888863, 0.314836085, 0.645273268, 7.02903571e-06, 0.763949275),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3479,7 +3479,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.44128418, 0.244832039, -0.364379883, -2.02121782e-07, 0.288140208, -0.957583427, -8.72514192e-06, 0.957586229, 0.288143337, 0.999998033, 8.19637535e-06, 4.37895324e-06),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3496,7 +3496,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.251525879, -0.239318848, -0.54888916, 0.717032015, 0.345024675, -0.605651677, -0.137268469, 0.92177707, 0.362604737, 0.683384418, -0.176863149, 0.708308637),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3513,7 +3513,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.168945312, -0.0475158691, -0.0146484375, -0.903787792, -0.421040893, 0.0767331123, -0.40288651, 0.897506237, 0.179342642, -0.144383878, 0.131173998, -0.980785906),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7660134717.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7660134717.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3531,7 +3531,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.136535645, -0.0603485107, 0.0240478516, -0.894259214, -0.415139675, -0.167196825, -0.399148285, 0.90878731, -0.121600553, 0.202425659, -0.0420068502, -0.978384972),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7660134717.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7660134717.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3549,7 +3549,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0479736328, -0.0687346458, -0.523132324, 0.999995232, 1.49011169e-06, -6.70550605e-07, -6.70550605e-07, 1.30384535e-07, 1, -1.49011169e-06, -0.999998212, -1.30384535e-07),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6720355129.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6720355129.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3566,7 +3566,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.0766601562, 0.514653921, -0.24230957, 0.787097275, -0.498641491, 0.363077641, 0.451583117, 0.866802633, 0.211485073, -0.420175463, -0.00249786698, 0.907437563),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7004864019.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7004864019.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3584,7 +3584,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.120727539, 0.514345884, -0.31817627, 0.999995232, 1.59744775e-06, -2.7102883e-06, -1.44849582e-06, 0.771619797, -0.63608402, -1.90503056e-06, 0.636083126, 0.771618247),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3602,7 +3602,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.102844238, 0.38935113, -0.46282959, -0.938311875, 0.179826811, 0.295336485, -0.0692516118, 0.739090443, -0.670036972, -0.338769197, -0.649158537, -0.681047142),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7004863745.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7004863745.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3620,7 +3620,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0443115234, 0.255191326, -0.58782959, 0.999995232, 2.68465783e-06, -1.64015682e-06, -1.44849582e-06, 0.980140269, -0.198305607, -1.90503056e-06, 0.198305503, 0.980138481),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3638,7 +3638,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.237976074, 0.271583557, -0.505615234, 0.999995232, 2.44005037e-06, -2.04078469e-06, -1.4637908e-06, 0.94541508, -0.325868547, -1.845979e-06, 0.325868189, 0.945413351),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3656,7 +3656,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(0.0971069336, 0.504099846, -0.206848145, 0.0925252661, 0.0484154634, 0.994527757, 0.202760041, 0.976973116, -0.0664230064, -0.974845827, 0.20779705, 0.0805752203),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7004864019.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7004864019.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3674,7 +3674,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.178894043, 0.144503593, -0.581176758, 0.999995232, 2.59762965e-06, -1.84204657e-06, -1.46700393e-06, 0.968367994, -0.24952662, -1.84463056e-06, 0.249526426, 0.968366146),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://6976475976.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6976475976.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3692,7 +3692,7 @@ function RoClothes(Player)
 				["CFrame"] = CFrame.new(-0.123840332, 0.291390419, -0.522583008, 0.0280825775, -0.340392381, 0.939859033, -0.710923135, 0.654169858, 0.258166909, -0.702707767, -0.675418377, -0.223625451),
 				["Transparency"] = 0,
 				["Material"] = Enum.Material.Glass,
-				["MeshId"] = "rbxasset://7004863745.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7004863745.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3711,7 +3711,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8447877878.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8447877878.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3730,7 +3730,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8447851356.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8447851356.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3749,7 +3749,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://6885999097.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6885999097.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3768,7 +3768,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://4803707231.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4803707231.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3787,7 +3787,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://4803707231.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4803707231.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3806,7 +3806,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://4803707231.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4803707231.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3826,7 +3826,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://4803707231.mesh",
+				["MeshId"] = "rbxasset://RoClothes/4803707231.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3846,7 +3846,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8313398285.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8313398285.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3864,7 +3864,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8313398067.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8313398067.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3883,7 +3883,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8371312822.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8371312822.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3901,7 +3901,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3920,7 +3920,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6866262171.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6866262171.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3939,7 +3939,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7980629618.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7980629618.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3959,7 +3959,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://7980629618.mesh",
+				["MeshId"] = "rbxasset://RoClothes/7980629618.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -3979,9 +3979,9 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://8915312843.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8915312843.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6888586040.png",
+				["TextureId"] = "rbxasset://RoClothes/6888586040.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -3998,9 +3998,9 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://8915312502.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8915312502.mesh",
 				["DoubleSided"] = false,
-				["TextureId"] = "rbxasset://6888586040.png",
+				["TextureId"] = "rbxasset://RoClothes/6888586040.png",
 				["Color"] = {
 					["Tone"] = "Base",
 					["Color"] = Color3.fromRGB(163.00000548362732, 162.00000554323196, 165.00000536441803),
@@ -4017,7 +4017,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8592346019.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8592346019.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4035,7 +4035,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8592346452.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8592346452.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4054,7 +4054,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033680123.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033680123.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4073,7 +4073,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033692280.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033692280.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4091,7 +4091,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033858168.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033858168.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4110,7 +4110,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033822343.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033822343.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4128,7 +4128,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4147,7 +4147,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8965126164.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8965126164.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4166,7 +4166,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033714666.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033714666.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4185,7 +4185,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033680123.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033680123.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4204,7 +4204,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4223,7 +4223,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4242,7 +4242,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4261,7 +4261,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4280,7 +4280,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4299,7 +4299,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4318,7 +4318,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4337,7 +4337,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4356,7 +4356,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4375,7 +4375,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4394,7 +4394,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4413,7 +4413,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4432,7 +4432,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4452,7 +4452,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4472,7 +4472,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4491,7 +4491,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4510,7 +4510,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8964755042.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964755042.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4529,7 +4529,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4548,7 +4548,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4567,7 +4567,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4586,7 +4586,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4605,7 +4605,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4624,7 +4624,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4643,7 +4643,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4662,7 +4662,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4681,7 +4681,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4700,7 +4700,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4719,7 +4719,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769902.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769902.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4738,7 +4738,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4757,7 +4757,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4776,7 +4776,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4795,7 +4795,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Sand,
-				["MeshId"] = "rbxasset://8964769904.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8964769904.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4814,7 +4814,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033508047.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033508047.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4833,7 +4833,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033874623.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033874623.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4851,7 +4851,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033906005.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033906005.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4870,7 +4870,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9033511985.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9033511985.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4888,7 +4888,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8914802954.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8914802954.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4907,7 +4907,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8914802954.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8914802954.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4926,7 +4926,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9020948490.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9020948490.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4944,7 +4944,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8896526740.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8896526740.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4963,7 +4963,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8896528338.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8896528338.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -4982,7 +4982,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8896528503.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8896528503.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5001,7 +5001,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://8896526539.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8896526539.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5020,7 +5020,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9867233367.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9867233367.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5039,7 +5039,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://9867233360.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9867233360.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5058,7 +5058,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://10858752208.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10858752208.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5076,7 +5076,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://10858752190.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10858752190.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5094,7 +5094,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://10859058245.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10859058245.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5112,7 +5112,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://10859058249.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10859058249.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5130,7 +5130,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Metal,
-				["MeshId"] = "rbxasset://10858752173.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10858752173.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5148,7 +5148,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://10858752241.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10858752241.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5166,7 +5166,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Plastic,
-				["MeshId"] = "rbxasset://10858752221.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10858752221.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5185,7 +5185,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9534436982.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9534436982.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5203,7 +5203,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9533965499.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9533965499.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5221,7 +5221,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9739471829.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9739471829.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5239,7 +5239,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9752288922.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9752288922.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5257,7 +5257,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9513009034.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9513009034.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5275,7 +5275,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9738589498.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9738589498.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5293,7 +5293,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9522843947.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9522843947.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5311,7 +5311,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.SmoothPlastic,
-				["MeshId"] = "rbxasset://6867647037.mesh",
+				["MeshId"] = "rbxasset://RoClothes/6867647037.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5329,7 +5329,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://9730141165.mesh",
+				["MeshId"] = "rbxasset://RoClothes/9730141165.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5347,7 +5347,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://10399620886.mesh",
+				["MeshId"] = "rbxasset://RoClothes/10399620886.mesh",
 				["DoubleSided"] = true,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5365,7 +5365,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863982580.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863982580.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5383,7 +5383,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863945719.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863945719.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5401,7 +5401,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863959589.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863959589.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5419,7 +5419,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863962668.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863962668.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5437,7 +5437,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863964841.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863964841.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5455,7 +5455,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863985603.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863985603.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5473,7 +5473,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863941262.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863941262.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -5491,7 +5491,7 @@ function RoClothes(Player)
 				["Transparency"] = 0,
 				["Reflectance"] = 0,
 				["Material"] = Enum.Material.Neon,
-				["MeshId"] = "rbxasset://8863966579.mesh",
+				["MeshId"] = "rbxasset://RoClothes/8863966579.mesh",
 				["DoubleSided"] = false,
 				["Color"] = {
 					["Tone"] = "Base",
@@ -7135,7 +7135,7 @@ function RoClothes(Player)
 		for i = 1, 6 do
 			local Texture = Instance.new("Texture", ObjectInstance)
 			Texture.Color3 = Color3.fromRGB(255,255,255)
-			Texture.Texture = "rbxasset://187645444.png"
+			Texture.Texture = "rbxasset://RoClothes/187645444.png"
 			Texture.Transparency = 0.3
 
 			if i == 1 then
@@ -7158,7 +7158,7 @@ function RoClothes(Player)
 		for i = 1, 6 do
 			local Texture = Instance.new("Texture", ObjectInstance)
 			Texture.Color3 = Color3.fromRGB(255,255,255)
-			Texture.Texture = "rbxasset://739677490.png"
+			Texture.Texture = "rbxasset://RoClothes/739677490.png"
 			Texture.Transparency = 0.3
 
 			if i == 1 then
@@ -7181,7 +7181,7 @@ function RoClothes(Player)
 		for i = 1, 6 do
 			local Texture = Instance.new("Texture", ObjectInstance)
 			Texture.Color3 = Color3.fromRGB(55, 55, 55)
-			Texture.Texture = "rbxasset://739677490.png"
+			Texture.Texture = "rbxasset://RoClothes/739677490.png"
 			Texture.Transparency = 0.3
 
 			if i == 1 then
@@ -7204,7 +7204,7 @@ function RoClothes(Player)
 		for i = 1, 4 do
 			local Texture = Instance.new("Texture", ObjectInstance)
 			Texture.Color3 = Color3.fromRGB(255, 255, 255)
-			Texture.Texture = "rbxasset://8131038954.png"
+			Texture.Texture = "rbxasset://RoClothes/8131038954.png"
 			Texture.Transparency = 0.3
 
 			if i == 1 then
@@ -7234,7 +7234,7 @@ function RoClothes(Player)
 			for i = 1, 2 do
 				local Decal = Instance.new("Decal", ObjectInstance)
 				Decal.Color3 = Color3.fromRGB(255, 167, 169)
-				Decal.Texture = "rbxasset://6667257628.png"
+				Decal.Texture = "rbxasset://RoClothes/6667257628.png"
 				Decal.Face = "Left"
 				Decal.Name = "Areola Decal".." "..tostring(i)
 				PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
@@ -7257,7 +7257,7 @@ function RoClothes(Player)
 	function Function.AreolaDecalType2Create(ObjectInstance, Character, Extra, Data)
 		local Decal = Instance.new("Decal", ObjectInstance)
 		Decal.Color3 = Color3.fromRGB(255, 167, 169)
-		Decal.Texture = "rbxasset://10374562715.png"
+		Decal.Texture = "rbxasset://RoClothes/10374562715.png"
 		Decal.Face = "Front"
 		Decal.Name = "Areola Decal"
 		PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
@@ -7276,7 +7276,7 @@ function RoClothes(Player)
 	function Function.AreolaDecalType3Create(ObjectInstance, Character, Extra, Data)
 		local Decal = Instance.new("Decal", ObjectInstance)
 		Decal.Color3 = Color3.fromRGB(255, 167, 169)
-		Decal.Texture = "rbxasset://9065282081.png"
+		Decal.Texture = "rbxasset://RoClothes/9065282081.png"
 		Decal.Face = "Right"
 		Decal.Name = "Areola Decal"
 		PlayerData[Data].CurrentPartList.AreolaDecal[Decal] = ObjectInstance
@@ -7460,9 +7460,9 @@ function RoClothes(Player)
 		SpecialMesh.MeshType = Enum.MeshType.FileMesh
 
 		if ObjectInstance.Name == "Left Breast" then
-			SpecialMesh.MeshId = "rbxasset://5270415437.mesh"
+			SpecialMesh.MeshId = "rbxasset://RoClothes/5270415437.mesh"
 		else
-			SpecialMesh.MeshId = "rbxasset://5270413797.mesh"
+			SpecialMesh.MeshId = "rbxasset://RoClothes/5270413797.mesh"
 		end
 
 		if Scale ~= nil then
