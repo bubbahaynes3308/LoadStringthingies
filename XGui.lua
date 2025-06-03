@@ -380,7 +380,7 @@ local GeodeHatting = function()
 			for _, Prt in pairs(NewHats:GetChildren()) do
 				Prt.Parent = Player
 				if Prt:IsA("Accessory") or Prt:IsA("Hat") then
-					--addAccoutrement(Player, Prt)
+					addAccoutrement(Player, Prt)
 					Prt.Handle.Anchored = false
 					Prt.Handle.CanCollide = false
 					Prt.Handle.Massless = true
