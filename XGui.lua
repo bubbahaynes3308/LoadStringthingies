@@ -392,6 +392,7 @@ local GeodeHatting = function()
 				if HatPackage:HasTag("CanHaveExtraArms") then
 					for z,x in pairs(Prt:GetDescendants()) do
 						if Player:FindFirstChild("SetAssets") then
+						if Player["SetAssets"]:FindFirstChild("HeianArms")then
 							local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
 							if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
 								x.Parent.Parent:Clone().Parent = P
