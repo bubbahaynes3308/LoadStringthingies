@@ -266,7 +266,7 @@ local GeodeHatting = function()
 						end
 					end
 				end
-				
+
 				for _, Meshes in pairs(Player:GetDescendants()) do
 					if  Meshes.Name == "GirlTorso" or 
 						Meshes.Name == "HiddenTorso" or 
@@ -392,156 +392,158 @@ local GeodeHatting = function()
 				if HatPackage:HasTag("CanHaveExtraArms") then
 					for z,x in pairs(Prt:GetDescendants()) do
 						if Player:FindFirstChild("SetAssets") then
-						if Player["SetAssets"]:FindFirstChild("HeianArms")then
-							local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
-							if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
-								x.Parent.Parent:Clone().Parent = P
+							if Player["SetAssets"]:FindFirstChild("HeianArms") then
+								local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
+								if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
+									x.Parent.Parent:Clone().Parent = P
+								end
+								
+								if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
+									P["Left Arm"].Transparency = 1
+									P["Right Arm"].Transparency = 1
+								end
+								end
 							end
-							if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
-								P["Left Arm"].Transparency = 1
-								P["Right Arm"].Transparency = 1
+						end
+					end
+				end
+			end
+
+			local function processCharacterAccessories(character)
+				local humanoid = character:FindFirstChildOfClass("Humanoid")
+				if not humanoid then
+					warn("Humanoid not found in character")
+					return
+				end
+
+				local scale = character:GetScale() -- Assuming uniform scaling, adjust as needed
+
+				local headHats = {}
+				local waistAccessories = {}
+				local otherAccessories = {}
+
+				for _, accessory in character:GetChildren() do
+					if accessory:IsA("Accessory") then
+						local handle = accessory:FindFirstChild("Handle")
+						if handle and handle:IsA("BasePart") then
+							-- Scale the handle and its descendants
+							handle.Size = handle.Size * scale
+							for _, descendant in handle:GetDescendants() do
+								if descendant:IsA("BasePart") then
+									descendant.Size = descendant.Size * scale
+								elseif descendant:IsA("SpecialMesh") then
+									descendant.Scale = descendant.Scale * scale
+								end
+							end
+
+							-- Separate head hats, waist accessories, and other accessories
+							local hatAttachment = handle:FindFirstChild("HatAttachment")
+							local waistAttachment = handle:FindFirstChild("WaistAttachment")
+							if hatAttachment then
+								table.insert(headHats, accessory)
+							elseif waistAttachment then
+								table.insert(waistAccessories, accessory)
+								-- Adjust waist accessory position
+								local waistPosition = waistAttachment.Position * scale
+								handle.Position = waistPosition
+							else
+								table.insert(otherAccessories, accessory)
 							end
 						end
 					end
 				end
 			end
-		end
 
-		local function processCharacterAccessories(character)
-			local humanoid = character:FindFirstChildOfClass("Humanoid")
-			if not humanoid then
-				warn("Humanoid not found in character")
-				return
-			end
-
-			local scale = character:GetScale() -- Assuming uniform scaling, adjust as needed
-
-			local headHats = {}
-			local waistAccessories = {}
-			local otherAccessories = {}
-
-			for _, accessory in character:GetChildren() do
-				if accessory:IsA("Accessory") then
-					local handle = accessory:FindFirstChild("Handle")
-					if handle and handle:IsA("BasePart") then
-						-- Scale the handle and its descendants
-						handle.Size = handle.Size * scale
-						for _, descendant in handle:GetDescendants() do
-							if descendant:IsA("BasePart") then
-								descendant.Size = descendant.Size * scale
-							elseif descendant:IsA("SpecialMesh") then
-								descendant.Scale = descendant.Scale * scale
-							end
-						end
-
-						-- Separate head hats, waist accessories, and other accessories
-						local hatAttachment = handle:FindFirstChild("HatAttachment")
-						local waistAttachment = handle:FindFirstChild("WaistAttachment")
-						if hatAttachment then
-							table.insert(headHats, accessory)
-						elseif waistAttachment then
-							table.insert(waistAccessories, accessory)
-							-- Adjust waist accessory position
-							local waistPosition = waistAttachment.Position * scale
-							handle.Position = waistPosition
-						else
-							table.insert(otherAccessories, accessory)
-						end
-					end
-				end
-			end
-		end
-
-		local function Execute()
-			spawn(function()
-				RemoveHatsAndRecolor()
-			end)
-			wait(0.025)
-			if Player:GetScale() ~= 1 then
-				local SavedScale = Player:GetScale()
-				Player:ScaleTo(1)
-				if HatPackage:HasTag("AddonWithClothes") then
-					script:FindFirstChildOfClass("Shirt"):Destroy()
-					script:FindFirstChildOfClass("Pants"):Destroy()
-				end
-				AddNewHats()
-				wait(0.025)
-				processCharacterAccessories(Player)
-				task.wait(0.025)
-				Player:ScaleTo(SavedScale)
-			else
-				if HatPackage:HasTag("AddonWithClothes") then
-					Player:FindFirstChildOfClass("Shirt"):Destroy()
-					Player:FindFirstChildOfClass("Pants"):Destroy()
-				end
-				AddNewHats()
-				wait(0.025)
-				processCharacterAccessories(Player)
-				wait(0.025)
-				if HatPackage:HasTag("UniverseIsR63d") then
-					local P1 = Player["Left LegAccessory"].Handle.L_Leg
-					local P2 = Player["Right LegAccessory"].Handle.R_Leg
-					local S = Player["TorsoAccessory"].Handle.B.Clothing
-					local L1 = Player["Left LegAccessory"].Handle.Skin
-					local L2 = Player["Right LegAccessory"].Handle.Clothes
-					local T1 = Player["TorsoAccessory"].Handle.B.B1
-					local T2 = Player["TorsoAccessory"].Handle.B.B2
-					local Shirt = Player:FindFirstChildOfClass("Shirt")
-					local Pants = Player:FindFirstChildOfClass("Pants")
-					L1.Color = Player["Left Leg"].Color
-					L2.Color = Player["Right Leg"].Color
-					T1.Color = Player["Torso"].Color
-					T2.Color = Player["Torso"].Color
-					if Shirt then
-						S.TextureID = Shirt.ShirtTemplate
-					end
-					if Pants then
-						P1.TextureID = Pants.PantsTemplate
-						P2.TextureID = Pants.PantsTemplate
-					end
-				end
-			end
-		end
-
-		Execute()
-
-
-		local HatPackageS = HatPackage
-		local ExtraValueSave = ExtraValue
-		local ExtraValue2Save = ExtraValue2
-		local PlrS = Plr
-
-
-		local CharacterConnect = PlrS.CharacterAdded:Connect(function()
-			if  SaveOutfit == true then
-				repeat task.wait(0.5) until PlrS.Character.Parent ~= nil
-				task.wait(0.1)
-				HatPackage = HatPackageS
-				ExtraValue = ExtraValueSave
-				ExtraValue2 = ExtraValue2Save
-				Player = PlrS.Character
-
-				Execute()
-			end
-		end)
-
-		table.insert(AllConnect, CharacterConnect)
-
-		task.spawn(function()
-			if  SaveOutfit == true then
-				local BreakerObject = Instance.new("BoolValue")
-				BreakerObject.Parent = game:GetService("ReplicatedStorage")
-				BreakerObject.Name = Plr.Name.."DeleteValue"
-				BreakerObject.Destroying:Connect(function()
-					SaveOutfit = false
-					for _, Connect in pairs(AllConnect) do
-						Connect:Disconnect()
-					end
-					warn("AutoOutfitter Disabled")
+			local function Execute()
+				spawn(function()
+					RemoveHatsAndRecolor()
 				end)
+				wait(0.025)
+				if Player:GetScale() ~= 1 then
+					local SavedScale = Player:GetScale()
+					Player:ScaleTo(1)
+					if HatPackage:HasTag("AddonWithClothes") then
+						script:FindFirstChildOfClass("Shirt"):Destroy()
+						script:FindFirstChildOfClass("Pants"):Destroy()
+					end
+					AddNewHats()
+					wait(0.025)
+					processCharacterAccessories(Player)
+					task.wait(0.025)
+					Player:ScaleTo(SavedScale)
+				else
+					if HatPackage:HasTag("AddonWithClothes") then
+						Player:FindFirstChildOfClass("Shirt"):Destroy()
+						Player:FindFirstChildOfClass("Pants"):Destroy()
+					end
+					AddNewHats()
+					wait(0.025)
+					processCharacterAccessories(Player)
+					wait(0.025)
+					if HatPackage:HasTag("UniverseIsR63d") then
+						local P1 = Player["Left LegAccessory"].Handle.L_Leg
+						local P2 = Player["Right LegAccessory"].Handle.R_Leg
+						local S = Player["TorsoAccessory"].Handle.B.Clothing
+						local L1 = Player["Left LegAccessory"].Handle.Skin
+						local L2 = Player["Right LegAccessory"].Handle.Clothes
+						local T1 = Player["TorsoAccessory"].Handle.B.B1
+						local T2 = Player["TorsoAccessory"].Handle.B.B2
+						local Shirt = Player:FindFirstChildOfClass("Shirt")
+						local Pants = Player:FindFirstChildOfClass("Pants")
+						L1.Color = Player["Left Leg"].Color
+						L2.Color = Player["Right Leg"].Color
+						T1.Color = Player["Torso"].Color
+						T2.Color = Player["Torso"].Color
+						if Shirt then
+							S.TextureID = Shirt.ShirtTemplate
+						end
+						if Pants then
+							P1.TextureID = Pants.PantsTemplate
+							P2.TextureID = Pants.PantsTemplate
+						end
+					end
+				end
 			end
+
+			Execute()
+
+
+			local HatPackageS = HatPackage
+			local ExtraValueSave = ExtraValue
+			local ExtraValue2Save = ExtraValue2
+			local PlrS = Plr
+
+
+			local CharacterConnect = PlrS.CharacterAdded:Connect(function()
+				if  SaveOutfit == true then
+					repeat task.wait(0.5) until PlrS.Character.Parent ~= nil
+					task.wait(0.1)
+					HatPackage = HatPackageS
+					ExtraValue = ExtraValueSave
+					ExtraValue2 = ExtraValue2Save
+					Player = PlrS.Character
+
+					Execute()
+				end
+			end)
+
+			table.insert(AllConnect, CharacterConnect)
+
+			task.spawn(function()
+				if  SaveOutfit == true then
+					local BreakerObject = Instance.new("BoolValue")
+					BreakerObject.Parent = game:GetService("ReplicatedStorage")
+					BreakerObject.Name = Plr.Name.."DeleteValue"
+					BreakerObject.Destroying:Connect(function()
+						SaveOutfit = false
+						for _, Connect in pairs(AllConnect) do
+							Connect:Disconnect()
+						end
+						warn("AutoOutfitter Disabled")
+					end)
+				end
+			end)
 		end)
-	end)
 end
 
 local GiveHeianArms = function()
@@ -575,7 +577,7 @@ local GiveHeianArms = function()
 			local LeftArm = Character["Left Arm"]
 			local RightArm = Character["Right Arm"]
 			local NormalScale = 1
-			
+
 			ExtraArms.Handle.Value.Destroying:Connect(function()
 				ExtraArms.Parent:Destroy()
 			end)
@@ -604,7 +606,7 @@ local GiveHeianArms = function()
 			end)
 		end
 
-		
+
 
 		Player.CharacterAdded:Connect(function()
 			repeat task.wait(0.5) until Player.Character.Parent ~= nil
@@ -841,10 +843,10 @@ local Tabs = {
 
 do
 
--------------------------------------------------------------------------------------------------------------------MainTab
-	
+	-------------------------------------------------------------------------------------------------------------------MainTab
+
 	local SSG = Tabs.MainTab:AddSection("Spectrum Star Wings")
-	
+
 	Tabs.MainTab:AddButton({
 		Title = "Execute",
 		Description = "Executes The Wings",
@@ -862,9 +864,9 @@ do
 		Title  = "Spectrum Star Wings Settings",
 		color = Color3.new(1, 1, 1),
 	})
-	
+
 	local SWR = Tabs.MainTab:AddToggle("SpectrumWingsRespawn", {Title = "On Respawn ReExecute", Default = false })
-	
+
 	SWR:OnChanged(function()
 		_G.SpectrumWingsRespawn = Main.Options["SpectrumWingsRespawn"].Value
 		Main:Notify({
@@ -872,10 +874,10 @@ do
 			Content = "SpectrumWingsRespawn Value: " .. tostring(Main.Options["SpectrumWingsRespawn"].Value),
 			Duration = 3
 		})
-		
-		
+
+
 	end)
-	
+
 	local SWRGB = Tabs.MainTab:AddToggle("RGB", {Title = "RGB", Default = false })
 
 	SWRGB:OnChanged(function()
@@ -886,7 +888,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local SGTWS = Tabs.MainTab:AddSlider("Slider", {
 		Title = "Task.Wait() Time",
 		Description = "Animation Speed",
@@ -899,14 +901,14 @@ do
 		warn("WaitTime value: " .. Value * 0.0001)
 		_G.WaitTime = Value * 0.0001
 	end)
-	
+
 	local SGWCPWT = Tabs.MainTab:AddColorpicker("TransparencyColorpicker", {
 		Title = "Color and Transparency",
 		Description = "Color and Transparency For the Wings",
 		Transparency = 0,
 		Default = Color3.fromRGB(255, 255, 255)
 	})
-	
+
 	SGWCPWT:OnChanged(function()
 		local r = SGWCPWT.Value.r * 255
 		local g = SGWCPWT.Value.g * 255 
@@ -920,7 +922,7 @@ do
 		_G.BV = b
 		_G.TransZ = SGWCPWT.Transparency * 0.01
 	end)
-	
+
 	local SGWReflect = Tabs.MainTab:AddSlider("Slider", {
 		Title = "Reflectance",
 		Description = "The Wings Reflectance",
@@ -933,7 +935,7 @@ do
 		warn("ReflectZ value: " .. Value * 0.01)
 		_G.ReflectZ = Value * 0.01
 	end)
-	
+
 	table.sort(Materials)
 	local SWM = Tabs.MainTab:AddDropdown("Dropdown", {
 		Title = "Material Of Wings",
@@ -950,9 +952,9 @@ do
 		})
 		_G.M = Value
 	end)
-	
+
 	--------------------------------------------------------
-	
+
 	local ILW = Tabs.MainTab:AddSection("Immortality Lord Wings")
 
 	Tabs.MainTab:AddButton({
@@ -996,7 +998,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local ILBodyColor = Tabs.MainTab:AddToggle("ILBC", {Title = "Use Body Color", Default = false })
 
 	ILBodyColor:OnChanged(function()
@@ -1071,10 +1073,10 @@ do
 		})
 		_G.M2 = Value
 	end)
-	
-	
+
+
 	------------------------------------------------------
-	
+
 	local Tail = Tabs.MainTab:AddSection("Tails")
 
 	Tabs.MainTab:AddButton({
@@ -1193,11 +1195,11 @@ do
 	end)
 
 	------------------------------------------------------------------------------------------------- End Of MainTab
-	
-	
-	
+
+
+
 	local GH = Tabs.MorphingTab:AddSection("GeodesHatting")
-	
+
 	Tabs.MorphingTab:AddButton({
 		Title = "Execute",
 		Description = "Executes The Selected Hat Set",
@@ -1210,7 +1212,7 @@ do
 			GeodeHatting()
 		end
 	})
-	
+
 	Tabs.MorphingTab:AddButton({
 		Title = "Stop AutoOutfitter",
 		Description = "Deletes A Value In Replicated Storage To Stop The AutoOutfitting",
@@ -1223,7 +1225,7 @@ do
 			StopAutoOutfit()
 		end
 	})
-	
+
 	local GHHatset = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Hat Set",
 		Values = FullHatSetNames,
@@ -1238,7 +1240,7 @@ do
 		})
 		_G.K1 = Value
 	end)
-	
+
 	local GHPlayer = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Player",
 		Values = PlayersTable,
@@ -1254,7 +1256,7 @@ do
 		})
 		_G.K4 = Players[Value]
 	end)
-	
+
 	local GHAutoOutfit = Tabs.MorphingTab:AddToggle("AutoOutfit", {Title = "ReOutfit On Respawn", Default = false })
 
 	GHAutoOutfit:OnChanged(function()
@@ -1265,7 +1267,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local GHE1 = Tabs.MorphingTab:AddSlider("Slider", {
 		Title = "Extra Value 1",
 		Description = "Food Demon Number",
@@ -1278,7 +1280,7 @@ do
 		warn("Food Demon: " .. Value)
 		_G.K2 = Value 
 	end)
-	
+
 	local GHE2 = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Extra Value 2",
 		Values = ExtraValue2,
@@ -1293,10 +1295,10 @@ do
 		})
 		_G.K3 = Value
 	end)
-	
-	
+
+
 	------------------------------------------------
-	
+
 	local Heian = Tabs.MorphingTab:AddSection("Heian Arms")
 
 	Tabs.MorphingTab:AddButton({
@@ -1324,7 +1326,7 @@ do
 			StopExtraArms()
 		end
 	})
-	
+
 	local HeianAutoGiver = Tabs.MorphingTab:AddToggle("HeianAutoGiver", {Title = "ReGive Extra Arms On Respawn", Default = false })
 
 	HeianAutoGiver:OnChanged(function()
@@ -1335,10 +1337,10 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	--------------------------------------------------------
-	
-	
+
+
 	local NC = Tabs.MorphingTab:AddSection("NightChild")
 
 	Tabs.MorphingTab:AddButton({
@@ -1377,7 +1379,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local NCAuraOnly = Tabs.MorphingTab:AddToggle("NCAuraOnly", {Title = "Aura Only", Default = false })
 
 	NCAuraOnly:OnChanged(function()
@@ -1388,11 +1390,11 @@ do
 			Duration = 3
 		})
 	end)
-	
-	
--------------------------------------------------------
+
+
+	-------------------------------------------------------
 	local MH = Tabs.MorphingTab:AddSection("Midnight Horrors Furry")
-	
+
 	Tabs.MorphingTab:AddButton({
 		Title = "Execute Morph",
 		Description = "Morphs You Into That One Furry From Midnight Horrors",
@@ -1416,11 +1418,11 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	------------------------------------------
-	
+
 	local R15TR6 = Tabs.MorphingTab:AddSection("R15 To R6")
-	
+
 	Tabs.MorphingTab:AddButton({
 		Title = "Execute Conversion",
 		Description = "Converts a R15 To R6 Cliently",
@@ -1433,7 +1435,7 @@ do
 			R15ToR6()
 		end
 	})
-	
+
 	local R6M = Tabs.MorphingTab:AddSlider("Slider", {
 		Title = "Method",
 		Default = 1,
@@ -1445,7 +1447,7 @@ do
 		warn("Method: " .. Value)
 		_G.Method = Value 
 	end)
-	
+
 	local R6AC = Tabs.MorphingTab:AddToggle("R6AC", {Title = "Converter Avatar Clothes", Default = true })
 
 	R6AC:OnChanged(function()
@@ -1456,7 +1458,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local R6SL = Tabs.MorphingTab:AddToggle("SL", {Title = "Converter Size Lock", Default = false })
 
 	R6SL:OnChanged(function()
@@ -1467,7 +1469,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local R15T = Tabs.MorphingTab:AddToggle("R15T", {Title = "R15 Part Transparent", Default = true })
 
 	R15T:OnChanged(function()
@@ -1478,7 +1480,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local R6T = Tabs.MorphingTab:AddToggle("R6T", {Title = "R6 Part Transparent", Default = false })
 
 	R6T:OnChanged(function()
@@ -1489,7 +1491,7 @@ do
 			Duration = 3
 		})
 	end)
-	
+
 	local R6Player = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Player",
 		Values = PlayersTable,
@@ -1505,7 +1507,7 @@ do
 		})
 		_G.Target = Players[Value]
 	end)
-	
+
 	local R6Torso = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "R6 Torso Type",
 		Values = SX,
@@ -1520,14 +1522,14 @@ do
 		})
 		_G.TorsoType = Value
 	end)
-	
+
 	------------------------------------------------------------------------------------------------- End Of Morphing Tab
 	--[[Required Parts for OthersTab
 	2Sliders(RespawnWaitTime Would Now Be In Settings)
 	1 Buttons
 	1 DropDown
 	]]
-	
+
 	Tabs.Other:AddButton({
 		Title = "Roclothes",
 		Description = "This Is Modified",
@@ -1542,7 +1544,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Client Regretevator Paranoia",
 		Description = "Its Wierdly Cool I guess(Only Visual)",
@@ -1557,7 +1559,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Infinite Yield",
 		Description = "The Client Admin",
@@ -1572,7 +1574,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Domain X",
 		Description = "The Client Taskbar",
@@ -1587,7 +1589,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Dex V1 Remastered",
 		Description = "The Dex From Infinite Yield",
@@ -1602,7 +1604,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Dark Dex V5",
 		Description = "This Dex is For When V1R is Not Working",
@@ -1617,7 +1619,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Aimbot",
 		Description = "Some Aimbot That Its UI Was Broken",
@@ -1632,7 +1634,7 @@ do
 			end)
 		end
 	})
-	
+
 	Tabs.Other:AddButton({
 		Title = "Open Aimbot",
 		Description = "Open Source Aimbot + Esp",
@@ -1647,9 +1649,9 @@ do
 			end)
 		end
 	})
-	
+
 	local HBES = Tabs.Other:AddSection("Hitbox Expander")
-	
+
 	Tabs.Other:AddButton({
 		Title = "Execute",
 		Description = "Executes The Hitbox Expander",
@@ -1662,7 +1664,7 @@ do
 			HBE()
 		end
 	})
-	
+
 	local HBESize = Tabs.Other:AddSlider("Slider", {
 		Title = "Hitbox Size",
 		Description = "Size Of Hitbox",
@@ -1675,7 +1677,7 @@ do
 		warn("Size: " .. Value)
 		_G.HS = Value 
 	end)
-	
+
 	local HBET = Tabs.Other:AddSlider("Slider", {
 		Title = "Hitbox Transparency",
 		Description = "",
@@ -1703,9 +1705,9 @@ do
 		})
 		_G.HBP = Value
 	end)
-	
+
 	--------------------------------------------------------------------------
-	
+
 	local HBET = Tabs.Settings:AddSlider("Slider", {
 		Title = "Respawn Wait Time",
 		Description = "Time For Task.Wait To Trigger The ReExecution",
@@ -1724,14 +1726,14 @@ window1:SelectTab(1)
 SaveManager:SetLibrary(Main)
 InterfaceManager:SetLibrary(Main)
 
-	SaveManager:IgnoreThemeSettings()
+SaveManager:IgnoreThemeSettings()
 
-	SaveManager:SetIgnoreIndexes({})
-	InterfaceManager:SetFolder("XGui")
-	SaveManager:SetFolder("XGui/specific-game")
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("XGui")
+SaveManager:SetFolder("XGui/specific-game")
 
-	InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-	SaveManager:BuildConfigSection(Tabs.Settings)
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
 
 
 
@@ -1742,6 +1744,6 @@ do
 		Duration = 5
 	})
 
-SaveManager:LoadAutoloadConfig()
-	
+	SaveManager:LoadAutoloadConfig()
+
 end
