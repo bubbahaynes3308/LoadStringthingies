@@ -1,5 +1,5 @@
 
-local Main = loadstring(game:HttpGet("https://twix.cyou/Fluent.txt", true))()
+local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/TwixCsFluentUiModified.lua", true))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
@@ -727,15 +727,32 @@ local MHF = function()
 	spawn(function()
 		local Target = Players.LocalPlayer
 		local Player = Target.Character
+		local function Execute()
 		local Furrything = XIIX["FurryMorph"]:Clone() --game:GetObjects('rbxasset://FurrymodelThing.rbxm')[1]:Clone() if the asset ever Gets Deleted
-		Furrything.Parent = Player
+			for _, PlrHats in pairs(Player:GetChildren()) do
+
+				if  PlrHats:IsA("Accessory") or 
+					PlrHats:IsA("Hat") or 
+					PlrHats:IsA("BodyColors") or 
+					PlrHats:IsA("CharacterMesh") or 
+					PlrHats:IsA("Pants") or 
+					PlrHats:IsA("Shirt") or 
+					PlrHats:IsA("ShirtGraphic")  
+				then
+					PlrHats:Destroy()
+				end
+			end
+			Furrything.Parent = Player
+			
+			
 
 		local Head = Furrything.Welds["Head"]
 		local Torso = Furrything.Welds["Torso"]
 		local Left_Arm = Furrything.Welds["Left Arm"]
 		local Right_Arm = Furrything.Welds["Right Arm"]
 		local Left_Leg = Furrything.Welds["Left Leg"]
-		local Right_Leg = Furrything.Welds["Right Leg"]
+			local Right_Leg = Furrything.Welds["Right Leg"]
+			local Face = Player["Head"]:FindFirstChildOfClass("Decal")
 
 
 		Player["Head"].Transparency = 1
@@ -743,8 +760,10 @@ local MHF = function()
 		Player["Left Arm"].Transparency = 1
 		Player["Left Leg"].Transparency = 1
 		Player["Right Arm"].Transparency = 1
-		Player["Right Leg"].Transparency = 1
-		Player["Head"]:FindFirstChildOfClass("Decal").Transparency = 1
+			Player["Right Leg"].Transparency = 1
+			if Face then
+				Face.Transparency = 1
+				end
 
 		Player["Head"].Color = Color3.fromRGB(226, 154, 66)
 		Player["Torso"].Color = Color3.fromRGB(226, 154, 66)
@@ -776,8 +795,10 @@ local MHF = function()
 
 		for _, RL in pairs(Right_Leg:GetChildren()) do
 			RL.Part0 = Player["Right Leg"]
+			end
 		end
-	end)
+		Execute()
+		end)
 end
 
 local Tails = function()
@@ -1244,6 +1265,7 @@ do
 	local GHPlayer = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Player",
 		Values = PlayersTable,
+		ValuesProvider = function() return PlayersTable end,
 		Multi = false,
 		Default = 1,
 	})
@@ -1495,6 +1517,7 @@ do
 	local R6Player = Tabs.MorphingTab:AddDropdown("Dropdown", {
 		Title = "Player",
 		Values = PlayersTable,
+		ValuesProvider = function() return PlayersTable end,
 		Multi = false,
 		Default = 1,
 	})
