@@ -179,7 +179,8 @@ GeodeHatting = function()
 		local RX = XIIX.GeodesHatting
 		local X = RX.XHat
 		local Plr = _G.K4
-		local HatPackage = X[HatPack]:Clone()
+		local HatPackage = X:WaitForChild(tostring(HatPack),50):Clone()
+		print(tostring(HatPackage))
 		local HiddenLimbs = RX.HiddenLimbs
 		local Player = Plr.Character
 		local HatsResized = {}
@@ -246,14 +247,13 @@ GeodeHatting = function()
 
 		------------------------------------------Above Is What Welds The Hats Together--------------------------------------------------------------
 
-		local function RemoveHatsAndRecolor()
-
+		local function RemoveHatsAndRecolor() 
 			if HatPack == "FoodDemons" then
-				NewHats = HatPackage[tostring(ExtraValue)]:Clone()
+				NewHats = HatPackage:WaitForChild(tostring(ExtraValue),50):Clone()
 			elseif HatPack == "WolframNightstalker" then
-				NewHats = HatPackage["NewHats".. ExtraValue2]:Clone()
+				NewHats = HatPackage:WaitForChild("NewHats".. ExtraValue2,50):Clone()
 			else
-				NewHats = HatPackage["NewHats"]:Clone()
+				NewHats = HatPackage:WaitForChild("NewHats",50):Clone()
 			end
 
 			if not HatPackage:HasTag("Addon") then
@@ -266,9 +266,8 @@ GeodeHatting = function()
 						end
 					end
 				end
-				
 				for _, Meshes in pairs(Player:GetDescendants()) do
-					
+
 					if  Meshes.Name == "GirlTorso" or 
 						Meshes.Name == "HiddenTorso" or 
 						Meshes.Name == "InvisibleHead" or 
@@ -311,13 +310,11 @@ GeodeHatting = function()
 				HiddenLimbs.LA:Clone().Parent = Player["Left Arm"]
 				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
 			end
-
 			if HatPackage:HasTag("UniverseIsR63d") then --female
 				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
 				HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
 				HiddenLimbs.RL:Clone().Parent = Player["Right Leg"]
 			end
-
 			for _, PossibleDecal in pairs(Player["Head"]:GetChildren()) do
 				if  PossibleDecal:IsA("Decal") and PossibleDecal.Name == "face" then
 					if HatPackage:HasTag("FaceIncluded") then
@@ -329,8 +326,7 @@ GeodeHatting = function()
 						HatPackage["AnimatedFace"]:Clone().Parent = PossibleDecal
 					end
 				end
-			end
-
+				end
 
 
 
@@ -344,7 +340,7 @@ GeodeHatting = function()
 					Player["Right Arm"].Color = BodyColor.RightArmColor3
 					Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 				else
-					local Color = Instance.new("BodyColors", NewHats)
+					local Color = Instance.new("BodyColors", Player)
 					Color.HeadColor3 = HatPackage:GetAttribute("Color")
 					Color.TorsoColor3 = HatPackage:GetAttribute("Color")
 					Color.LeftArmColor3 = HatPackage:GetAttribute("Color")
@@ -354,7 +350,6 @@ GeodeHatting = function()
 				end
 			end
 		end
-
 		if HatPackage:HasTag("UseAttributesColors") then --V1 Used Tags To Differ Them From Getting set Without one
 			local Color = Instance.new("BodyColors", Player)
 			Color.HeadColor3 = HatPackage:GetAttribute("Color")
@@ -364,7 +359,6 @@ GeodeHatting = function()
 			Color.RightArmColor3 = HatPackage:GetAttribute("Color")
 			Color.RightLegColor3 = HatPackage:GetAttribute("Color")
 		end
-
 		if HatPackage:HasTag("UseBodyColors") then --V1 Used Tags To Differ Them From Getting set Without one
 			--[[local BodyColor = HatPackage.NewHats:FindFirstChildOfClass("Body Colors")
 			Player["Head"].Color = BodyColor.HeadColor3
@@ -376,11 +370,10 @@ GeodeHatting = function()
 		end
 
 
-
 		--------------------------------------------------------------------------------------------------------
-
+ 
 		local function AddNewHats()
-			for _, Prt in pairs(NewHats:GetChildren()) do
+			for _, Prt in NewHats:GetChildren() do
 				Prt.Parent = Player
 				if Prt:IsA("Accessory") or Prt:IsA("Hat") then
 					addAccoutrement(Player, Prt)
@@ -395,14 +388,16 @@ GeodeHatting = function()
 				if HatPackage:HasTag("CanHaveExtraArms") then
 					for z,x in pairs(Prt:GetDescendants()) do
 						if Player:FindFirstChild("SetAssets") then
-							local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
-							if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
-								x.Parent.Parent:Clone().Parent = P
-								addAccoutrement(P, Prt)
-							end
-							if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
-								P["Left Arm"].Transparency = 1
-								P["Right Arm"].Transparency = 1
+							if Player:FindFirstChild("SetAssets"):FindFirstChild("HeianArms") then
+								local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms", 50)
+								if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
+									x.Parent.Parent:Clone().Parent = P
+									addAccoutrement(P, Prt)
+								end
+								if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
+									P["Left Arm"].Transparency = 1
+									P["Right Arm"].Transparency = 1
+								end
 							end
 						end
 					end
@@ -456,9 +451,9 @@ GeodeHatting = function()
 		end
 
 		local function Execute()
-			task.spawn(function()
+			
+				task.wait(0.115)
 				RemoveHatsAndRecolor()
-			end)
 			wait(0.025)
 			if Player:GetScale() ~= 1 then
 				local SavedScale = Player:GetScale()
@@ -474,8 +469,12 @@ GeodeHatting = function()
 				Player:ScaleTo(SavedScale)
 			else
 				if HatPackage:HasTag("AddonWithClothes") then
-					Player:FindFirstChildOfClass("Shirt"):Destroy()
-					Player:FindFirstChildOfClass("Pants"):Destroy()
+					if Player:FindFirstChildOfClass("Shirt") then
+						Player:FindFirstChildOfClass("Shirt"):Destroy()
+					end
+					if Player:FindFirstChildOfClass("Pants") then
+						Player:FindFirstChildOfClass("Pants"):Destroy()
+						end
 				end
 				AddNewHats()
 				wait(0.025)
@@ -539,7 +538,7 @@ GeodeHatting = function()
 					for _, Connect in pairs(AllConnect) do
 						Connect:Disconnect()
 					end
-					ClientPrint.PrintOnClient(Plr,"AutoOutfitter Disabled")
+					print(Plr,"AutoOutfitter Disabled")
 				end)
 			end
 		end)
@@ -881,7 +880,7 @@ do
 		end
 	})
 
-	local label1 = Tabs.MainTab:AddParagraph({
+	local label1 = Tabs.MainTab:Paragraph("Paragraph",{
 		Title  = "Spectrum Star Wings Settings",
 		color = Color3.new(1, 1, 1),
 	})
@@ -991,7 +990,7 @@ do
 		end
 	})
 
-	local ILWlabel = Tabs.MainTab:AddParagraph({
+	local ILWlabel = Tabs.MainTab:Paragraph("Paragraph",{
 		Title  = "Immortality Lord Wings Settings",
 		color = Color3.new(1, 1, 1),
 	})
@@ -1113,7 +1112,7 @@ do
 		end
 	})
 
-	local Taillabel = Tabs.MainTab:AddParagraph({
+	local Taillabel = Tabs.MainTab:Paragraph("Paragraph",{
 		Title  = "Tails Settings",
 		color = Color3.new(1, 1, 1),
 	})
