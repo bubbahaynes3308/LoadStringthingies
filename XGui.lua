@@ -1,7 +1,7 @@
 
-local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/TwixCsFluentUiModified.lua", true))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local Main = loadstring(game:HttpGetAsync("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
+local SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/SaveManager.luau"))()
+local InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
 
 
 local Players = game:GetService("Players")
@@ -170,9 +170,8 @@ local HBE = function()
 	end)
 end
 
-local GeodeHatting = function()
-	spawn(function()
-		--loadstring(game:HttpGet("https://raw.githubusercontent.com/bubbahaynes3308/LoadStringthingies/main/GeodeHatting.lua",true))()
+GeodeHatting = function()
+	task.spawn(function()
 		local HatPack = _G.K1
 		local ExtraValue = _G.K2
 		local ExtraValue2 = _G.K3
@@ -186,6 +185,7 @@ local GeodeHatting = function()
 		local HatsResized = {}
 		local Connections = {}
 		local AllConnect = {}
+		local NewHats
 
 		------------------------------------------Below Is What Welds The Hats Together--------------------------------------------------------------
 
@@ -266,8 +266,9 @@ local GeodeHatting = function()
 						end
 					end
 				end
-
+				
 				for _, Meshes in pairs(Player:GetDescendants()) do
+					
 					if  Meshes.Name == "GirlTorso" or 
 						Meshes.Name == "HiddenTorso" or 
 						Meshes.Name == "InvisibleHead" or 
@@ -311,7 +312,7 @@ local GeodeHatting = function()
 				HiddenLimbs.RA:Clone().Parent = Player["Right Arm"]
 			end
 
-			if HatPackage:HasTag("UniverseIsR63d") then --Invisible Full Body
+			if HatPackage:HasTag("UniverseIsR63d") then --female
 				HiddenLimbs.GirlTorso:Clone().Parent = Player["Torso"]
 				HiddenLimbs.LL:Clone().Parent = Player["Left Leg"]
 				HiddenLimbs.RL:Clone().Parent = Player["Right Leg"]
@@ -333,7 +334,7 @@ local GeodeHatting = function()
 
 
 
-			if HatPackage:HasTag("HasColors") then --i Used Tags To Differ Them From Getting set Without one
+			if HatPackage:HasTag("HasColors") then --V1 Used Tags To Differ Them From Getting set Without one
 				if  HatPack == "FoodDemons" and ExtraValue ~= "42" or ExtraValue ~= "41" or ExtraValue ~= "31" or ExtraValue ~= "30" or ExtraValue ~= "29" or ExtraValue ~= "66" or ExtraValue ~= "67" or ExtraValue ~= "68" or ExtraValue ~= "69" or ExtraValue ~= "70" or ExtraValue ~= "71" or ExtraValue ~= "72" or ExtraValue ~= "74" or ExtraValue ~= "73" then			---These Extra Values in question Have no Body Color And Use Hidden Limbs 
 					--[[local BodyColor = NewHats:FindFirstChildOfClass("Body Colors")
 					Player["Head"].Color = BodyColor.HeadColor3
@@ -343,26 +344,28 @@ local GeodeHatting = function()
 					Player["Right Arm"].Color = BodyColor.RightArmColor3
 					Player["Right Leg"].Color = BodyColor.RightLegColor3]]
 				else
-					Player["Head"].Color = HatPackage:GetAttribute("Color")
-					Player["Torso"].Color = HatPackage:GetAttribute("Color")
-					Player["Left Arm"].Color = HatPackage:GetAttribute("Color")
-					Player["Left Leg"].Color = HatPackage:GetAttribute("Color")
-					Player["Right Arm"].Color = HatPackage:GetAttribute("Color")
-					Player["Right Leg"].Color = HatPackage:GetAttribute("Color")
+					local Color = Instance.new("BodyColors", NewHats)
+					Color.HeadColor3 = HatPackage:GetAttribute("Color")
+					Color.TorsoColor3 = HatPackage:GetAttribute("Color")
+					Color.LeftArmColor3 = HatPackage:GetAttribute("Color")
+					Color.LeftLegColor3 = HatPackage:GetAttribute("Color")
+					Color.RightArmColor3 = HatPackage:GetAttribute("Color")
+					Color.RightLegColor3 = HatPackage:GetAttribute("Color")
 				end
 			end
 		end
 
-		if HatPackage:HasTag("UseAttributesColors") then --i Used Tags To Differ Them From Getting set Without one
-			Player["Head"].Color = HatPackage:GetAttribute("Color")
-			Player["Torso"].Color = HatPackage:GetAttribute("Color")
-			Player["Left Arm"].Color = HatPackage:GetAttribute("Color")
-			Player["Left Leg"].Color = HatPackage:GetAttribute("Color")
-			Player["Right Arm"].Color = HatPackage:GetAttribute("Color")
-			Player["Right Leg"].Color = HatPackage:GetAttribute("Color")
+		if HatPackage:HasTag("UseAttributesColors") then --V1 Used Tags To Differ Them From Getting set Without one
+			local Color = Instance.new("BodyColors", Player)
+			Color.HeadColor3 = HatPackage:GetAttribute("Color")
+			Color.TorsoColor3 = HatPackage:GetAttribute("Color")
+			Color.LeftArmColor3 = HatPackage:GetAttribute("Color")
+			Color.LeftLegColor3 = HatPackage:GetAttribute("Color")
+			Color.RightArmColor3 = HatPackage:GetAttribute("Color")
+			Color.RightLegColor3 = HatPackage:GetAttribute("Color")
 		end
 
-		if HatPackage:HasTag("UseBodyColors") then --i Used Tags To Differ Them From Getting set Without one
+		if HatPackage:HasTag("UseBodyColors") then --V1 Used Tags To Differ Them From Getting set Without one
 			--[[local BodyColor = HatPackage.NewHats:FindFirstChildOfClass("Body Colors")
 			Player["Head"].Color = BodyColor.HeadColor3
 			Player["Torso"].Color = BodyColor.TorsoColor3
@@ -392,158 +395,155 @@ local GeodeHatting = function()
 				if HatPackage:HasTag("CanHaveExtraArms") then
 					for z,x in pairs(Prt:GetDescendants()) do
 						if Player:FindFirstChild("SetAssets") then
-							if Player["SetAssets"]:FindFirstChild("HeianArms") then
-								local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
-								if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
-									x.Parent.Parent:Clone().Parent = P
-								end
-								
-								if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
-									P["Left Arm"].Transparency = 1
-									P["Right Arm"].Transparency = 1
-								end
-								end
+							local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms")
+							if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
+								x.Parent.Parent:Clone().Parent = P
+								addAccoutrement(P, Prt)
+							end
+							if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
+								P["Left Arm"].Transparency = 1
+								P["Right Arm"].Transparency = 1
 							end
 						end
 					end
 				end
 			end
+		end
 
-			local function processCharacterAccessories(character)
-				local humanoid = character:FindFirstChildOfClass("Humanoid")
-				if not humanoid then
-					warn("Humanoid not found in character")
-					return
-				end
+		local function processCharacterAccessories(character)
+			local humanoid = character:FindFirstChildOfClass("Humanoid")
+			if not humanoid then
+				warn("Humanoid not found in character")
+				return
+			end
 
-				local scale = character:GetScale() -- Assuming uniform scaling, adjust as needed
+			local scale = character:GetScale() -- Assuming uniform scaling, adjust as needed
 
-				local headHats = {}
-				local waistAccessories = {}
-				local otherAccessories = {}
+			local headHats = {}
+			local waistAccessories = {}
+			local otherAccessories = {}
 
-				for _, accessory in character:GetChildren() do
-					if accessory:IsA("Accessory") then
-						local handle = accessory:FindFirstChild("Handle")
-						if handle and handle:IsA("BasePart") then
-							-- Scale the handle and its descendants
-							handle.Size = handle.Size * scale
-							for _, descendant in handle:GetDescendants() do
-								if descendant:IsA("BasePart") then
-									descendant.Size = descendant.Size * scale
-								elseif descendant:IsA("SpecialMesh") then
-									descendant.Scale = descendant.Scale * scale
-								end
+			for _, accessory in character:GetChildren() do
+				if accessory:IsA("Accessory") then
+					local handle = accessory:FindFirstChild("Handle")
+					if handle and handle:IsA("BasePart") then
+						-- Scale the handle and its descendants
+						handle.Size = handle.Size * scale
+						for _, descendant in handle:GetDescendants() do
+							if descendant:IsA("BasePart") then
+								descendant.Size = descendant.Size * scale
+							elseif descendant:IsA("SpecialMesh") then
+								descendant.Scale = descendant.Scale * scale
 							end
+						end
 
-							-- Separate head hats, waist accessories, and other accessories
-							local hatAttachment = handle:FindFirstChild("HatAttachment")
-							local waistAttachment = handle:FindFirstChild("WaistAttachment")
-							if hatAttachment then
-								table.insert(headHats, accessory)
-							elseif waistAttachment then
-								table.insert(waistAccessories, accessory)
-								-- Adjust waist accessory position
-								local waistPosition = waistAttachment.Position * scale
-								handle.Position = waistPosition
-							else
-								table.insert(otherAccessories, accessory)
-							end
+						-- Separate head hats, waist accessories, and other accessories
+						local hatAttachment = handle:FindFirstChild("HatAttachment")
+						local waistAttachment = handle:FindFirstChild("WaistAttachment")
+						if hatAttachment then
+							table.insert(headHats, accessory)
+						elseif waistAttachment then
+							table.insert(waistAccessories, accessory)
+							-- Adjust waist accessory position
+							local waistPosition = waistAttachment.Position * scale
+							handle.Position = waistPosition
+						else
+							table.insert(otherAccessories, accessory)
 						end
 					end
 				end
 			end
+		end
 
-			local function Execute()
-				spawn(function()
-					RemoveHatsAndRecolor()
-				end)
-				wait(0.025)
-				if Player:GetScale() ~= 1 then
-					local SavedScale = Player:GetScale()
-					Player:ScaleTo(1)
-					if HatPackage:HasTag("AddonWithClothes") then
-						script:FindFirstChildOfClass("Shirt"):Destroy()
-						script:FindFirstChildOfClass("Pants"):Destroy()
-					end
-					AddNewHats()
-					wait(0.025)
-					processCharacterAccessories(Player)
-					task.wait(0.025)
-					Player:ScaleTo(SavedScale)
-				else
-					if HatPackage:HasTag("AddonWithClothes") then
-						Player:FindFirstChildOfClass("Shirt"):Destroy()
-						Player:FindFirstChildOfClass("Pants"):Destroy()
-					end
-					AddNewHats()
-					wait(0.025)
-					processCharacterAccessories(Player)
-					wait(0.025)
-					if HatPackage:HasTag("UniverseIsR63d") then
-						local P1 = Player["Left LegAccessory"].Handle.L_Leg
-						local P2 = Player["Right LegAccessory"].Handle.R_Leg
-						local S = Player["TorsoAccessory"].Handle.B.Clothing
-						local L1 = Player["Left LegAccessory"].Handle.Skin
-						local L2 = Player["Right LegAccessory"].Handle.Clothes
-						local T1 = Player["TorsoAccessory"].Handle.B.B1
-						local T2 = Player["TorsoAccessory"].Handle.B.B2
-						local Shirt = Player:FindFirstChildOfClass("Shirt")
-						local Pants = Player:FindFirstChildOfClass("Pants")
-						L1.Color = Player["Left Leg"].Color
-						L2.Color = Player["Right Leg"].Color
-						T1.Color = Player["Torso"].Color
-						T2.Color = Player["Torso"].Color
-						if Shirt then
-							S.TextureID = Shirt.ShirtTemplate
-						end
-						if Pants then
-							P1.TextureID = Pants.PantsTemplate
-							P2.TextureID = Pants.PantsTemplate
-						end
-					end
-				end
-			end
-
-			Execute()
-
-
-			local HatPackageS = HatPackage
-			local ExtraValueSave = ExtraValue
-			local ExtraValue2Save = ExtraValue2
-			local PlrS = Plr
-
-
-			local CharacterConnect = PlrS.CharacterAdded:Connect(function()
-				if  SaveOutfit == true then
-					repeat task.wait(0.5) until PlrS.Character.Parent ~= nil
-					task.wait(0.1)
-					HatPackage = HatPackageS
-					ExtraValue = ExtraValueSave
-					ExtraValue2 = ExtraValue2Save
-					Player = PlrS.Character
-
-					Execute()
-				end
-			end)
-
-			table.insert(AllConnect, CharacterConnect)
-
+		local function Execute()
 			task.spawn(function()
-				if  SaveOutfit == true then
-					local BreakerObject = Instance.new("BoolValue")
-					BreakerObject.Parent = game:GetService("ReplicatedStorage")
-					BreakerObject.Name = Plr.Name.."DeleteValue"
-					BreakerObject.Destroying:Connect(function()
-						SaveOutfit = false
-						for _, Connect in pairs(AllConnect) do
-							Connect:Disconnect()
-						end
-						warn("AutoOutfitter Disabled")
-					end)
-				end
+				RemoveHatsAndRecolor()
 			end)
+			wait(0.025)
+			if Player:GetScale() ~= 1 then
+				local SavedScale = Player:GetScale()
+				Player:ScaleTo(1)
+				if HatPackage:HasTag("AddonWithClothes") then
+					script:FindFirstChildOfClass("Shirt"):Destroy()
+					script:FindFirstChildOfClass("Pants"):Destroy()
+				end
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
+				task.wait(0.025)
+				Player:ScaleTo(SavedScale)
+			else
+				if HatPackage:HasTag("AddonWithClothes") then
+					Player:FindFirstChildOfClass("Shirt"):Destroy()
+					Player:FindFirstChildOfClass("Pants"):Destroy()
+				end
+				AddNewHats()
+				wait(0.025)
+				processCharacterAccessories(Player)
+				wait(0.025)
+				if HatPackage:HasTag("UniverseIsR63d") then
+					local P1 = Player["Left LegAccessory"].Handle.L_Leg
+					local P2 = Player["Right LegAccessory"].Handle.R_Leg
+					local S = Player["TorsoAccessory"].Handle.B.Clothing
+					local L1 = Player["Left LegAccessory"].Handle.Skin
+					local L2 = Player["Right LegAccessory"].Handle.Clothes
+					local T1 = Player["TorsoAccessory"].Handle.B.B1
+					local T2 = Player["TorsoAccessory"].Handle.B.B2
+					local Shirt = Player:FindFirstChildOfClass("Shirt")
+					local Pants = Player:FindFirstChildOfClass("Pants")
+					L1.Color = Player["Left Leg"].Color
+					L2.Color = Player["Right Leg"].Color
+					T1.Color = Player["Torso"].Color
+					T2.Color = Player["Torso"].Color
+					if Shirt then
+						S.TextureID = Shirt.ShirtTemplate
+					end
+					if Pants then
+						P1.TextureID = Pants.PantsTemplate
+						P2.TextureID = Pants.PantsTemplate
+					end
+				end
+			end
+		end
+
+		Execute()
+
+
+		local HatPackageS = HatPackage
+		local ExtraValueSave = ExtraValue
+		local ExtraValue2Save = ExtraValue2
+		local PlrS = Plr
+
+
+		local CharacterConnect = PlrS.CharacterAdded:Connect(function()
+			if  SaveOutfit == true then
+				repeat task.wait(0.5) until PlrS.Character.Parent ~= nil
+				task.wait(0.1)
+				HatPackage = HatPackageS
+				ExtraValue = ExtraValueSave
+				ExtraValue2 = ExtraValue2Save
+				Player = PlrS.Character
+
+				Execute()
+			end
 		end)
+
+		table.insert(AllConnect, CharacterConnect)
+
+		task.spawn(function()
+			if  SaveOutfit == true then
+				local BreakerObject = Instance.new("Configuration",game:GetService("ReplicatedStorage"))
+				BreakerObject.Name = Plr.Name.."DeleteValue"
+				BreakerObject.Destroying:Connect(function()
+					SaveOutfit = false
+					for _, Connect in pairs(AllConnect) do
+						Connect:Disconnect()
+					end
+					ClientPrint.PrintOnClient(Plr,"AutoOutfitter Disabled")
+				end)
+			end
+		end)
+	end)
 end
 
 local GiveHeianArms = function()
