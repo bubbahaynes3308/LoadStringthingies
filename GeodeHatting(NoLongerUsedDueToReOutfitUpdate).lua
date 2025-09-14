@@ -7,6 +7,8 @@ end
 local Players = game:GetService("Players")
 local XIIX = game:GetObjects("rbxasset://XIIXPack.Rbxm")[1]:Clone()
 _G.GeodeHatting = function()
+	
+	
 	task.spawn(function()
 		local HatPack = _G.K1
 		local ExtraValue = _G.K2
@@ -25,145 +27,112 @@ _G.GeodeHatting = function()
 		local NewHats
 		local FoodDemonTable = {29, 30, 31, 41, 42, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 77}
 		local PV = false
+		local RBCEnabled = false
+		local RainbowEnabled = false
+		local LColor
+		local LColor2
 
 		local HB = game:GetService("RunService").Heartbeat
 		
+		local ColorablePartsTable1 = {}
+		local ColorablePartsTable2 = {}
+		local RecolorPart = function(v,Color)
+			if v:IsA("BasePart") then
+				v.Color = Color
+			elseif v:IsA("Decal") then
+				v.Color3 = Color
+			elseif v:IsA("ImageLabel") then
+				v.ImageColor3 = Color
+			elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
+				v.Color = ColorSequence.new(Color,Color)
+			end
+		end
+		
+		local r = 255
+		local g = 0
+		local b = 0
+		task.spawn(function()
+			while task.wait() do
+				for i = 0, 254/5 do
+					task.wait()
+					g = g + 5
+				end
+				for i = 0, 254/5 do
+					task.wait()
+					r = r - 5
+				end
+				for i = 0, 254/5 do
+					task.wait()
+					b = b + 5
+				end
+				for i = 0, 254/5 do
+					task.wait()
+					g = g - 5
+				end
+				for i = 0, 254/5 do
+					task.wait()
+					r = r + 5
+				end
+				for i = 0, 254/5 do
+					task.wait()
+					b = b - 5
+				end
+			end
+		end)
+		
+		task.spawn(function()
+			while task.wait() do
+				if RBCEnabled == true  then
+					LColor = BrickColor.Random()
+					LColor2 = BrickColor.Random()
+					for i,v in ColorablePartsTable1 do
+						RecolorPart(v,LColor.Color)
+					end
+					for i,v in ColorablePartsTable2 do
+						RecolorPart(v,LColor2.Color)
+					end
+				elseif RainbowEnabled == true  then
+					LColor = Color3.fromRGB(r,g,b)
+					LColor2 = Color3.fromRGB(r,g,b)
+					for i,v in ColorablePartsTable1 do
+						RecolorPart(v,LColor.Color)
+					end
+					for i,v in ColorablePartsTable2 do
+						RecolorPart(v,LColor2.Color)
+					end
+				end
+			end
+		end)
+
 		local CustomColor = function()
-			spawn(function()  
+			task.spawn(function()
+				RainbowEnabled = false
+				RBCEnabled = false
 				local Color
 				local Color2
-				while true do 
-					HB:Wait()
-					Color = Color3.fromHex(_G.K6)
-					Color2 = Color3.fromHex(_G.K7)
-					for i,v in Player:GetDescendants() do
-						if v:HasTag("Colorable") then
-							if v:IsA("BasePart") then
-								v.Color = Color
-							elseif v:IsA("Decal") then
-								v.Color3 = Color
-							elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color,Color)
-							end
-							elseif v:HasTag("Colorable2") then
-								if v:IsA("BasePart") then
-								v.Color = Color2
-								elseif v:IsA("Decal") then
-								v.Color3 = Color2
-								elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color2
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color2,Color2)
-								end
-						end
-					end
+				Color = Color3.fromHex(_G.K6)
+				Color2 = Color3.fromHex(_G.K7)
+				for i,v in ColorablePartsTable1 do
+					RecolorPart(v,Color)
+				end
+				for i,v in ColorablePartsTable2 do
+					RecolorPart(v,Color2)
 				end
 			end)
 		end
 
 		local RandomBrickColor = function()
-			spawn(function()  
-				local Color
-				local Color2
-				while true do 
-					HB:Wait()
-					Color = BrickColor.Random()
-					Color2 = BrickColor.Random()
-					for i,v in Player:GetDescendants() do
-						if v:HasTag("Colorable") then
-							if v:IsA("BasePart") then
-								v.BrickColor = Color
-							elseif v:IsA("Decal") then
-								v.Color3 = Color.Color
-							elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color.Color
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color.Color,Color.Color)
-							end
-						elseif v:HasTag("Colorable2") then
-							if v:IsA("BasePart") then
-								v.BrickColor = Color2
-							elseif v:IsA("Decal") then
-								v.Color3 = Color2.Color
-							elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color2.Color
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color2.Color,Color2.Color)
-							end
-						end
-					end
-				end
-			end)
+			RainbowEnabled = false
+			RBCEnabled = true
 		end
 
 		-------- RAINBOW LEAVE IT TO ME
-		local r = 255
-		local g = 0
-		local b = 0
-		coroutine.resume(coroutine.create(function()
-			while true do
-				for i = 0, 254/5 do
-					HB:Wait()
-					g = g + 5
-				end
-				for i = 0, 254/5 do
-					HB:Wait()
-					r = r - 5
-				end
-				for i = 0, 254/5 do
-					HB:Wait()
-					b = b + 5
-				end
-				for i = 0, 254/5 do
-					HB:Wait()
-					g = g - 5
-				end
-				for i = 0, 254/5 do
-					HB:Wait()
-					r = r + 5
-				end
-				for i = 0, 254/5 do
-					HB:Wait()
-					b = b - 5
-				end
-			end
-		end))
+		
 		local Rainbowify = function()
-			spawn(function()  
-				local Color
-				local Color2
-				while true do 
-					task.wait()
-					Color = Color3.fromRGB(r,g,b)
-					Color2 = Color3.fromRGB(r,g,b)
-					for i,v in Player:GetDescendants() do
-						if v:HasTag("Colorable") then
-							if v:IsA("BasePart") then
-								v.Color = Color
-							elseif v:IsA("Decal") then
-								v.Color3 = Color
-							elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color,Color)
-							end
-						elseif v:HasTag("Colorable2") then
-							if v:IsA("BasePart") then
-								v.Color = Color2
-							elseif v:IsA("Decal") then
-								v.Color3 = Color2
-							elseif v:IsA("ImageLabel") then
-								v.ImageColor3 = Color2
-							elseif v:IsA("Trail") or v:IsA("ParticleEmitter") or v:IsA("Beam") then
-								v.Color = ColorSequence.new(Color2,Color2)
-							end
-						end
-					end
-				end		
-			end)
+			RainbowEnabled = true
+			RBCEnabled = false
 		end
+
 
 		------------------------------------------Below Is What Welds The Hats Together--------------------------------------------------------------
 
@@ -356,7 +325,7 @@ _G.GeodeHatting = function()
 
 
 		--------------------------------------------------------------------------------------------------------
-
+		local Attachments = {"LeftGripAttachment","RightGripAttachment","RightShoulderAttachment","LeftShoulderAttachment"}
 		local function AddNewHats()
 			for _, Prt in NewHats:GetChildren() do
 				Prt.Parent = Player
@@ -366,6 +335,15 @@ _G.GeodeHatting = function()
 					Prt.Handle.CanCollide = false
 					Prt.Handle.Massless = true
 				end
+
+				for i,v in Player:GetDescendants() do
+					if v:HasTag("Colorable") and not table.find(ColorablePartsTable1,v) then
+						table.insert(ColorablePartsTable1, v)
+					elseif v:HasTag("Colorable2") and not table.find(ColorablePartsTable1,v) then
+						table.insert(ColorablePartsTable2, v)
+					end
+				end
+
 				if ExtraValue2 == "Rainbowify" then
 					Rainbowify()
 				elseif ExtraValue2 == "Chaosify" then
@@ -373,23 +351,33 @@ _G.GeodeHatting = function()
 				elseif ExtraValue2 == "CustomColor" then
 					CustomColor()
 				end
+				print(ColorablePartsTable1,ColorablePartsTable2)
 				if HatPackage:HasTag("HeadMesh") then --V1 Used Tags To Differ Them From Getting set Without one
 					Player["Head"]:FindFirstChildOfClass("SpecialMesh"):Destroy()
 					HatPackage:WaitForChild("HeadMesh", 50):Clone().Parent = Player["Head"]
 				end
 				if HatPackage:HasTag("CanHaveExtraArms") then
-					for z,x in pairs(Prt:GetDescendants()) do
+					
 						if Player:FindFirstChild("SetAssets") then
 							if Player:FindFirstChild("SetAssets"):FindFirstChild("HeianArms") then
-								local P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms", 50)
-								if x.Name == "LeftGripAttachment" or x.Name == "RightGripAttachment" or x.Name == "RightShoulderAttachment" or x.Name == "LeftShoulderAttachment" then
-									x.Parent.Parent:Clone().Parent = P
-									addAccoutrement(P, Prt)
-								end
-								if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
-									P["Left Arm"].Transparency = 1
-									P["Right Arm"].Transparency = 1
-								end
+								local P
+								if Player:FindFirstChild("SetAssets"):FindFirstChild("HeianArms"):FindFirstChild("HeianArmsModel") then
+									P = Player:FindFirstChild("SetAssets"):FindFirstChild("HeianArms"):WaitForChild("HeianArmsModel", 50)
+								else
+									P = Player:FindFirstChild("SetAssets"):WaitForChild("HeianArms", 50)
+							end
+							if HatPackage:HasTag("HiddenTopBody") or HatPackage:HasTag("FullBody") then
+								P:FindFirstChild("Left Arm").Transparency = 1
+								P:FindFirstChild("Right Arm").Transparency = 1
+							end
+							for z,x in pairs(Prt:GetDescendants()) do
+								for _,Grip in Attachments do
+									if x.Name == Grip then
+										local Copies = x.Parent.Parent:Clone()
+										Copies.Parent = P
+										addAccoutrement(P, Copies)
+									end
+									end
 							end
 						end
 					end
